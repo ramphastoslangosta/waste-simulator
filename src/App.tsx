@@ -75,7 +75,7 @@ export default function App() {
                         <div className="flex justify-between items-center">
                             <div className="flex-1">
                                 <h1 className="text-2xl sm:text-4xl font-bold">Modelo de Simulación de Residuos</h1>
-                                <p className="mt-2 text-md sm:text-lg opacity-90">Isla Holbox (Modelo v4 - Flujos Separados) - Local SQLite</p>
+                                <p className="mt-2 text-md sm:text-lg opacity-90">Isla Holbox (Modelo v4 - Flujos Separados) - Live Version</p>
                             </div>
                             <div className="flex items-center space-x-4">
                                 {authLoading ? (
