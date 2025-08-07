@@ -132,6 +132,19 @@ src/
 - User authentication and data sync
 - Shareable scenarios between users
 
+## 📊 Data Collection
+
+For accurate simulation results, proper input data collection is essential:
+
+- **📋 [Data Collection Guide](./DATA_COLLECTION_GUIDE.md)** - Comprehensive instructions for gathering input parameters with proper source citation
+- **✅ [Data Collection Checklist](./DATA_COLLECTION_CHECKLIST.md)** - Quick reference and validation checklist
+
+**Key Requirements:**
+- All parameters must be supported by documented sources
+- Approximations and assumptions must be clearly identified
+- Local context should be prioritized over generic estimates
+- Uncertainty ranges should be provided where available
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see our [Development Protocol](./DEVELOPMENT_PROTOCOL.md) for detailed guidelines.
