@@ -1,0 +1,475 @@
+// Utility functions for CSV export/import of simulation scenarios
+export const exportScenariosToCSV = (scenarios: any[]) => {
+  if (scenarios.length === 0) {
+    throw new Error('No scenarios to export');
+  }
+
+  // Define CSV headers
+  const headers = [
+    'name',
+    'description',
+    'created_at',
+    // General parameters
+    'general_fixedPopulation',
+    'general_highSeasonOccupancy',
+    'general_lowSeasonOccupancy',
+    // Generation - Hotels
+    'generation_hotels_units',
+    'generation_hotels_rate',
+    'generation_hotels_sourceSeparationRate',
+    // Generation - Restaurants
+    'generation_restaurants_units',
+    'generation_restaurants_rate',
+    'generation_restaurants_sourceSeparationRate',
+    // Generation - Homes
+    'generation_homes_rate',
+    'generation_homes_sourceSeparationRate',
+    // Generation - Commerce
+    'generation_commerce_units',
+    'generation_commerce_rate',
+    'generation_commerce_sourceSeparationRate',
+    // Composition - Hotels
+    'composition_hotels_organicos',
+    'composition_hotels_pet',
+    'composition_hotels_aluminio',
+    'composition_hotels_carton',
+    'composition_hotels_vidrio',
+    'composition_hotels_rechazo',
+    'composition_hotels_peligrosos',
+    // Composition - Restaurants
+    'composition_restaurants_organicos',
+    'composition_restaurants_pet',
+    'composition_restaurants_aluminio',
+    'composition_restaurants_carton',
+    'composition_restaurants_vidrio',
+    'composition_restaurants_rechazo',
+    'composition_restaurants_peligrosos',
+    // Composition - Homes
+    'composition_homes_organicos',
+    'composition_homes_pet',
+    'composition_homes_aluminio',
+    'composition_homes_carton',
+    'composition_homes_vidrio',
+    'composition_homes_rechazo',
+    'composition_homes_peligrosos',
+    // Composition - Commerce
+    'composition_commerce_organicos',
+    'composition_commerce_pet',
+    'composition_commerce_aluminio',
+    'composition_commerce_carton',
+    'composition_commerce_vidrio',
+    'composition_commerce_rechazo',
+    'composition_commerce_peligrosos',
+    // RSU System - Logistics
+    'rsuSystem_logistics_vehicles',
+    'rsuSystem_logistics_vehicleCapacity',
+    'rsuSystem_logistics_tripsPerVehicle',
+    // RSU System - Processing
+    'rsuSystem_processing_transferStationRate',
+    'rsuSystem_processing_transferStationCapacity',
+    'rsuSystem_processing_finalTransportCapacity',
+    // RSU System - Separation
+    'rsuSystem_separation_differentiatedCaptureRate',
+    'rsuSystem_separation_rejectionRateSource',
+    'rsuSystem_separation_informalRecoveryRateCollection',
+    'rsuSystem_separation_informalRecoveryRateDisposal',
+    'rsuSystem_separation_plantSeparationEfficiency_pet',
+    'rsuSystem_separation_plantSeparationEfficiency_aluminio',
+    'rsuSystem_separation_plantSeparationEfficiency_carton',
+    'rsuSystem_separation_plantSeparationEfficiency_vidrio',
+    // RSU System - Economics
+    'rsuSystem_economics_collectionCost',
+    'rsuSystem_economics_transferStationCost',
+    'rsuSystem_economics_finalTransportCost',
+    'rsuSystem_economics_disposalCost',
+    'rsuSystem_economics_income_pet',
+    'rsuSystem_economics_income_aluminio',
+    'rsuSystem_economics_income_carton',
+    'rsuSystem_economics_income_vidrio',
+    // RSU System - Leaks
+    'rsuSystem_leaks_collectionLeak',
+    'rsuSystem_leaks_transferStationLeak',
+    'rsuSystem_leaks_finalTransportLeak',
+    'rsuSystem_leaks_disposalLeak',
+    // Special Waste Generation
+    'specialWasteGeneration_sargassumHigh',
+    'specialWasteGeneration_sargassumLow',
+    'specialWasteGeneration_construction',
+    // Sargassum Management
+    'sargassumManagement_collectionCost',
+    'sargassumManagement_disposalCost',
+    // RCD Management
+    'rcdManagement_collectionCost',
+    'rcdManagement_disposalCost'
+  ];
+
+  // Convert scenarios to CSV rows
+  const rows = scenarios.map(scenario => {
+    const inputs = scenario.inputs;
+    return [
+      `"${scenario.name}"`,
+      `"${scenario.description || ''}"`,
+      scenario.created_at,
+      // General
+      inputs.general.fixedPopulation,
+      inputs.general.highSeasonOccupancy,
+      inputs.general.lowSeasonOccupancy,
+      // Generation - Hotels
+      inputs.generation.hotels.units,
+      inputs.generation.hotels.rate,
+      inputs.generation.hotels.sourceSeparationRate,
+      // Generation - Restaurants
+      inputs.generation.restaurants.units,
+      inputs.generation.restaurants.rate,
+      inputs.generation.restaurants.sourceSeparationRate,
+      // Generation - Homes
+      inputs.generation.homes.rate,
+      inputs.generation.homes.sourceSeparationRate,
+      // Generation - Commerce
+      inputs.generation.commerce.units,
+      inputs.generation.commerce.rate,
+      inputs.generation.commerce.sourceSeparationRate,
+      // Composition - Hotels
+      inputs.composition.hotels.organicos,
+      inputs.composition.hotels.pet,
+      inputs.composition.hotels.aluminio,
+      inputs.composition.hotels.carton,
+      inputs.composition.hotels.vidrio,
+      inputs.composition.hotels.rechazo,
+      inputs.composition.hotels.peligrosos,
+      // Composition - Restaurants
+      inputs.composition.restaurants.organicos,
+      inputs.composition.restaurants.pet,
+      inputs.composition.restaurants.aluminio,
+      inputs.composition.restaurants.carton,
+      inputs.composition.restaurants.vidrio,
+      inputs.composition.restaurants.rechazo,
+      inputs.composition.restaurants.peligrosos,
+      // Composition - Homes
+      inputs.composition.homes.organicos,
+      inputs.composition.homes.pet,
+      inputs.composition.homes.aluminio,
+      inputs.composition.homes.carton,
+      inputs.composition.homes.vidrio,
+      inputs.composition.homes.rechazo,
+      inputs.composition.homes.peligrosos,
+      // Composition - Commerce
+      inputs.composition.commerce.organicos,
+      inputs.composition.commerce.pet,
+      inputs.composition.commerce.aluminio,
+      inputs.composition.commerce.carton,
+      inputs.composition.commerce.vidrio,
+      inputs.composition.commerce.rechazo,
+      inputs.composition.commerce.peligrosos,
+      // RSU System - Logistics
+      inputs.rsuSystem.logistics.vehicles,
+      inputs.rsuSystem.logistics.vehicleCapacity,
+      inputs.rsuSystem.logistics.tripsPerVehicle,
+      // RSU System - Processing
+      inputs.rsuSystem.processing.transferStationRate,
+      inputs.rsuSystem.processing.transferStationCapacity,
+      inputs.rsuSystem.processing.finalTransportCapacity,
+      // RSU System - Separation
+      inputs.rsuSystem.separation.differentiatedCaptureRate,
+      inputs.rsuSystem.separation.rejectionRateSource,
+      inputs.rsuSystem.separation.informalRecoveryRateCollection,
+      inputs.rsuSystem.separation.informalRecoveryRateDisposal,
+      inputs.rsuSystem.separation.plantSeparationEfficiency.pet,
+      inputs.rsuSystem.separation.plantSeparationEfficiency.aluminio,
+      inputs.rsuSystem.separation.plantSeparationEfficiency.carton,
+      inputs.rsuSystem.separation.plantSeparationEfficiency.vidrio,
+      // RSU System - Economics
+      inputs.rsuSystem.economics.collectionCost,
+      inputs.rsuSystem.economics.transferStationCost,
+      inputs.rsuSystem.economics.finalTransportCost,
+      inputs.rsuSystem.economics.disposalCost,
+      inputs.rsuSystem.economics.income.pet,
+      inputs.rsuSystem.economics.income.aluminio,
+      inputs.rsuSystem.economics.income.carton,
+      inputs.rsuSystem.economics.income.vidrio,
+      // RSU System - Leaks
+      inputs.rsuSystem.leaks.collectionLeak,
+      inputs.rsuSystem.leaks.transferStationLeak,
+      inputs.rsuSystem.leaks.finalTransportLeak,
+      inputs.rsuSystem.leaks.disposalLeak,
+      // Special Waste Generation
+      inputs.specialWasteGeneration.sargassumHigh,
+      inputs.specialWasteGeneration.sargassumLow,
+      inputs.specialWasteGeneration.construction,
+      // Sargassum Management
+      inputs.sargassumManagement.collectionCost,
+      inputs.sargassumManagement.disposalCost,
+      // RCD Management
+      inputs.rcdManagement.collectionCost,
+      inputs.rcdManagement.disposalCost
+    ].join(',');
+  });
+
+  // Combine headers and rows
+  const csvContent = [headers.join(','), ...rows].join('\n');
+  return csvContent;
+};
+
+export const downloadCSV = (csvContent: string, filename: string) => {
+  const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+  const link = document.createElement('a');
+  const url = URL.createObjectURL(blob);
+  link.setAttribute('href', url);
+  link.setAttribute('download', filename);
+  link.style.visibility = 'hidden';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
+export const exportCalculationsToCSV = (kpis: any, inputs: any, season: string) => {
+  const rsuKpis = kpis.rsu;
+  const data = rsuKpis.calculations;
+  const rsuInputs = inputs.rsuSystem;
+
+  // Access generation by source
+  const genBySource = rsuKpis.genBySource || data.genBySource || {
+    hotels: 0,
+    restaurants: 0,
+    homes: 0,
+    commerce: 0
+  };
+
+  // Create the calculations data array
+  const calculationsData = [
+    // Header information
+    ['Tabla de Cálculos Detallados', season, '', ''],
+    ['Concepto', 'Valor', 'Unidad', 'Inputs y Desglose del Cálculo'],
+    ['', '', '', ''],
+    
+    // GENERACIÓN
+    ['ETAPA 1: GENERACIÓN DE RSU', '', '', ''],
+    ['Generación Total de RSU', rsuKpis.totalGeneration.toFixed(2), 'ton/día', 'Suma de todas las fuentes'],
+    ['  Generado por Hoteles', genBySource.hotels.toFixed(2), 'ton/día', `${inputs.generation.hotels.units} cuartos × ${season === 'Temporada Alta' ? inputs.general.highSeasonOccupancy : inputs.general.lowSeasonOccupancy}% ocup. × ${inputs.generation.hotels.rate} kg/cuarto/día ÷ 1000`],
+    ['  Generado por Restaurantes', genBySource.restaurants.toFixed(2), 'ton/día', `${inputs.generation.restaurants.units} locales × ${inputs.generation.restaurants.rate} kg/local/día ÷ 1000`],
+    ['  Generado por Hogares', genBySource.homes.toFixed(2), 'ton/día', `${inputs.general.fixedPopulation} hab. × ${inputs.generation.homes.rate} kg/hab/día ÷ 1000`],
+    ['  Generado por Comercios', genBySource.commerce.toFixed(2), 'ton/día', `${inputs.generation.commerce.units} locales × ${inputs.generation.commerce.rate} kg/local/día ÷ 1000`],
+    ['', '', '', ''],
+    
+    // RECOLECCIÓN
+    ['ETAPA 2: RECOLECCIÓN Y LOGÍSTICA PRIMARIA', '', '', ''],
+    ['Capacidad de Recolección', data.collectionCapacity.toFixed(2), 'ton/día', `${rsuInputs.logistics.vehicles} veh. × ${rsuInputs.logistics.vehicleCapacity} ton × ${rsuInputs.logistics.tripsPerVehicle} viajes`],
+    ['Déficit de Recolección (Fuga)', rsuKpis.collectionDeficit.toFixed(2), 'ton/día', 'MAX(0, Generación RSU - Capacidad)'],
+    ['Total Recolectado', data.collectedWasteTotal.toFixed(2), 'ton/día', 'Generación RSU - Déficit'],
+    ['  Recuperación Informal (en ruta)', data.informalRecoveryCollection.toFixed(2), 'ton/día', `Total Recolectado × ${rsuInputs.separation.informalRecoveryRateCollection}%`],
+    ['  Fuga en Recolección (derrame)', data.leakCollection.toFixed(2), 'ton/día', `(Recolectado - Rec. Informal) × ${rsuInputs.leaks.collectionLeak}%`],
+    ['Entrada a Sitio de Transferencia', data.toTransferStationTotal.toFixed(2), 'ton/día', 'Recolectado - Rec. Informal - Fuga'],
+    ['', '', '', ''],
+    
+    // PROCESAMIENTO
+    ['ETAPA 3: SITIO DE TRANSFERENCIA Y VALORIZACIÓN', '', '', ''],
+    ['Tasa de Procesamiento de la Planta', rsuInputs.processing.transferStationRate.toFixed(2), 'ton/día', 'Input: Capacidad de la maquinaria'],
+    ['Material Procesado (Promedio diario)', data.materialProcessedToday.toFixed(2), 'ton/día', 'MIN(Material Disponible, Tasa de Proc.)'],
+    ['Inventario Acumulado (Día 30)', rsuKpis.finalInventory.toFixed(2), 'ton', 'Acumulación diaria limitada por capacidad'],
+    ['Recuperación Formal Total', data.totalRecoveredAtStation.toFixed(2), 'ton/día', 'Suma de Alta y Baja Calidad'],
+    ['    Recuperado Alta Calidad (Origen)', rsuKpis.recoveryByStage.source.toFixed(2), 'ton/día', ''],
+    ['    Recuperado Baja Calidad (Planta)', rsuKpis.recoveryByStage.plant.toFixed(2), 'ton/día', ''],
+    ['  Fuga en Planta (pérdida de proceso)', data.leakTransferStation.toFixed(2), 'ton/día', `Material Procesado × ${rsuInputs.leaks.transferStationLeak}%`],
+    ['Material para Traslado Final', data.toFinalTransport.toFixed(2), 'ton/día', 'Procesado - Recuperado - Fuga'],
+    ['', '', '', ''],
+    
+    // DISPOSICIÓN FINAL
+    ['ETAPA 4: TRASLADO Y DISPOSICIÓN FINAL', '', '', ''],
+    ['Capacidad de Traslado Final', rsuInputs.processing.finalTransportCapacity.toFixed(2), 'ton/día', 'Input: Capacidad de camiones de carga'],
+    ['Material Efectivamente Trasladado', data.actualFinalTransport.toFixed(2), 'ton/día', 'MIN(Material para Traslado, Capacidad)'],
+    ['  Material No Trasladado (acum. en planta)', data.untransportedMaterial.toFixed(2), 'ton/día', 'Material para Traslado - Trasladado'],
+    ['  Fuga en Traslado Final', data.leakFinalTransport.toFixed(2), 'ton/día', `Trasladado × ${rsuInputs.leaks.finalTransportLeak}%`],
+    ['Entrada a Disposición Final', data.toDisposalSite.toFixed(2), 'ton/día', 'Trasladado - Fuga en Traslado'],
+    ['  Recuperación Informal (en sitio)', data.informalRecoveryDisposal.toFixed(2), 'ton/día', `Entrada a Disp. × % Valorizables × ${rsuInputs.separation.informalRecoveryRateDisposal}%`],
+    ['  Fuga en Disposición Final', data.leakDisposal.toFixed(2), 'ton/día', `Entrada a Disp. × ${rsuInputs.leaks.disposalLeak}%`],
+    ['Residuo Final Enterrado', rsuKpis.toDisposal.toFixed(2), 'ton/día', 'Entrada a Disp. - Rec. Informal - Fuga'],
+    ['', '', '', ''],
+    
+    // FINANZAS
+    ['ANÁLISIS FINANCIERO (SOLO RSU)', '', '', ''],
+    ['Ingresos Totales por Venta', rsuKpis.totalRsuIncome.toFixed(2), 'MXN/día', 'Suma de venta de materiales'],
+    ['Costos Totales de Operación', rsuKpis.totalRsuCosts.toFixed(2), 'MXN/día', 'Suma de costos de todas las etapas'],
+    ['  Costo de Recolección', data.totalCollectionCost.toFixed(2), 'MXN/día', `Total Recolectado × ${rsuInputs.economics.collectionCost} MXN/ton`],
+    ['  Costo de Transferencia', data.totalTransferCost.toFixed(2), 'MXN/día', `Material Procesado × ${rsuInputs.economics.transferStationCost} MXN/ton`],
+    ['  Costo de Traslado Final', data.totalFinalTransportCost.toFixed(2), 'MXN/día', `Material Trasladado × ${rsuInputs.economics.finalTransportCost} MXN/ton`],
+    ['  Costo de Disposición Final', data.totalDisposalCost.toFixed(2), 'MXN/día', `Entrada a Disp. × ${rsuInputs.economics.disposalCost} MXN/ton`],
+    ['Costo Neto del Sistema RSU', rsuKpis.netCostPerDay.toFixed(2), 'MXN/día', 'Costos Totales - Ingresos Totales']
+  ];
+
+  // Convert to CSV format
+  const csvContent = calculationsData.map(row => 
+    row.map(cell => `"${cell}"`).join(',')
+  ).join('\n');
+
+  return csvContent;
+};
+
+export const parseCSVToScenarios = (csvContent: string): any[] => {
+  const lines = csvContent.trim().split('\n');
+  if (lines.length < 2) {
+    throw new Error('CSV file must contain at least a header row and one data row');
+  }
+
+  const headers = lines[0].split(',');
+  const scenarios: any[] = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    const values = parseCSVLine(lines[i]);
+    if (values.length !== headers.length) {
+      throw new Error(`Row ${i + 1} has ${values.length} columns but expected ${headers.length}`);
+    }
+
+    const scenario: any = {
+      name: values[0].replace(/"/g, ''),
+      description: values[1].replace(/"/g, ''),
+      inputs: {
+        general: {
+          fixedPopulation: parseFloat(values[3]) || 0,
+          highSeasonOccupancy: parseFloat(values[4]) || 0,
+          lowSeasonOccupancy: parseFloat(values[5]) || 0
+        },
+        generation: {
+          hotels: {
+            units: parseFloat(values[6]) || 0,
+            rate: parseFloat(values[7]) || 0,
+            sourceSeparationRate: parseFloat(values[8]) || 0
+          },
+          restaurants: {
+            units: parseFloat(values[9]) || 0,
+            rate: parseFloat(values[10]) || 0,
+            sourceSeparationRate: parseFloat(values[11]) || 0
+          },
+          homes: {
+            rate: parseFloat(values[12]) || 0,
+            sourceSeparationRate: parseFloat(values[13]) || 0
+          },
+          commerce: {
+            units: parseFloat(values[14]) || 0,
+            rate: parseFloat(values[15]) || 0,
+            sourceSeparationRate: parseFloat(values[16]) || 0
+          }
+        },
+        composition: {
+          hotels: {
+            organicos: parseFloat(values[17]) || 0,
+            pet: parseFloat(values[18]) || 0,
+            aluminio: parseFloat(values[19]) || 0,
+            carton: parseFloat(values[20]) || 0,
+            vidrio: parseFloat(values[21]) || 0,
+            rechazo: parseFloat(values[22]) || 0,
+            peligrosos: parseFloat(values[23]) || 0
+          },
+          restaurants: {
+            organicos: parseFloat(values[24]) || 0,
+            pet: parseFloat(values[25]) || 0,
+            aluminio: parseFloat(values[26]) || 0,
+            carton: parseFloat(values[27]) || 0,
+            vidrio: parseFloat(values[28]) || 0,
+            rechazo: parseFloat(values[29]) || 0,
+            peligrosos: parseFloat(values[30]) || 0
+          },
+          homes: {
+            organicos: parseFloat(values[31]) || 0,
+            pet: parseFloat(values[32]) || 0,
+            aluminio: parseFloat(values[33]) || 0,
+            carton: parseFloat(values[34]) || 0,
+            vidrio: parseFloat(values[35]) || 0,
+            rechazo: parseFloat(values[36]) || 0,
+            peligrosos: parseFloat(values[37]) || 0
+          },
+          commerce: {
+            organicos: parseFloat(values[38]) || 0,
+            pet: parseFloat(values[39]) || 0,
+            aluminio: parseFloat(values[40]) || 0,
+            carton: parseFloat(values[41]) || 0,
+            vidrio: parseFloat(values[42]) || 0,
+            rechazo: parseFloat(values[43]) || 0,
+            peligrosos: parseFloat(values[44]) || 0
+          }
+        },
+        rsuSystem: {
+          logistics: {
+            vehicles: parseFloat(values[45]) || 0,
+            vehicleCapacity: parseFloat(values[46]) || 0,
+            tripsPerVehicle: parseFloat(values[47]) || 0
+          },
+          processing: {
+            transferStationRate: parseFloat(values[48]) || 0,
+            transferStationCapacity: parseFloat(values[49]) || 0,
+            finalTransportCapacity: parseFloat(values[50]) || 0
+          },
+          separation: {
+            differentiatedCaptureRate: parseFloat(values[51]) || 0,
+            rejectionRateSource: parseFloat(values[52]) || 0,
+            informalRecoveryRateCollection: parseFloat(values[53]) || 0,
+            informalRecoveryRateDisposal: parseFloat(values[54]) || 0,
+            plantSeparationEfficiency: {
+              pet: parseFloat(values[55]) || 0,
+              aluminio: parseFloat(values[56]) || 0,
+              carton: parseFloat(values[57]) || 0,
+              vidrio: parseFloat(values[58]) || 0
+            }
+          },
+          economics: {
+            collectionCost: parseFloat(values[59]) || 0,
+            transferStationCost: parseFloat(values[60]) || 0,
+            finalTransportCost: parseFloat(values[61]) || 0,
+            disposalCost: parseFloat(values[62]) || 0,
+            income: {
+              pet: parseFloat(values[63]) || 0,
+              aluminio: parseFloat(values[64]) || 0,
+              carton: parseFloat(values[65]) || 0,
+              vidrio: parseFloat(values[66]) || 0
+            }
+          },
+          leaks: {
+            collectionLeak: parseFloat(values[67]) || 0,
+            transferStationLeak: parseFloat(values[68]) || 0,
+            finalTransportLeak: parseFloat(values[69]) || 0,
+            disposalLeak: parseFloat(values[70]) || 0
+          }
+        },
+        specialWasteGeneration: {
+          sargassumHigh: parseFloat(values[71]) || 0,
+          sargassumLow: parseFloat(values[72]) || 0,
+          construction: parseFloat(values[73]) || 0
+        },
+        sargassumManagement: {
+          collectionCost: parseFloat(values[74]) || 0,
+          disposalCost: parseFloat(values[75]) || 0
+        },
+        rcdManagement: {
+          collectionCost: parseFloat(values[76]) || 0,
+          disposalCost: parseFloat(values[77]) || 0
+        }
+      }
+    };
+
+    scenarios.push(scenario);
+  }
+
+  return scenarios;
+};
+
+// Helper function to parse CSV line handling quoted values
+const parseCSVLine = (line: string): string[] => {
+  const result: string[] = [];
+  let current = '';
+  let inQuotes = false;
+  
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    
+    if (char === '"') {
+      inQuotes = !inQuotes;
+    } else if (char === ',' && !inQuotes) {
+      result.push(current);
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+  
+  result.push(current);
+  return result;
+};
