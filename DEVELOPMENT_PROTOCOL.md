@@ -80,16 +80,29 @@ First, set up your local workspace. You only need to do this once per machine fo
 
 Follow these steps for every new feature, bugfix, or change.
 
-1.  **Sync and Create a Branch**
+1. **Sync and Create a Feature Branch** 🌿
+
+    Feature branches isolate your work from the stable `main` branch, allowing for safer development and easier collaboration.
 
     ```bash
     # Make sure your main branch is up-to-date
     git checkout main
     git pull origin main
 
-    # Create a new branch for your task
-    git checkout -b [feature/your-feature-name]
+    # Create a new branch for your task (use descriptive names)
+    git checkout -b feature/analytics-dashboard
+    # or
+    git checkout -b bugfix/simulation-calculation-error
+    # or  
+    git checkout -b enhancement/mobile-responsive-tables
     ```
+
+    **Branch Naming Conventions:**
+    - `feature/description` - New functionality
+    - `bugfix/description` - Bug fixes
+    - `enhancement/description` - Improvements to existing features
+    - `docs/description` - Documentation updates
+    - `refactor/description` - Code restructuring without new features
 
 2. **Code and Test Locally**
 
@@ -112,20 +125,68 @@ Follow these steps for every new feature, bugfix, or change.
         npm run preview
         ```
 
-3. **Commit, Push, and Open a Pull Request**
+3. **Commit, Push, and Create Pull Request** 🔄
 
-    - Stage and commit your changes using the **Conventional Commits** standard.
+    - Make multiple commits as you work (it's ok to commit incomplete work on feature branches):
         ```bash
-        # Stage your changes (including package.json if you added dependencies)
+        # Stage and commit your changes using Conventional Commits standard
         git add .
-
-        git commit -m "feat: Add scenario comparison dashboard"
+        git commit -m "feat: Add scenario comparison dashboard component"
+        
+        # Continue working...
+        git add .
+        git commit -m "feat: Add data visualization to comparison dashboard"
+        
+        # Fix something...
+        git add .
+        git commit -m "fix: Correct calculation error in comparison logic"
         ```
-    - Push your branch to the remote repository.
+        
+    - Push your feature branch to GitHub:
         ```bash
-        git push origin [feature/your-feature-name]
+        # First push - creates the remote branch
+        git push origin feature/scenario-comparison
+        
+        # Subsequent pushes (shorter syntax)
+        git push
         ```
-    - Go to GitHub and **open a Pull Request (PR)** from your branch to the `main` branch. Assign reviewers and ensure all checks pass before merging.
+        
+    - **Create Pull Request on GitHub:**
+        1. Go to your GitHub repository
+        2. Click "Compare & pull request" (appears after pushing new branch)
+        3. Fill out PR description explaining what you built and why
+        4. Request reviewers if working with a team
+        5. **Vercel will automatically create a preview deployment** for testing
+        
+    - **Benefits of Pull Requests:**
+        - ✅ Code review before merging to main
+        - ✅ Preview deployment to test your changes live  
+        - ✅ Automatic tests run on your code
+        - ✅ Discussion and collaboration on the changes
+        - ✅ History of what was changed and why
+
+### **Step 2b: After Merging - Branch Cleanup** 🧹
+
+Once your PR is merged, clean up your local environment:
+
+```bash
+# Switch back to main branch
+git checkout main
+
+# Pull the latest changes (includes your merged feature)
+git pull origin main
+
+# Delete your local feature branch (it's now merged)
+git branch -d feature/scenario-comparison
+
+# Delete the remote branch (optional - GitHub can do this automatically)
+git push origin --delete feature/scenario-comparison
+```
+
+**Why clean up branches?**
+- Keeps your local repository organized
+- Prevents confusion about which branches are active
+- Reduces clutter in branch lists
 
 ### **Step 3: Deployment**
 
@@ -260,6 +321,44 @@ npm run build
 - **Security:** Never commit API keys or sensitive data. Keep Supabase credentials in environment variables if using cloud features.
 - **Testing:** Test simulation calculations thoroughly when making changes. Verify that KPI calculations remain consistent across seasons.
 - **Browser Compatibility:** Test in different browsers since the app uses localStorage and SQL.js.
+- **Git Workflow:** Always use feature branches for development. Keep main branch stable and deployable at all times.
+
+## 🌿 **Advanced Git Workflows**
+
+### **Common Scenarios**
+
+**Starting a new feature:**
+```bash
+git checkout main && git pull origin main
+git checkout -b feature/new-awesome-feature
+```
+
+**Keeping your feature branch up to date with main:**
+```bash
+# While on your feature branch
+git checkout main
+git pull origin main
+git checkout feature/your-branch
+git merge main  # or: git rebase main (advanced)
+```
+
+**Making changes to a PR after feedback:**
+```bash
+# Make your changes, then commit and push
+git add .
+git commit -m "address: Fix issue mentioned in PR review"
+git push  # Updates the existing PR automatically
+```
+
+**Emergency hotfix:**
+```bash
+git checkout main
+git pull origin main
+git checkout -b hotfix/critical-bug-fix
+# Fix the bug, test, commit
+git push origin hotfix/critical-bug-fix
+# Create PR, get quick review, merge immediately
+```
 
 -----
 
