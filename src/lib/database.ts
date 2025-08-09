@@ -228,7 +228,7 @@ class SQLiteDatabase {
       await this.init();
       this.db = new this.SQL.Database(bytes);
       this.saveToLocalStorage();
-    } catch (error) {
+    } catch {
       throw new Error('Invalid database file');
     }
   }

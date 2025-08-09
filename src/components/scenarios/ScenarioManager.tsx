@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Save, FolderOpen, Trash2, Plus, Edit3, Download, Upload } from 'lucide-react'
+import { Save, FolderOpen, Trash2, Download, Upload } from 'lucide-react'
 import { useScenarios } from '../../hooks/useScenarios'
 import { useAuth } from '../../hooks/useAuth'
 import { exportScenariosToCSV, downloadCSV, parseCSVToScenarios } from '../../utils/csvUtils'

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { database, SimulationScenario } from '../lib/database'
 import { useAuth } from './useAuth'
 
@@ -7,7 +7,7 @@ export const useScenarios = () => {
   const [loading, setLoading] = useState(true)
   const { user } = useAuth()
 
-  const fetchScenarios = async () => {
+  const fetchScenarios = useCallback(async () => {
     if (!user) {
       setScenarios([])
       setLoading(false)
@@ -22,11 +22,11 @@ export const useScenarios = () => {
     } finally {
       setLoading(false)
     }
-  }
+  }, [user])
 
   useEffect(() => {
     fetchScenarios()
-  }, [user])
+  }, [user, fetchScenarios])
 
   const saveScenario = async (name: string, inputs: any, description?: string) => {
     if (!user) throw new Error('User must be authenticated')

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { X, Mail, Lock, User } from 'lucide-react'
+import { X, Mail, Lock } from 'lucide-react'
 import { useAuth } from '../../hooks/useAuth'
 
 interface AuthModalProps {
@@ -34,8 +34,8 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose }) => {
       } else {
         onClose()
       }
-    } catch (error: any) {
-      setError(error.message)
+    } catch (error: unknown) {
+      setError((error as Error).message)
     } finally {
       setLoading(false)
     }
