@@ -15,6 +15,7 @@ import ResultsTable from './components/features/ResultsTable.tsx';
 import ScenarioManager from './components/scenarios/ScenarioManager.tsx';
 import AuthModal from './components/auth/AuthModal.tsx';
 import DatabaseSchema from './components/admin/DatabaseSchema.tsx';
+import ComparisonDashboard from './components/features/ComparisonDashboard.tsx';
 
 // Placeholder component
 const SankeyDiagram = () => (
@@ -85,44 +86,57 @@ export default function App() {
             case 'scenarios':
                 return <ScenarioManager currentInputs={inputs} onLoadScenario={handleLoadScenario} onCompareScenarios={handleCompareScenarios} />;
             case 'comparison':
-                return <div className="text-center py-8">
-                    {comparisonLoading ? (
-                        <div>
+                if (comparisonLoading) {
+                    return (
+                        <div className="text-center py-8">
                             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
                             <p className="text-slate-600">Cargando comparación de escenarios...</p>
                         </div>
-                    ) : comparisonScenarios.length > 0 ? (
+                    );
+                }
+                
+                if (comparisonScenarios.length > 0) {
+                    return (
                         <div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-4">
-                                Comparación de Escenarios ({comparisonScenarios.length})
-                            </h3>
-                            <div className="grid grid-cols-1 gap-4">
-                                {comparisonScenarios.map(scenario => (
-                                    <div key={scenario.id} className="bg-white p-4 rounded-lg shadow border">
-                                        <h4 className="font-semibold">{scenario.name}</h4>
-                                        <p className="text-sm text-slate-600">{scenario.description || 'Sin descripción'}</p>
-                                    </div>
-                                ))}
+                            <div className="mb-6 flex justify-between items-center">
+                                <div className="flex items-center space-x-4">
+                                    <span className="font-semibold text-slate-700">Temporada para Comparación:</span>
+                                    <button 
+                                        onClick={() => setSeason('high')} 
+                                        className={`px-4 py-2 rounded-md text-sm font-medium flex items-center ${season === 'high' ? 'bg-blue-600 text-white shadow' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'}`}
+                                    >
+                                        <Sun size={16} className="mr-2"/> Temporada Alta
+                                    </button>
+                                    <button 
+                                        onClick={() => setSeason('low')} 
+                                        className={`px-4 py-2 rounded-md text-sm font-medium flex items-center ${season === 'low' ? 'bg-blue-600 text-white shadow' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'}`}
+                                    >
+                                        <Moon size={16} className="mr-2"/> Temporada Baja
+                                    </button>
+                                </div>
+                                <button 
+                                    onClick={() => {setIsComparisonMode(false); setActiveTab('scenarios')}}
+                                    className="px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
+                                >
+                                    Volver a Escenarios
+                                </button>
                             </div>
-                            <button 
-                                onClick={() => {setIsComparisonMode(false); setActiveTab('scenarios')}}
-                                className="mt-4 px-4 py-2 bg-slate-600 text-white rounded-lg hover:bg-slate-700 transition-colors"
-                            >
-                                Volver a Escenarios
-                            </button>
+                            <ComparisonDashboard scenarios={comparisonScenarios} season={season} />
                         </div>
-                    ) : (
-                        <div>
-                            <p className="text-slate-600 mb-4">No hay escenarios seleccionados para comparar</p>
-                            <button 
-                                onClick={() => setActiveTab('scenarios')}
-                                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                            >
-                                Ir a Escenarios
-                            </button>
-                        </div>
-                    )}
-                </div>;
+                    );
+                }
+                
+                return (
+                    <div className="text-center py-8">
+                        <p className="text-slate-600 mb-4">No hay escenarios seleccionados para comparar</p>
+                        <button 
+                            onClick={() => setActiveTab('scenarios')}
+                            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                        >
+                            Ir a Escenarios
+                        </button>
+                    </div>
+                );
             case 'sankey':
                  return <SankeyDiagram />;
             case 'schema':
