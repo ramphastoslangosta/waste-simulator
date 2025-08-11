@@ -9,9 +9,10 @@ import CardHeader from '../ui/CardHeader'
 interface ScenarioManagerProps {
   currentInputs: any
   onLoadScenario: (inputs: any) => void
+  onCompareScenarios?: (scenarioIds: string[]) => void
 }
 
-const ScenarioManager: React.FC<ScenarioManagerProps> = ({ currentInputs, onLoadScenario }) => {
+const ScenarioManager: React.FC<ScenarioManagerProps> = ({ currentInputs, onLoadScenario, onCompareScenarios }) => {
   const { user } = useAuth()
   const { scenarios, loading, saveScenario, deleteScenario } = useScenarios()
   const [showSaveModal, setShowSaveModal] = useState(false)
@@ -19,6 +20,8 @@ const ScenarioManager: React.FC<ScenarioManagerProps> = ({ currentInputs, onLoad
   const [scenarioDescription, setScenarioDescription] = useState('')
   const [saving, setSaving] = useState(false)
   const [importing, setImporting] = useState(false)
+  const [selectedScenarios, setSelectedScenarios] = useState<string[]>([])
+  const [isComparisonMode, setIsComparisonMode] = useState(false)
 
   if (!user) {
     return (
@@ -117,14 +120,56 @@ const ScenarioManager: React.FC<ScenarioManagerProps> = ({ currentInputs, onLoad
     reader.readAsText(file)
   }
 
+  const handleToggleComparison = () => {
+    setIsComparisonMode(!isComparisonMode)
+    setSelectedScenarios([])
+  }
+
+  const handleScenarioSelection = (scenarioId: string, isChecked: boolean) => {
+    if (isChecked) {
+      setSelectedScenarios(prev => [...prev, scenarioId])
+    } else {
+      setSelectedScenarios(prev => prev.filter(id => id !== scenarioId))
+    }
+  }
+
+  const handleCompareSelected = () => {
+    if (selectedScenarios.length >= 2 && onCompareScenarios) {
+      onCompareScenarios(selectedScenarios)
+    }
+  }
+
   return (
     <div className="space-y-6">
       <Card>
         <CardHeader title="Gestión de Escenarios" icon={<FolderOpen size={24} />} />
         
         <div className="flex justify-between items-center mb-4">
-          <h4 className="font-semibold text-slate-700">Escenarios Guardados</h4>
+          <div className="flex items-center space-x-4">
+            <h4 className="font-semibold text-slate-700">Escenarios Guardados</h4>
+            {onCompareScenarios && scenarios.length >= 2 && (
+              <button
+                onClick={handleToggleComparison}
+                className={`flex items-center px-3 py-1 rounded-lg text-sm transition-colors ${
+                  isComparisonMode 
+                    ? 'bg-purple-100 text-purple-700 border border-purple-300' 
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {isComparisonMode ? 'Cancelar Comparación' : 'Modo Comparación'}
+              </button>
+            )}
+          </div>
           <div className="flex space-x-2">
+            {isComparisonMode && (
+              <button
+                onClick={handleCompareSelected}
+                disabled={selectedScenarios.length < 2}
+                className="flex items-center px-3 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                Comparar Seleccionados ({selectedScenarios.length})
+              </button>
+            )}
             <button
               onClick={handleExportCSV}
               disabled={scenarios.length === 0}
@@ -168,15 +213,31 @@ const ScenarioManager: React.FC<ScenarioManagerProps> = ({ currentInputs, onLoad
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {scenarios.map((scenario) => (
-              <div key={scenario.id} className="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow">
+              <div key={scenario.id} className={`border rounded-lg p-4 hover:shadow-md transition-all ${
+                isComparisonMode && selectedScenarios.includes(scenario.id)
+                  ? 'border-purple-300 bg-purple-50'
+                  : 'border-slate-200'
+              }`}>
                 <div className="flex justify-between items-start mb-2">
-                  <h5 className="font-semibold text-slate-900 truncate">{scenario.name}</h5>
-                  <button
-                    onClick={() => handleDeleteScenario(scenario.id)}
-                    className="text-slate-400 hover:text-red-500 transition-colors"
-                  >
-                    <Trash2 size={16} />
-                  </button>
+                  <div className="flex items-center space-x-3 flex-1">
+                    {isComparisonMode && (
+                      <input
+                        type="checkbox"
+                        checked={selectedScenarios.includes(scenario.id)}
+                        onChange={(e) => handleScenarioSelection(scenario.id, e.target.checked)}
+                        className="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 focus:ring-2"
+                      />
+                    )}
+                    <h5 className="font-semibold text-slate-900 truncate">{scenario.name}</h5>
+                  </div>
+                  {!isComparisonMode && (
+                    <button
+                      onClick={() => handleDeleteScenario(scenario.id)}
+                      className="text-slate-400 hover:text-red-500 transition-colors"
+                    >
+                      <Trash2 size={16} />
+                    </button>
+                  )}
                 </div>
                 
                 {scenario.description && (
@@ -187,13 +248,18 @@ const ScenarioManager: React.FC<ScenarioManagerProps> = ({ currentInputs, onLoad
                   <span className="text-xs text-slate-500">
                     {new Date(scenario.created_at).toLocaleDateString()}
                   </span>
-                  <button
-                    onClick={() => onLoadScenario(scenario.inputs)}
-                    className="flex items-center px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition-colors text-sm"
-                  >
-                    <FolderOpen size={14} className="mr-1" />
-                    Cargar
-                  </button>
+                  {!isComparisonMode && (
+                    <button
+                      onClick={() => onLoadScenario(scenario.inputs)}
+                      className="flex items-center px-3 py-1 bg-slate-100 text-slate-700 rounded hover:bg-slate-200 transition-colors text-sm"
+                    >
+                      <FolderOpen size={14} className="mr-1" />
+                      Cargar
+                    </button>
+                  )}
+                  {isComparisonMode && selectedScenarios.includes(scenario.id) && (
+                    <span className="text-xs text-purple-600 font-medium">Seleccionado</span>
+                  )}
                 </div>
               </div>
             ))}

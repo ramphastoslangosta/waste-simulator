@@ -9,5 +9,6 @@ export const TABS = [
     { id: 'table', label: 'Tabla de Cálculos' },
     { id: 'inputs', label: 'Parámetros de Entrada' },
     { id: 'scenarios', label: 'Escenarios' },
+    { id: 'comparison', label: 'Comparación de Escenarios' },
     { id: 'schema', label: 'Esquema DB' },
 ];
