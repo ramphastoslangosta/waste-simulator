@@ -17,9 +17,42 @@ The simulator models realistic waste flows including collection, processing, mat
 - 📊 **Interactive Dashboard** - Multiple analysis views (KPIs, Financial, Flow Diagrams, Process Analysis)
 - 🏖️ **Season-based Modeling** - Separate calculations for high/low tourist seasons
 - 💾 **Scenario Management** - Save, load, and compare different simulation scenarios
+- 🆚 **NEW: Scenario Comparison** - Side-by-side analysis of multiple scenarios with charts and tables
 - 🗄️ **Local Data Persistence** - Client-side SQLite database with export/import capabilities
 - 📱 **Responsive Design** - Works on desktop, tablet, and mobile devices
 - 🎨 **Modern UI** - Built with Tailwind CSS and Lucide icons
+
+## 🔍 Testing the New Scenario Comparison Feature
+
+To test the **Scenario Comparison** functionality in the deployed app:
+
+### Step 1: Sign In
+1. Click **"Iniciar Sesión"** in the top-right corner
+2. Create an account or sign in with existing credentials
+
+### Step 2: Create Test Scenarios
+1. Go to **"Parámetros de Entrada"** tab
+2. Modify some parameters (population, waste generation, costs, etc.)
+3. Go to **"Escenarios"** tab
+4. Click **"Guardar Actual"** and save as "Scenario A"
+5. Return to **"Parámetros de Entrada"**, change different parameters
+6. Save another scenario as "Scenario B"
+7. Repeat to create at least 2-3 scenarios with different configurations
+
+### Step 3: Access Comparison Mode
+1. In **"Escenarios"** tab, you'll now see a **"Modo Comparación"** button
+2. Click it to enable comparison mode
+3. Check the scenarios you want to compare (select 2 or more)
+4. Click **"Comparar Seleccionados"**
+
+### Step 4: Explore Comparison Views
+- **Dashboard de KPIs**: Side-by-side charts and metric comparisons
+- **Análisis Financiero**: Cost breakdowns and income analysis
+- **Season Toggle**: Switch between High/Low season comparisons
+- **Summary Tables**: Detailed numerical comparisons
+
+### Quick Demo Option
+Import the included `demo-scenarios.csv` file using the **"Importar CSV"** button for pre-configured test scenarios.
 
 ## 🚀 Quick Start
 
