@@ -15,6 +15,14 @@ interface ScenarioManagerProps {
 const ScenarioManager: React.FC<ScenarioManagerProps> = ({ currentInputs, onLoadScenario, onCompareScenarios }) => {
   const { user } = useAuth()
   const { scenarios, loading, saveScenario, deleteScenario } = useScenarios()
+  
+  // Debug logging
+  console.log('ScenarioManager render:', {
+    user: !!user,
+    scenariosCount: scenarios.length,
+    hasOnCompareScenarios: !!onCompareScenarios,
+    scenarios: scenarios.map(s => ({ id: s.id, name: s.name }))
+  })
   const [showSaveModal, setShowSaveModal] = useState(false)
   const [scenarioName, setScenarioName] = useState('')
   const [scenarioDescription, setScenarioDescription] = useState('')
@@ -147,6 +155,12 @@ const ScenarioManager: React.FC<ScenarioManagerProps> = ({ currentInputs, onLoad
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center space-x-4">
             <h4 className="font-semibold text-slate-700">Escenarios Guardados</h4>
+            {/* Debug info - remove after testing */}
+            {process.env.NODE_ENV === 'development' && (
+              <div className="text-xs text-gray-500 bg-yellow-100 p-1 rounded">
+                Debug: onCompareScenarios={onCompareScenarios ? 'true' : 'false'}, scenarios.length={scenarios.length}
+              </div>
+            )}
             {onCompareScenarios && scenarios.length >= 2 && (
               <button
                 onClick={handleToggleComparison}
@@ -157,6 +171,31 @@ const ScenarioManager: React.FC<ScenarioManagerProps> = ({ currentInputs, onLoad
                 }`}
               >
                 {isComparisonMode ? 'Cancelar Comparación' : 'Modo Comparación'}
+              </button>
+            )}
+            {/* Always show button if there are scenarios but with different styling for debugging */}
+            {!onCompareScenarios && scenarios.length >= 2 && (
+              <div className="text-xs text-red-500 bg-red-100 p-1 rounded">
+                ⚠️ Missing onCompareScenarios prop
+              </div>
+            )}
+            {onCompareScenarios && scenarios.length < 2 && scenarios.length > 0 && (
+              <div className="text-xs text-orange-500 bg-orange-100 p-1 rounded">
+                ℹ️ Need {2 - scenarios.length} more scenario(s) for comparison
+              </div>
+            )}
+            {/* Temporary debug button - always show when we have 2+ scenarios */}
+            {scenarios.length >= 2 && (
+              <button
+                onClick={handleToggleComparison}
+                className={`flex items-center px-3 py-1 rounded-lg text-sm transition-colors border-2 border-dashed ${
+                  isComparisonMode 
+                    ? 'bg-purple-100 text-purple-700 border-purple-300' 
+                    : 'bg-blue-100 text-blue-600 border-blue-300 hover:bg-blue-200'
+                }`}
+                title={onCompareScenarios ? 'Working comparison button' : 'Debug: Missing onCompareScenarios prop'}
+              >
+                🔍 {isComparisonMode ? 'Cancelar Comparación' : 'DEBUG: Modo Comparación'}
               </button>
             )}
           </div>
