@@ -5,12 +5,14 @@ import React from 'react';
 import { ArrowRight, ArrowDown, Recycle, AlertTriangle, Factory, Package, Warehouse, Ship, Trash2 } from 'lucide-react';
 import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
-import ChartExportWrapper from '../ui/ChartExportWrapper.tsx';
+import ExportButton from '../ui/ExportButton.tsx';
+import { useExportRef } from '../../hooks/useExportRef';
 import { formatNumber } from '../../utils/formatNumber';
 
 const FlowDiagram = ({ kpis, season }) => {
     const data = kpis.rsu.calculations;
     const recoveryByStage = kpis.rsu.recoveryByStage;
+    const { elementRef } = useExportRef();
 
     const FlowBox = ({ title, value, icon }) => (
         <div className="bg-white p-4 rounded-xl shadow-lg text-center border border-slate-200 flex-shrink-0 w-48 min-h-[140px] flex flex-col justify-center hover:shadow-xl transition-shadow duration-300">
@@ -40,11 +42,21 @@ const FlowDiagram = ({ kpis, season }) => {
     );
 
     return (
-        <ChartExportWrapper
-            title={`Diagrama de Flujo del Sistema RSU (${season})`}
-            subtitle="Visualización del recorrido promedio diario de los Residuos Sólidos Urbanos."
-            enableExport={true}
-        >
+        <div ref={elementRef} data-export-name={`Diagrama de Flujo del Sistema RSU (${season})`}>
+            <Card>
+                <div className="flex justify-between items-start mb-4">
+                    <CardHeader 
+                        title={`Diagrama de Flujo del Sistema RSU (${season})`} 
+                        subtitle="Visualización del recorrido promedio diario de los Residuos Sólidos Urbanos." 
+                    />
+                    <ExportButton
+                        targetElement={elementRef.current}
+                        exportName={`Diagrama de Flujo del Sistema RSU (${season})`}
+                        exportType="chart"
+                        size="sm"
+                        showLabel={true}
+                    />
+                </div>
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-4 overflow-x-auto p-4">
                 <div className="flex flex-col items-center space-y-2">
                     <FlowBox title="Generación RSU" value={kpis.rsu.totalGeneration} icon={<Factory size={24}/>} />
@@ -74,7 +86,8 @@ const FlowDiagram = ({ kpis, season }) => {
                     <LossArrow value={data.leakDisposal} label="Fuga en Sitio" icon={<AlertTriangle size={16}/>} color="text-red-500" />
                 </div>
             </div>
-        </ChartExportWrapper>
+            </Card>
+        </div>
     );
 };
 
