@@ -4,7 +4,7 @@ import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
 import { formatNumber } from '../../utils/formatNumber';
 import { Download } from 'lucide-react';
-import { exportCalculationsToCSV, downloadCSV } from '../../utils/csvUtils';
+import { exportComparisonAnalysisToCSV, downloadCSV } from '../../utils/csvUtils';
 
 interface ComparisonCalculationsTableProps {
   scenarios: Array<{
@@ -44,74 +44,15 @@ const ComparisonCalculationsTable: React.FC<ComparisonCalculationsTableProps> = 
 
   const handleExportComparisonCalculations = () => {
     try {
-      // Export calculations for all scenarios
-      const csvData = scenarioResults.map(scenario => {
-        const kpis = season === 'high' ? scenario.results.high : scenario.results.low;
-        return {
-          scenario: scenario.name,
-          kpis,
-          inputs: scenario.inputs
-        };
-      });
-      
-      // Create comprehensive comparison CSV
-      let csvContent = 'Concepto,';
-      csvContent += scenarioResults.map(s => s.name).join(',') + ',Unidad\n';
-      
-      // Add key metrics rows
-      const metrics = [
-        ['Generación Total de RSU', scenarioResults.map(s => {
-          const kpis = season === 'high' ? s.results.high : s.results.low;
-          return formatNumber(kpis.rsu.totalGeneration, 2);
-        }), 'ton/día'],
-        ['Capacidad de Recolección', scenarioResults.map(s => {
-          const kpis = season === 'high' ? s.results.high : s.results.low;
-          return formatNumber(kpis.rsu.calculations.collectionCapacity, 2);
-        }), 'ton/día'],
-        ['Déficit de Recolección', scenarioResults.map(s => {
-          const kpis = season === 'high' ? s.results.high : s.results.low;
-          return formatNumber(kpis.rsu.collectionDeficit, 2);
-        }), 'ton/día'],
-        ['Material Procesado', scenarioResults.map(s => {
-          const kpis = season === 'high' ? s.results.high : s.results.low;
-          return formatNumber(kpis.rsu.calculations.materialProcessedToday, 2);
-        }), 'ton/día'],
-        ['Inventario Final', scenarioResults.map(s => {
-          const kpis = season === 'high' ? s.results.high : s.results.low;
-          return formatNumber(kpis.rsu.finalInventory, 2);
-        }), 'ton'],
-        ['Recuperación Total', scenarioResults.map(s => {
-          const kpis = season === 'high' ? s.results.high : s.results.low;
-          return formatNumber(kpis.rsu.recoveryByStage.source + kpis.rsu.recoveryByStage.plant + kpis.rsu.recoveryByStage.informal, 2);
-        }), 'ton/día'],
-        ['A Disposición Final', scenarioResults.map(s => {
-          const kpis = season === 'high' ? s.results.high : s.results.low;
-          return formatNumber(kpis.rsu.toDisposal, 2);
-        }), 'ton/día'],
-        ['Fuga Total', scenarioResults.map(s => {
-          const kpis = season === 'high' ? s.results.high : s.results.low;
-          return formatNumber(kpis.rsu.totalLeak, 2);
-        }), 'ton/día'],
-        ['Costo Total Sistema', scenarioResults.map(s => {
-          const kpis = season === 'high' ? s.results.high : s.results.low;
-          return formatNumber(kpis.totalSystemCost, 0);
-        }), 'MXN/día'],
-        ['Ingresos Totales', scenarioResults.map(s => {
-          const kpis = season === 'high' ? s.results.high : s.results.low;
-          return formatNumber(kpis.rsu.totalRsuIncome, 0);
-        }), 'MXN/día']
-      ];
-      
-      metrics.forEach(([label, values, unit]) => {
-        csvContent += `"${label}",${values.join(',')},${unit}\n`;
-      });
+      // Use the new enhanced CSV export function
+      const csvContent = exportComparisonAnalysisToCSV(scenarioResults, season);
       
       const timestamp = new Date().toISOString().split('T')[0];
       const seasonLabelFile = season.toLowerCase().replace(' ', '-');
-      downloadCSV(csvContent, `comparacion-calculos-${seasonLabelFile}-${timestamp}.csv`);
+      downloadCSV(csvContent, `analisis-comparativo-thesis-${seasonLabelFile}-${timestamp}.csv`);
     } catch (error) {
-      console.error('Error exporting comparison calculations:', error);
-      alert('Error al exportar comparación: ' + error.message);
+      console.error('Error exporting comparison analysis:', error);
+      alert('Error al exportar análisis comparativo: ' + error.message);
     }
   };
 
@@ -224,7 +165,7 @@ const ComparisonCalculationsTable: React.FC<ComparisonCalculationsTableProps> = 
             className="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
           >
             <Download size={16} className="mr-2" />
-            Exportar Comparación CSV
+            Exportar Análisis Thesis (CSV)
           </button>
         </div>
         
