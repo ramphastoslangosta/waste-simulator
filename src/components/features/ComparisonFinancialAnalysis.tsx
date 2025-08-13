@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { useWasteSimulation } from '../../hooks/useWasteSimulation';
 import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
+import ChartExportWrapper from '../ui/ChartExportWrapper.tsx';
 import { formatNumber } from '../../utils/formatNumber';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
@@ -97,8 +98,11 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
 
       {/* Cost Comparison Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card>
-          <CardHeader title="Costo Total" subtitle="MXN/día" />
+        <ChartExportWrapper
+          title="Costo Total"
+          subtitle="MXN/día"
+          enableExport={true}
+        >
           <div className="space-y-2">
             {financialMetrics.map((metric, index) => (
               <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
@@ -110,10 +114,13 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
               </div>
             ))}
           </div>
-        </Card>
+        </ChartExportWrapper>
 
-        <Card>
-          <CardHeader title="Costo Sistema RSU" subtitle="MXN/día" />
+        <ChartExportWrapper
+          title="Costo Sistema RSU"
+          subtitle="MXN/día"
+          enableExport={true}
+        >
           <div className="space-y-2">
             {financialMetrics.map((metric, index) => (
               <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
@@ -125,10 +132,13 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
               </div>
             ))}
           </div>
-        </Card>
+        </ChartExportWrapper>
 
-        <Card>
-          <CardHeader title="Costo Sargazo" subtitle="MXN/día" />
+        <ChartExportWrapper
+          title="Costo Sargazo"
+          subtitle="MXN/día"
+          enableExport={true}
+        >
           <div className="space-y-2">
             {financialMetrics.map((metric, index) => (
               <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
@@ -140,10 +150,13 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
               </div>
             ))}
           </div>
-        </Card>
+        </ChartExportWrapper>
 
-        <Card>
-          <CardHeader title="Ingresos Totales" subtitle="MXN/día" />
+        <ChartExportWrapper
+          title="Ingresos Totales"
+          subtitle="MXN/día"
+          enableExport={true}
+        >
           <div className="space-y-2">
             {financialMetrics.map((metric, index) => (
               <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
@@ -155,14 +168,17 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
               </div>
             ))}
           </div>
-        </Card>
+        </ChartExportWrapper>
       </div>
 
       {/* Comparative Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Total Cost Comparison */}
-        <Card>
-          <CardHeader title="Costo Total Comparativo" subtitle="Comparación de costos totales del sistema" />
+        <ChartExportWrapper
+          title="Costo Total Comparativo"
+          subtitle="Comparación de costos totales del sistema"
+          enableExport={true}
+        >
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={financialMetrics} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -176,11 +192,14 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
               </Bar>
             </BarChart>
           </ResponsiveContainer>
-        </Card>
+        </ChartExportWrapper>
 
         {/* Income Comparison */}
-        <Card>
-          <CardHeader title="Ingresos Totales Comparativo" subtitle="Comparación de ingresos por venta de materiales" />
+        <ChartExportWrapper
+          title="Ingresos Totales Comparativo"
+          subtitle="Comparación de ingresos por venta de materiales"
+          enableExport={true}
+        >
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={financialMetrics} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -194,12 +213,15 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
               </Bar>
             </BarChart>
           </ResponsiveContainer>
-        </Card>
+        </ChartExportWrapper>
       </div>
 
       {/* Cost Breakdown Comparison */}
-      <Card>
-        <CardHeader title="Desglose de Costos por Sistema" subtitle="Comparación detallada de costos por tipo de residuo" />
+      <ChartExportWrapper
+        title="Desglose de Costos por Sistema"
+        subtitle="Comparación detallada de costos por tipo de residuo"
+        enableExport={true}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div>
             <h4 className="font-semibold mb-4 text-center">Costo Sistema RSU</h4>
@@ -252,11 +274,14 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
             </ResponsiveContainer>
           </div>
         </div>
-      </Card>
+      </ChartExportWrapper>
 
       {/* Income by Material Comparison */}
-      <Card>
-        <CardHeader title="Ingresos por Material - Comparación" subtitle="Comparación de ingresos por tipo de material recuperado" />
+      <ChartExportWrapper
+        title="Ingresos por Material - Comparación"
+        subtitle="Comparación de ingresos por tipo de material recuperado"
+        enableExport={true}
+      >
         <ResponsiveContainer width="100%" height={400}>
           <BarChart data={incomeComparisonData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -276,11 +301,14 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
             ))}
           </BarChart>
         </ResponsiveContainer>
-      </Card>
+      </ChartExportWrapper>
 
       {/* Summary Table */}
-      <Card>
-        <CardHeader title="Resumen Financiero Comparativo" subtitle="Tabla detallada de métricas financieras por escenario" />
+      <ChartExportWrapper
+        title="Resumen Financiero Comparativo"
+        subtitle="Tabla detallada de métricas financieras por escenario"
+        enableExport={true}
+      >
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
@@ -314,7 +342,7 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
             </tbody>
           </table>
         </div>
-      </Card>
+      </ChartExportWrapper>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import { Database, Table, Key, FileText, Download, Upload } from 'lucide-react'
 import { database } from '../../lib/database'
 import Card from '../ui/Card'
 import CardHeader from '../ui/CardHeader'
+import ChartExportWrapper from '../ui/ChartExportWrapper'
 
 const DatabaseSchema: React.FC = () => {
   const [schemaInfo, setSchemaInfo] = useState<any>(null)
@@ -123,8 +124,11 @@ const DatabaseSchema: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Database Overview */}
-      <Card>
-        <CardHeader title="Esquema de Base de Datos SQLite" icon={<Database size={24} />} />
+      <ChartExportWrapper
+        title="Esquema de Base de Datos SQLite"
+        subtitle="Estructura y estadísticas de la base de datos local SQLite"
+        enableExport={true}
+      >
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
           <div className="bg-blue-50 p-4 rounded-lg">
@@ -188,16 +192,16 @@ const DatabaseSchema: React.FC = () => {
             />
           </label>
         </div>
-      </Card>
+      </ChartExportWrapper>
 
       {/* Table Schemas */}
       {schemaInfo?.tables.map((table: any) => (
-        <Card key={table.name}>
-          <CardHeader 
-            title={`Tabla: ${table.name}`} 
-            subtitle={table.description}
-            icon={<Table size={24} />} 
-          />
+        <ChartExportWrapper
+          key={table.name}
+          title={`Tabla: ${table.name}`}
+          subtitle={table.description}
+          enableExport={true}
+        >
           
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -233,12 +237,15 @@ const DatabaseSchema: React.FC = () => {
               ))}
             </div>
           )}
-        </Card>
+        </ChartExportWrapper>
       ))}
 
       {/* Data Structure Analysis */}
-      <Card>
-        <CardHeader title="Análisis de Estructura de Datos" icon={<FileText size={24} />} />
+      <ChartExportWrapper
+        title="Análisis de Estructura de Datos"
+        subtitle="Detalle de campos JSON y estadísticas de datos almacenados"
+        enableExport={true}
+      >
         
         <div className="space-y-4">
           <div>
@@ -313,7 +320,7 @@ const DatabaseSchema: React.FC = () => {
             </div>
           </div>
         </div>
-      </Card>
+      </ChartExportWrapper>
     </div>
   )
 }
