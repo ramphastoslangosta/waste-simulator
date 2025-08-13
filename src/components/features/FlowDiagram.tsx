@@ -5,6 +5,7 @@ import React from 'react';
 import { ArrowRight, ArrowDown, Recycle, AlertTriangle, Factory, Package, Warehouse, Ship, Trash2 } from 'lucide-react';
 import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
+import ChartExportWrapper from '../ui/ChartExportWrapper.tsx';
 import { formatNumber } from '../../utils/formatNumber';
 
 const FlowDiagram = ({ kpis, season }) => {
@@ -39,8 +40,11 @@ const FlowDiagram = ({ kpis, season }) => {
     );
 
     return (
-        <Card>
-            <CardHeader title={`Diagrama de Flujo del Sistema RSU (${season})`} subtitle="Visualización del recorrido promedio diario de los Residuos Sólidos Urbanos." />
+        <ChartExportWrapper
+            title={`Diagrama de Flujo del Sistema RSU (${season})`}
+            subtitle="Visualización del recorrido promedio diario de los Residuos Sólidos Urbanos."
+            enableExport={true}
+        >
             <div className="flex flex-col md:flex-row items-center md:items-start space-y-8 md:space-y-0 md:space-x-4 overflow-x-auto p-4">
                 <div className="flex flex-col items-center space-y-2">
                     <FlowBox title="Generación RSU" value={kpis.rsu.totalGeneration} icon={<Factory size={24}/>} />
@@ -70,7 +74,7 @@ const FlowDiagram = ({ kpis, season }) => {
                     <LossArrow value={data.leakDisposal} label="Fuga en Sitio" icon={<AlertTriangle size={16}/>} color="text-red-500" />
                 </div>
             </div>
-        </Card>
+        </ChartExportWrapper>
     );
 };
 

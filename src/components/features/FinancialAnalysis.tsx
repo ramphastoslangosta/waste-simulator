@@ -5,6 +5,7 @@ import React from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
+import ChartExportWrapper from '../ui/ChartExportWrapper.tsx';
 import { formatNumber } from '../../utils/formatNumber';
 
 const FinancialAnalysis = ({ kpis, season }) => {
@@ -23,8 +24,11 @@ const FinancialAnalysis = ({ kpis, season }) => {
         .filter(item => item.value > 0);
     
     return (
-        <Card>
-            <CardHeader title={`Análisis Financiero Diario (${season})`} subtitle={`Costo Neto Total del Sistema: ${formatNumber(kpis.totalSystemCost, 0)} MXN`} />
+        <ChartExportWrapper
+            title={`Análisis Financiero Diario (${season})`}
+            subtitle={`Costo Neto Total del Sistema: ${formatNumber(kpis.totalSystemCost, 0)} MXN`}
+            enableExport={true}
+        >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
                     <h4 className="font-bold text-center text-slate-700 mb-2">Desglose de Costos por Sistema</h4>
@@ -51,7 +55,7 @@ const FinancialAnalysis = ({ kpis, season }) => {
                     </ResponsiveContainer>
                 </div>
             </div>
-        </Card>
+        </ChartExportWrapper>
     );
 };
 

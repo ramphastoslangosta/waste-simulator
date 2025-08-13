@@ -4,6 +4,7 @@ import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
 import ComparisonFinancialAnalysis from './ComparisonFinancialAnalysis.tsx';
 import ComparisonCalculationsTable from './ComparisonCalculationsTable.tsx';
+import ChartExportWrapper from '../ui/ChartExportWrapper.tsx';
 import { formatNumber } from '../../utils/formatNumber';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
@@ -80,8 +81,11 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
       <div className="space-y-6">
         {/* KPI Comparison Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card>
-            <CardHeader title="Generación Total" subtitle="ton/día" />
+          <ChartExportWrapper
+            title="Generación Total"
+            subtitle="ton/día"
+            enableExport={true}
+          >
             <div className="space-y-2">
               {comparisonMetrics.map((metric, index) => (
                 <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
@@ -93,10 +97,13 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
                 </div>
               ))}
             </div>
-          </Card>
+          </ChartExportWrapper>
 
-          <Card>
-            <CardHeader title="Generación RSU" subtitle="ton/día" />
+          <ChartExportWrapper
+            title="Generación RSU"
+            subtitle="ton/día"
+            enableExport={true}
+          >
             <div className="space-y-2">
               {comparisonMetrics.map((metric, index) => (
                 <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
@@ -108,10 +115,13 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
                 </div>
               ))}
             </div>
-          </Card>
+          </ChartExportWrapper>
 
-          <Card>
-            <CardHeader title="Déficit Recolección" subtitle="ton/día" />
+          <ChartExportWrapper
+            title="Déficit Recolección"
+            subtitle="ton/día"
+            enableExport={true}
+          >
             <div className="space-y-2">
               {comparisonMetrics.map((metric, index) => (
                 <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
@@ -123,10 +133,13 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
                 </div>
               ))}
             </div>
-          </Card>
+          </ChartExportWrapper>
 
-          <Card>
-            <CardHeader title="Costo Total" subtitle="MXN/día" />
+          <ChartExportWrapper
+            title="Costo Total"
+            subtitle="MXN/día"
+            enableExport={true}
+          >
             <div className="space-y-2">
               {comparisonMetrics.map((metric, index) => (
                 <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
@@ -138,14 +151,17 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
                 </div>
               ))}
             </div>
-          </Card>
+          </ChartExportWrapper>
         </div>
 
         {/* Comparative Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Total Generation Comparison */}
-          <Card>
-            <CardHeader title="Generación Total Comparativa" subtitle="Comparación de generación total por escenario" />
+          <ChartExportWrapper
+            title="Generación Total Comparativa"
+            subtitle="Comparación de generación total por escenario"
+            enableExport={true}
+          >
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={comparisonMetrics} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -159,11 +175,14 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
-          </Card>
+          </ChartExportWrapper>
 
           {/* Cost Comparison */}
-          <Card>
-            <CardHeader title="Costo Total Comparativo" subtitle="Comparación de costos del sistema por escenario" />
+          <ChartExportWrapper
+            title="Costo Total Comparativo"
+            subtitle="Comparación de costos del sistema por escenario"
+            enableExport={true}
+          >
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={comparisonMetrics} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -177,12 +196,15 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
                 </Bar>
               </BarChart>
             </ResponsiveContainer>
-          </Card>
+          </ChartExportWrapper>
         </div>
 
         {/* RSU Flow Distribution Comparison */}
-        <Card>
-          <CardHeader title="Distribución del Flujo de RSU - Comparación" subtitle="Comparación del destino final de RSU entre escenarios" />
+        <ChartExportWrapper
+          title="Distribución del Flujo de RSU - Comparación"
+          subtitle="Comparación del destino final de RSU entre escenarios"
+          enableExport={true}
+        >
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-4">Recuperación en Origen (Alta Calidad)</h4>
@@ -218,11 +240,14 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
               </ResponsiveContainer>
             </div>
           </div>
-        </Card>
+        </ChartExportWrapper>
 
         {/* Summary Table */}
-        <Card>
-          <CardHeader title="Resumen Comparativo" subtitle="Tabla detallada de métricas por escenario" />
+        <ChartExportWrapper
+          title="Resumen Comparativo"
+          subtitle="Tabla detallada de métricas por escenario"
+          enableExport={true}
+        >
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -255,7 +280,7 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
               </tbody>
             </table>
           </div>
-        </Card>
+        </ChartExportWrapper>
       </div>
     );
   };

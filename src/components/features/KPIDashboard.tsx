@@ -6,6 +6,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
 import KPICard from '../ui/KPICard.tsx';
+import ChartExportWrapper from '../ui/ChartExportWrapper.tsx';
 import { formatNumber } from '../../utils/formatNumber';
 
 const KPIDashboard = ({ kpis, season }) => {
@@ -26,6 +27,7 @@ const KPIDashboard = ({ kpis, season }) => {
                     unit="ton/día"
                     description="Suma de RSU, Sargazo y RCD."
                     color="text-blue-600"
+                    enableExport={true}
                 />
                 <KPICard 
                     title="Generación RSU Diaria"
@@ -33,6 +35,7 @@ const KPIDashboard = ({ kpis, season }) => {
                     unit="ton/día"
                     description="Residuos Sólidos Urbanos únicamente."
                     color="text-amber-600"
+                    enableExport={true}
                 />
                  <KPICard 
                     title="Déficit Recolección RSU" 
@@ -40,6 +43,7 @@ const KPIDashboard = ({ kpis, season }) => {
                     unit="ton/día"
                     description="RSU no recolectados por falta de capacidad."
                     color={kpis.rsu.collectionDeficit > 0 ? 'text-red-600' : 'text-green-600'}
+                    enableExport={true}
                 />
                 <KPICard 
                     title="Costo Total del Sistema" 
@@ -47,10 +51,14 @@ const KPIDashboard = ({ kpis, season }) => {
                     unit="MXN/día"
                     description="Costo neto de gestión de todos los flujos."
                     color="text-purple-600"
+                    enableExport={true}
                 />
             </div>
-            <Card>
-                <CardHeader title={`Distribución del Flujo de RSU (${season})`} subtitle="Destino final promedio de los Residuos Sólidos Urbanos generados en ton/día." />
+            <ChartExportWrapper
+                title={`Distribución del Flujo de RSU (${season})`}
+                subtitle="Destino final promedio de los Residuos Sólidos Urbanos generados en ton/día."
+                enableExport={true}
+            >
                 <ResponsiveContainer width="100%" height={300}>
                     <BarChart data={recoveryData} layout="vertical" margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                         <CartesianGrid strokeDasharray="3 3" />
@@ -64,7 +72,7 @@ const KPIDashboard = ({ kpis, season }) => {
                         </Bar>
                     </BarChart>
                 </ResponsiveContainer>
-            </Card>
+            </ChartExportWrapper>
         </div>
     );
 };
