@@ -5,6 +5,7 @@ import React from 'react';
 import { Package, Warehouse, Ship, Trash2 } from 'lucide-react';
 import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
+import ChartExportWrapper from '../ui/ChartExportWrapper.tsx';
 import { formatNumber } from '../../utils/formatNumber';
 
 const ProcessAnalysis = ({ kpis, season, inputs }) => {
@@ -40,8 +41,11 @@ const ProcessAnalysis = ({ kpis, season, inputs }) => {
     );
 
     return (
-        <Card>
-            <CardHeader title={`Análisis de Procesos del Sistema RSU (${season})`} subtitle="Evaluación de la dinámica y cuellos de botella del sistema (promedios de simulación de 30 días)." />
+        <ChartExportWrapper
+            title={`Análisis de Procesos del Sistema RSU (${season})`}
+            subtitle="Evaluación de la dinámica y cuellos de botella del sistema (promedios de simulación de 30 días)."
+            enableExport={true}
+        >
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                 <ProcessCard title="Recolección" icon={<Package size={24}/>} rateIn={kpis.rsu.totalGeneration} rateOut={data.collectedWasteTotal} inventory={kpis.rsu.collectionDeficit} waitTime={0}>
                     <div className="flex justify-between text-orange-600"><span>Recuperación Informal:</span> <span className="font-bold font-mono">{formatNumber(data.informalRecoveryCollection, 2)} ton/día</span></div>
@@ -67,7 +71,7 @@ const ProcessAnalysis = ({ kpis, season, inputs }) => {
                     <div className="flex justify-between text-red-600"><span>Fuga en Sitio:</span> <span className="font-bold font-mono">{formatNumber(data.leakDisposal, 2)} ton/día</span></div>
                 </ProcessCard>
             </div>
-        </Card>
+        </ChartExportWrapper>
     );
 };
 

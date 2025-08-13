@@ -23,8 +23,12 @@ const ExportButton: React.FC<ExportButtonProps> = ({
   const [showOptions, setShowOptions] = useState(false);
 
   const handleExport = async (format: 'png' | 'svg', dpi: number = 300) => {
-    if (!targetElement) {
+    // Find the target element at the time of export
+    const element = targetElement || document.querySelector(`[data-export-name="${exportName}"]`) as HTMLElement;
+    
+    if (!element) {
       alert('No se pudo encontrar el elemento para exportar');
+      console.error('Target element not found:', { targetElement, exportName });
       return;
     }
 
@@ -39,7 +43,7 @@ const ExportButton: React.FC<ExportButtonProps> = ({
         backgroundColor: '#ffffff'
       };
 
-      await exportElementAsImage(targetElement, options);
+      await exportElementAsImage(element, options);
     } catch (error) {
       console.error('Error exporting:', error);
       alert(`Error al exportar: ${error.message}`);
@@ -56,7 +60,7 @@ const ExportButton: React.FC<ExportButtonProps> = ({
       {/* Simple export button */}
       <button
         onClick={() => setShowOptions(!showOptions)}
-        disabled={isExporting || !targetElement}
+        disabled={isExporting}
         className={`
           ${buttonSize} bg-white border border-slate-200 rounded-lg shadow-sm
           hover:bg-slate-50 hover:border-slate-300 transition-colors

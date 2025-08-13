@@ -20,10 +20,10 @@ const KPICard: React.FC<KPICardProps> = ({
   color = 'text-blue-600',
   enableExport = false 
 }) => {
-  const { elementRef, getExportElement } = useExportRef();
+  const { elementRef } = useExportRef();
 
   return (
-    <div ref={elementRef} className="relative">
+    <div ref={elementRef} className="relative" data-export-name={title}>
       <Card>
         <div className="flex justify-between items-start">
           <div className="flex-1">
@@ -40,7 +40,7 @@ const KPICard: React.FC<KPICardProps> = ({
           {enableExport && (
             <div className="ml-2 mt-1">
               <ExportButton
-                targetElement={getExportElement()}
+                targetElement={elementRef.current}
                 exportName={title}
                 exportType="kpi"
                 size="sm"

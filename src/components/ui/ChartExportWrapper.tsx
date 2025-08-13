@@ -19,10 +19,10 @@ const ChartExportWrapper: React.FC<ChartExportWrapperProps> = ({
   enableExport = false,
   className = ''
 }) => {
-  const { elementRef, getExportElement } = useExportRef();
+  const { elementRef } = useExportRef();
 
   return (
-    <div ref={elementRef} className={`relative ${className}`}>
+    <div ref={elementRef} className={`relative ${className}`} data-export-name={title}>
       <Card>
         <div className="flex justify-between items-start mb-4">
           <CardHeader title={title} subtitle={subtitle} />
@@ -30,7 +30,7 @@ const ChartExportWrapper: React.FC<ChartExportWrapperProps> = ({
           {enableExport && (
             <div className="ml-4">
               <ExportButton
-                targetElement={getExportElement()}
+                targetElement={elementRef.current}
                 exportName={title}
                 exportType="chart"
                 size="sm"
