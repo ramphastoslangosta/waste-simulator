@@ -102,6 +102,35 @@ const InputPanel = ({ inputs, setInputs }) => {
                     </div>
                 </Card>
                 <Card>
+                    <CardHeader title="Inventarios Iniciales" icon={<Package size={24} />} />
+                    <div className="space-y-4">
+                        <InputField 
+                            label="Vehículos de Recolección" 
+                            value={inputs.rsuSystem.initialInventory?.collectionVehicles || 0} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'initialInventory', 'collectionVehicles', e.target.value)} 
+                            unit="ton" 
+                        />
+                        <InputField 
+                            label="Estación de Transferencia" 
+                            value={inputs.rsuSystem.initialInventory?.transferStation || 0} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'initialInventory', 'transferStation', e.target.value)} 
+                            unit="ton" 
+                        />
+                        <InputField 
+                            label="Vehículos de Traslado Final" 
+                            value={inputs.rsuSystem.initialInventory?.finalTransportVehicles || 0} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'initialInventory', 'finalTransportVehicles', e.target.value)} 
+                            unit="ton" 
+                        />
+                        <InputField 
+                            label="Sitio de Disposición" 
+                            value={inputs.rsuSystem.initialInventory?.disposalSite || 0} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'initialInventory', 'disposalSite', e.target.value)} 
+                            unit="ton" 
+                        />
+                    </div>
+                </Card>
+                <Card>
                     <CardHeader title="Sistema RSU: Separación" icon={<Recycle size={24} />} />
                     <div className="space-y-4">
                         <InputField label="% Captura Diferenciada" value={inputs.rsuSystem.separation.differentiatedCaptureRate} onChange={e => handleNestedInputChange('rsuSystem', 'separation', 'differentiatedCaptureRate', e.target.value)} unit="%" />

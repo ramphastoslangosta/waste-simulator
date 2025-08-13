@@ -18,6 +18,12 @@ export const INITIAL_INPUTS = {
     rsuSystem: {
         logistics: { vehicles: 4, vehicleCapacity: 5, tripsPerVehicle: 2 },
         processing: { transferStationRate: 50, transferStationCapacity: 150, finalTransportCapacity: 40 },
+        initialInventory: {
+            collectionVehicles: 0,           // ton - Initial waste in collection vehicles at day 0
+            transferStation: 0,              // ton - Initial waste inventory at transfer station at day 0  
+            finalTransportVehicles: 0,       // ton - Initial waste in final transport vehicles at day 0
+            disposalSite: 0                  // ton - Initial waste inventory at disposal site at day 0
+        },
         separation: {
             differentiatedCaptureRate: 90,
             rejectionRateSource: 15,

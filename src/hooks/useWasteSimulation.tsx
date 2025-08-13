@@ -7,7 +7,13 @@ export const useWasteSimulation = (inputs: any) => {
         const calculateKpisForSeason = (currentSeason) => {
             const SIMULATION_DAYS = 30;
             const dailyResults: any[] = [];
-            let rsuInventory = 0;
+            
+            // Initialize inventories from input parameters
+            let rsuInventory = inputs.rsuSystem.initialInventory?.transferStation || 0;
+            let collectionVehicleInventory = inputs.rsuSystem.initialInventory?.collectionVehicles || 0;
+            let finalTransportInventory = inputs.rsuSystem.initialInventory?.finalTransportVehicles || 0;
+            let disposalSiteInventory = inputs.rsuSystem.initialInventory?.disposalSite || 0;
+            
             const materialTypes = ['organicos', 'pet', 'aluminio', 'carton', 'vidrio', 'rechazo', 'peligrosos'];
             const valorizableTypes = ['pet', 'aluminio', 'carton', 'vidrio'];
 
@@ -55,7 +61,15 @@ export const useWasteSimulation = (inputs: any) => {
                 materialTypes.forEach(m => toTransferStationByMaterial[m] = wasteAfterInformalRec1[m] * (1 - leakRatio));
                 const toTransferStationTotal = Object.values(toTransferStationByMaterial).reduce((a, b) => a + b, 0);
 
-                const materialAvailableInStation = rsuInventory + toTransferStationTotal;
+                // Update collection vehicle inventory (waste collected but not yet delivered to transfer station)
+                collectionVehicleInventory += toTransferStationTotal;
+                
+                // Deliver from collection vehicles to transfer station (based on vehicle capacity and trips)
+                const maxDeliveryCapacity = inputs.rsuSystem.logistics.vehicles * inputs.rsuSystem.logistics.vehicleCapacity * inputs.rsuSystem.logistics.tripsPerVehicle;
+                const actualDelivery = Math.min(collectionVehicleInventory, maxDeliveryCapacity);
+                collectionVehicleInventory -= actualDelivery;
+                
+                const materialAvailableInStation = rsuInventory + actualDelivery;
                 const materialProcessedToday = Math.min(materialAvailableInStation, inputs.rsuSystem.processing.transferStationRate);
                 
                 const recoveredHighQuality: any = {};
@@ -83,10 +97,18 @@ export const useWasteSimulation = (inputs: any) => {
                 const leakTransferStation = materialProcessedToday * (inputs.rsuSystem.leaks.transferStationLeak / 100);
                 const materialLeavingStation = materialProcessedToday - totalRecoveredAtStation - leakTransferStation;
 
-                const actualFinalTransport = Math.min(materialLeavingStation, inputs.rsuSystem.processing.finalTransportCapacity);
+                // Update final transport inventory
+                finalTransportInventory += materialLeavingStation;
+                const actualFinalTransport = Math.min(finalTransportInventory, inputs.rsuSystem.processing.finalTransportCapacity);
+                finalTransportInventory -= actualFinalTransport;
                 const untransportedMaterial = materialLeavingStation - actualFinalTransport;
+                
                 const leakFinalTransport = actualFinalTransport * (inputs.rsuSystem.leaks.finalTransportLeak / 100);
-                const toDisposalSite = actualFinalTransport - leakFinalTransport;
+                const arrivedAtDisposal = actualFinalTransport - leakFinalTransport;
+                
+                // Update disposal site inventory
+                disposalSiteInventory += arrivedAtDisposal;
+                const toDisposalSite = arrivedAtDisposal; // For compatibility with existing calculations
                 
                 let valorizablesToDisposal = 0;
                 if(materialLeavingStation > 0) {
@@ -139,6 +161,12 @@ export const useWasteSimulation = (inputs: any) => {
                         totalLeak: rsuLeaks,
                         finalInventory: rsuInventory,
                         inventoryWaitTime: materialProcessedToday > 0 ? rsuInventory / materialProcessedToday : 0,
+                        inventoryLevels: {
+                            collectionVehicles: collectionVehicleInventory,
+                            transferStation: rsuInventory,
+                            finalTransportVehicles: finalTransportInventory,
+                            disposalSite: disposalSiteInventory
+                        },
                         recoveryByStage: rsuRecovery,
                         toDisposal: finalDisposal,
                         totalRsuIncome,

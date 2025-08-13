@@ -54,6 +54,36 @@ const KPIDashboard = ({ kpis, season }) => {
                     enableExport={true}
                 />
             </div>
+            
+            {/* Inventory Levels Section */}
+            <div className="mb-6">
+                <Card>
+                    <CardHeader title="Inventarios Actuales del Sistema" subtitle="Niveles de acumulación de material en cada etapa del proceso" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div className="text-center p-3 bg-blue-50 rounded-lg">
+                            <h4 className="font-semibold text-sm text-slate-700">Vehículos Recolección</h4>
+                            <p className="text-2xl font-bold text-blue-600">{formatNumber(kpis.rsu.inventoryLevels?.collectionVehicles || 0, 1)}</p>
+                            <p className="text-xs text-slate-500">ton</p>
+                        </div>
+                        <div className="text-center p-3 bg-green-50 rounded-lg">
+                            <h4 className="font-semibold text-sm text-slate-700">Estación Transferencia</h4>
+                            <p className="text-2xl font-bold text-green-600">{formatNumber(kpis.rsu.inventoryLevels?.transferStation || 0, 1)}</p>
+                            <p className="text-xs text-slate-500">ton</p>
+                        </div>
+                        <div className="text-center p-3 bg-orange-50 rounded-lg">
+                            <h4 className="font-semibold text-sm text-slate-700">Vehículos Traslado</h4>
+                            <p className="text-2xl font-bold text-orange-600">{formatNumber(kpis.rsu.inventoryLevels?.finalTransportVehicles || 0, 1)}</p>
+                            <p className="text-xs text-slate-500">ton</p>
+                        </div>
+                        <div className="text-center p-3 bg-purple-50 rounded-lg">
+                            <h4 className="font-semibold text-sm text-slate-700">Sitio Disposición</h4>
+                            <p className="text-2xl font-bold text-purple-600">{formatNumber(kpis.rsu.inventoryLevels?.disposalSite || 0, 1)}</p>
+                            <p className="text-xs text-slate-500">ton</p>
+                        </div>
+                    </div>
+                </Card>
+            </div>
+
             <ChartExportWrapper
                 title={`Distribución del Flujo de RSU (${season})`}
                 subtitle="Destino final promedio de los Residuos Sólidos Urbanos generados en ton/día."
