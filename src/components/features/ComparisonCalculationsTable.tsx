@@ -107,9 +107,9 @@ const ComparisonCalculationsTable: React.FC<ComparisonCalculationsTableProps> = 
       tableData.forEach(([concept, values, unit]) => {
         csvContent += `"${concept}",`;
         if (Array.isArray(values)) {
-          csvContent += values.join(',');
+          csvContent += values.map(value => `"${value}"`).join(',');
         } else {
-          csvContent += Array(scenarioResults.length).fill('').join(',');
+          csvContent += Array(scenarioResults.length).fill('""').join(',');
         }
         csvContent += `,"${unit}"\n`;
       });
