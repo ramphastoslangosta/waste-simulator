@@ -12,6 +12,10 @@ A waste management simulation application for Isla Holbox built with React, Type
 - **Build**: `npm run build` - Create production build  
 - **Lint**: `npm run lint` - Run ESLint on the codebase
 - **Preview**: `npm run preview` - Preview production build locally
+- **Test**: `npm run test` - Run tests in watch mode
+- **Test (CI)**: `npm run test:run` - Run all tests once
+- **Test UI**: `npm run test:ui` - Open Vitest UI for interactive testing
+- **Test Coverage**: `npm run test:coverage` - Run tests with coverage report
 
 ## Architecture Overview
 
@@ -52,6 +56,7 @@ A waste management simulation application for Isla Holbox built with React, Type
 - Recharts for data visualization
 - SQL.js for client-side database
 - Supabase for cloud persistence (optional)
+- Vitest + React Testing Library for testing
 
 ## Development Notes
 
@@ -59,3 +64,30 @@ A waste management simulation application for Isla Holbox built with React, Type
 - Database operations use both local SQLite and cloud Supabase depending on user authentication status  
 - All numerical results are averaged over the final 7 days of simulation for stability
 - Component styling follows Tailwind conventions with responsive design patterns
+
+## Testing
+
+The project uses **Vitest** with **React Testing Library** for comprehensive testing:
+
+### Test Structure
+- **Unit Tests**: Core simulation logic (`useWasteSimulation` hook)
+- **Component Tests**: UI components (`KPICard`, `KPIDashboard`)
+- **Utility Tests**: Helper functions (`formatNumber`)
+
+### Running Tests
+- `npm run test` - Interactive test watcher
+- `npm run test:run` - Single test run for CI/CD
+- `npm run test:ui` - Visual test interface
+- `npm run test:coverage` - Generate coverage reports
+
+### Test Files Location
+- Test files use `.test.tsx` or `.test.js` suffix
+- Located alongside source files or in `src/test/` directory
+- Mock setup in `src/test/setup.ts`
+
+### Coverage Areas
+- ✅ Simulation engine calculations and edge cases
+- ✅ Component rendering and user interactions  
+- ✅ Data formatting and validation
+- ✅ Season-based calculation differences
+- ✅ Error handling and edge cases

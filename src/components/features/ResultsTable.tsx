@@ -4,7 +4,7 @@
 import React from 'react';
 import { Download } from 'lucide-react';
 import Card from '../ui/Card.tsx';
-import CardHeader from '../ui/CardHeader.tsx';
+// import CardHeader from '../ui/CardHeader.tsx';
 import { exportCalculationsToCSV, downloadCSV } from '../../utils/csvUtils';
 import { formatNumber } from '../../utils/formatNumber';
 

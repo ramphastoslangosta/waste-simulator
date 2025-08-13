@@ -2,11 +2,11 @@ import { useMemo } from 'react';
 
 // Este hook personalizado contiene toda la lógica de cálculo de la simulación.
 // Recibe los inputs del usuario y devuelve los resultados calculados.
-export const useWasteSimulation = (inputs) => {
+export const useWasteSimulation = (inputs: any) => {
     const results = useMemo(() => {
         const calculateKpisForSeason = (currentSeason) => {
             const SIMULATION_DAYS = 30;
-            let dailyResults = [];
+            const dailyResults: any[] = [];
             let rsuInventory = 0;
             const materialTypes = ['organicos', 'pet', 'aluminio', 'carton', 'vidrio', 'rechazo', 'peligrosos'];
             const valorizableTypes = ['pet', 'aluminio', 'carton', 'vidrio'];
@@ -15,13 +15,13 @@ export const useWasteSimulation = (inputs) => {
                 const occupancy = currentSeason === 'high' ? inputs.general.highSeasonOccupancy : inputs.general.lowSeasonOccupancy;
                 
                 // --- FLOW 1: RSU (Residuos Sólidos Urbanos) ---
-                let genBySource = {
+                const genBySource = {
                     hotels: (inputs.generation.hotels.units * occupancy / 100) * inputs.generation.hotels.rate / 1000,
                     restaurants: (inputs.generation.restaurants.units * inputs.generation.restaurants.rate) / 1000,
                     homes: (inputs.general.fixedPopulation * inputs.generation.homes.rate) / 1000,
                     commerce: (inputs.generation.commerce.units * inputs.generation.commerce.rate) / 1000,
                 };
-                let genByMaterial = { organicos: 0, pet: 0, aluminio: 0, carton: 0, vidrio: 0, rechazo: 0, peligrosos: 0 };
+                const genByMaterial = { organicos: 0, pet: 0, aluminio: 0, carton: 0, vidrio: 0, rechazo: 0, peligrosos: 0 };
                 for (const source in genBySource) {
                     for (const material of materialTypes) {
                         genByMaterial[material] += genBySource[source] * (inputs.composition[source][material] / 100);
@@ -34,11 +34,11 @@ export const useWasteSimulation = (inputs) => {
                 const collectedWasteTotal = genRSU - collectionDeficit;
                 
                 const collectedRatio = genRSU > 0 ? collectedWasteTotal / genRSU : 0;
-                let collectedByMaterial = {};
+                const collectedByMaterial: any = {};
                 materialTypes.forEach(m => collectedByMaterial[m] = genByMaterial[m] * collectedRatio);
 
-                let informalRecoveryCollectionByMaterial = {};
-                let wasteAfterInformalRec1 = {};
+                const informalRecoveryCollectionByMaterial: any = {};
+                const wasteAfterInformalRec1: any = {};
                 valorizableTypes.forEach(m => {
                     const recovered = collectedByMaterial[m] * (inputs.rsuSystem.separation.informalRecoveryRateCollection / 100);
                     informalRecoveryCollectionByMaterial[m] = recovered;
@@ -51,18 +51,18 @@ export const useWasteSimulation = (inputs) => {
                 const leakCollection = wasteBeforeLeak * (inputs.rsuSystem.leaks.collectionLeak / 100);
                 const leakRatio = wasteBeforeLeak > 0 ? leakCollection / wasteBeforeLeak : 0;
                 
-                let toTransferStationByMaterial = {};
+                const toTransferStationByMaterial: any = {};
                 materialTypes.forEach(m => toTransferStationByMaterial[m] = wasteAfterInformalRec1[m] * (1 - leakRatio));
                 const toTransferStationTotal = Object.values(toTransferStationByMaterial).reduce((a, b) => a + b, 0);
 
-                let materialAvailableInStation = rsuInventory + toTransferStationTotal;
+                const materialAvailableInStation = rsuInventory + toTransferStationTotal;
                 const materialProcessedToday = Math.min(materialAvailableInStation, inputs.rsuSystem.processing.transferStationRate);
                 
-                let recoveredHighQuality = {};
-                let recoveredLowQualityPlant = {};
+                const recoveredHighQuality: any = {};
+                const recoveredLowQualityPlant: any = {};
                 
                 const processedRatio = toTransferStationTotal > 0 ? materialProcessedToday / toTransferStationTotal : 0;
-                let processedByMaterial = {};
+                const processedByMaterial: any = {};
                 materialTypes.forEach(m => processedByMaterial[m] = toTransferStationByMaterial[m] * processedRatio);
 
                 valorizableTypes.forEach(m => {
@@ -107,7 +107,7 @@ export const useWasteSimulation = (inputs) => {
                 const totalDisposalCost = toDisposalSite * inputs.rsuSystem.economics.disposalCost;
                 const totalRsuCosts = totalCollectionCost + totalTransferCost + totalFinalTransportCost + totalDisposalCost;
 
-                let incomeByMaterial = {};
+                const incomeByMaterial: any = {};
                 valorizableTypes.forEach(m => {
                     incomeByMaterial[m] = ((recoveredHighQuality[m] || 0) + (recoveredLowQualityPlant[m] || 0)) * inputs.rsuSystem.economics.income[m];
                 });
