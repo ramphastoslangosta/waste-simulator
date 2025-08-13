@@ -213,17 +213,22 @@ TASK-027,New Feature Title,"Description of new requirement",Medium,3 days,featur
 
 ### Thesis-Specific Task Management:
 For thesis work, prioritize tasks that support academic analysis:
-- **TASK-021**: ✅ Completed - Comparison Tabla de Cálculos for detailed technical analysis
+- **TASK-021**: ✅ Completed (PR #3) - Comparison Tabla de Cálculos for detailed technical analysis
+- **TASK-024**: ✅ Completed (PR #4) - Enhanced CSV export for academic data analysis
 - **TASK-023**: High-res chart/card export for thesis figures (300 DPI PNG/SVG)
-- **TASK-024**: Enhanced CSV export for academic data analysis
 - **TASK-025**: Transfer station valorization scenarios (MRF, composting, biogas)
 - **TASK-026**: Waste separation at generation modeling
 
-**Current Thesis Sprint Focus (1 week timeline):**
-1. High-resolution exports for thesis documentation
-2. Enhanced data export functionality  
-3. Transfer station improvement scenarios
-4. Source separation modeling capabilities
+**Current Thesis Sprint Progress (1 week timeline):**
+✅ Completed (2/6 tasks):
+1. ✅ Detailed comparison calculations table with side-by-side analysis
+2. ✅ Simple CSV export functionality matching UI table exactly
+
+🔲 Remaining (4/6 tasks):
+3. High-resolution exports for thesis documentation
+4. Transfer station improvement scenarios
+5. Source separation modeling capabilities
+6. Basic geolocation display
 
 ## 🎯 Best Practices
 
