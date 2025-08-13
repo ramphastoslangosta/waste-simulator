@@ -44,15 +44,82 @@ const ComparisonCalculationsTable: React.FC<ComparisonCalculationsTableProps> = 
 
   const handleExportComparisonCalculations = () => {
     try {
-      // Use the new enhanced CSV export function
-      const csvContent = exportComparisonAnalysisToCSV(scenarioResults, season);
+      // Create simple CSV that matches the table shown in UI
+      let csvContent = `Tabla de Cálculos Comparativa - ${seasonLabel}\n`;
+      csvContent += `Fecha de Exportación: ${new Date().toISOString().split('T')[0]}\n\n`;
+      
+      // Header row
+      csvContent += 'Concepto,';
+      csvContent += scenarioResults.map(s => s.name).join(',');
+      csvContent += ',Unidad\n';
+      
+      // Data rows - exactly matching the table structure
+      const tableData = [
+        // GENERATION SECTION
+        ['ETAPA 1: GENERACIÓN DE RSU', ...Array(scenarioResults.length).fill(''), ''],
+        ['Generación Total de RSU', calculationRows.map(row => formatNumber(row.data.totalGeneration, 2)), 'ton/día'],
+        ['  - Generado por Hoteles', calculationRows.map(row => formatNumber(row.data.genHotels, 2)), 'ton/día'],
+        ['  - Generado por Restaurantes', calculationRows.map(row => formatNumber(row.data.genRestaurants, 2)), 'ton/día'],
+        ['  - Generado por Hogares', calculationRows.map(row => formatNumber(row.data.genHomes, 2)), 'ton/día'],
+        ['  - Generado por Comercios', calculationRows.map(row => formatNumber(row.data.genCommerce, 2)), 'ton/día'],
+        
+        // COLLECTION SECTION
+        ['ETAPA 2: RECOLECCIÓN Y LOGÍSTICA PRIMARIA', ...Array(scenarioResults.length).fill(''), ''],
+        ['Capacidad de Recolección', calculationRows.map(row => formatNumber(row.data.collectionCapacity, 2)), 'ton/día'],
+        ['Déficit de Recolección (Fuga)', calculationRows.map(row => formatNumber(row.data.collectionDeficit, 2)), 'ton/día'],
+        ['Total Recolectado', calculationRows.map(row => formatNumber(row.data.collectedWasteTotal, 2)), 'ton/día'],
+        ['  - Recuperación Informal (en ruta)', calculationRows.map(row => formatNumber(row.data.informalRecoveryCollection, 2)), 'ton/día'],
+        ['  - Fuga en Recolección', calculationRows.map(row => formatNumber(row.data.leakCollection, 2)), 'ton/día'],
+        ['Entrada a Sitio de Transferencia', calculationRows.map(row => formatNumber(row.data.toTransferStationTotal, 2)), 'ton/día'],
+        
+        // PROCESSING SECTION
+        ['ETAPA 3: SITIO DE TRANSFERENCIA Y VALORIZACIÓN', ...Array(scenarioResults.length).fill(''), ''],
+        ['Material Procesado (Promedio diario)', calculationRows.map(row => formatNumber(row.data.materialProcessedToday, 2)), 'ton/día'],
+        ['Inventario Acumulado (Día 30)', calculationRows.map(row => formatNumber(row.data.finalInventory, 2)), 'ton'],
+        ['Recuperación Formal Total', calculationRows.map(row => formatNumber(row.data.totalRecoveredAtStation, 2)), 'ton/día'],
+        ['  - Recuperado Alta Calidad (Origen)', calculationRows.map(row => formatNumber(row.data.recoverySource, 2)), 'ton/día'],
+        ['  - Recuperado Baja Calidad (Planta)', calculationRows.map(row => formatNumber(row.data.recoveryPlant, 2)), 'ton/día'],
+        ['  - Fuga en Planta', calculationRows.map(row => formatNumber(row.data.leakTransferStation, 2)), 'ton/día'],
+        ['Material para Traslado Final', calculationRows.map(row => formatNumber(row.data.toFinalTransport, 2)), 'ton/día'],
+        
+        // FINAL DISPOSAL SECTION
+        ['ETAPA 4: TRASLADO Y DISPOSICIÓN FINAL', ...Array(scenarioResults.length).fill(''), ''],
+        ['Material Efectivamente Trasladado', calculationRows.map(row => formatNumber(row.data.actualFinalTransport, 2)), 'ton/día'],
+        ['Material No Trasladado (acum. en planta)', calculationRows.map(row => formatNumber(row.data.untransportedMaterial, 2)), 'ton/día'],
+        ['  - Fuga en Traslado Final', calculationRows.map(row => formatNumber(row.data.leakFinalTransport, 2)), 'ton/día'],
+        ['Entrada a Disposición Final', calculationRows.map(row => formatNumber(row.data.toDisposalSite, 2)), 'ton/día'],
+        ['  - Recuperación Informal (en sitio)', calculationRows.map(row => formatNumber(row.data.informalRecoveryDisposal, 2)), 'ton/día'],
+        ['  - Fuga en Disposición Final', calculationRows.map(row => formatNumber(row.data.leakDisposal, 2)), 'ton/día'],
+        ['Residuo Final Enterrado', calculationRows.map(row => formatNumber(row.data.toDisposal, 2)), 'ton/día'],
+        
+        // FINANCIAL SECTION
+        ['ANÁLISIS FINANCIERO (SOLO RSU)', ...Array(scenarioResults.length).fill(''), ''],
+        ['Ingresos Totales por Venta', calculationRows.map(row => formatNumber(row.data.totalRsuIncome, 2)), 'MXN/día'],
+        ['Costos Totales de Operación', calculationRows.map(row => formatNumber(row.data.totalRsuCosts, 2)), 'MXN/día'],
+        ['  - Costo de Recolección', calculationRows.map(row => formatNumber(row.data.totalCollectionCost, 2)), 'MXN/día'],
+        ['  - Costo de Transferencia', calculationRows.map(row => formatNumber(row.data.totalTransferCost, 2)), 'MXN/día'],
+        ['  - Costo de Traslado Final', calculationRows.map(row => formatNumber(row.data.totalFinalTransportCost, 2)), 'MXN/día'],
+        ['  - Costo de Disposición Final', calculationRows.map(row => formatNumber(row.data.totalDisposalCost, 2)), 'MXN/día'],
+        ['Costo Neto del Sistema RSU', calculationRows.map(row => formatNumber(row.data.netCostPerDay, 2)), 'MXN/día']
+      ];
+      
+      // Add each row to CSV
+      tableData.forEach(([concept, values, unit]) => {
+        csvContent += `"${concept}",`;
+        if (Array.isArray(values)) {
+          csvContent += values.join(',');
+        } else {
+          csvContent += Array(scenarioResults.length).fill('').join(',');
+        }
+        csvContent += `,"${unit}"\n`;
+      });
       
       const timestamp = new Date().toISOString().split('T')[0];
       const seasonLabelFile = season.toLowerCase().replace(' ', '-');
-      downloadCSV(csvContent, `analisis-comparativo-thesis-${seasonLabelFile}-${timestamp}.csv`);
+      downloadCSV(csvContent, `comparacion-calculos-${seasonLabelFile}-${timestamp}.csv`);
     } catch (error) {
-      console.error('Error exporting comparison analysis:', error);
-      alert('Error al exportar análisis comparativo: ' + error.message);
+      console.error('Error exporting comparison calculations:', error);
+      alert('Error al exportar comparación: ' + error.message);
     }
   };
 
@@ -165,7 +232,7 @@ const ComparisonCalculationsTable: React.FC<ComparisonCalculationsTableProps> = 
             className="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
           >
             <Download size={16} className="mr-2" />
-            Exportar Análisis Thesis (CSV)
+            Exportar Tabla CSV
           </button>
         </div>
         
