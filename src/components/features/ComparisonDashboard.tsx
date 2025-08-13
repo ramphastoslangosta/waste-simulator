@@ -3,6 +3,7 @@ import { useWasteSimulation } from '../../hooks/useWasteSimulation';
 import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
 import ComparisonFinancialAnalysis from './ComparisonFinancialAnalysis.tsx';
+import ComparisonCalculationsTable from './ComparisonCalculationsTable.tsx';
 import { formatNumber } from '../../utils/formatNumber';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
@@ -17,7 +18,7 @@ interface ComparisonDashboardProps {
 }
 
 const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, season }) => {
-  const [activeComparisonTab, setActiveComparisonTab] = useState<'kpis' | 'financials'>('kpis');
+  const [activeComparisonTab, setActiveComparisonTab] = useState<'kpis' | 'financials' | 'calculations'>('kpis');
   
   // Calculate simulation results for each scenario using individual hooks
   const scenario1Results = scenarios[0] ? useWasteSimulation(scenarios[0].inputs) : null;
@@ -69,6 +70,10 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
   const renderComparisonContent = () => {
     if (activeComparisonTab === 'financials') {
       return <ComparisonFinancialAnalysis scenarios={scenarios} season={season} />;
+    }
+    
+    if (activeComparisonTab === 'calculations') {
+      return <ComparisonCalculationsTable scenarios={scenarios} season={season} />;
     }
     
     return (
@@ -297,6 +302,16 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
             }`}
           >
             Análisis Financiero
+          </button>
+          <button
+            onClick={() => setActiveComparisonTab('calculations')}
+            className={`px-6 py-3 font-medium transition-colors ${
+              activeComparisonTab === 'calculations'
+                ? 'text-blue-600 border-b-2 border-blue-600 bg-blue-50'
+                : 'text-slate-500 hover:text-slate-700 hover:bg-slate-50'
+            }`}
+          >
+            Tabla de Cálculos
           </button>
         </div>
       </Card>
