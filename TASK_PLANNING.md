@@ -144,25 +144,37 @@ Before marking a task complete, verify all success criteria:
 High Priority:
 - TASK-001: Performance Optimization (5 days)
 - TASK-013: Data Validation (2 days)
+- TASK-021: Comparison Mode for Tabla de Cálculos (3 days)
 
 Medium Priority:  
 - TASK-004: Mobile Optimization (4 days)
-- TASK-009: CI/CD Pipeline (3 days)
 
 Total: 14 days (fits 2-week sprint)
 ```
 
-### Sprint 2 (2 weeks): Feature Expansion
+### Sprint 2 (2 weeks): Feature Expansion & Geolocation
 ```
 High Priority:
 - TASK-019: Accessibility (3 days)
 - TASK-016: Integration Testing (3 days)
 
 Medium Priority:
+- TASK-022: Geolocation Integration (5 days)
 - TASK-002: Advanced Export (3 days)
-- TASK-005: Advanced Visualizations (6 days)
 
-Total: 15 days (slightly over-planned for buffer)
+Total: 14 days (well-balanced sprint)
+```
+
+### Sprint 3 (2 weeks): Advanced Features
+```
+High Priority:
+- TASK-009: CI/CD Pipeline (3 days)
+
+Medium Priority:
+- TASK-005: Advanced Visualizations (6 days)
+- TASK-008: Analytics Dashboard (5 days)
+
+Total: 14 days (visualization-focused sprint)
 ```
 
 ## 🔍 Task Dependencies Management
@@ -201,6 +213,154 @@ TASK-021,New Feature Title,"Description of new requirement",Medium,3 days,featur
 4. **Use task IDs in commit messages** for traceability
 5. **Update estimates** based on actual completion times
 6. **Review completed tasks** to improve future estimates
+
+## 🎯 Detailed Implementation Guidelines for New Priority Tasks
+
+### TASK-021: Comparison Mode for Tabla de Cálculos
+
+**Implementation Strategy:**
+```typescript
+// 1. Add comparison tab to ComparisonDashboard.tsx
+const comparisonTabs = ['kpis', 'financials', 'calculations'] as const;
+
+// 2. Create ComparisonResultsTable.tsx component
+interface ComparisonResultsTableProps {
+  scenarios: Scenario[];
+  season: 'high' | 'low';
+}
+
+// 3. Side-by-side table layout with difference highlighting
+const renderComparisonTable = () => {
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {scenarios.map((scenario, index) => (
+        <div key={scenario.id}>
+          <h3>{scenario.name}</h3>
+          <ResultsTable kpis={scenario.results[season]} />
+        </div>
+      ))}
+    </div>
+  );
+};
+```
+
+**Key Features:**
+- Side-by-side calculation tables
+- Highlight differences between scenarios with color coding
+- Responsive design for mobile viewing
+- Export comparison tables to CSV/PDF
+
+### TASK-022: Geolocation Integration for Waste Management Sites
+
+**Implementation Strategy:**
+```typescript
+// 1. Add geolocation data to initial state
+interface GeolocationData {
+  simulationArea: {
+    lat: number;
+    lng: number;
+    radius: number; // in km
+  };
+  transferSites: Array<{
+    id: string;
+    name: string;
+    lat: number;
+    lng: number;
+    capacity: number;
+  }>;
+  disposalSites: Array<{
+    id: string;
+    name: string;
+    lat: number;
+    lng: number;
+    type: 'landfill' | 'recycling' | 'composting';
+  }>;
+}
+
+// 2. Create GeolocationMap component using Leaflet or MapBox
+const GeolocationMap = ({ sites, onSiteUpdate }) => {
+  // Interactive map with drag-and-drop site positioning
+  // Distance calculations between sites
+  // Route optimization suggestions
+};
+
+// 3. Add to navigation tabs
+const geoTab = { id: 'geolocation', label: 'Mapa de Sitios' };
+```
+
+**Key Features:**
+- Interactive map showing simulation area, transfer sites, disposal sites
+- Drag-and-drop positioning for easy site placement
+- Distance calculations affecting transportation costs
+- Route optimization suggestions
+- Mobile-responsive map interface
+- Integration with waste flow calculations
+
+**Dependencies & Considerations:**
+- Choose mapping library: Leaflet (free) vs MapBox (paid but better features)
+- Add geolocation permissions handling
+- Consider offline map capabilities for remote areas
+- Impact on simulation calculations (transportation costs/time)
+
+**Commit Planning for TASK-021:**
+```bash
+# Commit 1: Add comparison calculations tab structure
+git commit -m "feat(comparison): add calculations tab to comparison dashboard
+
+- Add 'calculations' tab to comparison mode navigation
+- Create basic structure for side-by-side table comparison
+- Update ComparisonDashboard.tsx with new tab handling
+
+Related: TASK-021"
+
+# Commit 2: Implement side-by-side comparison tables
+git commit -m "feat(comparison): implement side-by-side calculations comparison
+
+- Create ComparisonResultsTable.tsx component
+- Display scenario results in parallel table layout
+- Add responsive design for mobile devices
+
+Related: TASK-021"
+
+# Commit 3: Add difference highlighting
+git commit -m "feat(comparison): add difference highlighting in calculation tables
+
+- Highlight numerical differences between scenarios
+- Color-code increases/decreases in values
+- Add percentage change indicators
+
+Related: TASK-021"
+```
+
+**Commit Planning for TASK-022:**
+```bash
+# Commit 1: Add geolocation data structure
+git commit -m "feat(geolocation): add geolocation data structure to initial state
+
+- Define interfaces for simulation area and sites
+- Add default coordinates for Isla Holbox
+- Update initial state with geolocation data
+
+Related: TASK-022"
+
+# Commit 2: Create basic map component
+git commit -m "feat(geolocation): create interactive map component
+
+- Add GeolocationMap.tsx with Leaflet integration
+- Display simulation area and waste management sites
+- Implement basic map interactions and markers
+
+Related: TASK-022"
+
+# Commit 3: Add distance calculations
+git commit -m "feat(geolocation): implement distance calculations and routing
+
+- Calculate distances between sites
+- Add route optimization suggestions
+- Integrate distance data with transportation cost calculations
+
+Related: TASK-022"
+```
 
 ---
 
