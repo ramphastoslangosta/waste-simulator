@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useWasteSimulation } from '../../hooks/useWasteSimulation';
 import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
-import KPICard from '../ui/KPICard.tsx';
 import ComparisonFinancialAnalysis from './ComparisonFinancialAnalysis.tsx';
 import { formatNumber } from '../../utils/formatNumber';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
@@ -20,11 +19,28 @@ interface ComparisonDashboardProps {
 const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, season }) => {
   const [activeComparisonTab, setActiveComparisonTab] = useState<'kpis' | 'financials'>('kpis');
   
-  // Calculate simulation results for each scenario
-  const scenarioResults = scenarios.map(scenario => ({
-    ...scenario,
-    results: useWasteSimulation(scenario.inputs)
-  }));
+  // Calculate simulation results for each scenario using individual hooks
+  const scenario1Results = scenarios[0] ? useWasteSimulation(scenarios[0].inputs) : null;
+  const scenario2Results = scenarios[1] ? useWasteSimulation(scenarios[1].inputs) : null;
+  const scenario3Results = scenarios[2] ? useWasteSimulation(scenarios[2].inputs) : null;
+  const scenario4Results = scenarios[3] ? useWasteSimulation(scenarios[3].inputs) : null;
+  
+  // Combine results with scenarios
+  const scenarioResults = useMemo(() => {
+    const results = [];
+    const allResults = [scenario1Results, scenario2Results, scenario3Results, scenario4Results];
+    
+    scenarios.forEach((scenario, index) => {
+      if (allResults[index]) {
+        results.push({
+          ...scenario,
+          results: allResults[index]
+        });
+      }
+    });
+    
+    return results;
+  }, [scenarios, scenario1Results, scenario2Results, scenario3Results, scenario4Results]);
 
   const seasonLabel = season === 'high' ? 'Temporada Alta' : 'Temporada Baja';
 
@@ -217,7 +233,7 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
                 </tr>
               </thead>
               <tbody>
-                {comparisonMetrics.map((metric, index) => (
+                {comparisonMetrics.map((metric) => (
                   <tr key={metric.name} className="border-b border-slate-100 hover:bg-slate-50">
                     <td className="p-2 font-medium">{metric.name}</td>
                     <td className="p-2 text-right">{formatNumber(metric.totalGeneration, 1)}</td>

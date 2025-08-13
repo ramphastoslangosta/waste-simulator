@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useWasteSimulation } from '../../hooks/useWasteSimulation';
 import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
 import { formatNumber } from '../../utils/formatNumber';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, PieChart, Pie, Legend } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from 'recharts';
 
 interface ComparisonFinancialAnalysisProps {
   scenarios: Array<{
@@ -16,11 +16,28 @@ interface ComparisonFinancialAnalysisProps {
 }
 
 const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = ({ scenarios, season }) => {
-  // Calculate simulation results for each scenario
-  const scenarioResults = scenarios.map(scenario => ({
-    ...scenario,
-    results: useWasteSimulation(scenario.inputs)
-  }));
+  // Calculate simulation results for each scenario using individual hooks
+  const scenario1Results = scenarios[0] ? useWasteSimulation(scenarios[0].inputs) : null;
+  const scenario2Results = scenarios[1] ? useWasteSimulation(scenarios[1].inputs) : null;
+  const scenario3Results = scenarios[2] ? useWasteSimulation(scenarios[2].inputs) : null;
+  const scenario4Results = scenarios[3] ? useWasteSimulation(scenarios[3].inputs) : null;
+  
+  // Combine results with scenarios
+  const scenarioResults = useMemo(() => {
+    const results = [];
+    const allResults = [scenario1Results, scenario2Results, scenario3Results, scenario4Results];
+    
+    scenarios.forEach((scenario, index) => {
+      if (allResults[index]) {
+        results.push({
+          ...scenario,
+          results: allResults[index]
+        });
+      }
+    });
+    
+    return results;
+  }, [scenarios, scenario1Results, scenario2Results, scenario3Results, scenario4Results]);
 
   const seasonLabel = season === 'high' ? 'Temporada Alta' : 'Temporada Baja';
 
@@ -278,7 +295,7 @@ const ComparisonFinancialAnalysis: React.FC<ComparisonFinancialAnalysisProps> = 
               </tr>
             </thead>
             <tbody>
-              {financialMetrics.map((metric, index) => {
+              {financialMetrics.map((metric) => {
                 const netBalance = metric.totalIncome - metric.totalSystemCost;
                 return (
                   <tr key={metric.name} className="border-b border-slate-100 hover:bg-slate-50">

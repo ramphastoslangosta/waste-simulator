@@ -34,7 +34,7 @@ describe('KPICard', () => {
   })
 
   it('should use default blue color when no color specified', () => {
-    const { color, ...propsWithoutColor } = mockProps
+    const { color: _color, ...propsWithoutColor } = mockProps
     render(<KPICard {...propsWithoutColor} />)
     
     // The default color class is applied to the <p> element containing the value
@@ -43,7 +43,7 @@ describe('KPICard', () => {
   })
 
   it('should render without description', () => {
-    const { description, ...propsWithoutDescription } = mockProps
+    const { description: _description, ...propsWithoutDescription } = mockProps
     render(<KPICard {...propsWithoutDescription} />)
     
     expect(screen.getByText('Total Generation')).toBeInTheDocument()
