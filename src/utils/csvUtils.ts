@@ -304,6 +304,268 @@ export const exportCalculationsToCSV = (kpis: any, inputs: any, season: string) 
   return csvContent;
 };
 
+// Enhanced CSV export for thesis - detailed comparison analysis
+export const exportComparisonAnalysisToCSV = (scenarioResults: any[], season: string) => {
+  const timestamp = new Date().toISOString().split('T')[0];
+  const seasonLabel = season === 'high' ? 'Temporada Alta' : 'Temporada Baja';
+  
+  // Document metadata section
+  let csvContent = '# ANÁLISIS COMPARATIVO DE ESCENARIOS - SISTEMA DE GESTIÓN DE RESIDUOS SÓLIDOS\n';
+  csvContent += `# Isla Holbox, Quintana Roo, México\n`;
+  csvContent += `# Temporada: ${seasonLabel}\n`;
+  csvContent += `# Fecha de Exportación: ${timestamp}\n`;
+  csvContent += `# Número de Escenarios: ${scenarioResults.length}\n\n`;
+  
+  // Scenario overview section
+  csvContent += 'RESUMEN DE ESCENARIOS\n';
+  csvContent += 'ID,Nombre,Descripción\n';
+  scenarioResults.forEach((scenario, index) => {
+    csvContent += `E${index + 1},"${scenario.name}","${scenario.description || 'Sin descripción'}"\n`;
+  });
+  csvContent += '\n';
+
+  // Detailed technical analysis section
+  csvContent += 'ANÁLISIS TÉCNICO DETALLADO\n';
+  csvContent += 'Categoría,Subcategoría,Concepto,';
+  csvContent += scenarioResults.map((s, i) => `E${i + 1}_${s.name.replace(/[,\s]/g, '_')}`).join(',');
+  csvContent += ',Unidad,Fórmula/Cálculo,Notas\n';
+
+  // Helper function to add metric rows
+  const addMetricRow = (category: string, subcategory: string, concept: string, values: number[], unit: string, formula: string = '', notes: string = '') => {
+    csvContent += `"${category}","${subcategory}","${concept}",`;
+    csvContent += values.map(v => formatNumber(v, 4)).join(',');
+    csvContent += `,"${unit}","${formula}","${notes}"\n`;
+  };
+
+  // GENERATION ANALYSIS
+  scenarioResults.forEach((scenario, index) => {
+    const kpis = season === 'high' ? scenario.results.high : scenario.results.low;
+    const data = kpis.rsu.calculations;
+    const genBySource = kpis.rsu.genBySource || data.genBySource || { hotels: 0, restaurants: 0, homes: 0, commerce: 0 };
+    
+    if (index === 0) {
+      // Generation metrics
+      addMetricRow('Generación', 'Total', 'Generación Total de RSU', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.totalGeneration),
+        'ton/día', 'Suma de todas las fuentes de generación', 'Baseline para dimensionamiento del sistema');
+        
+      addMetricRow('Generación', 'Por Fuente', 'Hoteles', 
+        scenarioResults.map(s => {
+          const kpis = season === 'high' ? s.results.high : s.results.low;
+          const genBySource = kpis.rsu.genBySource || kpis.rsu.calculations.genBySource || { hotels: 0 };
+          return genBySource.hotels;
+        }),
+        'ton/día', 'Unidades × Ocupación × Tasa × Factor Conversión', 'Variable por temporada turística');
+        
+      addMetricRow('Generación', 'Por Fuente', 'Restaurantes', 
+        scenarioResults.map(s => {
+          const kpis = season === 'high' ? s.results.high : s.results.low;
+          const genBySource = kpis.rsu.genBySource || kpis.rsu.calculations.genBySource || { restaurants: 0 };
+          return genBySource.restaurants;
+        }),
+        'ton/día', 'Establecimientos × Tasa Generación', 'Relativamente constante entre temporadas');
+        
+      addMetricRow('Generación', 'Por Fuente', 'Hogares', 
+        scenarioResults.map(s => {
+          const kpis = season === 'high' ? s.results.high : s.results.low;
+          const genBySource = kpis.rsu.genBySource || kpis.rsu.calculations.genBySource || { homes: 0 };
+          return genBySource.homes;
+        }),
+        'ton/día', 'Población Fija × Tasa per Cápita', 'Base poblacional permanente');
+        
+      addMetricRow('Generación', 'Por Fuente', 'Comercios', 
+        scenarioResults.map(s => {
+          const kpis = season === 'high' ? s.results.high : s.results.low;
+          const genBySource = kpis.rsu.genBySource || kpis.rsu.calculations.genBySource || { commerce: 0 };
+          return genBySource.commerce;
+        }),
+        'ton/día', 'Locales Comerciales × Tasa Generación', 'Incluye pequeño comercio local');
+
+      // Collection and logistics metrics
+      addMetricRow('Recolección', 'Capacidad', 'Capacidad Total de Recolección', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.calculations.collectionCapacity),
+        'ton/día', 'Vehículos × Capacidad × Viajes por Día', 'Limitante operacional crítico');
+        
+      addMetricRow('Recolección', 'Déficit', 'Déficit de Recolección', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.collectionDeficit),
+        'ton/día', 'MAX(0, Generación - Capacidad)', 'Indicador de saturación del sistema');
+        
+      addMetricRow('Recolección', 'Eficiencia', 'Porcentaje de Cobertura', 
+        scenarioResults.map(s => {
+          const kpis = season === 'high' ? s.results.high : s.results.low;
+          const coverage = ((kpis.rsu.totalGeneration - kpis.rsu.collectionDeficit) / kpis.rsu.totalGeneration) * 100;
+          return coverage;
+        }),
+        '%', '(Generación - Déficit) / Generación × 100', 'KPI de cobertura del servicio');
+
+      // Processing metrics
+      addMetricRow('Procesamiento', 'Capacidad', 'Tasa de Procesamiento Diaria', 
+        scenarioResults.map(s => s.inputs.rsuSystem.processing.transferStationRate),
+        'ton/día', 'Capacidad de Maquinaria/Equipos', 'Parámetro de diseño de la planta');
+        
+      addMetricRow('Procesamiento', 'Inventario', 'Inventario Acumulado (Día 30)', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.finalInventory),
+        'ton', 'Acumulación diaria limitada por capacidad', 'Indicador de saturación de la planta');
+        
+      addMetricRow('Procesamiento', 'Valorización', 'Recuperación en Origen (Alta Calidad)', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.recoveryByStage.source),
+        'ton/día', 'Material Separado × Eficiencia × Tasa Captura', 'Material de mayor valor comercial');
+        
+      addMetricRow('Procesamiento', 'Valorización', 'Recuperación en Planta (Baja Calidad)', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.recoveryByStage.plant),
+        'ton/día', 'Material Procesado × Eficiencia Separación', 'Material contaminado pero recuperable');
+        
+      addMetricRow('Procesamiento', 'Valorización', 'Recuperación Informal Total', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.recoveryByStage.informal),
+        'ton/día', 'Rec. en Recolección + Rec. en Disposición', 'Sector informal organizado');
+
+      // Environmental impact metrics
+      addMetricRow('Impacto Ambiental', 'Fugas', 'Fuga Total del Sistema', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.totalLeak),
+        'ton/día', 'Suma de todas las fugas por etapa', 'Impacto ambiental directo');
+        
+      addMetricRow('Impacto Ambiental', 'Disposición', 'Residuo a Disposición Final', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.toDisposal),
+        'ton/día', 'Material Final - Recuperación - Fugas', 'Carga al relleno sanitario');
+        
+      addMetricRow('Impacto Ambiental', 'Desviación', 'Tasa de Desviación de Relleno', 
+        scenarioResults.map(s => {
+          const kpis = season === 'high' ? s.results.high : s.results.low;
+          const totalRecovery = kpis.rsu.recoveryByStage.source + kpis.rsu.recoveryByStage.plant + kpis.rsu.recoveryByStage.informal;
+          const diversionRate = (totalRecovery / kpis.rsu.totalGeneration) * 100;
+          return diversionRate;
+        }),
+        '%', 'Recuperación Total / Generación Total × 100', 'Meta de sostenibilidad ambiental');
+
+      // Economic analysis
+      addMetricRow('Análisis Económico', 'Costos', 'Costo Total del Sistema', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).totalSystemCost),
+        'MXN/día', 'Suma de costos RSU + Sargazo + RCD', 'Costo operacional total');
+        
+      addMetricRow('Análisis Económico', 'Costos', 'Costo Sistema RSU', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.totalRsuCosts),
+        'MXN/día', 'Recolección + Transferencia + Transporte + Disposición', 'Componente principal del costo');
+        
+      addMetricRow('Análisis Económico', 'Ingresos', 'Ingresos por Venta de Materiales', 
+        scenarioResults.map(s => (season === 'high' ? s.results.high : s.results.low).rsu.totalRsuIncome),
+        'MXN/día', 'Suma de ingresos por material recuperado', 'Potencial de autofinanciamiento');
+        
+      addMetricRow('Análisis Económico', 'Eficiencia', 'Costo Neto por Tonelada', 
+        scenarioResults.map(s => {
+          const kpis = season === 'high' ? s.results.high : s.results.low;
+          const netCostPerTon = kpis.rsu.netCostPerDay / kpis.rsu.totalGeneration;
+          return netCostPerTon;
+        }),
+        'MXN/ton', 'Costo Neto del Sistema / Generación Total', 'Indicador de eficiencia económica');
+        
+      addMetricRow('Análisis Económico', 'Sostenibilidad', 'Ratio Autofinanciamiento', 
+        scenarioResults.map(s => {
+          const kpis = season === 'high' ? s.results.high : s.results.low;
+          const selfFinancingRatio = (kpis.rsu.totalRsuIncome / kpis.rsu.totalRsuCosts) * 100;
+          return selfFinancingRatio;
+        }),
+        '%', 'Ingresos / Costos × 100', 'Capacidad de sostenibilidad financiera');
+    }
+  });
+
+  // Special waste analysis section
+  csvContent += '\nANÁLISIS DE RESIDUOS ESPECIALES\n';
+  csvContent += 'Tipo,Concepto,';
+  csvContent += scenarioResults.map((s, i) => `E${i + 1}_${s.name.replace(/[,\s]/g, '_')}`).join(',');
+  csvContent += ',Unidad,Observaciones\n';
+  
+  // Sargassum analysis
+  const sargassumGeneration = season === 'high' ? 'sargassumHigh' : 'sargassumLow';
+  csvContent += `"Sargazo","Generación","Generación Sargazo",`;
+  csvContent += scenarioResults.map(s => formatNumber(s.inputs.specialWasteGeneration[sargassumGeneration], 2)).join(',');
+  csvContent += `,"ton/día","Variable estacional crítica para Holbox"\n`;
+    
+  csvContent += `"Sargazo","Costo","Costo de Gestión",`;
+  csvContent += scenarioResults.map(s => formatNumber((season === 'high' ? s.results.high : s.results.low).sargassumCost, 2)).join(',');
+  csvContent += `,"MXN/día","Desafío específico de ecosistemas costeros"\n`;
+
+  // RCD analysis  
+  csvContent += `"RCD","Generación","Generación RCD",`;
+  csvContent += scenarioResults.map(s => formatNumber(s.inputs.specialWasteGeneration.construction, 2)).join(',');
+  csvContent += `,"ton/día","Residuos de construcción y demolición"\n`;
+    
+  csvContent += `"RCD","Costo","Costo de Gestión",`;
+  csvContent += scenarioResults.map(s => formatNumber((season === 'high' ? s.results.high : s.results.low).rcdCost, 2)).join(',');
+  csvContent += `,"MXN/día","Gestión especializada requerida"\n`;
+
+  // Input parameters comparison section
+  csvContent += '\nPARÁMETROS DE ENTRADA - COMPARACIÓN\n';
+  csvContent += 'Categoría,Parámetro,';
+  csvContent += scenarioResults.map((s, i) => `E${i + 1}_${s.name.replace(/[,\s]/g, '_')}`).join(',');
+  csvContent += ',Unidad,Descripción\n';
+  
+  // Key input parameters for thesis analysis
+  const inputParams = [
+    ['Población', 'Población Fija', scenarioResults.map(s => s.inputs.general.fixedPopulation), 'habitantes', 'Base poblacional permanente'],
+    ['Turismo', 'Ocupación Temporada Alta', scenarioResults.map(s => s.inputs.general.highSeasonOccupancy), '%', 'Factor de variabilidad estacional'],
+    ['Turismo', 'Ocupación Temporada Baja', scenarioResults.map(s => s.inputs.general.lowSeasonOccupancy), '%', 'Nivel base de ocupación'],
+    ['Infraestructura', 'Cuartos de Hotel', scenarioResults.map(s => s.inputs.generation.hotels.units), 'cuartos', 'Capacidad hotelera total'],
+    ['Infraestructura', 'Establecimientos Gastronómicos', scenarioResults.map(s => s.inputs.generation.restaurants.units), 'locales', 'Infraestructura gastronómica'],
+    ['Logística', 'Vehículos de Recolección', scenarioResults.map(s => s.inputs.rsuSystem.logistics.vehicles), 'vehículos', 'Flota de recolección disponible'],
+    ['Logística', 'Capacidad por Vehículo', scenarioResults.map(s => s.inputs.rsuSystem.logistics.vehicleCapacity), 'ton', 'Capacidad de carga unitaria'],
+    ['Procesamiento', 'Capacidad de Planta', scenarioResults.map(s => s.inputs.rsuSystem.processing.transferStationRate), 'ton/día', 'Capacidad de procesamiento diario'],
+    ['Valorización', 'Eficiencia Separación PET', scenarioResults.map(s => s.inputs.rsuSystem.separation.plantSeparationEfficiency.pet), '%', 'Eficiencia de recuperación PET'],
+    ['Valorización', 'Eficiencia Separación Aluminio', scenarioResults.map(s => s.inputs.rsuSystem.separation.plantSeparationEfficiency.aluminio), '%', 'Eficiencia de recuperación aluminio']
+  ];
+  
+  inputParams.forEach(([category, param, values, unit, description]) => {
+    csvContent += `"${category}","${param}",`;
+    csvContent += (values as number[]).map(v => formatNumber(v, 2)).join(',');
+    csvContent += `,"${unit}","${description}"\n`;
+  });
+
+  // Performance indicators summary
+  csvContent += '\nINDICADORES DE DESEMPEÑO - RESUMEN EJECUTIVO\n';
+  csvContent += 'KPI,';
+  csvContent += scenarioResults.map((s, i) => `E${i + 1}_${s.name.replace(/[,\s]/g, '_')}`).join(',');
+  csvContent += ',Unidad,Meta/Benchmark,Evaluación\n';
+  
+  // Key performance indicators for decision making
+  const kpis = [
+    ['Cobertura de Recolección', scenarioResults.map(s => {
+      const kpis = season === 'high' ? s.results.high : s.results.low;
+      return ((kpis.rsu.totalGeneration - kpis.rsu.collectionDeficit) / kpis.rsu.totalGeneration) * 100;
+    }), '%', '>95%', 'Cobertura universal del servicio'],
+    ['Tasa de Desviación de Relleno', scenarioResults.map(s => {
+      const kpis = season === 'high' ? s.results.high : s.results.low;
+      const totalRecovery = kpis.rsu.recoveryByStage.source + kpis.rsu.recoveryByStage.plant + kpis.rsu.recoveryByStage.informal;
+      return (totalRecovery / kpis.rsu.totalGeneration) * 100;
+    }), '%', '>30%', 'Meta de aprovechamiento de residuos'],
+    ['Eficiencia Económica', scenarioResults.map(s => {
+      const kpis = season === 'high' ? s.results.high : s.results.low;
+      return kpis.rsu.netCostPerDay / kpis.rsu.totalGeneration;
+    }), 'MXN/ton', '<500', 'Costo competitivo de gestión'],
+    ['Autofinanciamiento', scenarioResults.map(s => {
+      const kpis = season === 'high' ? s.results.high : s.results.low;
+      return (kpis.rsu.totalRsuIncome / kpis.rsu.totalRsuCosts) * 100;
+    }), '%', '>20%', 'Sostenibilidad financiera parcial']
+  ];
+  
+  kpis.forEach(([indicator, values, unit, target, evaluation]) => {
+    csvContent += `"${indicator}",`;
+    csvContent += (values as number[]).map(v => formatNumber(v, 2)).join(',');
+    csvContent += `,"${unit}","${target}","${evaluation}"\n`;
+  });
+
+  // Metadata footer
+  csvContent += '\n# METADATOS DEL ANÁLISIS\n';
+  csvContent += `# Software: Simulador de Gestión de Residuos - Isla Holbox\n`;
+  csvContent += `# Versión: 2.0.0 - Thesis Enhanced\n`;
+  csvContent += `# Modelo: 30 días de simulación, promedios de últimos 7 días\n`;
+  csvContent += `# Metodología: Análisis de flujo de materiales (MFA)\n`;
+  csvContent += `# Alcance: Sistema integral RSU + Residuos especiales\n`;
+  csvContent += `# Autor: [Nombre del Tesista]\n`;
+  csvContent += `# Institución: [Universidad]\n`;
+  csvContent += `# Fecha: ${timestamp}\n`;
+
+  return csvContent;
+};
+
 export const parseCSVToScenarios = (csvContent: string): any[] => {
   const lines = csvContent.trim().split('\n');
   if (lines.length < 2) {

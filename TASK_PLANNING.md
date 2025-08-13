@@ -16,6 +16,10 @@ The `tasks.csv` file contains the following columns:
 - **dependencies**: Other tasks that must be completed first
 - **success_criteria**: How to know when the task is complete
 - **files_to_modify**: Key files that will likely need changes
+- **status**: Current task status (pending/in_progress/completed)
+- **completion_date**: Date when task was completed (YYYY-MM-DD format)
+- **pr_number**: Associated pull request number for completed tasks
+- **notes**: Additional context, lessons learned, or implementation details
 
 ## 🎯 How to Use for Commit Planning
 
@@ -112,13 +116,25 @@ Update task status by adding columns or using project management tools:
 - **Start Date**: When work began
 - **Completion Date**: When task was finished
 
-### 3. Success Validation
+### 3. Success Validation and Completion Tracking
 Before marking a task complete, verify all success criteria:
 - [ ] Functional requirements met
 - [ ] Performance benchmarks achieved  
 - [ ] Tests written and passing
 - [ ] Documentation updated
 - [ ] Code review completed
+- [ ] PR merged to main branch
+
+**Completion Tracking Process:**
+1. Update task status to "completed" in tasks.csv
+2. Add completion_date (YYYY-MM-DD format)
+3. Record pr_number for traceability
+4. Add implementation notes for future reference
+
+Example completion update:
+```csv
+TASK-021,Comparison Mode Tabla de Cálculos,"...",High,1 day,feature,feature/comparison-calculations-table,none,"...","...",completed,2025-08-13,3,"Thesis-critical feature for detailed technical analysis. Includes CSV export functionality."
+```
 
 ## 🎨 Commit Planning Strategies
 
@@ -184,7 +200,7 @@ TASK-009 (CI/CD) → TASK-016 (Integration Tests)
 
 ### Adding New Tasks:
 ```csv
-TASK-021,New Feature Title,"Description of new requirement",Medium,3 days,feature,feature/new-feature,TASK-001,"Success criteria here","files/to/modify.tsx"
+TASK-027,New Feature Title,"Description of new requirement",Medium,3 days,feature,feature/new-feature,TASK-001,"Success criteria here","files/to/modify.tsx",pending,,,,
 ```
 
 ### Modifying Existing Tasks:
@@ -192,6 +208,22 @@ TASK-021,New Feature Title,"Description of new requirement",Medium,3 days,featur
 - Adjust priorities based on business needs
 - Add discovered dependencies
 - Refine success criteria
+- Update status as work progresses
+- Record completion details for tracking
+
+### Thesis-Specific Task Management:
+For thesis work, prioritize tasks that support academic analysis:
+- **TASK-021**: ✅ Completed - Comparison Tabla de Cálculos for detailed technical analysis
+- **TASK-023**: High-res chart/card export for thesis figures (300 DPI PNG/SVG)
+- **TASK-024**: Enhanced CSV export for academic data analysis
+- **TASK-025**: Transfer station valorization scenarios (MRF, composting, biogas)
+- **TASK-026**: Waste separation at generation modeling
+
+**Current Thesis Sprint Focus (1 week timeline):**
+1. High-resolution exports for thesis documentation
+2. Enhanced data export functionality  
+3. Transfer station improvement scenarios
+4. Source separation modeling capabilities
 
 ## 🎯 Best Practices
 
