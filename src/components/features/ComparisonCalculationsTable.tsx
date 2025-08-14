@@ -80,6 +80,10 @@ const ComparisonCalculationsTable: React.FC<ComparisonCalculationsTableProps> = 
         ['  - Recuperado Alta Calidad (Origen)', calculationRows.map(row => formatNumber(row.data.recoverySource, 2)), 'ton/día'],
         ['  - Recuperado Baja Calidad (Planta)', calculationRows.map(row => formatNumber(row.data.recoveryPlant, 2)), 'ton/día'],
         ['  - Fuga en Planta', calculationRows.map(row => formatNumber(row.data.leakTransferStation, 2)), 'ton/día'],
+        ['  - Material Valorizado Total', calculationRows.map(row => formatNumber(row.data.totalValorized, 2)), 'ton/día'],
+        ['    - Compostaje', calculationRows.map(row => formatNumber(row.data.composted, 2)), 'ton/día'],
+        ['    - Biogás', calculationRows.map(row => formatNumber(row.data.biogas, 2)), 'ton/día'],
+        ['    - Pirólisis', calculationRows.map(row => formatNumber(row.data.pyrolyzed, 2)), 'ton/día'],
         ['Material para Traslado Final', calculationRows.map(row => formatNumber(row.data.toFinalTransport, 2)), 'ton/día'],
         
         // FINAL DISPOSAL SECTION
@@ -100,6 +104,12 @@ const ComparisonCalculationsTable: React.FC<ComparisonCalculationsTableProps> = 
         ['  - Costo de Transferencia', calculationRows.map(row => formatNumber(row.data.totalTransferCost, 2)), 'MXN/día'],
         ['  - Costo de Traslado Final', calculationRows.map(row => formatNumber(row.data.totalFinalTransportCost, 2)), 'MXN/día'],
         ['  - Costo de Disposición Final', calculationRows.map(row => formatNumber(row.data.totalDisposalCost, 2)), 'MXN/día'],
+        ['  - Costos de Valorización', calculationRows.map(row => formatNumber(row.data.valorizationCosts, 2)), 'MXN/día'],
+        ['  - Ingresos de Valorización', calculationRows.map(row => formatNumber(row.data.valorizationIncomes, 2)), 'MXN/día'],
+        ['Programas de Separación (Costos)', calculationRows.map(row => formatNumber(row.data.separationProgramCosts, 2)), 'MXN/día'],
+        ['  - Educación', calculationRows.map(row => formatNumber(row.data.educationCosts, 2)), 'MXN/día'],
+        ['  - Incentivos', calculationRows.map(row => formatNumber(row.data.incentiveCosts, 2)), 'MXN/día'],
+        ['  - Contenedores', calculationRows.map(row => formatNumber(row.data.containerCosts, 2)), 'MXN/día'],
         ['Costo Neto del Sistema RSU', calculationRows.map(row => formatNumber(row.data.netCostPerDay, 2)), 'MXN/día']
       ];
       
@@ -184,7 +194,24 @@ const ComparisonCalculationsTable: React.FC<ComparisonCalculationsTableProps> = 
           totalCollectionCost: data.totalCollectionCost,
           totalTransferCost: data.totalTransferCost,
           totalFinalTransportCost: data.totalFinalTransportCost,
-          totalDisposalCost: data.totalDisposalCost
+          totalDisposalCost: data.totalDisposalCost,
+          
+          // Valorization metrics
+          totalValorized: (kpis.valorization?.composted || 0) + (kpis.valorization?.biogas || 0) + (kpis.valorization?.pyrolyzed || 0),
+          composted: kpis.valorization?.composted || 0,
+          biogas: kpis.valorization?.biogas || 0,
+          pyrolyzed: kpis.valorization?.pyrolyzed || 0,
+          valorizationCosts: kpis.valorizationCosts || 0,
+          valorizationIncomes: kpis.valorizationIncomes || 0,
+          
+          // Separation program costs
+          separationProgramCosts: kpis.separationProgramCosts || 0,
+          educationCosts: scenario.inputs.separationScenarios?.educationProgram?.enableEducation ? 
+            ((scenario.inputs.general.fixedPopulation + 500) * scenario.inputs.separationScenarios.educationProgram.educationCostPerCapita) / 365 : 0,
+          incentiveCosts: scenario.inputs.separationScenarios?.incentiveProgram?.enableIncentives ? 
+            rsuKpis.recoveryByStage.source * scenario.inputs.separationScenarios.incentiveProgram.incentiveCostPerTon : 0,
+          containerCosts: scenario.inputs.separationScenarios?.containerProgram?.enableContainers ? 
+            ((scenario.inputs.generation.hotels.units + scenario.inputs.generation.restaurants.units + scenario.inputs.generation.commerce.units + Math.ceil(scenario.inputs.general.fixedPopulation / 100)) * scenario.inputs.separationScenarios.containerProgram.containerCostPerUnit / 5) / 365 : 0
         }
       };
     });
@@ -372,6 +399,27 @@ const ComparisonCalculationsTable: React.FC<ComparisonCalculationsTableProps> = 
                 highlight={true}
               />
               <TableRow 
+                label="  - Material Valorizado Total" 
+                values={calculationRows.map(row => row.data.totalValorized)} 
+                unit="ton/día" 
+                bold={true}
+              />
+              <TableRow 
+                label="    - Compostaje" 
+                values={calculationRows.map(row => row.data.composted)} 
+                unit="ton/día"
+              />
+              <TableRow 
+                label="    - Biogás" 
+                values={calculationRows.map(row => row.data.biogas)} 
+                unit="ton/día"
+              />
+              <TableRow 
+                label="    - Pirólisis" 
+                values={calculationRows.map(row => row.data.pyrolyzed)} 
+                unit="ton/día"
+              />
+              <TableRow 
                 label="Material para Traslado Final" 
                 values={calculationRows.map(row => row.data.toFinalTransport)} 
                 unit="ton/día" 
@@ -457,6 +505,41 @@ const ComparisonCalculationsTable: React.FC<ComparisonCalculationsTableProps> = 
                 values={calculationRows.map(row => row.data.totalDisposalCost)} 
                 unit="MXN/día"
               />
+              <TableRow 
+                label="  - Costos de Valorización" 
+                values={calculationRows.map(row => row.data.valorizationCosts)} 
+                unit="MXN/día"
+              />
+              <TableRow 
+                label="  - Ingresos de Valorización" 
+                values={calculationRows.map(row => row.data.valorizationIncomes)} 
+                unit="MXN/día"
+              />
+              
+              {/* Separation Programs Section */}
+              <TableRow isTitle={true} label="PROGRAMAS DE SEPARACIÓN Y MEJORA" values={[]} unit="" />
+              <TableRow 
+                label="Programas de Separación (Costos)" 
+                values={calculationRows.map(row => row.data.separationProgramCosts)} 
+                unit="MXN/día" 
+                bold={true}
+              />
+              <TableRow 
+                label="  - Educación" 
+                values={calculationRows.map(row => row.data.educationCosts)} 
+                unit="MXN/día"
+              />
+              <TableRow 
+                label="  - Incentivos" 
+                values={calculationRows.map(row => row.data.incentiveCosts)} 
+                unit="MXN/día"
+              />
+              <TableRow 
+                label="  - Contenedores" 
+                values={calculationRows.map(row => row.data.containerCosts)} 
+                unit="MXN/día"
+              />
+              
               <TableRow 
                 label="Costo Neto del Sistema RSU" 
                 values={calculationRows.map(row => row.data.netCostPerDay)} 

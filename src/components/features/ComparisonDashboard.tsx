@@ -49,6 +49,8 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
   // Prepare comparison data for key metrics
   const comparisonMetrics = scenarioResults.map(scenario => {
     const kpis = season === 'high' ? scenario.results.high : scenario.results.low;
+    const totalValorized = (kpis.valorization?.composted || 0) + (kpis.valorization?.biogas || 0) + (kpis.valorization?.pyrolyzed || 0);
+    
     return {
       name: scenario.name,
       totalGeneration: kpis.totalGeneration,
@@ -59,7 +61,27 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
       recoveryPlant: kpis.rsu.recoveryByStage.plant,
       recoveryInformal: kpis.rsu.recoveryByStage.informal,
       toDisposal: kpis.rsu.toDisposal,
-      totalLeak: kpis.rsu.totalLeak
+      totalLeak: kpis.rsu.totalLeak,
+      
+      // Valorization metrics
+      totalValorized: totalValorized,
+      composted: kpis.valorization?.composted || 0,
+      biogas: kpis.valorization?.biogas || 0,
+      pyrolyzed: kpis.valorization?.pyrolyzed || 0,
+      valorizationIncomes: kpis.valorizationIncomes || 0,
+      valorizationCosts: kpis.valorizationCosts || 0,
+      valorizationNetBenefit: (kpis.valorizationIncomes || 0) - (kpis.valorizationCosts || 0),
+      
+      // Separation program metrics
+      separationProgramCosts: kpis.separationProgramCosts || 0,
+      enhancedSeparationImpact: Object.values(kpis.enhancedSeparationRates || {}).length > 0 ? 
+        (Object.values(kpis.enhancedSeparationRates).reduce((a, b) => a + b, 0) / Object.values(kpis.enhancedSeparationRates).length) - 18.75 : 0,
+        
+      // Overall recovery rate including valorization
+      totalRecoveryRate: ((kpis.rsu.recoveryByStage.source + kpis.rsu.recoveryByStage.plant + totalValorized) / kpis.rsu.totalGeneration) * 100,
+      
+      // Cost per ton including all programs
+      costPerTonGenerated: kpis.totalSystemCost / kpis.rsu.totalGeneration
     };
   });
 
@@ -80,7 +102,7 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
     return (
       <div className="space-y-6">
         {/* KPI Comparison Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           <ChartExportWrapper
             title="Generación Total"
             subtitle="ton/día"
@@ -152,7 +174,164 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
               ))}
             </div>
           </ChartExportWrapper>
+
+          <ChartExportWrapper
+            title="Valorización Total"
+            subtitle="ton/día"
+            enableExport={true}
+          >
+            <div className="space-y-2">
+              {comparisonMetrics.map((metric, index) => (
+                <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
+                     style={{backgroundColor: `${colors[index % colors.length]}15`}}>
+                  <span className="text-sm font-medium truncate mr-2">{metric.name}</span>
+                  <span className={`font-bold ${metric.totalValorized > 0 ? 'text-purple-600' : 'text-gray-400'}`}>
+                    {formatNumber(metric.totalValorized, 1)}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </ChartExportWrapper>
         </div>
+
+        {/* Valorization and Separation Programs Impact */}
+        {comparisonMetrics.some(m => m.totalValorized > 0 || m.separationProgramCosts > 0) && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+            <ChartExportWrapper
+              title="Beneficio Neto Valorización"
+              subtitle="MXN/día"
+              enableExport={true}
+            >
+              <div className="space-y-2">
+                {comparisonMetrics.map((metric, index) => (
+                  <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
+                       style={{backgroundColor: `${colors[index % colors.length]}15`}}>
+                    <span className="text-sm font-medium truncate mr-2">{metric.name}</span>
+                    <span className={`font-bold ${metric.valorizationNetBenefit >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                      {formatNumber(metric.valorizationNetBenefit, 0)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </ChartExportWrapper>
+
+            <ChartExportWrapper
+              title="Costo Programas Separación"
+              subtitle="MXN/día"
+              enableExport={true}
+            >
+              <div className="space-y-2">
+                {comparisonMetrics.map((metric, index) => (
+                  <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
+                       style={{backgroundColor: `${colors[index % colors.length]}15`}}>
+                    <span className="text-sm font-medium truncate mr-2">{metric.name}</span>
+                    <span className={`font-bold ${metric.separationProgramCosts > 0 ? 'text-blue-600' : 'text-gray-400'}`}>
+                      {formatNumber(metric.separationProgramCosts, 0)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </ChartExportWrapper>
+
+            <ChartExportWrapper
+              title="Mejora en Separación"
+              subtitle="% puntos"
+              enableExport={true}
+            >
+              <div className="space-y-2">
+                {comparisonMetrics.map((metric, index) => (
+                  <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
+                       style={{backgroundColor: `${colors[index % colors.length]}15`}}>
+                    <span className="text-sm font-medium truncate mr-2">{metric.name}</span>
+                    <span className={`font-bold ${metric.enhancedSeparationImpact > 0 ? 'text-green-600' : 'text-gray-400'}`}>
+                      {formatNumber(metric.enhancedSeparationImpact, 1)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </ChartExportWrapper>
+
+            <ChartExportWrapper
+              title="Tasa Recuperación Total"
+              subtitle="% (incl. valorización)"
+              enableExport={true}
+            >
+              <div className="space-y-2">
+                {comparisonMetrics.map((metric, index) => (
+                  <div key={metric.name} className="flex justify-between items-center p-2 rounded" 
+                       style={{backgroundColor: `${colors[index % colors.length]}15`}}>
+                    <span className="text-sm font-medium truncate mr-2">{metric.name}</span>
+                    <span className="font-bold text-green-600">
+                      {formatNumber(metric.totalRecoveryRate, 1)}%
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </ChartExportWrapper>
+          </div>
+        )}
+
+        {/* Valorization Breakdown Comparison */}
+        {comparisonMetrics.some(m => m.totalValorized > 0) && (
+          <ChartExportWrapper
+            title="Comparación de Procesos de Valorización"
+            subtitle="Distribución de material valorizado por proceso y escenario"
+            enableExport={true}
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              <div>
+                <h4 className="font-semibold mb-4 text-green-700">Compostaje (ton/día)</h4>
+                <ResponsiveContainer width="100%" height={200}>
+                  <BarChart data={comparisonMetrics} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" angle={-45} textAnchor="end" height={80} />
+                    <YAxis />
+                    <Tooltip formatter={(value) => `${formatNumber(value, 2)} ton/día`} />
+                    <Bar dataKey="composted" fill="#16a34a">
+                      {comparisonMetrics.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-4 text-blue-700">Biogás (ton/día)</h4>
+                <ResponsiveContainer width="100%" height={200}>
+                  <BarChart data={comparisonMetrics} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" angle={-45} textAnchor="end" height={80} />
+                    <YAxis />
+                    <Tooltip formatter={(value) => `${formatNumber(value, 2)} ton/día`} />
+                    <Bar dataKey="biogas" fill="#2563eb">
+                      {comparisonMetrics.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              
+              <div>
+                <h4 className="font-semibold mb-4 text-orange-700">Pirólisis (ton/día)</h4>
+                <ResponsiveContainer width="100%" height={200}>
+                  <BarChart data={comparisonMetrics} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" angle={-45} textAnchor="end" height={80} />
+                    <YAxis />
+                    <Tooltip formatter={(value) => `${formatNumber(value, 2)} ton/día`} />
+                    <Bar dataKey="pyrolyzed" fill="#ea580c">
+                      {comparisonMetrics.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          </ChartExportWrapper>
+        )}
 
         {/* Comparative Charts */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -260,6 +439,8 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
                   <th className="text-right p-2 font-semibold">Recup. Origen</th>
                   <th className="text-right p-2 font-semibold">A Disposición</th>
                   <th className="text-right p-2 font-semibold">Fuga Total</th>
+                  <th className="text-right p-2 font-semibold">Valorizado</th>
+                  <th className="text-right p-2 font-semibold">Prog. Separación</th>
                 </tr>
               </thead>
               <tbody>
@@ -275,6 +456,12 @@ const ComparisonDashboard: React.FC<ComparisonDashboardProps> = ({ scenarios, se
                     <td className="p-2 text-right text-green-600">{formatNumber(metric.recoverySource, 2)}</td>
                     <td className="p-2 text-right text-slate-600">{formatNumber(metric.toDisposal, 2)}</td>
                     <td className="p-2 text-right text-red-600">{formatNumber(metric.totalLeak, 2)}</td>
+                    <td className={`p-2 text-right font-medium ${metric.totalValorized > 0 ? 'text-purple-600' : 'text-gray-400'}`}>
+                      {formatNumber(metric.totalValorized, 2)}
+                    </td>
+                    <td className={`p-2 text-right font-medium ${metric.separationProgramCosts > 0 ? 'text-blue-600' : 'text-gray-400'}`}>
+                      {formatNumber(metric.separationProgramCosts, 0)}
+                    </td>
                   </tr>
                 ))}
               </tbody>
