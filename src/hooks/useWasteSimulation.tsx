@@ -20,6 +20,40 @@ export const useWasteSimulation = (inputs: any) => {
             for (let day = 0; day < SIMULATION_DAYS; day++) {
                 const occupancy = currentSeason === 'high' ? inputs.general.highSeasonOccupancy : inputs.general.lowSeasonOccupancy;
                 
+                // --- ENHANCED SEPARATION SCENARIOS ---
+                // Calculate enhanced separation rates based on active programs
+                const getEnhancedSeparationRate = (baseRate, source) => {
+                    let enhancedRate = baseRate;
+                    
+                    // Education Program Impact
+                    if (inputs.separationScenarios?.educationProgram?.enableEducation) {
+                        const educationImpact = inputs.separationScenarios.educationProgram[`educationImpact${source.charAt(0).toUpperCase() + source.slice(1)}`] || 0;
+                        enhancedRate += educationImpact;
+                    }
+                    
+                    // Incentive Program Impact
+                    if (inputs.separationScenarios?.incentiveProgram?.enableIncentives) {
+                        const incentiveImpact = inputs.separationScenarios.incentiveProgram[`incentiveImpact${source.charAt(0).toUpperCase() + source.slice(1)}`] || 0;
+                        enhancedRate += incentiveImpact;
+                    }
+                    
+                    // Container Program Impact
+                    if (inputs.separationScenarios?.containerProgram?.enableContainers) {
+                        const containerImpact = inputs.separationScenarios.containerProgram[`containerImpact${source.charAt(0).toUpperCase() + source.slice(1)}`] || 0;
+                        enhancedRate += containerImpact;
+                    }
+                    
+                    return Math.min(enhancedRate, 95); // Cap at 95% maximum separation rate
+                };
+                
+                // Apply enhanced separation rates
+                const enhancedSeparationRates = {
+                    hotels: getEnhancedSeparationRate(inputs.generation.hotels.sourceSeparationRate, 'hotels'),
+                    restaurants: getEnhancedSeparationRate(inputs.generation.restaurants.sourceSeparationRate, 'restaurants'),
+                    homes: getEnhancedSeparationRate(inputs.generation.homes.sourceSeparationRate, 'homes'),
+                    commerce: getEnhancedSeparationRate(inputs.generation.commerce.sourceSeparationRate, 'commerce'),
+                };
+                
                 // --- FLOW 1: RSU (Residuos Sólidos Urbanos) ---
                 const genBySource = {
                     hotels: (inputs.generation.hotels.units * occupancy / 100) * inputs.generation.hotels.rate / 1000,
@@ -82,7 +116,8 @@ export const useWasteSimulation = (inputs: any) => {
                 valorizableTypes.forEach(m => {
                     let sourceSeparatedAmount = 0;
                     for (const source in genBySource) {
-                        sourceSeparatedAmount += (genBySource[source] * (inputs.composition[source][m] / 100)) * (inputs.generation[source].sourceSeparationRate / 100);
+                        // Use enhanced separation rates instead of base rates
+                        sourceSeparatedAmount += (genBySource[source] * (inputs.composition[source][m] / 100)) * (enhancedSeparationRates[source] / 100);
                     }
                     const captured = sourceSeparatedAmount * (inputs.rsuSystem.separation.differentiatedCaptureRate / 100) * collectedRatio * processedRatio;
                     recoveredHighQuality[m] = captured * (1 - inputs.rsuSystem.separation.rejectionRateSource / 100);
@@ -94,8 +129,50 @@ export const useWasteSimulation = (inputs: any) => {
                 });
 
                 const totalRecoveredAtStation = Object.values(recoveredHighQuality).reduce((a,b)=>a+b,0) + Object.values(recoveredLowQualityPlant).reduce((a,b)=>a+b,0);
+                
+                // --- VALORIZATION PROCESSES AT TRANSFER STATION ---
+                let valorizedMaterials = {
+                    composted: 0,
+                    biogas: 0,
+                    pyrolyzed: 0
+                };
+                let valorizationCosts = 0;
+                let valorizationIncomes = 0;
+                
+                const availableOrganics = processedByMaterial.organicos || 0;
+                const availablePlastics = (processedByMaterial.pet || 0);
+                
+                // Composting Process
+                if (inputs.rsuSystem.valorization?.enableComposting && availableOrganics > 0) {
+                    const organicsToCompost = availableOrganics * (inputs.rsuSystem.valorization.compostingEfficiency / 100);
+                    valorizedMaterials.composted = organicsToCompost;
+                    valorizationCosts += organicsToCompost * inputs.rsuSystem.valorization.compostingCost;
+                    valorizationIncomes += organicsToCompost * inputs.rsuSystem.valorization.compostIncome;
+                }
+                
+                // Biogas Process (can't overlap with composting for same organics)
+                if (inputs.rsuSystem.valorization?.enableBiogas && availableOrganics > 0) {
+                    const remainingOrganics = availableOrganics - valorizedMaterials.composted;
+                    if (remainingOrganics > 0) {
+                        const organicsForBiogas = remainingOrganics * (inputs.rsuSystem.valorization.biogasEfficiency / 100);
+                        valorizedMaterials.biogas = organicsForBiogas;
+                        valorizationCosts += organicsForBiogas * inputs.rsuSystem.valorization.biogasCost;
+                        valorizationIncomes += organicsForBiogas * inputs.rsuSystem.valorization.biogasIncome;
+                    }
+                }
+                
+                // Plastic Pyrolysis Process
+                if (inputs.rsuSystem.valorization?.enablePlasticPyrolysis && availablePlastics > 0) {
+                    const plasticsForPyrolysis = availablePlastics * (inputs.rsuSystem.valorization.pyrolysisEfficiency / 100);
+                    valorizedMaterials.pyrolyzed = plasticsForPyrolysis;
+                    valorizationCosts += plasticsForPyrolysis * inputs.rsuSystem.valorization.pyrolysisCost;
+                    valorizationIncomes += plasticsForPyrolysis * inputs.rsuSystem.valorization.pyrolysisIncome;
+                }
+                
+                const totalValorizedMaterials = valorizedMaterials.composted + valorizedMaterials.biogas + valorizedMaterials.pyrolyzed;
+                
                 const leakTransferStation = materialProcessedToday * (inputs.rsuSystem.leaks.transferStationLeak / 100);
-                const materialLeavingStation = materialProcessedToday - totalRecoveredAtStation - leakTransferStation;
+                const materialLeavingStation = materialProcessedToday - totalRecoveredAtStation - totalValorizedMaterials - leakTransferStation;
 
                 // Update final transport inventory
                 finalTransportInventory += materialLeavingStation;
@@ -127,13 +204,13 @@ export const useWasteSimulation = (inputs: any) => {
                 const totalTransferCost = materialProcessedToday * inputs.rsuSystem.economics.transferStationCost;
                 const totalFinalTransportCost = actualFinalTransport * inputs.rsuSystem.economics.finalTransportCost;
                 const totalDisposalCost = toDisposalSite * inputs.rsuSystem.economics.disposalCost;
-                const totalRsuCosts = totalCollectionCost + totalTransferCost + totalFinalTransportCost + totalDisposalCost;
+                const totalRsuCosts = totalCollectionCost + totalTransferCost + totalFinalTransportCost + totalDisposalCost + valorizationCosts;
 
                 const incomeByMaterial: any = {};
                 valorizableTypes.forEach(m => {
                     incomeByMaterial[m] = ((recoveredHighQuality[m] || 0) + (recoveredLowQualityPlant[m] || 0)) * inputs.rsuSystem.economics.income[m];
                 });
-                const totalRsuIncome = Object.values(incomeByMaterial).reduce((a, b) => a + b, 0);
+                const totalRsuIncome = Object.values(incomeByMaterial).reduce((a, b) => a + b, 0) + valorizationIncomes;
                 const netRsuCost = totalRsuCosts - totalRsuIncome;
 
                 const rsuLeaks = collectionDeficit + leakCollection + leakTransferStation + leakFinalTransport + leakDisposal;
@@ -143,6 +220,33 @@ export const useWasteSimulation = (inputs: any) => {
                     informal: informalRecoveryCollection + informalRecoveryDisposal,
                 };
                 
+                // --- SEPARATION SCENARIO COSTS ---
+                let separationProgramCosts = 0;
+                
+                // Education Program Costs
+                if (inputs.separationScenarios?.educationProgram?.enableEducation) {
+                    const annualEducationCost = inputs.general.fixedPopulation * inputs.separationScenarios.educationProgram.educationCostPerCapita;
+                    const touristPopulation = (inputs.generation.hotels.units * occupancy / 100) + 
+                                            inputs.generation.restaurants.units * 3 + // Estimate 3 people per restaurant
+                                            inputs.generation.commerce.units * 2; // Estimate 2 people per commerce
+                    const totalEducationCost = (inputs.general.fixedPopulation + touristPopulation) * inputs.separationScenarios.educationProgram.educationCostPerCapita;
+                    separationProgramCosts += totalEducationCost / 365; // Convert annual to daily cost
+                }
+                
+                // Incentive Program Costs
+                if (inputs.separationScenarios?.incentiveProgram?.enableIncentives) {
+                    const totalSeparatedMaterial = Object.values(recoveredHighQuality).reduce((a, b) => a + b, 0);
+                    separationProgramCosts += totalSeparatedMaterial * inputs.separationScenarios.incentiveProgram.incentiveCostPerTon;
+                }
+                
+                // Container Program Costs (one-time cost amortized over 5 years)
+                if (inputs.separationScenarios?.containerProgram?.enableContainers) {
+                    const totalUnits = inputs.generation.hotels.units + inputs.generation.restaurants.units + 
+                                     inputs.generation.commerce.units + Math.ceil(inputs.general.fixedPopulation / 100);
+                    const annualContainerCost = totalUnits * inputs.separationScenarios.containerProgram.containerCostPerUnit / 5; // 5-year amortization
+                    separationProgramCosts += annualContainerCost / 365; // Convert annual to daily cost
+                }
+                
                 // --- FLOW 2 & 3: Special Wastes (Sargassum & RCD) ---
                 const sargassumGeneration = currentSeason === 'high' ? inputs.specialWasteGeneration.sargassumHigh : inputs.specialWasteGeneration.sargassumLow;
                 const rcdGeneration = inputs.specialWasteGeneration.construction;
@@ -150,11 +254,16 @@ export const useWasteSimulation = (inputs: any) => {
                 const rcdCost = rcdGeneration * (inputs.rcdManagement.collectionCost + inputs.rcdManagement.disposalCost);
 
                 // --- FINAL CONSOLIDATION ---
-                const totalSystemCost = netRsuCost + sargassumCost + rcdCost;
+                const totalSystemCost = netRsuCost + sargassumCost + rcdCost + separationProgramCosts;
                 
                 dailyResults.push({
                     totalGeneration: genRSU + sargassumGeneration + rcdGeneration,
                     sargassumGeneration, rcdGeneration, sargassumCost, rcdCost, totalSystemCost,
+                    valorization: valorizedMaterials,
+                    valorizationCosts,
+                    valorizationIncomes,
+                    separationProgramCosts,
+                    enhancedSeparationRates,
                     rsu: {
                         totalGeneration: genRSU,
                         collectionDeficit,
@@ -211,6 +320,11 @@ export const useWasteSimulation = (inputs: any) => {
                 sargassumCost: avg(stablePeriodResults.map(r => r.sargassumCost)),
                 rcdCost: avg(stablePeriodResults.map(r => r.rcdCost)),
                 totalSystemCost: avg(stablePeriodResults.map(r => r.totalSystemCost)),
+                valorization: avgObj(stablePeriodResults.map(r => r.valorization)),
+                valorizationCosts: avg(stablePeriodResults.map(r => r.valorizationCosts)),
+                valorizationIncomes: avg(stablePeriodResults.map(r => r.valorizationIncomes)),
+                separationProgramCosts: avg(stablePeriodResults.map(r => r.separationProgramCosts)),
+                enhancedSeparationRates: avgObj(stablePeriodResults.map(r => r.enhancedSeparationRates)),
                 rsu: {
                     totalGeneration: avg(stablePeriodResults.map(r => r.rsu.totalGeneration)),
                     collectionDeficit: avg(stablePeriodResults.map(r => r.rsu.collectionDeficit)),

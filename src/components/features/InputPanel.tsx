@@ -2,7 +2,7 @@
 // FILE: src/components/features/InputPanel.js
 // ========================================================================
 import React from 'react';
-import { Factory, Package, Warehouse, Recycle, AlertTriangle, Droplets, Wrench } from 'lucide-react';
+import { Factory, Package, Warehouse, Recycle, AlertTriangle, Droplets, Wrench, Leaf, Users, Gift } from 'lucide-react';
 import Card from '../ui/Card.tsx';
 import CardHeader from '../ui/CardHeader.tsx';
 import InputField from '../ui/InputField.tsx';
@@ -22,6 +22,35 @@ const InputPanel = ({ inputs, setInputs }) => {
             [cat1]: {
                 ...prev[cat1],
                 [cat2]: { ...prev[cat1][cat2], [field]: parseFloat(value) || 0 }
+            }
+        }));
+    };
+    
+    const handleTripleNestedInputChange = (cat1, cat2, cat3, field, value) => {
+        setInputs(prev => ({
+            ...prev,
+            [cat1]: {
+                ...prev[cat1] || {},
+                [cat2]: {
+                    ...prev[cat1]?.[cat2] || {},
+                    [cat3]: { 
+                        ...prev[cat1]?.[cat2]?.[cat3] || {}, 
+                        [field]: field === '' ? value : (parseFloat(value) || 0)
+                    }
+                }
+            }
+        }));
+    };
+    
+    const handleBooleanChange = (cat1, cat2, field, value) => {
+        setInputs(prev => ({
+            ...prev,
+            [cat1]: {
+                ...prev[cat1] || {},
+                [cat2]: { 
+                    ...prev[cat1]?.[cat2] || {}, 
+                    [field]: value 
+                }
             }
         }));
     };
@@ -176,6 +205,116 @@ const InputPanel = ({ inputs, setInputs }) => {
                     </div>
                 </Card>
 
+                {/* Waste Valorization Scenarios */}
+                <Card>
+                    <CardHeader title="Valorización: Compostaje" icon={<Leaf size={24} />} />
+                    <div className="space-y-4">
+                        <div className="flex items-center space-x-2">
+                            <input 
+                                type="checkbox" 
+                                id="enableComposting"
+                                checked={inputs.rsuSystem.valorization?.enableComposting || false}
+                                onChange={e => handleBooleanChange('rsuSystem', 'valorization', 'enableComposting', e.target.checked)}
+                                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            />
+                            <label htmlFor="enableComposting" className="text-sm font-medium text-gray-700">Habilitar Compostaje</label>
+                        </div>
+                        <InputField 
+                            label="Eficiencia de Compostaje" 
+                            value={inputs.rsuSystem.valorization?.compostingEfficiency || 80} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'valorization', 'compostingEfficiency', e.target.value)} 
+                            unit="%" 
+                            disabled={!inputs.rsuSystem.valorization?.enableComposting}
+                        />
+                        <InputField 
+                            label="Costo de Compostaje" 
+                            value={inputs.rsuSystem.valorization?.compostingCost || 200} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'valorization', 'compostingCost', e.target.value)} 
+                            unit="MXN/ton" 
+                            disabled={!inputs.rsuSystem.valorization?.enableComposting}
+                        />
+                        <InputField 
+                            label="Ingresos por Compost" 
+                            value={inputs.rsuSystem.valorization?.compostIncome || 500} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'valorization', 'compostIncome', e.target.value)} 
+                            unit="MXN/ton" 
+                            disabled={!inputs.rsuSystem.valorization?.enableComposting}
+                        />
+                    </div>
+                </Card>
+                <Card>
+                    <CardHeader title="Valorización: Biogás" icon={<Leaf size={24} />} />
+                    <div className="space-y-4">
+                        <div className="flex items-center space-x-2">
+                            <input 
+                                type="checkbox" 
+                                id="enableBiogas"
+                                checked={inputs.rsuSystem.valorization?.enableBiogas || false}
+                                onChange={e => handleBooleanChange('rsuSystem', 'valorization', 'enableBiogas', e.target.checked)}
+                                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            />
+                            <label htmlFor="enableBiogas" className="text-sm font-medium text-gray-700">Habilitar Biogás</label>
+                        </div>
+                        <InputField 
+                            label="Eficiencia de Biogás" 
+                            value={inputs.rsuSystem.valorization?.biogasEfficiency || 60} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'valorization', 'biogasEfficiency', e.target.value)} 
+                            unit="%" 
+                            disabled={!inputs.rsuSystem.valorization?.enableBiogas}
+                        />
+                        <InputField 
+                            label="Costo de Biogás" 
+                            value={inputs.rsuSystem.valorization?.biogasCost || 300} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'valorization', 'biogasCost', e.target.value)} 
+                            unit="MXN/ton" 
+                            disabled={!inputs.rsuSystem.valorization?.enableBiogas}
+                        />
+                        <InputField 
+                            label="Ingresos por Biogás" 
+                            value={inputs.rsuSystem.valorization?.biogasIncome || 800} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'valorization', 'biogasIncome', e.target.value)} 
+                            unit="MXN/ton" 
+                            disabled={!inputs.rsuSystem.valorization?.enableBiogas}
+                        />
+                    </div>
+                </Card>
+                <Card>
+                    <CardHeader title="Valorización: Pirólisis Plásticos" icon={<Recycle size={24} />} />
+                    <div className="space-y-4">
+                        <div className="flex items-center space-x-2">
+                            <input 
+                                type="checkbox" 
+                                id="enablePlasticPyrolysis"
+                                checked={inputs.rsuSystem.valorization?.enablePlasticPyrolysis || false}
+                                onChange={e => handleBooleanChange('rsuSystem', 'valorization', 'enablePlasticPyrolysis', e.target.checked)}
+                                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            />
+                            <label htmlFor="enablePlasticPyrolysis" className="text-sm font-medium text-gray-700">Habilitar Pirólisis</label>
+                        </div>
+                        <InputField 
+                            label="Eficiencia de Pirólisis" 
+                            value={inputs.rsuSystem.valorization?.pyrolysisEfficiency || 70} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'valorization', 'pyrolysisEfficiency', e.target.value)} 
+                            unit="%" 
+                            disabled={!inputs.rsuSystem.valorization?.enablePlasticPyrolysis}
+                        />
+                        <InputField 
+                            label="Costo de Pirólisis" 
+                            value={inputs.rsuSystem.valorization?.pyrolysisCost || 400} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'valorization', 'pyrolysisCost', e.target.value)} 
+                            unit="MXN/ton" 
+                            disabled={!inputs.rsuSystem.valorization?.enablePlasticPyrolysis}
+                        />
+                        <InputField 
+                            label="Ingresos por Pirólisis" 
+                            value={inputs.rsuSystem.valorization?.pyrolysisIncome || 600} 
+                            onChange={e => handleNestedInputChange('rsuSystem', 'valorization', 'pyrolysisIncome', e.target.value)} 
+                            unit="MXN/ton" 
+                            disabled={!inputs.rsuSystem.valorization?.enablePlasticPyrolysis}
+                        />
+                    </div>
+                </Card>
+
                 {/* Special Waste Cards */}
                  <Card>
                     <CardHeader title="Generación Residuos Especiales" icon={<AlertTriangle size={24} />} />
@@ -197,6 +336,165 @@ const InputPanel = ({ inputs, setInputs }) => {
                     <div className="space-y-4">
                         <InputField label="Costo Recolección" value={inputs.rcdManagement.collectionCost} onChange={e => handleNestedInputChange('rcdManagement', 'collectionCost', '', e.target.value)} unit="MXN/ton" />
                         <InputField label="Costo Disposición/Trat." value={inputs.rcdManagement.disposalCost} onChange={e => handleNestedInputChange('rcdManagement', 'disposalCost', '', e.target.value)} unit="MXN/ton" />
+                    </div>
+                </Card>
+            </div>
+
+            <h3 className="text-2xl font-bold text-slate-900 mt-8 mb-6">Escenarios de Separación en Origen</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                {/* Education Program Card */}
+                <Card>
+                    <CardHeader title="Programa de Educación" icon={<Users size={24} />} />
+                    <div className="space-y-4">
+                        <div className="flex items-center space-x-2">
+                            <input 
+                                type="checkbox" 
+                                id="enableEducation"
+                                checked={inputs.separationScenarios?.educationProgram?.enableEducation || false}
+                                onChange={e => handleTripleNestedInputChange('separationScenarios', 'educationProgram', 'enableEducation', '', e.target.checked ? 1 : 0)}
+                                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            />
+                            <label htmlFor="enableEducation" className="text-sm font-medium text-gray-700">Habilitar Educación</label>
+                        </div>
+                        <InputField 
+                            label="Impacto Hoteles" 
+                            value={inputs.separationScenarios?.educationProgram?.educationImpactHotels || 15} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'educationProgram', 'educationImpactHotels', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.educationProgram?.enableEducation}
+                        />
+                        <InputField 
+                            label="Impacto Restaurantes" 
+                            value={inputs.separationScenarios?.educationProgram?.educationImpactRestaurants || 20} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'educationProgram', 'educationImpactRestaurants', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.educationProgram?.enableEducation}
+                        />
+                        <InputField 
+                            label="Impacto Hogares" 
+                            value={inputs.separationScenarios?.educationProgram?.educationImpactHomes || 25} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'educationProgram', 'educationImpactHomes', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.educationProgram?.enableEducation}
+                        />
+                        <InputField 
+                            label="Impacto Comercios" 
+                            value={inputs.separationScenarios?.educationProgram?.educationImpactCommerce || 10} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'educationProgram', 'educationImpactCommerce', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.educationProgram?.enableEducation}
+                        />
+                        <InputField 
+                            label="Costo per Cápita" 
+                            value={inputs.separationScenarios?.educationProgram?.educationCostPerCapita || 50} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'educationProgram', 'educationCostPerCapita', '', e.target.value)} 
+                            unit="MXN/persona/año" 
+                            disabled={!inputs.separationScenarios?.educationProgram?.enableEducation}
+                        />
+                    </div>
+                </Card>
+
+                {/* Incentive Program Card */}
+                <Card>
+                    <CardHeader title="Programa de Incentivos" icon={<Gift size={24} />} />
+                    <div className="space-y-4">
+                        <div className="flex items-center space-x-2">
+                            <input 
+                                type="checkbox" 
+                                id="enableIncentives"
+                                checked={inputs.separationScenarios?.incentiveProgram?.enableIncentives || false}
+                                onChange={e => handleTripleNestedInputChange('separationScenarios', 'incentiveProgram', 'enableIncentives', '', e.target.checked ? 1 : 0)}
+                                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            />
+                            <label htmlFor="enableIncentives" className="text-sm font-medium text-gray-700">Habilitar Incentivos</label>
+                        </div>
+                        <InputField 
+                            label="Impacto Hoteles" 
+                            value={inputs.separationScenarios?.incentiveProgram?.incentiveImpactHotels || 20} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'incentiveProgram', 'incentiveImpactHotels', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.incentiveProgram?.enableIncentives}
+                        />
+                        <InputField 
+                            label="Impacto Restaurantes" 
+                            value={inputs.separationScenarios?.incentiveProgram?.incentiveImpactRestaurants || 25} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'incentiveProgram', 'incentiveImpactRestaurants', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.incentiveProgram?.enableIncentives}
+                        />
+                        <InputField 
+                            label="Impacto Hogares" 
+                            value={inputs.separationScenarios?.incentiveProgram?.incentiveImpactHomes || 30} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'incentiveProgram', 'incentiveImpactHomes', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.incentiveProgram?.enableIncentives}
+                        />
+                        <InputField 
+                            label="Impacto Comercios" 
+                            value={inputs.separationScenarios?.incentiveProgram?.incentiveImpactCommerce || 15} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'incentiveProgram', 'incentiveImpactCommerce', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.incentiveProgram?.enableIncentives}
+                        />
+                        <InputField 
+                            label="Costo por Tonelada" 
+                            value={inputs.separationScenarios?.incentiveProgram?.incentiveCostPerTon || 200} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'incentiveProgram', 'incentiveCostPerTon', '', e.target.value)} 
+                            unit="MXN/ton separada" 
+                            disabled={!inputs.separationScenarios?.incentiveProgram?.enableIncentives}
+                        />
+                    </div>
+                </Card>
+
+                {/* Container Program Card */}
+                <Card>
+                    <CardHeader title="Programa de Contenedores" icon={<Package size={24} />} />
+                    <div className="space-y-4">
+                        <div className="flex items-center space-x-2">
+                            <input 
+                                type="checkbox" 
+                                id="enableContainers"
+                                checked={inputs.separationScenarios?.containerProgram?.enableContainers || false}
+                                onChange={e => handleTripleNestedInputChange('separationScenarios', 'containerProgram', 'enableContainers', '', e.target.checked ? 1 : 0)}
+                                className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                            />
+                            <label htmlFor="enableContainers" className="text-sm font-medium text-gray-700">Habilitar Contenedores</label>
+                        </div>
+                        <InputField 
+                            label="Impacto Hoteles" 
+                            value={inputs.separationScenarios?.containerProgram?.containerImpactHotels || 10} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'containerProgram', 'containerImpactHotels', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.containerProgram?.enableContainers}
+                        />
+                        <InputField 
+                            label="Impacto Restaurantes" 
+                            value={inputs.separationScenarios?.containerProgram?.containerImpactRestaurants || 15} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'containerProgram', 'containerImpactRestaurants', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.containerProgram?.enableContainers}
+                        />
+                        <InputField 
+                            label="Impacto Hogares" 
+                            value={inputs.separationScenarios?.containerProgram?.containerImpactHomes || 20} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'containerProgram', 'containerImpactHomes', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.containerProgram?.enableContainers}
+                        />
+                        <InputField 
+                            label="Impacto Comercios" 
+                            value={inputs.separationScenarios?.containerProgram?.containerImpactCommerce || 8} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'containerProgram', 'containerImpactCommerce', '', e.target.value)} 
+                            unit="% adicional" 
+                            disabled={!inputs.separationScenarios?.containerProgram?.enableContainers}
+                        />
+                        <InputField 
+                            label="Costo por Unidad" 
+                            value={inputs.separationScenarios?.containerProgram?.containerCostPerUnit || 300} 
+                            onChange={e => handleTripleNestedInputChange('separationScenarios', 'containerProgram', 'containerCostPerUnit', '', e.target.value)} 
+                            unit="MXN/set" 
+                            disabled={!inputs.separationScenarios?.containerProgram?.enableContainers}
+                        />
                     </div>
                 </Card>
             </div>

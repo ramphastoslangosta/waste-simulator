@@ -9,6 +9,34 @@ export const INITIAL_INPUTS = {
         homes: { rate: 0.9, sourceSeparationRate: 5 },
         commerce: { units: 300, rate: 8, sourceSeparationRate: 30 },
     },
+    // Waste Separation at Generation Scenarios
+    separationScenarios: {
+        enableEnhancedSeparation: false,     // Enable enhanced separation program
+        educationProgram: {
+            enableEducation: false,          // Enable education and awareness program
+            educationImpactHotels: 15,       // Additional % increase in separation for hotels
+            educationImpactRestaurants: 20,  // Additional % increase in separation for restaurants  
+            educationImpactHomes: 25,        // Additional % increase in separation for homes
+            educationImpactCommerce: 10,     // Additional % increase in separation for commerce
+            educationCostPerCapita: 50,      // MXN/person/year - Cost of education program
+        },
+        incentiveProgram: {
+            enableIncentives: false,         // Enable economic incentive program
+            incentiveImpactHotels: 20,       // Additional % increase in separation for hotels
+            incentiveImpactRestaurants: 25,  // Additional % increase in separation for restaurants
+            incentiveImpactHomes: 30,        // Additional % increase in separation for homes
+            incentiveImpactCommerce: 15,     // Additional % increase in separation for commerce
+            incentiveCostPerTon: 200,        // MXN/ton - Cost of incentive program per ton of separated waste
+        },
+        containerProgram: {
+            enableContainers: false,         // Enable improved container distribution
+            containerImpactHotels: 10,       // Additional % increase in separation for hotels
+            containerImpactRestaurants: 15,  // Additional % increase in separation for restaurants
+            containerImpactHomes: 20,        // Additional % increase in separation for homes
+            containerImpactCommerce: 8,      // Additional % increase in separation for commerce
+            containerCostPerUnit: 300,       // MXN/unit - Cost per container set (hotels: cuartos, rest/com: locales, homes: per 100 hab)
+        },
+    },
     composition: {
         hotels: { organicos: 45, pet: 12, aluminio: 5, carton: 10, vidrio: 3, rechazo: 20, peligrosos: 5 },
         restaurants: { organicos: 70, pet: 5, aluminio: 3, carton: 8, vidrio: 4, rechazo: 8, peligrosos: 2 },
@@ -30,6 +58,21 @@ export const INITIAL_INPUTS = {
             plantSeparationEfficiency: { pet: 50, aluminio: 60, carton: 40, vidrio: 30 },
             informalRecoveryRateCollection: 2,
             informalRecoveryRateDisposal: 3,
+        },
+        // Waste Valorization Scenarios at Transfer Station
+        valorization: {
+            enableComposting: false,         // Enable composting of organic waste
+            compostingEfficiency: 80,        // % of organics that can be successfully composted
+            compostingCost: 200,             // MXN/ton - Cost of composting process
+            compostIncome: 500,              // MXN/ton - Income from compost sales
+            enableBiogas: false,             // Enable biogas generation from organics
+            biogasEfficiency: 60,            // % of organics that can be processed for biogas
+            biogasCost: 300,                 // MXN/ton - Cost of biogas process
+            biogasIncome: 800,               // MXN/ton - Income from biogas sales
+            enablePlasticPyrolysis: false,   // Enable pyrolysis of plastic waste
+            pyrolysisEfficiency: 70,         // % of plastics that can be pyrolyzed
+            pyrolysisCost: 400,              // MXN/ton - Cost of pyrolysis process
+            pyrolysisIncome: 600,            // MXN/ton - Income from pyrolysis products
         },
         economics: {
             collectionCost: 800,
