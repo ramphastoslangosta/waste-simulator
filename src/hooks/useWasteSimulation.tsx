@@ -331,6 +331,7 @@ export const useWasteSimulation = (inputs: any) => {
                     totalLeak: avg(stablePeriodResults.map(r => r.rsu.totalLeak)),
                     finalInventory: rsuInventory,
                     inventoryWaitTime: avg(stablePeriodResults.map(r => r.rsu.inventoryWaitTime)),
+                    inventoryLevels: avgObj(stablePeriodResults.map(r => r.rsu.inventoryLevels)),
                     recoveryByStage: avgObj(stablePeriodResults.map(r => r.rsu.recoveryByStage)),
                     toDisposal: avg(stablePeriodResults.map(r => r.rsu.toDisposal)),
                     netCostPerDay: avg(stablePeriodResults.map(r => r.rsu.netCostPerDay)),
