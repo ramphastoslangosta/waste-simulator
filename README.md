@@ -9,17 +9,29 @@ This application simulates complex waste management systems with three distinct 
 - **Sargassum** - Seasonal seaweed management 
 - **RCD (Residuos de Construcción y Demolición)** - Construction and Demolition waste
 
-The simulator models realistic waste flows including collection, processing, material recovery, and disposal across high and low tourist seasons.
+The simulator models realistic waste flows including collection, processing, material recovery, valorization processes, and disposal across high and low tourist seasons with advanced circular economy strategies.
 
 ## ✨ Key Features
 
-- 🔄 **Real-time Simulation Engine** - Complex 30-day waste flow calculations with multi-stage processing
-- 📊 **Interactive Dashboard** - Multiple analysis views (KPIs, Financial, Flow Diagrams, Process Analysis)
-- 🏖️ **Season-based Modeling** - Separate calculations for high/low tourist seasons
-- 💾 **Scenario Management** - Save, load, and compare different simulation scenarios
-- 🗄️ **Local Data Persistence** - Client-side SQLite database with export/import capabilities
-- 📱 **Responsive Design** - Works on desktop, tablet, and mobile devices
-- 🎨 **Modern UI** - Built with Tailwind CSS and Lucide icons
+### Core Simulation
+- 🔄 **Advanced Simulation Engine** - Complex 30-day waste flow calculations with multi-stage processing and inventory tracking
+- 📊 **Interactive Dashboard** - Multiple analysis views (KPIs, Financial, Flow Diagrams, Process Analysis, Calculations Table)
+- 🏖️ **Season-based Modeling** - Separate calculations for high/low tourist seasons with dynamic occupancy rates
+- ♻️ **Circular Economy Integration** - Comprehensive valorization and separation enhancement modeling
+
+### New Advanced Features
+- 🌱 **Waste Valorization Scenarios** - Compostaje, biogas generation, and plastic pyrolysis with economic analysis
+- 📚 **Separation Enhancement Programs** - Education, incentive, and container programs with effectiveness tracking
+- 💰 **Cost-Benefit Analysis** - ROI calculations, waterfall charts, and program impact assessment
+- 📈 **Enhanced Visualizations** - Dynamic charts, progress bars, and conditional rendering based on active scenarios
+- 🔍 **Inventory Management** - Real-time tracking across all process stages with capacity utilization metrics
+
+### Data & Scenarios
+- 💾 **Advanced Scenario Management** - Save, load, compare up to 4 scenarios simultaneously with detailed comparison tools
+- 🗄️ **Dual Data Persistence** - Client-side SQLite database with optional cloud Supabase integration
+- 📤 **Comprehensive Export System** - High-resolution PNG/SVG chart export and detailed CSV data tables
+- 📱 **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+- 🎨 **Modern UI/UX** - Built with Tailwind CSS, Lucide icons, and interactive components
 
 ## 🚀 Quick Start
 
@@ -102,17 +114,24 @@ src/
 
 ### Waste Streams
 
-1. **RSU Flow**: Collection → Transfer Station → Material Recovery → Final Transport → Disposal
-2. **Sargassum Flow**: Seasonal collection and disposal
-3. **RCD Flow**: Construction waste management
+1. **Enhanced RSU Flow**: Collection → Transfer Station → Material Recovery + Valorization → Final Transport → Disposal
+2. **Sargassum Flow**: Seasonal collection and disposal with capacity planning
+3. **RCD Flow**: Construction waste management with cost tracking
 
-### Key Calculations
+### Advanced Simulation Features
 
-- **Material Composition**: Different waste compositions by source (hotels, restaurants, homes, commerce)
-- **Collection Logistics**: Vehicle capacity, trips, and collection efficiency
-- **Material Recovery**: Source separation and plant-based material recovery
-- **Economic Analysis**: Costs, revenues, and net system costs
-- **Leak Analysis**: Waste losses at each processing stage
+- **Multi-Stage Inventory Tracking**: Real-time material accumulation across all process stages
+- **Valorization Processes**: 
+  - Compostaje (organic waste → compost with revenue generation)
+  - Biogas generation (organic waste → energy with income tracking)  
+  - Plastic pyrolysis (plastic waste → fuel with cost-benefit analysis)
+- **Separation Enhancement Programs**:
+  - Education programs (population-based costs and effectiveness)
+  - Incentive programs (performance-based costs per ton separated)
+  - Container programs (infrastructure costs with amortization)
+- **Enhanced Material Recovery**: Source separation and plant-based recovery with program impacts
+- **Comprehensive Economic Analysis**: Costs, revenues, ROI calculations, and program cost-effectiveness
+- **Advanced Leak Analysis**: Waste losses at each stage with capacity utilization tracking
 
 ### Seasons
 
@@ -162,18 +181,28 @@ We welcome contributions! Please see our [Development Protocol](./DEVELOPMENT_PR
 
 ## 📋 Roadmap
 
-- [ ] **Sankey Diagram Implementation** - Visual flow representation
-- [ ] **Advanced Analytics** - Trend analysis and forecasting
+### Recently Completed ✅
+- ✅ **Waste Valorization Scenarios** - Compostaje, biogas, plastic pyrolysis 
+- ✅ **Separation Enhancement Programs** - Education, incentive, container programs
+- ✅ **Enhanced Visualizations** - Dynamic charts with program impact tracking
+- ✅ **Advanced Cost-Benefit Analysis** - ROI calculations and waterfall charts
+- ✅ **Comprehensive Export System** - High-resolution chart export and detailed CSV tables
+- ✅ **Multi-Stage Inventory Tracking** - Real-time capacity utilization monitoring
+
+### Upcoming Features
+- [ ] **Sankey Diagram Implementation** - Visual flow representation with valorization branches
+- [ ] **Advanced Analytics** - Trend analysis and forecasting with program effectiveness tracking
 - [ ] **Multi-language Support** - English and Spanish interfaces
-- [ ] **Mobile App** - React Native version
-- [ ] **API Integration** - Real-time data feeds
-- [ ] **Reporting System** - PDF/Excel report generation
+- [ ] **Mobile App** - React Native version with core simulation features
+- [ ] **API Integration** - Real-time data feeds and external system integration
+- [ ] **PDF Reporting System** - Comprehensive report generation with charts and analysis
 
 ## 🐛 Known Issues
 
 - Sankey diagram component is placeholder (needs implementation)
-- Mobile responsiveness could be improved for complex tables
-- Large scenario datasets may impact browser performance
+- Mobile responsiveness could be improved for complex comparison tables
+- Large scenario datasets with extensive valorization data may impact browser performance
+- Some advanced charts may require horizontal scrolling on smaller screens
 
 ## 📄 License
 

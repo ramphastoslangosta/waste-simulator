@@ -5,6 +5,101 @@ All notable changes to the Waste Management Simulator for Isla Holbox will be do
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 2024-08-14
+
+### 🎉 Major Features Added
+
+#### Waste Valorization Scenarios
+- **Compostaje Process**: Transform organic waste into compost with configurable efficiency (60-95%) and revenue generation
+- **Biogas Generation**: Convert organic waste to energy with efficiency settings and income tracking  
+- **Plastic Pyrolysis**: Process plastic waste into fuel with cost-benefit analysis and efficiency controls
+- **Integrated Economic Model**: Full cost-benefit analysis with ROI calculations for all valorization processes
+
+#### Separation Enhancement Programs
+- **Education Programs**: Population-based education campaigns with configurable impact on separation rates by source (hotels, restaurants, homes, commerce)
+- **Incentive Programs**: Performance-based incentive systems with cost per ton separated and dynamic effectiveness
+- **Container Programs**: Infrastructure investment in specialized containers with 5-year amortization and source-specific impacts
+- **Cumulative Program Effects**: Multiple programs can run simultaneously with additive benefits (capped at 95% separation rate)
+
+#### Advanced Visualization System
+- **Enhanced KPI Dashboard**: 
+  - New Valorization Metrics section with 4 KPI cards and process breakdown pie chart
+  - Separation Program Effectiveness section with before/after comparison charts
+  - Real-time inventory levels with proper data integration
+- **Comprehensive Financial Analysis**:
+  - Enhanced cost/income pie charts including valorization and separation programs
+  - Cost-Benefit Analysis section with 3-card display (costs, benefits, net impact)
+  - Waterfall chart showing progressive cost impacts
+  - ROI calculations and program effectiveness metrics
+- **Enhanced Flow Diagram**:
+  - Valorization processes branch showing active technologies
+  - Enhancement badges indicating when separation programs are active
+  - Income indicators displaying daily valorization revenue
+  - Separation program cost summary
+- **Advanced Process Analysis**:
+  - Comprehensive inventory tracking with capacity utilization progress bars
+  - Color-coded capacity indicators (green <70%, yellow 70-90%, red >90%)
+  - Dedicated valorization process analysis section
+  - System performance summary with 4 key efficiency metrics
+- **Enhanced Comparison Tools**:
+  - 5-column KPI comparison including valorization totals
+  - Program impact comparison section (4 new comparison cards)
+  - Valorization breakdown charts by process type
+  - Enhanced summary table with valorization and separation program columns
+- **Comprehensive Calculations Table**:
+  - New valorization section with detailed process breakdowns
+  - Separation programs section with cost analysis by program type
+  - Enhanced CSV export with all new metrics
+
+#### Multi-Stage Inventory Management
+- **Real-time Inventory Tracking**: Continuous monitoring across all process stages (collection vehicles, transfer station, final transport, disposal site)
+- **Capacity Utilization Metrics**: Percentage-based capacity tracking with visual progress bars
+- **Wait Time Calculations**: Dynamic wait time calculations based on inventory levels and processing rates
+- **Bottleneck Identification**: Visual identification of system bottlenecks through capacity utilization indicators
+
+### 🔧 Technical Improvements
+
+#### Simulation Engine Enhancements
+- **Enhanced useWasteSimulation Hook**: Integrated valorization logic with existing material flow calculations
+- **Advanced Separation Rate Calculations**: Dynamic rate enhancement based on active programs with cumulative effects
+- **Cost Calculation Integration**: Comprehensive cost modeling including program costs with proper amortization
+- **Inventory Level Integration**: Fixed inventory levels in final KPI calculations for proper dashboard display
+
+#### UI/UX Improvements
+- **Conditional Rendering**: Smart component rendering based on enabled scenarios and active programs
+- **Dynamic Chart Updates**: Real-time chart updates reflecting program activation and parameter changes
+- **Enhanced Input Panel**: New parameter sections for valorization scenarios and separation programs
+- **Improved Export Functionality**: Enhanced CSV exports with detailed program breakdowns
+
+### 📊 Data Model Extensions
+
+#### New Input Parameters
+- **Valorization Settings**: 
+  - Enable/disable toggles for each process
+  - Efficiency percentages for compostaje (default: 80%), biogas (60%), pyrolysis (70%)
+  - Cost per ton for each process
+  - Income per ton for revenue calculations
+- **Separation Program Configuration**:
+  - Education program settings with per-capita costs and source-specific impacts
+  - Incentive program settings with per-ton costs and effectiveness rates  
+  - Container program settings with per-unit costs and impact metrics
+
+#### Enhanced KPI Calculations
+- **Valorization Metrics**: Total valorized materials, income generated, net costs, process efficiency
+- **Separation Program Metrics**: Program costs, effectiveness improvements, cost per improvement point
+- **Enhanced Recovery Rates**: Total recovery including valorization processes
+- **Advanced Financial Metrics**: ROI calculations, program cost-effectiveness, waterfall cost analysis
+
+### 🐛 Bug Fixes
+- **Fixed Inventory Levels Display**: Resolved issue where inventory levels weren't updating in dashboard
+- **Enhanced State Management**: Improved handling of deeply nested parameter structures for valorization and separation scenarios
+- **Export Functionality**: Enhanced CSV export formatting for complex nested data structures
+
+### 🔄 Compatibility & Migration
+- **Backward Compatibility**: All existing scenarios remain fully functional
+- **Automatic Parameter Migration**: New parameters have sensible defaults when loading existing scenarios
+- **Enhanced Default Values**: Updated initial state with comprehensive default parameters for new features
+
 ## [2.0.0] - 2025-01-11
 
 ### 🆕 Major Features Added

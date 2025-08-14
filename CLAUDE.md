@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-A waste management simulation application for Isla Holbox built with React, TypeScript, and Vite. The app simulates waste flows (RSU - Urban Solid Waste, Sargassum, and Construction/Demolition waste) across high and low seasons with detailed KPI tracking and scenario management.
+A comprehensive waste management simulation application for Isla Holbox built with React, TypeScript, and Vite. The app simulates complex waste flows (RSU - Urban Solid Waste, Sargassum, and Construction/Demolition waste) across high and low seasons with detailed KPI tracking, advanced valorization scenarios (compostaje, biogas, plastic pyrolysis), separation enhancement programs (education, incentives, containers), multi-stage inventory management, and comprehensive scenario comparison tools.
 
 ## Essential Commands
 
@@ -20,8 +20,11 @@ A waste management simulation application for Isla Holbox built with React, Type
 ## Architecture Overview
 
 ### Core Simulation Logic
-- **`useWasteSimulation` hook** (`src/hooks/useWasteSimulation.tsx`): Contains the main simulation engine that calculates waste flows, processing, and KPIs for both seasons over a 30-day simulation period
-- **Multi-flow system**: Handles 3 waste streams (RSU, Sargassum, RCD) with complex processing chains including collection, transfer, processing, and disposal
+- **`useWasteSimulation` hook** (`src/hooks/useWasteSimulation.tsx`): Contains the advanced simulation engine that calculates waste flows, processing, valorization, separation programs, and comprehensive KPIs for both seasons over a 30-day simulation period
+- **Multi-flow system**: Handles 3 waste streams (RSU, Sargassum, RCD) with complex processing chains including collection, transfer, processing, valorization, and disposal
+- **Valorization integration**: Compostaje, biogas generation, and plastic pyrolysis processes with economic modeling
+- **Separation enhancement**: Education, incentive, and container programs with cumulative effectiveness tracking
+- **Multi-stage inventory tracking**: Real-time monitoring across all process stages with capacity utilization
 - **Season-based calculations**: Differentiates between high/low tourist seasons affecting occupancy rates and waste generation
 
 ### Data Management
