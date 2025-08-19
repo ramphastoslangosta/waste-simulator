@@ -1,0 +1,9 @@
+date,data_source,kpi_name,kpi_category,real_value,units,confidence_level,notes,source_citation
+2023-01,Municipal_Report,waste_generated_monthly,generation,45.2,ton/month,high,"Reporte oficial de limpia pública municipal","Municipio de Lázaro Cárdenas (2023). Reporte Anual de Residuos Sólidos"
+2023-02,SEMARNAT_Study,collection_efficiency,logistics,85.5,percentage,medium,"Estudio regional de manejo de residuos","SEMARNAT Quintana Roo (2023). Diagnóstico de Residuos Sólidos"
+2023-03,Academic_Research,disposal_cost_per_ton,economics,2800,pesos/ton,high,"Investigación académica peer-reviewed","Universidad de Yucatán (2023). Costos de Manejo de Residuos en Islas"
+2022-12,Operator_Data,recovery_rate_informal,recovery,12.5,percentage,medium,"Datos de operadores de reciclaje informal","Cooperativa de Recicladores Holbox (2022). Reporte de Actividades"
+2023-04,Tourism_Board,waste_generated_daily,generation,1.8,ton/day,low,"Estimación basada en ocupación turística","Consejo de Promoción Turística de Quintana Roo (2023)"
+2023-05,Environmental_NGO,system_leakage_rate,operational,8.2,percentage,medium,"Monitoreo ambiental independiente","Greenpeace México (2023). Contaminación Costera en el Caribe"
+2022-11,Federal_Study,valorization_compost,valorization,0.5,ton/day,high,"Estudio federal de valorización","SEMARNAT Nacional (2022). Valorización de Residuos Orgánicos"
+2023-06,Municipal_Budget,total_cost_monthly,economics,125000,pesos/month,high,"Presupuesto municipal oficial","H. Ayuntamiento Lázaro Cárdenas (2023). Presupuesto de Egresos"
