@@ -7,6 +7,7 @@ export const TABS = [
     { id: 'flow', label: 'Diagrama de Flujo RSU' },
     { id: 'process', label: 'Análisis de Procesos RSU' },
     { id: 'table', label: 'Tabla de Cálculos' },
+    { id: 'validation', label: 'Validación Científica' },
     { id: 'inputs', label: 'Parámetros de Entrada' },
     { id: 'scenarios', label: 'Escenarios' },
     { id: 'comparison', label: 'Comparación de Escenarios' },

@@ -16,6 +16,7 @@ import ScenarioManager from './components/scenarios/ScenarioManager.tsx';
 import AuthModal from './components/auth/AuthModal.tsx';
 import DatabaseSchema from './components/admin/DatabaseSchema.tsx';
 import ComparisonDashboard from './components/features/ComparisonDashboard.tsx';
+import ValidationDashboard from './components/features/ValidationDashboard.tsx';
 
 // Placeholder component
 const SankeyDiagram = () => (
@@ -81,6 +82,8 @@ export default function App() {
                 return <ProcessAnalysis kpis={activeKpis} season={activeSeasonLabel} inputs={inputs} />;
             case 'table':
                 return <ResultsTable kpis={activeKpis} season={activeSeasonLabel} inputs={inputs} />;
+            case 'validation':
+                return <ValidationDashboard kpis={activeKpis} inputs={inputs} season={season} />;
             case 'inputs':
                 return <InputPanel inputs={inputs} setInputs={setInputs} />;
             case 'scenarios':
