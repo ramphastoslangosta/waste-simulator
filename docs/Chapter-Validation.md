@@ -2,7 +2,7 @@
 
 ## Abstract
 
-This chapter presents the validation of the waste management simulation model against historical data from Isla Holbox, Q. Roo, Mexico. The validation process compares simulated Key Performance Indicators (KPIs) with actual municipal data, calculating error percentages and analyzing discrepancies to establish model credibility for decision-making applications.
+This chapter presents the validation of the waste management simulation model against available data sources for Isla Holbox, Q. Roo, Mexico. The validation process uses existing reports, online databases, and proxy data from similar locations to assess model credibility within the constraints of undergraduate thesis timeline and data availability.
 
 ## 4.1 Introduction
 
@@ -15,63 +15,77 @@ Model validation is a critical step in establishing the credibility and practica
 3. **Credibility Establishment**: Demonstrate model reliability for policy recommendations
 4. **Limitation Identification**: Document where model assumptions diverge from reality
 
-### 4.1.2 Validation Scope
+### 4.1.2 Validation Scope and Constraints
 
-This validation focuses on 2-3 verifiable KPIs that can be obtained from municipal reports, environmental studies, or official data sources:
+**Scope Definition**: This validation adopts a pragmatic approach suitable for undergraduate thesis constraints, utilizing:
+- **Existing reports** provided by contacts and collaborators
+- **Online public databases** (INEGI, SEMARNAT open data)
+- **Proxy data** from demographically similar Caribbean islands
+- **Academic literature** with quantitative references to the region
 
-- **Total waste generation** (tons/month)
-- **Collection costs** (pesos/year)  
-- **Disposal volumes** (tons/month to mainland)
+**Target KPIs** (adapted to data availability):
+- **Waste generation rates** (per capita or total volumes)
+- **Economic indicators** (costs, budgets, or operational metrics)  
+- **System performance** (collection efficiency, disposal patterns)
 
 ## 4.2 Methodology
 
-### 4.2.1 Data Collection Strategy
+### 4.2.1 Revised Data Collection Strategy
 
-#### Primary Sources (Target: 1-2 KPIs)
-- **Municipio de Lázaro Cárdenas**: Official waste management reports, budget documents
-- **SEMARNAT Quintana Roo**: Environmental impact studies, waste characterization reports
-- **CONANP**: Área de Protección de Flora y Fauna Yum Balam management plans
+#### Tier 1: Existing Reports and Documents (Priority: Highest)
+- **Source**: Previously shared reports from contacts and collaborators
+- **Expected Data**: Direct quantitative metrics from Holbox or region
+- **Reliability**: High (primary sources with known methodology)
+- **Timeline**: Immediate analysis (1 day)
 
-#### Secondary Sources (Target: 1 KPI)
-- Academic studies on island waste management in Caribbean Mexico
-- Environmental impact assessments for tourism development
-- Press releases with quantitative waste management data
+#### Tier 2: Online Public Databases (Priority: High)
+- **INEGI**: Municipal waste statistics for Quintana Roo
+- **SEMARNAT Open Data**: Environmental monitoring and waste characterization
+- **Government Transparency**: Municipal budgets and operational costs
+- **Timeline**: Systematic search (1-2 days)
 
-#### Contact Protocol
-```
-1. Formal request to Municipio de Lázaro Cárdenas
-   - Request: Historical waste generation data (2019-2024)
-   - Contact: Dirección de Servicios Públicos
+#### Tier 3: Proxy Data from Similar Islands (Priority: Medium)
+- **Cozumel**: Demographic and tourism-adjusted waste data
+- **Isla Mujeres**: Similar island tourism dynamics
+- **Caribbean Studies**: Regional waste generation patterns
+- **Timeline**: Comparative analysis with adjustments (1 day)
 
-2. SEMARNAT Quintana Roo consultation
-   - Request: Environmental monitoring reports
-   - Focus: Solid waste characterization studies
+#### Tier 4: Academic and Technical Literature (Priority: Supporting)
+- **Keywords**: "residuos sólidos Yucatán", "island waste management", "tourism waste"
+- **Databases**: Google Scholar, SciELO, ResearchGate
+- **Purpose**: Contextual validation and parameter verification
 
-3. Academic literature search
-   - Keywords: "Holbox residuos sólidos", "island waste management Mexico"
-   - Databases: CONACYT, SciELO, academic repositories
-```
+### 4.2.2 Adapted Statistical Validation Framework
 
-### 4.2.2 Statistical Validation Framework
-
-The validation uses the comprehensive framework implemented in `src/utils/realDataComparison.js` with the following metrics:
+The validation uses the comprehensive framework implemented in `src/utils/realDataComparison.js` with adjustments for limited data availability:
 
 #### Error Calculation Methods
 ```javascript
-// Percentage Error
+// Percentage Error (primary metric for limited data)
 PE = |Simulated - Observed| / Observed × 100%
 
-// Mean Absolute Percentage Error (MAPE)
-MAPE = (1/n) × Σ(|Simulated_i - Observed_i| / Observed_i) × 100%
+// Weighted Mean Absolute Percentage Error (accounts for data quality)
+WMAPE = Σ(weight_i × |Simulated_i - Observed_i| / Observed_i) × 100%
 
-// Root Mean Square Error (RMSE)
-RMSE = √[(1/n) × Σ(Simulated_i - Observed_i)²]
+// Confidence-adjusted Root Mean Square Error
+RMSE_adj = √[(1/n) × Σ(confidence_i × (Simulated_i - Observed_i)²)]
 ```
 
-#### Statistical Significance Tests
-- **t-test**: Compare simulated vs observed means
-- **Confidence Intervals**: 95% CI for error estimates
-- **R² Correlation**: Overall model fit assessment
+#### Adjusted Error Thresholds for Limited Data Context
+```javascript
+errorThresholds: {
+  excellent: 15,    // Direct data from existing reports
+  good: 25,         // Online databases and government sources  
+  acceptable: 40,   // Proxy data from similar islands
+  poor: Infinity    // Requires documentation and limitation notes
+}
+```
+
+#### Data Quality Weighting System
+- **Direct Reports**: Weight = 1.0 (full confidence)
+- **Government Data**: Weight = 0.85 (high confidence)
+- **Academic Proxy**: Weight = 0.70 (medium confidence)
+- **Demographic Adjusted**: Weight = 0.60 (documented uncertainty)
 
 ### 4.2.3 Validation Scenarios
 
