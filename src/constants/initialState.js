@@ -46,7 +46,7 @@ export const INITIAL_INPUTS = {
     },
     rsuSystem: {
         logistics: { vehicles: 4, vehicleCapacity: 5, tripsPerVehicle: 2 },
-        processing: { transferStationRate: 50, transferStationCapacity: 300, finalTransportCapacity: 10 },
+        processing: { transferStationRate: 50, transferStationCapacity: 300, finalTransportCapacity: 8 },
         initialInventory: {
             collectionVehicles: 0,           // ton - Initial waste in collection vehicles at day 0
             transferStation: 0,              // ton - Initial waste inventory at transfer station at day 0  
