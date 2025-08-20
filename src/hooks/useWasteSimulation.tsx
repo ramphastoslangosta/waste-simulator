@@ -64,7 +64,7 @@ export const useWasteSimulation = (inputs: any) => {
                 const genByMaterial = { organicos: 0, pet: 0, aluminio: 0, carton: 0, vidrio: 0, rechazo: 0, peligrosos: 0 };
                 for (const source in genBySource) {
                     for (const material of materialTypes) {
-                        genByMaterial[material] += genBySource[source] * (inputs.composition[source][material] / 100);
+                        genByMaterial[material] += genBySource[source] * ((inputs.composition[source]?.[material] || 0) / 100);
                     }
                 }
                 const genRSU = Object.values(genByMaterial).reduce((a, b) => a + b, 0);
@@ -92,7 +92,7 @@ export const useWasteSimulation = (inputs: any) => {
                 const leakRatio = wasteBeforeLeak > 0 ? leakCollection / wasteBeforeLeak : 0;
                 
                 const toTransferStationByMaterial: any = {};
-                materialTypes.forEach(m => toTransferStationByMaterial[m] = wasteAfterInformalRec1[m] * (1 - leakRatio));
+                materialTypes.forEach(m => toTransferStationByMaterial[m] = (wasteAfterInformalRec1[m] || 0) * (1 - leakRatio));
                 const toTransferStationTotal = Object.values(toTransferStationByMaterial).reduce((a, b) => a + b, 0);
 
                 // Update collection vehicle inventory (waste collected but not yet delivered to transfer station)
@@ -111,20 +111,20 @@ export const useWasteSimulation = (inputs: any) => {
                 
                 const processedRatio = toTransferStationTotal > 0 ? materialProcessedToday / toTransferStationTotal : 0;
                 const processedByMaterial: any = {};
-                materialTypes.forEach(m => processedByMaterial[m] = toTransferStationByMaterial[m] * processedRatio);
+                materialTypes.forEach(m => processedByMaterial[m] = (toTransferStationByMaterial[m] || 0) * processedRatio);
 
                 valorizableTypes.forEach(m => {
                     let sourceSeparatedAmount = 0;
                     for (const source in genBySource) {
                         // Use enhanced separation rates instead of base rates
-                        sourceSeparatedAmount += (genBySource[source] * (inputs.composition[source][m] / 100)) * (enhancedSeparationRates[source] / 100);
+                        sourceSeparatedAmount += (genBySource[source] * ((inputs.composition[source]?.[m] || 0) / 100)) * (enhancedSeparationRates[source] / 100);
                     }
                     const captured = sourceSeparatedAmount * (inputs.rsuSystem.separation.differentiatedCaptureRate / 100) * collectedRatio * processedRatio;
                     recoveredHighQuality[m] = captured * (1 - inputs.rsuSystem.separation.rejectionRateSource / 100);
                 });
 
                 valorizableTypes.forEach(m => {
-                    const availableInMixed = Math.max(0, processedByMaterial[m] - (recoveredHighQuality[m] || 0));
+                    const availableInMixed = Math.max(0, (processedByMaterial[m] || 0) - (recoveredHighQuality[m] || 0));
                     recoveredLowQualityPlant[m] = availableInMixed * (inputs.rsuSystem.separation.plantSeparationEfficiency[m] / 100);
                 });
 
@@ -189,7 +189,7 @@ export const useWasteSimulation = (inputs: any) => {
                 
                 let valorizablesToDisposal = 0;
                 if(materialLeavingStation > 0) {
-                    const proportionOfValorizablesLeaving = valorizableTypes.reduce((sum, m) => sum + processedByMaterial[m], 0) / materialProcessedToday;
+                    const proportionOfValorizablesLeaving = valorizableTypes.reduce((sum, m) => sum + (processedByMaterial[m] || 0), 0) / materialProcessedToday;
                     valorizablesToDisposal = toDisposalSite * proportionOfValorizablesLeaving;
                 }
                 const informalRecoveryDisposal = valorizablesToDisposal * (inputs.rsuSystem.separation.informalRecoveryRateDisposal / 100);
