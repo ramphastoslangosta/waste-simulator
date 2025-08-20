@@ -8,6 +8,7 @@ export const TABS = [
     { id: 'process', label: 'Análisis de Procesos RSU' },
     { id: 'table', label: 'Tabla de Cálculos' },
     { id: 'validation', label: 'Validación Científica' },
+    { id: 'validation-test', label: 'Prueba de Validación' },
     { id: 'inputs', label: 'Parámetros de Entrada' },
     { id: 'scenarios', label: 'Escenarios' },
     { id: 'comparison', label: 'Comparación de Escenarios' },
