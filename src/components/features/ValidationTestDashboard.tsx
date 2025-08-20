@@ -22,7 +22,7 @@ import {
 } from '../../utils/validation';
 import { formatNumber } from '../../utils/formatNumber';
 
-// Test scenario for validation
+// Test scenario for validation - based on INITIAL_INPUTS structure
 const testScenario = {
   general: { highSeasonOccupancy: 80, lowSeasonOccupancy: 40, fixedPopulation: 2500 },
   generation: {
@@ -30,6 +30,33 @@ const testScenario = {
     restaurants: { units: 30, rate: 2.0, sourceSeparationRate: 0 },
     homes: { rate: 0.8, sourceSeparationRate: 0 },
     commerce: { units: 80, rate: 1.2, sourceSeparationRate: 0 }
+  },
+  separationScenarios: {
+    enableEnhancedSeparation: false,
+    educationProgram: {
+      enableEducation: false,
+      educationImpactHotels: 15,
+      educationImpactRestaurants: 20,
+      educationImpactHomes: 25,
+      educationImpactCommerce: 10,
+      educationCostPerCapita: 50,
+    },
+    incentiveProgram: {
+      enableIncentives: false,
+      incentiveImpactHotels: 20,
+      incentiveImpactRestaurants: 25,
+      incentiveImpactHomes: 30,
+      incentiveImpactCommerce: 15,
+      incentiveCostPerTon: 200,
+    },
+    containerProgram: {
+      enableContainers: false,
+      containerImpactHotels: 10,
+      containerImpactRestaurants: 15,
+      containerImpactHomes: 20,
+      containerImpactCommerce: 8,
+      containerCostPerUnit: 300,
+    },
   },
   composition: {
     hotels: { organicos: 40, pet: 8, aluminio: 2, carton: 15, vidrio: 5, rechazo: 28, peligrosos: 2 },
@@ -40,10 +67,45 @@ const testScenario = {
   rsuSystem: {
     logistics: { vehicles: 4, vehicleCapacity: 5, tripsPerVehicle: 2 },
     processing: { transferStationRate: 50, transferStationCapacity: 150, finalTransportCapacity: 40 },
-    leaks: { collectionLeak: 2, transferLeak: 1, transportLeak: 1 },
-    separation: { informalRecoveryRateCollection: 15, informalRecoveryRateTransfer: 10 },
-    initialInventory: { transferStation: 10, collectionVehicles: 2, finalTransportVehicles: 5, disposalSite: 0 }
-  }
+    initialInventory: {
+      collectionVehicles: 2,
+      transferStation: 10,
+      finalTransportVehicles: 5,
+      disposalSite: 0
+    },
+    separation: {
+      differentiatedCaptureRate: 90,
+      rejectionRateSource: 15,
+      plantSeparationEfficiency: { pet: 50, aluminio: 60, carton: 40, vidrio: 30 },
+      informalRecoveryRateCollection: 15,
+      informalRecoveryRateDisposal: 10
+    },
+    valorization: {
+      enableComposting: false,
+      compostingEfficiency: 80,
+      compostingCost: 200,
+      compostIncome: 500,
+      enableBiogas: false,
+      biogasEfficiency: 60,
+      biogasCost: 300,
+      biogasIncome: 800,
+      enablePlasticPyrolysis: false,
+      pyrolysisEfficiency: 70,
+      pyrolysisCost: 400,
+      pyrolysisIncome: 600,
+    },
+    economics: {
+      collectionCost: 800,
+      transferStationCost: 150,
+      finalTransportCost: 250,
+      disposalCost: 400,
+      income: { pet: 2500, aluminio: 15000, carton: 1200, vidrio: 300 }
+    },
+    leaks: { collectionLeak: 2, transferStationLeak: 1, finalTransportLeak: 0.5, disposalLeak: 5 }
+  },
+  specialWasteGeneration: { sargassumHigh: 50, sargassumLow: 5, construction: 5 },
+  sargassumManagement: { collectionCost: 300, disposalCost: 100 },
+  rcdManagement: { collectionCost: 400, disposalCost: 200 }
 };
 
 // Mock historical data based on CSV template
