@@ -1,13 +1,17 @@
 kpi_name,unit,period,year,month,season,observed_value,source_type,source_institution,source_document,confidence_level,methodology,notes
-total_waste_generation,tons_per_month,monthly,2023,annual_average,combined,pending,official,municipio_lazaro_cardenas,solicitud_pendiente,high,recoleccion_municipal,Datos solicitados via transparencia
-collection_costs,pesos_per_year,annual,2023,na,combined,pending,official,municipio_lazaro_cardenas,presupuesto_2023,high,presupuesto_publico,Presupuesto de servicios publicos
-transport_to_mainland,tons_per_month,monthly,2023,annual_average,combined,pending,official,semarnat_qroo,manifiestos_transporte,medium,registros_transporte,Manifiestos de entrega y recepcion
-waste_generation_high_season,tons_per_month,seasonal,2023,na,high,pending,secondary,estudio_academico,tesis_uqroo,medium,estimacion_turistica,Correlacion con ocupacion hotelera
-waste_generation_low_season,tons_per_month,seasonal,2023,na,low,pending,secondary,estudio_academico,tesis_uqroo,medium,estimacion_turistica,Correlacion con ocupacion hotelera
-collection_efficiency,percentage,annual,2023,na,combined,pending,tertiary,reporte_ong,greenpeace_caribe,low,observacion_campo,Estimacion por monitoreo ambiental
-disposal_costs,pesos_per_ton,annual,2023,na,combined,pending,official,contrato_transporte,licitacion_publica,high,costos_contractuales,Contratos de transporte y disposicion
-population_permanent,inhabitants,annual,2023,na,combined,1200,official,inegi,censo_localidades,high,censo_oficial,Poblacion permanente registrada
-population_tourist_peak,inhabitants,daily,2023,december,high,8000,secondary,sectur_qroo,estadisticas_turismo,medium,ocupacion_hotelera,Capacidad maxima en temporada alta
+total_waste_generation,tons_per_month,monthly,2022,annual_average,combined,1044,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,comprehensive_sector_analysis,"34.8 tons/day from detailed establishment survey and projections"
+total_waste_generation_daily,tons_per_day,daily,2022,annual_average,combined,34.8,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,comprehensive_sector_analysis,"Sum of all generation sources: residential + commercial"
+collection_efficiency,percentage,annual,2022,na,combined,28.15,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,waste_wise_cities_methodology,"Only 28.15% of generated waste actually collected off-island"
+collection_primary,tons_per_day,daily,2022,na,combined,22.5,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,field_measurement,"Primary collection at transfer station"
+collection_secondary,tons_per_day,daily,2022,na,combined,9.8,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,field_measurement,"Secondary collection - transported to mainland"
+disposal_to_mainland,tons_per_day,daily,2022,na,combined,9.6,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,field_measurement,"Waste sent to Kantunilkin landfill"
+residential_generation,tons_per_day,daily,2022,na,combined,1.98,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,demographic_analysis,"Residential generation only"
+commercial_generation,tons_per_day,daily,2022,na,combined,32.8,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,establishment_survey,"Non-residential sources (hotels, restaurants, commerce)"
+per_capita_generation,kg_per_person_day,daily,2022,na,combined,0.74,direct,census_own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,population_based_calculation,"1.98 tons/day ÷ 2673 inhabitants"
+population_permanent,inhabitants,annual,2020,na,combined,2673,official,inegi,censo_poblacion_vivienda_2020,high,national_census,"Official permanent population count"
+accommodation_capacity,rooms,annual,2022,na,combined,4524,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,medium,establishment_census_projection,"Total accommodation capacity including private rentals"
+organic_waste_fraction,percentage,annual,2022,na,combined,55.65,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,medium,composition_analysis,"Organic fraction of total waste stream"
+plastic_generation_annual,tons_per_year,annual,2022,na,combined,734,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,medium,wfd_methodology,"Annual plastic waste generation from WFD analysis"
 # Template para datos historicos de Holbox - THESIS-003 Model Validation
 # 
 # INSTRUCCIONES DE USO:
