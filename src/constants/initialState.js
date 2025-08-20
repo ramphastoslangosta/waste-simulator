@@ -2,12 +2,12 @@
 // FILE: src/constants/initialState.js
 // ========================================================================
 export const INITIAL_INPUTS = {
-    general: { fixedPopulation: 2500, highSeasonOccupancy: 90, lowSeasonOccupancy: 20 },
+    general: { fixedPopulation: 2673, highSeasonOccupancy: 90, lowSeasonOccupancy: 20 },
     generation: {
-        hotels: { units: 3000, rate: 1.5, sourceSeparationRate: 25 },
-        restaurants: { units: 200, rate: 30, sourceSeparationRate: 15 },
-        homes: { rate: 0.9, sourceSeparationRate: 5 },
-        commerce: { units: 300, rate: 8, sourceSeparationRate: 30 },
+        hotels: { units: 4524, rate: 1.2, sourceSeparationRate: 25 },
+        restaurants: { units: 99, rate: 114.2, sourceSeparationRate: 15 },
+        homes: { rate: 0.74, sourceSeparationRate: 5 },
+        commerce: { units: 482, rate: 19.77, sourceSeparationRate: 30 },
     },
     // Waste Separation at Generation Scenarios
     separationScenarios: {
@@ -38,14 +38,15 @@ export const INITIAL_INPUTS = {
         },
     },
     composition: {
-        hotels: { organicos: 45, pet: 12, aluminio: 5, carton: 10, vidrio: 3, rechazo: 20, peligrosos: 5 },
-        restaurants: { organicos: 70, pet: 5, aluminio: 3, carton: 8, vidrio: 4, rechazo: 8, peligrosos: 2 },
-        homes: { organicos: 60, pet: 10, aluminio: 2, carton: 8, vidrio: 5, rechazo: 12, peligrosos: 3 },
-        commerce: { organicos: 20, pet: 25, aluminio: 10, carton: 20, vidrio: 5, rechazo: 18, peligrosos: 2 },
+        // Based on 2022 Holbox field study composition analysis
+        hotels: { organicos: 56, pet: 6, aluminio: 2, carton: 4, vidrio: 9, rechazo: 20, peligrosos: 3 },
+        restaurants: { organicos: 56, pet: 6, aluminio: 2, carton: 4, vidrio: 9, rechazo: 20, peligrosos: 3 },
+        homes: { organicos: 56, pet: 6, aluminio: 2, carton: 4, vidrio: 9, rechazo: 20, peligrosos: 3 },
+        commerce: { organicos: 56, pet: 6, aluminio: 2, carton: 4, vidrio: 9, rechazo: 20, peligrosos: 3 },
     },
     rsuSystem: {
         logistics: { vehicles: 4, vehicleCapacity: 5, tripsPerVehicle: 2 },
-        processing: { transferStationRate: 50, transferStationCapacity: 150, finalTransportCapacity: 40 },
+        processing: { transferStationRate: 50, transferStationCapacity: 300, finalTransportCapacity: 10 },
         initialInventory: {
             collectionVehicles: 0,           // ton - Initial waste in collection vehicles at day 0
             transferStation: 0,              // ton - Initial waste inventory at transfer station at day 0  
@@ -81,7 +82,7 @@ export const INITIAL_INPUTS = {
             disposalCost: 400,
             income: { pet: 2500, aluminio: 15000, carton: 1200, vidrio: 300 }
         },
-        leaks: { collectionLeak: 2, transferStationLeak: 1, finalTransportLeak: 0.5, disposalLeak: 5 },
+        leaks: { collectionLeak: 15, transferStationLeak: 1, finalTransportLeak: 0.5, disposalLeak: 2 },
     },
     specialWasteGeneration: { sargassumHigh: 50, sargassumLow: 5, construction: 5 },
     sargassumManagement: { collectionCost: 300, disposalCost: 100 },
