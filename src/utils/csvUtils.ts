@@ -1,4 +1,10 @@
 // Utility functions for CSV export/import of simulation scenarios
+
+// Helper function to format numbers for export
+const formatNumber = (value: number, decimals: number = 2): string => {
+  if (isNaN(value) || !isFinite(value)) return '0';
+  return Number(value).toFixed(decimals);
+};
 export const exportScenariosToCSV = (scenarios: any[]) => {
   if (scenarios.length === 0) {
     throw new Error('No scenarios to export');
@@ -100,7 +106,45 @@ export const exportScenariosToCSV = (scenarios: any[]) => {
     'sargassumManagement_disposalCost',
     // RCD Management
     'rcdManagement_collectionCost',
-    'rcdManagement_disposalCost'
+    'rcdManagement_disposalCost',
+    // RSU System - Initial Inventory
+    'rsuSystem_initialInventory_collectionVehicles',
+    'rsuSystem_initialInventory_transferStation',
+    'rsuSystem_initialInventory_finalTransportVehicles',
+    'rsuSystem_initialInventory_disposalSite',
+    // RSU System - Valorization
+    'rsuSystem_valorization_enableComposting',
+    'rsuSystem_valorization_compostingEfficiency',
+    'rsuSystem_valorization_compostingCost',
+    'rsuSystem_valorization_compostIncome',
+    'rsuSystem_valorization_enableBiogas',
+    'rsuSystem_valorization_biogasEfficiency',
+    'rsuSystem_valorization_biogasCost',
+    'rsuSystem_valorization_biogasIncome',
+    'rsuSystem_valorization_enablePlasticPyrolysis',
+    'rsuSystem_valorization_pyrolysisEfficiency',
+    'rsuSystem_valorization_pyrolysisCost',
+    'rsuSystem_valorization_pyrolysisIncome',
+    // Separation Scenarios
+    'separationScenarios_enableEnhancedSeparation',
+    'separationScenarios_educationProgram_enableEducation',
+    'separationScenarios_educationProgram_educationImpactHotels',
+    'separationScenarios_educationProgram_educationImpactRestaurants',
+    'separationScenarios_educationProgram_educationImpactHomes',
+    'separationScenarios_educationProgram_educationImpactCommerce',
+    'separationScenarios_educationProgram_educationCostPerCapita',
+    'separationScenarios_incentiveProgram_enableIncentives',
+    'separationScenarios_incentiveProgram_incentiveImpactHotels',
+    'separationScenarios_incentiveProgram_incentiveImpactRestaurants',
+    'separationScenarios_incentiveProgram_incentiveImpactHomes',
+    'separationScenarios_incentiveProgram_incentiveImpactCommerce',
+    'separationScenarios_incentiveProgram_incentiveCostPerTon',
+    'separationScenarios_containerProgram_enableContainers',
+    'separationScenarios_containerProgram_containerImpactHotels',
+    'separationScenarios_containerProgram_containerImpactRestaurants',
+    'separationScenarios_containerProgram_containerImpactHomes',
+    'separationScenarios_containerProgram_containerImpactCommerce',
+    'separationScenarios_containerProgram_containerCostPerUnit'
   ];
 
   // Convert scenarios to CSV rows
@@ -201,7 +245,45 @@ export const exportScenariosToCSV = (scenarios: any[]) => {
       inputs.sargassumManagement.disposalCost,
       // RCD Management
       inputs.rcdManagement.collectionCost,
-      inputs.rcdManagement.disposalCost
+      inputs.rcdManagement.disposalCost,
+      // RSU System - Initial Inventory
+      inputs.rsuSystem.initialInventory?.collectionVehicles || 0,
+      inputs.rsuSystem.initialInventory?.transferStation || 0,
+      inputs.rsuSystem.initialInventory?.finalTransportVehicles || 0,
+      inputs.rsuSystem.initialInventory?.disposalSite || 0,
+      // RSU System - Valorization
+      inputs.rsuSystem.valorization?.enableComposting || false,
+      inputs.rsuSystem.valorization?.compostingEfficiency || 0,
+      inputs.rsuSystem.valorization?.compostingCost || 0,
+      inputs.rsuSystem.valorization?.compostIncome || 0,
+      inputs.rsuSystem.valorization?.enableBiogas || false,
+      inputs.rsuSystem.valorization?.biogasEfficiency || 0,
+      inputs.rsuSystem.valorization?.biogasCost || 0,
+      inputs.rsuSystem.valorization?.biogasIncome || 0,
+      inputs.rsuSystem.valorization?.enablePlasticPyrolysis || false,
+      inputs.rsuSystem.valorization?.pyrolysisEfficiency || 0,
+      inputs.rsuSystem.valorization?.pyrolysisCost || 0,
+      inputs.rsuSystem.valorization?.pyrolysisIncome || 0,
+      // Separation Scenarios
+      inputs.separationScenarios?.enableEnhancedSeparation || false,
+      inputs.separationScenarios?.educationProgram?.enableEducation || false,
+      inputs.separationScenarios?.educationProgram?.educationImpactHotels || 0,
+      inputs.separationScenarios?.educationProgram?.educationImpactRestaurants || 0,
+      inputs.separationScenarios?.educationProgram?.educationImpactHomes || 0,
+      inputs.separationScenarios?.educationProgram?.educationImpactCommerce || 0,
+      inputs.separationScenarios?.educationProgram?.educationCostPerCapita || 0,
+      inputs.separationScenarios?.incentiveProgram?.enableIncentives || false,
+      inputs.separationScenarios?.incentiveProgram?.incentiveImpactHotels || 0,
+      inputs.separationScenarios?.incentiveProgram?.incentiveImpactRestaurants || 0,
+      inputs.separationScenarios?.incentiveProgram?.incentiveImpactHomes || 0,
+      inputs.separationScenarios?.incentiveProgram?.incentiveImpactCommerce || 0,
+      inputs.separationScenarios?.incentiveProgram?.incentiveCostPerTon || 0,
+      inputs.separationScenarios?.containerProgram?.enableContainers || false,
+      inputs.separationScenarios?.containerProgram?.containerImpactHotels || 0,
+      inputs.separationScenarios?.containerProgram?.containerImpactRestaurants || 0,
+      inputs.separationScenarios?.containerProgram?.containerImpactHomes || 0,
+      inputs.separationScenarios?.containerProgram?.containerImpactCommerce || 0,
+      inputs.separationScenarios?.containerProgram?.containerCostPerUnit || 0
     ].join(',');
   });
 
@@ -704,6 +786,59 @@ export const parseCSVToScenarios = (csvContent: string): any[] => {
           collectionCost: parseFloat(values[76]) || 0,
           disposalCost: parseFloat(values[77]) || 0
         }
+      }
+    };
+
+    // Add missing fields: Initial Inventory
+    scenario.inputs.rsuSystem.initialInventory = {
+      collectionVehicles: parseFloat(values[78]) || 0,
+      transferStation: parseFloat(values[79]) || 0,
+      finalTransportVehicles: parseFloat(values[80]) || 0,
+      disposalSite: parseFloat(values[81]) || 0
+    };
+
+    // Add missing fields: Valorization
+    scenario.inputs.rsuSystem.valorization = {
+      enableComposting: values[82] === 'TRUE' || values[82] === 'true' || values[82] === '1',
+      compostingEfficiency: parseFloat(values[83]) || 0,
+      compostingCost: parseFloat(values[84]) || 0,
+      compostIncome: parseFloat(values[85]) || 0,
+      enableBiogas: values[86] === 'TRUE' || values[86] === 'true' || values[86] === '1',
+      biogasEfficiency: parseFloat(values[87]) || 0,
+      biogasCost: parseFloat(values[88]) || 0,
+      biogasIncome: parseFloat(values[89]) || 0,
+      enablePlasticPyrolysis: values[90] === 'TRUE' || values[90] === 'true' || values[90] === '1',
+      pyrolysisEfficiency: parseFloat(values[91]) || 0,
+      pyrolysisCost: parseFloat(values[92]) || 0,
+      pyrolysisIncome: parseFloat(values[93]) || 0
+    };
+
+    // Add missing fields: Separation Scenarios
+    scenario.inputs.separationScenarios = {
+      enableEnhancedSeparation: values[94] === 'TRUE' || values[94] === 'true' || values[94] === '1',
+      educationProgram: {
+        enableEducation: values[95] === 'TRUE' || values[95] === 'true' || values[95] === '1',
+        educationImpactHotels: parseFloat(values[96]) || 0,
+        educationImpactRestaurants: parseFloat(values[97]) || 0,
+        educationImpactHomes: parseFloat(values[98]) || 0,
+        educationImpactCommerce: parseFloat(values[99]) || 0,
+        educationCostPerCapita: parseFloat(values[100]) || 0
+      },
+      incentiveProgram: {
+        enableIncentives: values[101] === 'TRUE' || values[101] === 'true' || values[101] === '1',
+        incentiveImpactHotels: parseFloat(values[102]) || 0,
+        incentiveImpactRestaurants: parseFloat(values[103]) || 0,
+        incentiveImpactHomes: parseFloat(values[104]) || 0,
+        incentiveImpactCommerce: parseFloat(values[105]) || 0,
+        incentiveCostPerTon: parseFloat(values[106]) || 0
+      },
+      containerProgram: {
+        enableContainers: values[107] === 'TRUE' || values[107] === 'true' || values[107] === '1',
+        containerImpactHotels: parseFloat(values[108]) || 0,
+        containerImpactRestaurants: parseFloat(values[109]) || 0,
+        containerImpactHomes: parseFloat(values[110]) || 0,
+        containerImpactCommerce: parseFloat(values[111]) || 0,
+        containerCostPerUnit: parseFloat(values[112]) || 0
       }
     };
 
