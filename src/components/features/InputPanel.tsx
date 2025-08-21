@@ -341,6 +341,28 @@ const InputPanel = ({ inputs, setInputs }) => {
             </div>
 
             <h3 className="text-2xl font-bold text-slate-900 mt-8 mb-6">Escenarios de Separación en Origen</h3>
+            
+            {/* Master Separation Toggle */}
+            <div className="mb-6 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <div className="flex items-center space-x-2">
+                    <input 
+                        type="checkbox" 
+                        id="enableEnhancedSeparation"
+                        checked={inputs.separationScenarios?.enableEnhancedSeparation || false}
+                        onChange={e => setInputs(prev => ({
+                            ...prev,
+                            separationScenarios: {
+                                ...prev.separationScenarios,
+                                enableEnhancedSeparation: e.target.checked
+                            }
+                        }))}
+                        className="rounded border-gray-300 text-blue-600 focus:ring-blue-500 w-5 h-5"
+                    />
+                    <label htmlFor="enableEnhancedSeparation" className="text-lg font-semibold text-blue-800">Habilitar Programas de Separación Mejorada</label>
+                </div>
+                <p className="text-sm text-blue-600 mt-1">Activa todos los programas de separación en origen disponibles</p>
+            </div>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
                 {/* Education Program Card */}
                 <Card>
@@ -351,7 +373,16 @@ const InputPanel = ({ inputs, setInputs }) => {
                                 type="checkbox" 
                                 id="enableEducation"
                                 checked={inputs.separationScenarios?.educationProgram?.enableEducation || false}
-                                onChange={e => handleTripleNestedInputChange('separationScenarios', 'educationProgram', 'enableEducation', '', e.target.checked ? 1 : 0)}
+                                onChange={e => setInputs(prev => ({
+                                    ...prev,
+                                    separationScenarios: {
+                                        ...prev.separationScenarios || {},
+                                        educationProgram: {
+                                            ...prev.separationScenarios?.educationProgram || {},
+                                            enableEducation: e.target.checked
+                                        }
+                                    }
+                                }))}
                                 className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                             />
                             <label htmlFor="enableEducation" className="text-sm font-medium text-gray-700">Habilitar Educación</label>
@@ -403,7 +434,16 @@ const InputPanel = ({ inputs, setInputs }) => {
                                 type="checkbox" 
                                 id="enableIncentives"
                                 checked={inputs.separationScenarios?.incentiveProgram?.enableIncentives || false}
-                                onChange={e => handleTripleNestedInputChange('separationScenarios', 'incentiveProgram', 'enableIncentives', '', e.target.checked ? 1 : 0)}
+                                onChange={e => setInputs(prev => ({
+                                    ...prev,
+                                    separationScenarios: {
+                                        ...prev.separationScenarios || {},
+                                        incentiveProgram: {
+                                            ...prev.separationScenarios?.incentiveProgram || {},
+                                            enableIncentives: e.target.checked
+                                        }
+                                    }
+                                }))}
                                 className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                             />
                             <label htmlFor="enableIncentives" className="text-sm font-medium text-gray-700">Habilitar Incentivos</label>
@@ -455,7 +495,16 @@ const InputPanel = ({ inputs, setInputs }) => {
                                 type="checkbox" 
                                 id="enableContainers"
                                 checked={inputs.separationScenarios?.containerProgram?.enableContainers || false}
-                                onChange={e => handleTripleNestedInputChange('separationScenarios', 'containerProgram', 'enableContainers', '', e.target.checked ? 1 : 0)}
+                                onChange={e => setInputs(prev => ({
+                                    ...prev,
+                                    separationScenarios: {
+                                        ...prev.separationScenarios || {},
+                                        containerProgram: {
+                                            ...prev.separationScenarios?.containerProgram || {},
+                                            enableContainers: e.target.checked
+                                        }
+                                    }
+                                }))}
                                 className="rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                             />
                             <label htmlFor="enableContainers" className="text-sm font-medium text-gray-700">Habilitar Contenedores</label>
