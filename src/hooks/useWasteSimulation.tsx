@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { calculateGeneration } from '../simulation/modules/generation';
 import { processCollection } from '../simulation/modules/collection';
+import { processSeparation } from '../simulation/modules/separation';
 
 // Este hook personalizado contiene toda la lógica de cálculo de la simulación.
 // Recibe los inputs del usuario y devuelve los resultados calculados.
@@ -45,37 +46,28 @@ export const useWasteSimulation = (inputs: any) => {
                 // Update collection vehicle inventory (waste collected but not yet delivered to transfer station)
                 collectionVehicleInventory += toTransferStationTotal;
                 
-                // Deliver from collection vehicles to transfer station (based on vehicle capacity and trips)
-                const maxDeliveryCapacity = inputs.rsuSystem.logistics.vehicles * inputs.rsuSystem.logistics.vehicleCapacity * inputs.rsuSystem.logistics.tripsPerVehicle;
-                const actualDelivery = Math.min(collectionVehicleInventory, maxDeliveryCapacity);
-                collectionVehicleInventory -= actualDelivery;
+                // --- SEPARATION MODULE ---
+                const separationData = processSeparation(
+                    generationResults, 
+                    collectionResults, 
+                    inputs,
+                    { collectionVehicleInventory, rsuInventory }
+                );
+                const {
+                    maxDeliveryCapacity,
+                    actualDelivery,
+                    materialAvailableInStation,
+                    materialProcessedToday,
+                    processedRatio,
+                    processedByMaterial,
+                    recoveredHighQuality,
+                    recoveredLowQualityPlant,
+                    totalRecoveredAtStation,
+                } = separationData.results;
                 
-                const materialAvailableInStation = rsuInventory + actualDelivery;
-                const materialProcessedToday = Math.min(materialAvailableInStation, inputs.rsuSystem.processing.transferStationRate);
-                
-                const recoveredHighQuality: any = {};
-                const recoveredLowQualityPlant: any = {};
-                
-                const processedRatio = toTransferStationTotal > 0 ? materialProcessedToday / toTransferStationTotal : 0;
-                const processedByMaterial: any = {};
-                materialTypes.forEach(m => processedByMaterial[m] = (toTransferStationByMaterial[m] || 0) * processedRatio);
-
-                valorizableTypes.forEach(m => {
-                    let sourceSeparatedAmount = 0;
-                    for (const source in genBySource) {
-                        // Use enhanced separation rates instead of base rates
-                        sourceSeparatedAmount += (genBySource[source] * ((inputs.composition[source]?.[m] || 0) / 100)) * (enhancedSeparationRates[source] / 100);
-                    }
-                    const captured = sourceSeparatedAmount * (inputs.rsuSystem.separation.differentiatedCaptureRate / 100) * collectedRatio * processedRatio;
-                    recoveredHighQuality[m] = captured * (1 - inputs.rsuSystem.separation.rejectionRateSource / 100);
-                });
-
-                valorizableTypes.forEach(m => {
-                    const availableInMixed = Math.max(0, (processedByMaterial[m] || 0) - (recoveredHighQuality[m] || 0));
-                    recoveredLowQualityPlant[m] = availableInMixed * (inputs.rsuSystem.separation.plantSeparationEfficiency[m] / 100);
-                });
-
-                const totalRecoveredAtStation = Object.values(recoveredHighQuality).reduce((a,b)=>a+b,0) + Object.values(recoveredLowQualityPlant).reduce((a,b)=>a+b,0);
+                // Update inventories from separation module
+                collectionVehicleInventory = separationData.updatedInventory.collectionVehicleInventory;
+                rsuInventory = separationData.updatedInventory.rsuInventory;
                 
                 // --- VALORIZATION PROCESSES AT TRANSFER STATION ---
                 let valorizedMaterials = {
