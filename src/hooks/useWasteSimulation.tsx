@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { calculateGeneration } from '../simulation/modules/generation';
+import { processCollection } from '../simulation/modules/collection';
 
 // Este hook personalizado contiene toda la lógica de cálculo de la simulación.
 // Recibe los inputs del usuario y devuelve los resultados calculados.
@@ -25,31 +26,21 @@ export const useWasteSimulation = (inputs: any) => {
                 const generationResults = calculateGeneration(inputs, occupancy);
                 const { genBySource, genByMaterial, genRSU, enhancedSeparationRates } = generationResults;
 
-                const collectionCapacity = inputs.rsuSystem.logistics.vehicles * inputs.rsuSystem.logistics.vehicleCapacity * inputs.rsuSystem.logistics.tripsPerVehicle;
-                const collectionDeficit = Math.max(0, genRSU - collectionCapacity);
-                const collectedWasteTotal = genRSU - collectionDeficit;
-                
-                const collectedRatio = genRSU > 0 ? collectedWasteTotal / genRSU : 0;
-                const collectedByMaterial: any = {};
-                materialTypes.forEach(m => collectedByMaterial[m] = genByMaterial[m] * collectedRatio);
-
-                const informalRecoveryCollectionByMaterial: any = {};
-                const wasteAfterInformalRec1: any = {};
-                valorizableTypes.forEach(m => {
-                    const recovered = collectedByMaterial[m] * (inputs.rsuSystem.separation.informalRecoveryRateCollection / 100);
-                    informalRecoveryCollectionByMaterial[m] = recovered;
-                    wasteAfterInformalRec1[m] = collectedByMaterial[m] - recovered;
-                });
-                ['organicos', 'rechazo', 'peligrosos'].forEach(m => wasteAfterInformalRec1[m] = collectedByMaterial[m]);
-                const informalRecoveryCollection = Object.values(informalRecoveryCollectionByMaterial).reduce((a, b) => a + b, 0);
-
-                const wasteBeforeLeak = Object.values(wasteAfterInformalRec1).reduce((a, b) => a + b, 0);
-                const leakCollection = wasteBeforeLeak * (inputs.rsuSystem.leaks.collectionLeak / 100);
-                const leakRatio = wasteBeforeLeak > 0 ? leakCollection / wasteBeforeLeak : 0;
-                
-                const toTransferStationByMaterial: any = {};
-                materialTypes.forEach(m => toTransferStationByMaterial[m] = (wasteAfterInformalRec1[m] || 0) * (1 - leakRatio));
-                const toTransferStationTotal = Object.values(toTransferStationByMaterial).reduce((a, b) => a + b, 0);
+                // --- COLLECTION MODULE ---
+                const collectionResults = processCollection(generationResults, inputs);
+                const {
+                    collectionCapacity,
+                    collectionDeficit,
+                    collectedWasteTotal,
+                    collectedRatio,
+                    collectedByMaterial,
+                    informalRecoveryCollectionByMaterial,
+                    wasteAfterInformalRec1,
+                    informalRecoveryCollection,
+                    leakCollection,
+                    toTransferStationByMaterial,
+                    toTransferStationTotal,
+                } = collectionResults;
 
                 // Update collection vehicle inventory (waste collected but not yet delivered to transfer station)
                 collectionVehicleInventory += toTransferStationTotal;
