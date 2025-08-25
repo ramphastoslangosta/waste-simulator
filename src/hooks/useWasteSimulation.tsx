@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { calculateGeneration } from '../simulation/modules/generation';
 import { processCollection } from '../simulation/modules/collection';
 import { processSeparation } from '../simulation/modules/separation';
+import { processValorization } from '../simulation/modules/valorization';
 
 // Este hook personalizado contiene toda la lógica de cálculo de la simulación.
 // Recibe los inputs del usuario y devuelve los resultados calculados.
@@ -69,49 +70,23 @@ export const useWasteSimulation = (inputs: any) => {
                 collectionVehicleInventory = separationData.updatedInventory.collectionVehicleInventory;
                 rsuInventory = separationData.updatedInventory.rsuInventory;
                 
-                // --- VALORIZATION PROCESSES AT TRANSFER STATION ---
-                let valorizedMaterials = {
-                    composted: 0,
-                    biogas: 0,
-                    pyrolyzed: 0
-                };
-                let valorizationCosts = 0;
-                let valorizationIncomes = 0;
-                
-                const availableOrganics = processedByMaterial.organicos || 0;
-                const availablePlastics = (processedByMaterial.pet || 0);
-                
-                // Composting Process
-                if (inputs.rsuSystem.valorization?.enableComposting && availableOrganics > 0) {
-                    const organicsToCompost = availableOrganics * (inputs.rsuSystem.valorization.compostingEfficiency / 100);
-                    valorizedMaterials.composted = organicsToCompost;
-                    valorizationCosts += organicsToCompost * inputs.rsuSystem.valorization.compostingCost;
-                    valorizationIncomes += organicsToCompost * inputs.rsuSystem.valorization.compostIncome;
-                }
-                
-                // Biogas Process (can't overlap with composting for same organics)
-                if (inputs.rsuSystem.valorization?.enableBiogas && availableOrganics > 0) {
-                    const remainingOrganics = availableOrganics - valorizedMaterials.composted;
-                    if (remainingOrganics > 0) {
-                        const organicsForBiogas = remainingOrganics * (inputs.rsuSystem.valorization.biogasEfficiency / 100);
-                        valorizedMaterials.biogas = organicsForBiogas;
-                        valorizationCosts += organicsForBiogas * inputs.rsuSystem.valorization.biogasCost;
-                        valorizationIncomes += organicsForBiogas * inputs.rsuSystem.valorization.biogasIncome;
-                    }
-                }
-                
-                // Plastic Pyrolysis Process
-                if (inputs.rsuSystem.valorization?.enablePlasticPyrolysis && availablePlastics > 0) {
-                    const plasticsForPyrolysis = availablePlastics * (inputs.rsuSystem.valorization.pyrolysisEfficiency / 100);
-                    valorizedMaterials.pyrolyzed = plasticsForPyrolysis;
-                    valorizationCosts += plasticsForPyrolysis * inputs.rsuSystem.valorization.pyrolysisCost;
-                    valorizationIncomes += plasticsForPyrolysis * inputs.rsuSystem.valorization.pyrolysisIncome;
-                }
-                
-                const totalValorizedMaterials = valorizedMaterials.composted + valorizedMaterials.biogas + valorizedMaterials.pyrolyzed;
-                
-                const leakTransferStation = materialProcessedToday * (inputs.rsuSystem.leaks.transferStationLeak / 100);
-                const materialLeavingStation = materialProcessedToday - totalRecoveredAtStation - totalValorizedMaterials - leakTransferStation;
+                // --- VALORIZATION MODULE ---
+                const valorizationResults = processValorization(
+                    processedByMaterial,
+                    materialProcessedToday,
+                    totalRecoveredAtStation,
+                    inputs
+                );
+                const {
+                    valorizedMaterials,
+                    valorizationCosts,
+                    valorizationIncomes,
+                    totalValorizedMaterials,
+                    availableOrganics,
+                    availablePlastics,
+                    leakTransferStation,
+                    materialLeavingStation,
+                } = valorizationResults;
 
                 // Update final transport inventory
                 finalTransportInventory += materialLeavingStation;
