@@ -4,6 +4,7 @@ import { processCollection } from '../simulation/modules/collection';
 import { processSeparation } from '../simulation/modules/separation';
 import { processValorization } from '../simulation/modules/valorization';
 import { updateInventoriesAndFlows } from '../simulation/modules/inventory';
+import { calculateEconomics } from '../simulation/modules/economics';
 
 // Este hook personalizado contiene toda la lógica de cálculo de la simulación.
 // Recibe los inputs del usuario y devuelve los resultados calculados.
@@ -122,18 +123,21 @@ export const useWasteSimulation = (inputs: any) => {
                 const { actualFinalTransport, untransportedMaterial, leakFinalTransport, arrivedAtDisposal, toDisposalSite } = inventoryResults.finalTransportFlows;
                 const { informalRecoveryDisposal, leakDisposal, finalDisposal } = inventoryResults.disposalFlows;
 
-                const totalCollectionCost = collectedWasteTotal * inputs.rsuSystem.economics.collectionCost;
-                const totalTransferCost = materialProcessedToday * inputs.rsuSystem.economics.transferStationCost;
-                const { totalFinalTransportCost } = inventoryResults.transportCosts;
-                const totalDisposalCost = toDisposalSite * inputs.rsuSystem.economics.disposalCost;
-                const totalRsuCosts = totalCollectionCost + totalTransferCost + totalFinalTransportCost + totalDisposalCost + valorizationCosts;
-
-                const incomeByMaterial: any = {};
-                valorizableTypes.forEach(m => {
-                    incomeByMaterial[m] = ((recoveredHighQuality[m] || 0) + (recoveredLowQualityPlant[m] || 0)) * inputs.rsuSystem.economics.income[m];
-                });
-                const totalRsuIncome = Object.values(incomeByMaterial).reduce((a, b) => a + b, 0) + valorizationIncomes;
-                const netRsuCost = totalRsuCosts - totalRsuIncome;
+                // --- ECONOMICS MODULE ---
+                const economicsResults = calculateEconomics(
+                    collectionResults,
+                    separationData.results,
+                    valorizationResults,
+                    inventoryResults,
+                    { materialProcessedToday, occupancy },
+                    inputs,
+                    currentSeason
+                );
+                
+                // Extract economic values for compatibility
+                const { totalCollectionCost, totalTransferCost, totalFinalTransportCost, totalDisposalCost, totalRsuCosts } = economicsResults.rsuCosts;
+                const { incomeByMaterial, totalRsuIncome } = economicsResults.rsuIncome;
+                const { netRsuCost } = economicsResults.netCosts;
 
                 const rsuLeaks = collectionDeficit + leakCollection + leakTransferStation + leakFinalTransport + leakDisposal;
                 const rsuRecovery = {
@@ -142,41 +146,13 @@ export const useWasteSimulation = (inputs: any) => {
                     informal: informalRecoveryCollection + informalRecoveryDisposal,
                 };
                 
-                // --- SEPARATION SCENARIO COSTS ---
-                let separationProgramCosts = 0;
+                const { separationProgramCosts } = economicsResults.programCosts;
+                const { sargassumCost, rcdCost } = economicsResults.specialWasteCosts;
+                const { totalSystemCost } = economicsResults;
                 
-                // Education Program Costs
-                if (inputs.separationScenarios?.educationProgram?.enableEducation) {
-                    const annualEducationCost = inputs.general.fixedPopulation * inputs.separationScenarios.educationProgram.educationCostPerCapita;
-                    const touristPopulation = (inputs.generation.hotels.units * occupancy / 100) + 
-                                            inputs.generation.restaurants.units * 3 + // Estimate 3 people per restaurant
-                                            inputs.generation.commerce.units * 2; // Estimate 2 people per commerce
-                    const totalEducationCost = (inputs.general.fixedPopulation + touristPopulation) * inputs.separationScenarios.educationProgram.educationCostPerCapita;
-                    separationProgramCosts += totalEducationCost / 365; // Convert annual to daily cost
-                }
-                
-                // Incentive Program Costs
-                if (inputs.separationScenarios?.incentiveProgram?.enableIncentives) {
-                    const totalSeparatedMaterial = Object.values(recoveredHighQuality).reduce((a, b) => a + b, 0);
-                    separationProgramCosts += totalSeparatedMaterial * inputs.separationScenarios.incentiveProgram.incentiveCostPerTon;
-                }
-                
-                // Container Program Costs (one-time cost amortized over 5 years)
-                if (inputs.separationScenarios?.containerProgram?.enableContainers) {
-                    const totalUnits = inputs.generation.hotels.units + inputs.generation.restaurants.units + 
-                                     inputs.generation.commerce.units + Math.ceil(inputs.general.fixedPopulation / 100);
-                    const annualContainerCost = totalUnits * inputs.separationScenarios.containerProgram.containerCostPerUnit / 5; // 5-year amortization
-                    separationProgramCosts += annualContainerCost / 365; // Convert annual to daily cost
-                }
-                
-                // --- FLOW 2 & 3: Special Wastes (Sargassum & RCD) ---
+                // Extract special waste generations for compatibility
                 const sargassumGeneration = currentSeason === 'high' ? inputs.specialWasteGeneration.sargassumHigh : inputs.specialWasteGeneration.sargassumLow;
                 const rcdGeneration = inputs.specialWasteGeneration.construction;
-                const sargassumCost = sargassumGeneration * (inputs.sargassumManagement.collectionCost + inputs.sargassumManagement.disposalCost);
-                const rcdCost = rcdGeneration * (inputs.rcdManagement.collectionCost + inputs.rcdManagement.disposalCost);
-
-                // --- FINAL CONSOLIDATION ---
-                const totalSystemCost = netRsuCost + sargassumCost + rcdCost + separationProgramCosts;
                 
                 dailyResults.push({
                     totalGeneration: genRSU + sargassumGeneration + rcdGeneration,
