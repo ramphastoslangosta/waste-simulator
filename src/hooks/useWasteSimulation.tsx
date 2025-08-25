@@ -3,6 +3,7 @@ import { calculateGeneration } from '../simulation/modules/generation';
 import { processCollection } from '../simulation/modules/collection';
 import { processSeparation } from '../simulation/modules/separation';
 import { processValorization } from '../simulation/modules/valorization';
+import { updateInventoriesAndFlows } from '../simulation/modules/inventory';
 
 // Este hook personalizado contiene toda la lógica de cálculo de la simulación.
 // Recibe los inputs del usuario y devuelve los resultados calculados.
@@ -88,35 +89,42 @@ export const useWasteSimulation = (inputs: any) => {
                     materialLeavingStation,
                 } = valorizationResults;
 
-                // Update final transport inventory
-                finalTransportInventory += materialLeavingStation;
-                const actualFinalTransport = Math.min(finalTransportInventory, inputs.rsuSystem.processing.finalTransportCapacity);
-                finalTransportInventory -= actualFinalTransport;
-                const untransportedMaterial = materialLeavingStation - actualFinalTransport;
-                
-                const leakFinalTransport = actualFinalTransport * (inputs.rsuSystem.leaks.finalTransportLeak / 100);
-                const arrivedAtDisposal = actualFinalTransport - leakFinalTransport;
-                
-                // Update disposal site inventory
-                disposalSiteInventory += arrivedAtDisposal;
-                const toDisposalSite = arrivedAtDisposal; // For compatibility with existing calculations
-                
+                // --- INVENTORY & FINAL DISPOSAL MODULE ---
                 let valorizablesToDisposal = 0;
                 if(materialLeavingStation > 0) {
                     const proportionOfValorizablesLeaving = valorizableTypes.reduce((sum, m) => sum + (processedByMaterial[m] || 0), 0) / materialProcessedToday;
-                    valorizablesToDisposal = toDisposalSite * proportionOfValorizablesLeaving;
+                    valorizablesToDisposal = materialLeavingStation * proportionOfValorizablesLeaving;
                 }
-                const informalRecoveryDisposal = valorizablesToDisposal * (inputs.rsuSystem.separation.informalRecoveryRateDisposal / 100);
                 
-                const leakDisposal = toDisposalSite * (inputs.rsuSystem.leaks.disposalLeak / 100);
-                const finalDisposal = toDisposalSite - informalRecoveryDisposal - leakDisposal;
-
-                rsuInventory = materialAvailableInStation - materialProcessedToday + untransportedMaterial;
-                rsuInventory = Math.min(rsuInventory, inputs.rsuSystem.processing.transferStationCapacity);
+                const inventoryResults = updateInventoriesAndFlows(
+                    { 
+                        collectionVehicleInventory: collectionVehicleInventory,
+                        rsuInventory: rsuInventory, 
+                        finalTransportInventory: finalTransportInventory, 
+                        disposalSiteInventory: disposalSiteInventory 
+                    },
+                    {
+                        materialLeavingStation,
+                        materialProcessedToday,
+                        materialAvailableInStation,
+                        valorizablesToDisposal
+                    },
+                    inputs
+                );
+                
+                // Update inventory variables from results
+                collectionVehicleInventory = inventoryResults.inventoryLevels.collectionVehicleInventory;
+                rsuInventory = inventoryResults.inventoryLevels.rsuInventory;
+                finalTransportInventory = inventoryResults.inventoryLevels.finalTransportInventory;
+                disposalSiteInventory = inventoryResults.inventoryLevels.disposalSiteInventory;
+                
+                // Extract flow results for compatibility
+                const { actualFinalTransport, untransportedMaterial, leakFinalTransport, arrivedAtDisposal, toDisposalSite } = inventoryResults.finalTransportFlows;
+                const { informalRecoveryDisposal, leakDisposal, finalDisposal } = inventoryResults.disposalFlows;
 
                 const totalCollectionCost = collectedWasteTotal * inputs.rsuSystem.economics.collectionCost;
                 const totalTransferCost = materialProcessedToday * inputs.rsuSystem.economics.transferStationCost;
-                const totalFinalTransportCost = actualFinalTransport * inputs.rsuSystem.economics.finalTransportCost;
+                const { totalFinalTransportCost } = inventoryResults.transportCosts;
                 const totalDisposalCost = toDisposalSite * inputs.rsuSystem.economics.disposalCost;
                 const totalRsuCosts = totalCollectionCost + totalTransferCost + totalFinalTransportCost + totalDisposalCost + valorizationCosts;
 
