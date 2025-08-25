@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { calculateGeneration } from '../simulation/modules/generation';
 
 // Este hook personalizado contiene toda la lógica de cálculo de la simulación.
 // Recibe los inputs del usuario y devuelve los resultados calculados.
@@ -20,54 +21,9 @@ export const useWasteSimulation = (inputs: any) => {
             for (let day = 0; day < SIMULATION_DAYS; day++) {
                 const occupancy = currentSeason === 'high' ? inputs.general.highSeasonOccupancy : inputs.general.lowSeasonOccupancy;
                 
-                // --- ENHANCED SEPARATION SCENARIOS ---
-                // Calculate enhanced separation rates based on active programs
-                const getEnhancedSeparationRate = (baseRate, source) => {
-                    let enhancedRate = baseRate;
-                    
-                    // Education Program Impact
-                    if (inputs.separationScenarios?.educationProgram?.enableEducation) {
-                        const educationImpact = inputs.separationScenarios.educationProgram[`educationImpact${source.charAt(0).toUpperCase() + source.slice(1)}`] || 0;
-                        enhancedRate += educationImpact;
-                    }
-                    
-                    // Incentive Program Impact
-                    if (inputs.separationScenarios?.incentiveProgram?.enableIncentives) {
-                        const incentiveImpact = inputs.separationScenarios.incentiveProgram[`incentiveImpact${source.charAt(0).toUpperCase() + source.slice(1)}`] || 0;
-                        enhancedRate += incentiveImpact;
-                    }
-                    
-                    // Container Program Impact
-                    if (inputs.separationScenarios?.containerProgram?.enableContainers) {
-                        const containerImpact = inputs.separationScenarios.containerProgram[`containerImpact${source.charAt(0).toUpperCase() + source.slice(1)}`] || 0;
-                        enhancedRate += containerImpact;
-                    }
-                    
-                    return Math.min(enhancedRate, 95); // Cap at 95% maximum separation rate
-                };
-                
-                // Apply enhanced separation rates
-                const enhancedSeparationRates = {
-                    hotels: getEnhancedSeparationRate(inputs.generation.hotels.sourceSeparationRate, 'hotels'),
-                    restaurants: getEnhancedSeparationRate(inputs.generation.restaurants.sourceSeparationRate, 'restaurants'),
-                    homes: getEnhancedSeparationRate(inputs.generation.homes.sourceSeparationRate, 'homes'),
-                    commerce: getEnhancedSeparationRate(inputs.generation.commerce.sourceSeparationRate, 'commerce'),
-                };
-                
-                // --- FLOW 1: RSU (Residuos Sólidos Urbanos) ---
-                const genBySource = {
-                    hotels: (inputs.generation.hotels.units * occupancy / 100) * inputs.generation.hotels.rate / 1000,
-                    restaurants: (inputs.generation.restaurants.units * inputs.generation.restaurants.rate) / 1000,
-                    homes: (inputs.general.fixedPopulation * inputs.generation.homes.rate) / 1000,
-                    commerce: (inputs.generation.commerce.units * inputs.generation.commerce.rate) / 1000,
-                };
-                const genByMaterial = { organicos: 0, pet: 0, aluminio: 0, carton: 0, vidrio: 0, rechazo: 0, peligrosos: 0 };
-                for (const source in genBySource) {
-                    for (const material of materialTypes) {
-                        genByMaterial[material] += genBySource[source] * ((inputs.composition[source]?.[material] || 0) / 100);
-                    }
-                }
-                const genRSU = Object.values(genByMaterial).reduce((a, b) => a + b, 0);
+                // --- GENERATION MODULE ---
+                const generationResults = calculateGeneration(inputs, occupancy);
+                const { genBySource, genByMaterial, genRSU, enhancedSeparationRates } = generationResults;
 
                 const collectionCapacity = inputs.rsuSystem.logistics.vehicles * inputs.rsuSystem.logistics.vehicleCapacity * inputs.rsuSystem.logistics.tripsPerVehicle;
                 const collectionDeficit = Math.max(0, genRSU - collectionCapacity);
