@@ -202,11 +202,14 @@ function runDailyStep(
   } = collectionResults;
 
   // --- SEPARATION MODULE ---
+  // CRITICAL FIX: Add collected material to vehicle inventory before processing
+  const updatedCollectionInventory = currentInventory.collectionVehicleInventory + toTransferStationTotal;
+  
   const separationData = processSeparation(
     generationResults,
     collectionResults,
     inputs,
-    { collectionVehicleInventory: currentInventory.collectionVehicleInventory, rsuInventory: currentInventory.rsuInventory }
+    { collectionVehicleInventory: updatedCollectionInventory, rsuInventory: currentInventory.rsuInventory }
   );
   const {
     materialAvailableInStation,
