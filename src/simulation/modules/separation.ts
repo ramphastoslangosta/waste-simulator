@@ -72,7 +72,8 @@ export function processSeparation(
   const updatedRsuInventory = currentInventory.rsuInventory + actualDelivery - materialProcessedToday;
   
   // Calculate processing ratio and material distribution
-  const processedRatio = toTransferStationTotal > 0 ? materialProcessedToday / toTransferStationTotal : 0;
+  // Fix: Process material based on the composition that actually arrives today
+  const processedRatio = toTransferStationTotal > 0 ? Math.min(materialProcessedToday, toTransferStationTotal) / toTransferStationTotal : 0;
   const processedByMaterial: { [material: string]: number } = {};
   materialTypes.forEach(m => {
     processedByMaterial[m] = (toTransferStationByMaterial[m] || 0) * processedRatio;
