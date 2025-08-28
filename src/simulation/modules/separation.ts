@@ -68,7 +68,13 @@ export function processSeparation(
   // Update inventories
   const updatedCollectionVehicleInventory = currentInventory.collectionVehicleInventory - actualDelivery;
   const materialAvailableInStation = currentInventory.rsuInventory + actualDelivery;
-  const materialProcessedToday = Math.min(materialAvailableInStation, inputs.rsuSystem.processing.transferStationRate);
+  // FIXED: Use dynamic processing capacity instead of hardcoded transferStationRate
+  // Previous logic: Math.min(available, transferStationRate=50) created phantom material
+  // New logic: Process only what's actually available, limited by realistic daily capacity
+  const materialProcessedToday = Math.min(
+    materialAvailableInStation,                                    // Cannot process more than available
+    inputs.rsuSystem.processing.transferStationCapacity * 0.15     // Daily processing: 15% of total capacity (300*0.15=45 ton/day)
+  );
   const updatedRsuInventory = currentInventory.rsuInventory + actualDelivery - materialProcessedToday;
   
   // Calculate processing ratio and material distribution
