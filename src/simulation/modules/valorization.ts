@@ -57,8 +57,23 @@ export function processValorization(
   let valorizationCosts = 0;
   let valorizationIncomes = 0;
   
-  const availableOrganics = processedByMaterial.organicos || 0;
-  const availablePlastics = processedByMaterial.pet || 0;
+  // Calculate available materials for valorization (after formal recovery is removed)
+  // This prevents double-counting of recovered materials in both recovery and valorization
+  const totalProcessedOrganics = processedByMaterial.organicos || 0;
+  const totalProcessedPlastics = processedByMaterial.pet || 0;
+  
+  // Estimate recovered materials by type (proportional to composition)
+  // Handle division by zero case when no material is processed
+  const organicsRecoveredEstimate = materialProcessedToday > 0 
+    ? totalRecoveredAtStation * (totalProcessedOrganics / materialProcessedToday)
+    : 0;
+  const plasticsRecoveredEstimate = materialProcessedToday > 0
+    ? totalRecoveredAtStation * (totalProcessedPlastics / materialProcessedToday)
+    : 0;
+  
+  // Calculate net available materials for valorization (processed - already recovered)
+  const availableOrganics = Math.max(0, totalProcessedOrganics - organicsRecoveredEstimate);
+  const availablePlastics = Math.max(0, totalProcessedPlastics - plasticsRecoveredEstimate);
   
   // Composting Process
   if (inputs.rsuSystem.valorization?.enableComposting && availableOrganics > 0) {
@@ -98,8 +113,8 @@ export function processValorization(
     valorizationCosts,
     valorizationIncomes,
     totalValorizedMaterials,
-    availableOrganics,
-    availablePlastics,
+    availableOrganics, // Net available after recovery (corrected)
+    availablePlastics, // Net available after recovery (corrected)  
     leakTransferStation,
     materialLeavingStation,
   };
