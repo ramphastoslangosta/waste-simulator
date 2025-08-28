@@ -82,6 +82,10 @@ function extractMassComponents(kpis) {
   // Collection deficit (material not collected)
   const collectionDeficit = kpis.rsu?.collectionDeficit || 0;
   
+  // Material accumulated/not transported (bottleneck effect)
+  // This accounts for material that is collected and processed but cannot be transported due to capacity limitations
+  const materialAccumulated = kpis.rsu?.untransportedMaterial || 0;
+  
   return {
     generated,
     disposed,
@@ -89,6 +93,7 @@ function extractMassComponents(kpis) {
     valorized,
     leaked,
     collectionDeficit,
+    materialAccumulated,
     // Detailed breakdown
     recoveryBreakdown: {
       source: recoveredSource,
@@ -109,10 +114,10 @@ function extractMassComponents(kpis) {
  * @returns {Object} Mass balance calculation
  */
 function calculateMassBalance(components) {
-  const { generated, disposed, recovered, valorized, leaked, collectionDeficit } = components;
+  const { generated, disposed, recovered, valorized, leaked, collectionDeficit, materialAccumulated } = components;
   
-  // Total material accounted for
-  const totalAccounted = disposed + recovered + valorized + leaked + collectionDeficit;
+  // Total material accounted for (includes accumulated material from bottlenecks)
+  const totalAccounted = disposed + recovered + valorized + leaked + collectionDeficit + materialAccumulated;
   
   // Mass balance error
   const absoluteError = Math.abs(generated - totalAccounted);
