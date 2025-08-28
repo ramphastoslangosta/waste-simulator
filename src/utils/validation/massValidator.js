@@ -85,6 +85,17 @@ function extractMassComponents(kpis) {
   // Transport deficit (material not transported due to final transport capacity)
   const transportDeficit = kpis.rsu?.calculations?.untransportedMaterial || 0;
   
+  // Debug: Show values to verify calculation 
+  if (generated > 0) {
+    console.log(`Mass Balance Debug: Gen=${generated.toFixed(2)}, Disp=${disposed.toFixed(2)}, Rec=${recovered.toFixed(2)}, Val=${valorized.toFixed(2)}, Leak=${leaked.toFixed(2)}, CollDef=${collectionDeficit.toFixed(2)}, TransDef=${transportDeficit.toFixed(2)}`);
+    console.log(`Transport deficit path check:`, {
+      hasRsu: !!kpis.rsu,
+      hasCalculations: !!kpis.rsu?.calculations,
+      untransportedMaterial: kpis.rsu?.calculations?.untransportedMaterial,
+      calculationsKeys: kpis.rsu?.calculations ? Object.keys(kpis.rsu.calculations) : 'no calculations'
+    });
+  }
+  
   return {
     generated,
     disposed,
