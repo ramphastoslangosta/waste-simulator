@@ -79,13 +79,11 @@ function extractMassComponents(kpis) {
   // System losses (leaks)
   const leaked = kpis.rsu?.totalLeak || 0;
   
-  // Collection deficit (material not collected)
+  // Collection deficit (material not collected due to vehicle capacity)
   const collectionDeficit = kpis.rsu?.collectionDeficit || 0;
   
-  // NOTE: Material accumulated (untransportedMaterial) should NOT be included in mass conservation
-  // because it represents material that is temporarily retained in the system, not lost from it.
-  // This material will eventually be transported in future time periods.
-  // Including it would cause double-counting in the mass balance equation.
+  // Transport deficit (material not transported due to final transport capacity)
+  const transportDeficit = kpis.rsu?.calculations?.untransportedMaterial || 0;
   
   return {
     generated,
@@ -94,6 +92,7 @@ function extractMassComponents(kpis) {
     valorized,
     leaked,
     collectionDeficit,
+    transportDeficit,
     // Detailed breakdown
     recoveryBreakdown: {
       source: recoveredSource,
@@ -114,10 +113,10 @@ function extractMassComponents(kpis) {
  * @returns {Object} Mass balance calculation
  */
 function calculateMassBalance(components) {
-  const { generated, disposed, recovered, valorized, leaked, collectionDeficit } = components;
+  const { generated, disposed, recovered, valorized, leaked, collectionDeficit, transportDeficit } = components;
   
   // Total material accounted for (material that exits the system or is definitively lost)
-  const totalAccounted = disposed + recovered + valorized + leaked + collectionDeficit;
+  const totalAccounted = disposed + recovered + valorized + leaked + collectionDeficit + transportDeficit;
   
   // Mass balance error
   const absoluteError = Math.abs(generated - totalAccounted);
@@ -214,6 +213,14 @@ function generateValidationReport(components, massBalance, isValid, season) {
     }
   }
   
+  // Check for transport deficits
+  if (components.transportDeficit > 0) {
+    const transportDeficitRatio = components.transportDeficit / components.generated;
+    if (transportDeficitRatio > 0.1) {
+      warnings.push(`Significant transport deficit (${(transportDeficitRatio * 100).toFixed(1)}%) - insufficient final transport capacity`);
+    }
+  }
+  
   // Season-specific checks
   if (season === 'high' && components.generated <= 0) {
     warnings.push('Zero waste generation in high season is unusual');
@@ -272,8 +279,8 @@ Status: ${isValid ? 'PASS' : 'FAIL'}
 Timestamp: ${validation.timestamp}
 
 Mass Balance Equation:
-Generated = Disposed + Recovered + Valorized + Leaked + Collection Deficit
-${massBalance.totalGenerated.toFixed(3)} = ${components.disposed.toFixed(3)} + ${components.recovered.toFixed(3)} + ${components.valorized.toFixed(3)} + ${components.leaked.toFixed(3)} + ${components.collectionDeficit.toFixed(3)}
+Generated = Disposed + Recovered + Valorized + Leaked + Collection Deficit + Transport Deficit
+${massBalance.totalGenerated.toFixed(3)} = ${components.disposed.toFixed(3)} + ${components.recovered.toFixed(3)} + ${components.valorized.toFixed(3)} + ${components.leaked.toFixed(3)} + ${components.collectionDeficit.toFixed(3)} + ${components.transportDeficit.toFixed(3)}
 ${massBalance.totalGenerated.toFixed(3)} = ${massBalance.totalAccounted.toFixed(3)}
 
 Error Analysis:
@@ -288,6 +295,7 @@ Component Breakdown:
 - Valorized: ${components.valorized.toFixed(3)} ton/day (${(components.valorized/components.generated*100).toFixed(1)}%)
 - Leaked: ${components.leaked.toFixed(3)} ton/day (${(components.leaked/components.generated*100).toFixed(1)}%)
 - Collection Deficit: ${components.collectionDeficit.toFixed(3)} ton/day (${(components.collectionDeficit/components.generated*100).toFixed(1)}%)
+- Transport Deficit: ${components.transportDeficit.toFixed(3)} ton/day (${(components.transportDeficit/components.generated*100).toFixed(1)}%)
 `;
 
   if (validation.errors && validation.errors.length > 0) {
