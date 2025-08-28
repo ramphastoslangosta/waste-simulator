@@ -84,17 +84,25 @@ function extractMassComponents(kpis) {
   const collectionDeficit = kpis.rsu?.collectionDeficit || 0;
   
   // Transport deficit (material not transported due to final transport capacity)
-  const transportDeficit = kpis.rsu?.calculations?.untransportedMaterial || 0;
+  // TEMPORARILY DISABLED: Causing massive overcounting (95.87% error)
+  const transportDeficit = 0; // kpis.rsu?.calculations?.untransportedMaterial || 0;
   
   // Debug: Show values to verify calculation 
   if (generated > 0) {
-    console.log(`Mass Balance Debug: Gen=${generated.toFixed(2)}, Disp=${disposed.toFixed(2)}, Rec=${recovered.toFixed(2)}, Val=${valorized.toFixed(2)}, Leak=${leaked.toFixed(2)}, CollDef=${collectionDeficit.toFixed(2)}, TransDef=${transportDeficit.toFixed(2)}`);
-    console.log(`Transport deficit path check:`, {
-      hasRsu: !!kpis.rsu,
-      hasCalculations: !!kpis.rsu?.calculations,
-      untransportedMaterial: kpis.rsu?.calculations?.untransportedMaterial,
-      calculationsKeys: kpis.rsu?.calculations ? Object.keys(kpis.rsu.calculations) : 'no calculations'
-    });
+    const totalAccounted = disposed + recovered + valorized + leaked + collectionDeficit + transportDeficit;
+    const missingMaterial = generated - totalAccounted;
+    
+    console.log(`🧮 Mass Balance Debug:`);
+    console.log(`  Generated: ${generated.toFixed(2)} ton/day`);
+    console.log(`  Disposed: ${disposed.toFixed(2)} ton/day`);
+    console.log(`  Recovered: ${recovered.toFixed(2)} ton/day (Source:${recoveredSource.toFixed(2)} + Plant:${recoveredPlant.toFixed(2)} + Informal:${recoveredInformal.toFixed(2)})`);
+    console.log(`  Valorized: ${valorized.toFixed(2)} ton/day (Compost:${valorizedCompost.toFixed(2)} + Biogas:${valorizedBiogas.toFixed(2)} + Pyrolysis:${valorizedPyrolysis.toFixed(2)})`);
+    console.log(`  Leaked: ${leaked.toFixed(2)} ton/day`);
+    console.log(`  Collection Deficit: ${collectionDeficit.toFixed(2)} ton/day`);
+    console.log(`  Transport Deficit: ${transportDeficit.toFixed(2)} ton/day`);
+    console.log(`  Total Accounted: ${totalAccounted.toFixed(2)} ton/day`);
+    console.log(`  Missing Material: ${missingMaterial.toFixed(2)} ton/day (${(Math.abs(missingMaterial/generated)*100).toFixed(2)}%)`);
+    console.log(`  Actual untransportedMaterial: ${kpis.rsu?.calculations?.untransportedMaterial || 'undefined'}`);
   }
   
   return {
