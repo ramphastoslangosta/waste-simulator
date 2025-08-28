@@ -84,8 +84,9 @@ function extractMassComponents(kpis) {
   const collectionDeficit = kpis.rsu?.collectionDeficit || 0;
   
   // Transport deficit (material not transported due to final transport capacity)
-  // TEMPORARILY DISABLED: Causing massive overcounting (95.87% error)
-  const transportDeficit = 0; // kpis.rsu?.calculations?.untransportedMaterial || 0;
+  // NOW CORRECTLY REPRESENTS: Real material that cannot be transported due to capacity limits
+  // After fixing phantom material issue, untransportedMaterial now represents actual systemic deficit
+  const transportDeficit = kpis.rsu?.calculations?.untransportedMaterial || 0;
   
   // Debug: Show values to verify calculation 
   if (generated > 0) {
