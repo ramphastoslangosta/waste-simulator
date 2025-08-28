@@ -141,7 +141,7 @@ const ValidationDashboard: React.FC<ValidationDashboardProps> = ({
           </h4>
           <div className="bg-slate-50 p-3 rounded-lg font-mono text-sm">
             <div className="text-center mb-2 font-semibold">
-              G<sub>total</sub> = Material<sub>dispuesto</sub> + Material<sub>recuperado</sub> + Material<sub>valorizado</sub> + Fugas<sub>total</sub> + Déficit<sub>recolección</sub> + Material<sub>acumulado</sub>
+              G<sub>total</sub> = Material<sub>dispuesto</sub> + Material<sub>recuperado</sub> + Material<sub>valorizado</sub> + Fugas<sub>total</sub> + Déficit<sub>recolección</sub>
             </div>
             <div className="text-center text-lg">
               <span className="text-blue-600 font-bold">
@@ -162,7 +162,7 @@ const ValidationDashboard: React.FC<ValidationDashboardProps> = ({
 
       {/* Component Breakdown */}
       {validation.massConservation?.components && (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
           <div className="text-center p-3 bg-blue-50 rounded-lg">
             <div className="text-xl font-bold text-blue-600">
               {formatNumber(validation.massConservation.components.generated, 2)}
@@ -203,13 +203,6 @@ const ValidationDashboard: React.FC<ValidationDashboardProps> = ({
               {formatNumber(validation.massConservation.components.collectionDeficit, 2)}
             </div>
             <div className="text-xs text-slate-600">Déficit Recolección</div>
-          </div>
-
-          <div className="text-center p-3 bg-orange-50 rounded-lg">
-            <div className="text-xl font-bold text-orange-600">
-              {formatNumber(validation.massConservation.components.materialAccumulated || 0, 2)}
-            </div>
-            <div className="text-xs text-slate-600">Material Acumulado</div>
           </div>
         </div>
       )}

@@ -82,9 +82,10 @@ function extractMassComponents(kpis) {
   // Collection deficit (material not collected)
   const collectionDeficit = kpis.rsu?.collectionDeficit || 0;
   
-  // Material accumulated/not transported (bottleneck effect)
-  // This accounts for material that is collected and processed but cannot be transported due to capacity limitations
-  const materialAccumulated = kpis.rsu?.calculations?.untransportedMaterial || 0;
+  // NOTE: Material accumulated (untransportedMaterial) should NOT be included in mass conservation
+  // because it represents material that is temporarily retained in the system, not lost from it.
+  // This material will eventually be transported in future time periods.
+  // Including it would cause double-counting in the mass balance equation.
   
   return {
     generated,
@@ -93,7 +94,6 @@ function extractMassComponents(kpis) {
     valorized,
     leaked,
     collectionDeficit,
-    materialAccumulated,
     // Detailed breakdown
     recoveryBreakdown: {
       source: recoveredSource,
@@ -114,10 +114,10 @@ function extractMassComponents(kpis) {
  * @returns {Object} Mass balance calculation
  */
 function calculateMassBalance(components) {
-  const { generated, disposed, recovered, valorized, leaked, collectionDeficit, materialAccumulated } = components;
+  const { generated, disposed, recovered, valorized, leaked, collectionDeficit } = components;
   
-  // Total material accounted for (includes accumulated material from bottlenecks)
-  const totalAccounted = disposed + recovered + valorized + leaked + collectionDeficit + materialAccumulated;
+  // Total material accounted for (material that exits the system or is definitively lost)
+  const totalAccounted = disposed + recovered + valorized + leaked + collectionDeficit;
   
   // Mass balance error
   const absoluteError = Math.abs(generated - totalAccounted);
