@@ -84,7 +84,7 @@ function extractMassComponents(kpis) {
   
   // Material accumulated/not transported (bottleneck effect)
   // This accounts for material that is collected and processed but cannot be transported due to capacity limitations
-  const materialAccumulated = kpis.rsu?.untransportedMaterial || 0;
+  const materialAccumulated = kpis.rsu?.calculations?.untransportedMaterial || 0;
   
   return {
     generated,
