@@ -15,7 +15,6 @@
  * @returns {Object} Validation result with detailed analysis
  */
 export function validateMassConservation(kpis, inputs, season = 'high') {
-  console.log('🔍 Mass Validator Called:', { hasKpis: !!kpis, hasInputs: !!inputs, season });
   try {
     // Extract components from KPIs
     const components = extractMassComponents(kpis);
@@ -88,56 +87,7 @@ function extractMassComponents(kpis) {
   // After fixing phantom material issue, untransportedMaterial now represents actual systemic deficit
   const transportDeficit = kpis.rsu?.calculations?.untransportedMaterial || 0;
   
-  // Debug: Show values to verify calculation 
-  if (generated > 0) {
-    const totalAccounted = disposed + recovered + valorized + leaked + collectionDeficit + transportDeficit;
-    const missingMaterial = generated - totalAccounted;
-    
-    console.log(`🧮 Mass Balance Debug:`);
-    console.log(`  Generated: ${generated.toFixed(2)} ton/day`);
-    console.log(`  Disposed: ${disposed.toFixed(2)} ton/day`);
-    console.log(`  Recovered: ${recovered.toFixed(2)} ton/day (Source:${recoveredSource.toFixed(2)} + Plant:${recoveredPlant.toFixed(2)} + Informal:${recoveredInformal.toFixed(2)})`);
-    console.log(`  Valorized: ${valorized.toFixed(2)} ton/day (Compost:${valorizedCompost.toFixed(2)} + Biogas:${valorizedBiogas.toFixed(2)} + Pyrolysis:${valorizedPyrolysis.toFixed(2)})`);
-    console.log(`  Leaked: ${leaked.toFixed(2)} ton/day`);
-    console.log(`  Collection Deficit: ${collectionDeficit.toFixed(2)} ton/day`);
-    console.log(`  Transport Deficit: ${transportDeficit.toFixed(2)} ton/day`);
-    console.log(`  Total Accounted: ${totalAccounted.toFixed(2)} ton/day`);
-    console.log(`  Missing Material: ${missingMaterial.toFixed(2)} ton/day (${(Math.abs(missingMaterial/generated)*100).toFixed(2)}%)`);
-    console.log(`  Actual untransportedMaterial: ${kpis.rsu?.calculations?.untransportedMaterial || 'undefined'}`);
-    
-    // Additional debugging - check intermediate flows
-    console.log(`🔍 Intermediate Flow Debug:`);
-    console.log(`  RSU Generation: ${kpis.rsu?.totalGeneration || 'N/A'}`);
-    console.log(`  To Disposal (final): ${kpis.rsu?.toDisposal || 'N/A'}`);
-    console.log(`  Total Leak: ${kpis.rsu?.totalLeak || 'N/A'}`);
-    console.log(`  Collection Capacity: ${kpis.rsu?.calculations?.collectionCapacity || 'N/A'}`);
-    console.log(`  Collected Total: ${kpis.rsu?.calculations?.collectedWasteTotal || 'N/A'}`);
-    console.log(`  To Transfer Station: ${kpis.rsu?.calculations?.toTransferStationTotal || 'N/A'}`);
-    console.log(`  Material Processed: ${kpis.rsu?.calculations?.materialProcessedToday || 'N/A'}`);
-    console.log(`  To Final Transport: ${kpis.rsu?.calculations?.toFinalTransport || 'N/A'}`);
-    console.log(`  Actual Final Transport: ${kpis.rsu?.calculations?.actualFinalTransport || 'N/A'}`);
-    console.log(`  Untransported: ${kpis.rsu?.calculations?.untransportedMaterial || 'N/A'}`);
-    console.log(`  Final Inventory: ${kpis.rsu?.finalInventory || 'N/A'}`);
-    
-    // Check if there's material stuck somewhere in the process
-    const collectedTotal = kpis.rsu?.calculations?.collectedWasteTotal || 0;
-    const toTransferStation = kpis.rsu?.calculations?.toTransferStationTotal || 0;
-    const materialProcessed = kpis.rsu?.calculations?.materialProcessedToday || 0;
-    const collectionLoss = collectedTotal - toTransferStation;
-    const processingLoss = toTransferStation - materialProcessed;
-    
-    console.log(`📊 Flow Analysis:`);
-    console.log(`  Collection Loss: ${collectionLoss.toFixed(2)} (collected - to_station)`);
-    console.log(`  Processing Loss: ${processingLoss.toFixed(2)} (to_station - processed)`);
-    
-    if (kpis.rsu?.inventoryLevels) {
-      console.log(`📦 Inventory Levels:`);
-      console.log(`  Collection Vehicles: ${kpis.rsu.inventoryLevels.collectionVehicleInventory || 0}`);
-      console.log(`  RSU Inventory: ${kpis.rsu.inventoryLevels.rsuInventory || 0}`);
-      console.log(`  Final Transport: ${kpis.rsu.inventoryLevels.finalTransportInventory || 0}`);
-      console.log(`  Disposal Site: ${kpis.rsu.inventoryLevels.disposalSiteInventory || 0}`);
-    }
-  }
+  // Mass conservation validation successful - debug logging removed
   
   return {
     generated,
