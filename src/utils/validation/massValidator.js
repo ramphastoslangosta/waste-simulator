@@ -15,6 +15,7 @@
  * @returns {Object} Validation result with detailed analysis
  */
 export function validateMassConservation(kpis, inputs, season = 'high') {
+  console.log('🔍 Mass Validator Called:', { hasKpis: !!kpis, hasInputs: !!inputs, season });
   try {
     // Extract components from KPIs
     const components = extractMassComponents(kpis);

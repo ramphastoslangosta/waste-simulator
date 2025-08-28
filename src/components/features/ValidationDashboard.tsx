@@ -28,7 +28,9 @@ const ValidationDashboard: React.FC<ValidationDashboardProps> = ({
 }) => {
   // Run validation analysis
   const validation = useMemo(() => {
+    console.log('🔍 ValidationDashboard check:', { enableRealTimeValidation, hasKpis: !!kpis, hasInputs: !!inputs });
     if (!enableRealTimeValidation || !kpis || !inputs) {
+      console.log('❌ Validation disabled or missing data');
       return null;
     }
     
