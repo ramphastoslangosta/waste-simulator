@@ -1,0 +1,866 @@
+/* ==========================================================================
+   Estilos CSS para Tesina Académica - v2.0
+   Optimizado para Pandoc + WeasyPrint con selectores de alta especificidad.
+   ==========================================================================
+*/
+
+@page {
+    size: A4;
+    margin-top: 2.5cm;
+    margin-bottom: 2.5cm;
+    margin-left: 3.5cm;
+    margin-right: 2.5cm;
+    
+    @top-center {
+        content: none; /* Sin encabezado */
+    }
+    
+    @bottom-center {
+        content: counter(page); /* Número de página en el pie */
+        font-family: "Times New Roman", serif;
+        font-size: 12pt;
+    }
+}
+
+/* Reglas específicas para la portada */
+@page cover {
+    size: A4;
+    margin: 2cm;
+    
+    @top-center {
+        content: none; /* Sin encabezado en portada */
+    }
+    
+    @bottom-left {
+        content: "Ciudad de México, México";
+        font-family: "Times New Roman", serif;
+        font-size: 14pt;
+    }
+    
+    @bottom-right {
+        content: "Agosto de 2025";
+        font-family: "Times New Roman", serif;
+        font-size: 14pt;
+    }
+    
+    @bottom-center {
+        content: none; /* Sin número de página en portada */
+    }
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 2.42; /* Ajustado para 24 líneas por página */
+    color: #000;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    hyphens: auto; /* Habilita la separación de sílabas */
+}
+
+/* --- REGLAS DE TÍTULOS CON ALTA ESPECIFICIDAD --- */
+
+/* Títulos principales (Capítulos) */
+body h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: left;
+    line-height: 2.42;
+    margin-top: 0;
+    margin-bottom: 29pt; /* Equivalente a 2 líneas con el nuevo espaciado */
+    page-break-before: always; /* Cada capítulo inicia en una nueva página */
+    text-transform: none; /* Evita que se conviertan a mayúsculas */
+}
+
+/* Títulos de anexos - centrados y en mayúsculas */
+body h1.anexo,
+body h1[id*="anexo"],
+body h1[id*="ANEXO"],
+body h1:contains("ANEXO"),
+body h1:contains("Anexo") {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Ocultar numeración de anexos usando CSS */
+h1[id*="anexo"] .header-section-number,
+h2[id*="anexo"] .header-section-number,
+h3[id*="anexo"] .header-section-number,
+h1[id*="ANEXO"] .header-section-number,
+h2[id*="ANEXO"] .header-section-number,
+h3[id*="ANEXO"] .header-section-number {
+    display: none !important;
+}
+
+/* Ocultar numeración específicamente para elementos de anexos por ID */
+h1[id*="anexo-"] .header-section-number,
+h2[id*="anexo-"] .header-section-number,
+h3[id*="anexo-"] .header-section-number {
+    display: none !important;
+}
+
+/* Ocultar numeración h3 de anexos usando data-number (capítulos 7+) */
+h3[data-number^="7."] .header-section-number,
+h3[data-number^="8."] .header-section-number,
+h3[data-number^="9."] .header-section-number,
+h3[data-number^="10."] .header-section-number,
+h3[data-number^="11."] .header-section-number {
+    display: none !important;
+}
+
+/* Estilos para índices de figuras, tablas y ecuaciones */
+#LOF, #LOT, #LOE {
+    margin-top: 2cm;
+    margin-bottom: 1.5cm;
+}
+
+#LOF h2, #LOT h2, #LOE h2 {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1cm;
+    text-transform: uppercase;
+}
+
+#LOF ul, #LOT ul, #LOE ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+#LOF li, #LOT li, #LOE li {
+    margin-bottom: 0.3cm;
+    line-height: 1.2;
+}
+
+#LOF a, #LOT a, #LOE a {
+    text-decoration: none;
+    color: #000;
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    display: block;
+    padding-right: 1cm;
+    position: relative;
+}
+
+/* Números de página para índices de figuras, tablas y ecuaciones */
+#LOF a::after, #LOT a::after, #LOE a::after {
+    content: target-counter(attr(href, url), page);
+    float: right;
+    background-color: white;
+    color: #000;
+    padding-left: 0.5cm;
+}
+
+/* Centrar títulos de tablas y figuras usando clase específica */
+.table-title, .figure-title {
+    text-align: center;
+    margin: 1cm auto 0.5cm auto;
+    font-weight: bold;
+}
+
+.table-title strong, .figure-title strong {
+    font-weight: bold;
+    display: block;
+}
+
+/* Margen para tablas después de título */
+.table-title + table {
+    margin-top: 0.5cm;
+}
+
+/* Formato para fuentes de figuras y tablas */
+.source-citation {
+    font-style: italic;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+    text-indent: 0;
+    font-size: 10pt;
+    margin-top: 0.3cm;
+    margin-bottom: 0.5cm;
+    line-height: 1.2;
+}
+
+/* Formato específico para fuentes dentro de títulos de figuras */
+.figure-title em {
+    font-style: italic;
+    font-weight: normal !important;
+    text-align: left;
+    display: block;
+    margin-top: 0.3cm;
+    font-size: 10pt;
+}
+
+/* Asegurar que el contenedor de figura no centre las fuentes */
+.figure-title {
+    text-align: center; /* Solo para el título */
+}
+
+.figure-title em {
+    text-align: left !important; /* Fuente alineada a la izquierda */
+    margin-left: 0 !important;
+}
+
+/* Estilo para ecuaciones numeradas */
+.numbered-equation {
+    position: relative;
+    width: 100%;
+    display: block;
+    margin: 1cm 0;
+}
+
+.numbered-equation .math.display {
+    display: inline-block;
+    width: calc(100% - 3cm);
+    text-align: center;
+}
+
+.equation-number {
+    position: absolute;
+    right: 1cm;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    font-weight: normal;
+    color: #000;
+}
+
+/* Subtítulos nivel 2 */
+body h2 {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    font-weight: bold;
+    line-height: 2.42;
+    margin-top: 29pt;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* Subtítulos nivel 3 */
+body h3 {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    font-weight: bold;
+    line-height: 2.42;
+    margin-top: 29pt;
+    margin-bottom: 0;
+    text-align: left;
+    font-style: italic;
+}
+
+/* Subtítulos nivel 4 y menores */
+body h4, body h5, body h6 {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    font-weight: bold;
+    line-height: 2.42;
+    margin-top: 14pt;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+/* --- ESTILOS DE ELEMENTOS DE TEXTO --- */
+
+/* Párrafos */
+p {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 2.42;
+    margin-top: 0;
+    margin-bottom: 0; /* Sin espacio extra entre párrafos */
+    text-align: justify;
+    text-indent: 3.5em; /* Sangría de 7 espacios (tabulador normal) */
+}
+
+/* Párrafos que contienen imágenes (figuras) no deben tener sangría */
+p:has(img) {
+    text-indent: 0 !important;
+}
+
+/* Párrafos que contienen tanto imagen como texto en cursiva */
+p:has(img):has(em) {
+    text-indent: 0 !important;
+}
+
+/* Párrafos sin sangría para casos específicos */
+li p, 
+li,
+ul p,
+ol p,
+.table-container p, 
+.figure-container p,
+p:has(em):has(> em:first-child:contains("Fuente:")),
+p:has(em):has(> em:first-child:contains("Elaboración propia")),
+p:has(em:contains("Fuente:")),
+p:has(em:contains("Elaboración propia")),
+p em:contains("Fuente:"),
+p em:contains("Elaboración propia"),
+blockquote p,
+dl dd,
+dd p,
+/* Párrafos que contienen solo texto en cursiva (descripciones de figuras) */
+p:has(> em:only-child),
+/* Párrafos cortos de una sola línea (títulos de secciones en negritas) */
+p:has(> strong:first-child),
+p:has(> strong:only-child),
+/* Líneas independientes que no forman párrafos completos */
+p:not(:has(~ p)):not(:has(+ p)) strong {
+    text-indent: 0 !important; /* Sin sangría para casos especiales */
+}
+
+/* Listas */
+ul, ol {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 2.42;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 1.5cm;
+}
+
+li {
+    margin-bottom: 0;
+    text-align: justify;
+    text-indent: 0 !important; /* Sin sangría en elementos de lista */
+}
+
+li p {
+    text-indent: 0 !important; /* Sin sangría en párrafos dentro de listas */
+}
+
+/* Elementos de lista específicos sin sangría */
+ul li, ol li {
+    text-indent: 0 !important;
+}
+
+ul li p, ol li p {
+    text-indent: 0 !important;
+}
+
+/* === TABLAS CON CONTROL DE PAGINACIÓN === */
+table {
+    font-family: "Times New Roman", serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 6pt;
+    margin-bottom: 18pt;
+    page-break-inside: avoid;  /* Evita que las tablas se corten */
+    page-break-before: avoid;  /* Evita salto antes de tabla */
+}
+
+/* Contenedores de tablas completas (título + tabla) */
+.table-container {
+    page-break-inside: avoid !important;
+    page-break-before: auto;
+    margin-bottom: 29pt;
+    display: block;
+}
+
+/* Contenedores de figuras completas (título + imagen + descripción) */
+.figure-container {
+    page-break-inside: avoid !important;
+    page-break-before: auto;
+    margin-bottom: 29pt;
+    display: block;
+}
+
+/* Refuerzo general para elementos no-break */
+.no-break {
+    page-break-inside: avoid !important;
+    display: block;
+}
+
+th, td {
+    border: 1pt solid #000;
+    padding: 6pt;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* === CONTROL DE PAGINACIÓN PARA FIGURAS Y TABLAS === */
+
+/* Estilos para imágenes */
+img {
+    max-width: 95%;
+    height: auto;
+    display: block;
+    margin: 12pt auto;
+    page-break-inside: avoid;
+    page-break-before: avoid;
+}
+
+/* Contenedores de figuras (título + imagen + descripción) */
+.figure-container,
+p:has(strong):has(img) + p:has(em),
+p:has(strong) + p:has(img) + p:has(em) {
+    page-break-inside: avoid;
+    margin-bottom: 29pt;
+}
+
+/* Títulos de figuras - nunca separar de la imagen */
+p:has(strong):has(> strong:first-child:contains("Figura")),
+p:has(strong):has(> strong:first-child:contains("Tabla")) {
+    page-break-after: avoid;
+    margin-bottom: 6pt;
+    font-weight: bold;
+}
+
+/* Descripciones/fuentes de figuras - nunca separar de la imagen */
+p:has(em):has(> em:first-child:contains("Fuente:")),
+p:has(em):has(> em:first-child:contains("Elaboración propia")) {
+    page-break-before: avoid;
+    margin-top: 7pt;
+    margin-bottom: 29pt;
+    text-indent: 0 !important; /* Sin sangría para fuentes de figuras */
+}
+
+/* Reglas específicas para texto de fuentes de figuras/tablas */
+p em,
+p i,
+em,
+i {
+    text-indent: 0 !important; /* Elementos en cursiva sin sangría */
+}
+
+/* Párrafos que contienen solo cursiva (fuentes completas) */
+p:has(> em:only-child),
+p:has(> i:only-child) {
+    text-indent: 0 !important;
+}
+
+/* Reglas más específicas para fuentes */
+*[style*="font-style: italic"],
+*[style*="font-style:italic"] {
+    text-indent: 0 !important;
+}
+
+/* Texto enfatizado */
+strong, b {
+    font-weight: bold;
+}
+
+em, i {
+    font-style: italic;
+    text-indent: 0 !important; /* Sin sangría para cursivas */
+}
+
+/* Citas y bloques especiales */
+blockquote {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 2.42;
+    margin-left: 2cm;
+    margin-right: 1cm;
+    margin-top: 14pt;
+    margin-bottom: 14pt;
+    font-style: italic;
+}
+
+/* Código (si hay) - Estilo consistente */
+code {
+    font-family: "Courier New", monospace;
+    font-size: 8.5pt;
+    background-color: #f8f8f8;
+    padding: 2pt;
+}
+
+pre {
+    font-family: "Courier New", monospace;
+    font-size: 8.5pt;
+    line-height: 1.3;
+    background-color: #f8f8f8;
+    padding: 8pt;
+    margin: 12pt 0;
+    border-left: 2pt solid #ccc;
+    text-align: left;
+    page-break-inside: avoid;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+/* Pseudocódigo - Hereda estilo base con configuraciones especiales */
+pre.pseudocode {
+    /* Hereda todos los estilos de pre, solo sobrescribe lo necesario */
+    white-space: pre;
+    overflow: hidden;
+    word-wrap: normal;
+    overflow-wrap: normal;
+}
+
+pre.pseudocode code {
+    background-color: transparent;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    white-space: pre;
+    display: block;
+    overflow: hidden;
+}
+
+/* --- CLASES DE UTILIDAD --- */
+
+/* Forzar salto de página */
+.page-break {
+    page-break-before: always;
+}
+
+/* Evitar salto de página interno */
+.no-break {
+    page-break-inside: avoid;
+}
+
+/* Estilos para fórmulas matemáticas */
+/* Fórmulas en línea */
+.math-formula {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    font-style: normal;
+    font-weight: normal;
+    display: inline-block;
+    margin: 0 4px;
+    vertical-align: middle;
+}
+
+/* Fórmulas de display (centradas) */
+.math-display {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    font-style: normal;
+    font-weight: normal;
+    display: block;
+    text-align: center;
+    margin: 22pt auto;
+    padding: 7pt 0;
+    width: 100%;
+    page-break-inside: avoid;
+}
+
+.math-formula sub,
+.math-display sub {
+    font-size: 10pt;
+    vertical-align: sub;
+}
+
+.math-formula sup,
+.math-display sup {
+    font-size: 10pt;
+    vertical-align: super;
+}
+
+/* Estilos específicos para la portada */
+.cover-page {
+    page: cover; /* Usar la página de portada específica */
+    text-align: center;
+    font-family: "Times New Roman", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 90vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Nombre de la institución - 14pt */
+.cover-page .institution-name,
+.institution-name {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 1cm 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Logo ITAM - 40pt */
+.cover-page .itam-logo,
+.itam-logo {
+    font-family: "Times New Roman", serif;
+    font-size: 40pt;
+    font-weight: bold;
+    margin: 1cm 0;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+/* Título de la tesis - 14pt */
+.cover-page .thesis-title,
+.thesis-title {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 1.5cm 0;
+    text-align: center;
+    line-height: 1.3;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Texto general - 14pt */
+.cover-page .thesis-type,
+.cover-page .degree-text,
+.cover-page .degree-name,
+.cover-page .presents,
+.thesis-type,
+.degree-text,
+.degree-name,
+.presents {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: normal;
+    margin: 0.8cm 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Nombre del estudiante - 14pt, bold */
+.cover-page .student-name,
+.student-name {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 1cm 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Asesor - 12pt */
+.cover-page .advisor,
+.advisor {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    font-weight: normal;
+    margin: 1cm 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Fallback para elementos heredados */
+.cover-page h1,
+.cover-page h2,
+.cover-page h3,
+.cover-page h4,
+.cover-page h5,
+.cover-page h6 {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 1cm 0;
+    text-align: center;
+    line-height: 1.2;
+    page-break-before: never;
+    page-break-after: never;
+}
+
+.cover-page p {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    margin: 0.5cm 0;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* Asegurar que la portada esté en una página separada */
+.page-break {
+    page-break-before: always;
+    page-break-after: always;
+}
+
+/* Estilos para el índice (tabla de contenidos) */
+#TOC,
+nav#TOC,
+.table-of-contents,
+nav.toc,
+div.toc {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    line-height: 2.0;
+    margin-top: 0;
+    margin-bottom: 29pt;
+    page-break-after: always;
+    text-align: left;
+}
+
+/* Título "CONTENIDO" centrado */
+#TOC h1,
+nav#TOC h1,
+.table-of-contents h1,
+nav.toc h1,
+div.toc h1 {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 29pt;
+    margin-top: 0;
+}
+
+#TOC ul,
+nav#TOC ul,
+.table-of-contents ul,
+nav.toc ul,
+div.toc ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#TOC li,
+nav#TOC li,
+.table-of-contents li,
+nav.toc li,
+div.toc li {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+/* Nivel 1 - Capítulos principales */
+#TOC > ul > li,
+nav#TOC > ul > li,
+.table-of-contents > ul > li,
+nav.toc > ul > li,
+div.toc > ul > li {
+    margin-bottom: 14pt;
+}
+
+/* Nivel 2 - Subcapítulos con sangría reducida */
+#TOC li li,
+nav#TOC li li,
+.table-of-contents li li,
+nav.toc li li,
+div.toc li li {
+    margin-left: 1.5cm;
+    margin-bottom: 0;
+}
+
+/* Enlaces del TOC - formato simple con puntos leader */
+#TOC a,
+nav#TOC a,
+.table-of-contents a,
+nav.toc a,
+div.toc a {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    text-decoration: none;
+    color: #000;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* Números de página alineados a la derecha para todos los niveles */
+#TOC a::after,
+nav#TOC a::after,
+.table-of-contents a::after,
+nav.toc a::after,
+div.toc a::after {
+    content: target-counter(attr(href, url), page);
+    float: right;
+    background-color: white;
+    color: #000;
+}
+
+/* Ocultar numeración de anexos en el TOC usando CSS como respaldo */
+#TOC a[href*="anexo"]::before,
+nav#TOC a[href*="anexo"]::before,
+.table-of-contents a[href*="anexo"]::before,
+nav.toc a[href*="anexo"]::before,
+div.toc a[href*="anexo"]::before,
+#TOC a[href*="ANEXO"]::before,
+nav#TOC a[href*="ANEXO"]::before,
+.table-of-contents a[href*="ANEXO"]::before,
+nav.toc a[href*="ANEXO"]::before,
+div.toc a[href*="ANEXO"]::before {
+    display: none !important;
+}
+
+/* === ESTILOS PARA REFERENCIAS === */
+
+/* Ocultar numeración de referencias */
+h1[id*="referencias"] .header-section-number,
+h1[id="referencias"] .header-section-number {
+    display: none !important;
+}
+
+/* Título de Referencias - sin numeración, centrado y en mayúsculas */
+#referencias h1,
+h1[id*="referencias"],
+h1[id="referencias"],
+h1[id*="Referencias"] {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 29pt;
+    margin-top: 0;
+    page-break-before: always;
+}
+
+/* Contenedor de sección de referencias */
+#referencias-section {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    text-align: justify;
+}
+
+/* Contenedores individuales para cada referencia */
+.single-reference {
+    margin: 0 0 24pt 0 !important; /* Doble espacio entre referencias */
+    padding: 0 !important;
+    text-indent: 0 !important;
+    line-height: 0.8 !important; /* Espaciado muy compacto dentro de cada referencia */
+    font-family: "Times New Roman", serif !important;
+    font-size: 12pt !important;
+    text-align: justify !important;
+    display: block !important;
+}
+
+/* Primera referencia sin espacio adicional arriba */
+.single-reference:first-of-type {
+    margin-top: 0 !important;
+}
+
+/* Última referencia con menos espacio abajo */
+.single-reference:last-of-type {
+    margin-bottom: 12pt !important;
+}
+
+/* Texto en cursiva dentro de referencias (nombres de revistas, libros) */
+.single-reference em,
+.single-reference i {
+    font-style: italic !important;
+    line-height: 0.8 !important;
+}
+
+/* Estilos de respaldo para compatibilidad */
+#referencias p,
+div[id*="referencias"] p,
+section[id*="referencias"] p {
+    margin-top: 0;
+    margin-bottom: 29pt;
+    text-indent: 0 !important;
+    line-height: 1.0 !important;
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    text-align: justify;
+}
