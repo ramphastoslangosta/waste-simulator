@@ -1,0 +1,41 @@
+kpi_name,unit,period,year,month,season,observed_value,source_type,source_institution,source_document,confidence_level,methodology,notes
+total_waste_generation,tons_per_month,monthly,2022,annual_average,combined,1044,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,comprehensive_sector_analysis,"34.8 tons/day from detailed establishment survey and projections"
+total_waste_generation_daily,tons_per_day,daily,2022,annual_average,combined,34.8,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,comprehensive_sector_analysis,"Sum of all generation sources: residential + commercial"
+collection_efficiency,percentage,annual,2022,na,combined,28.15,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,waste_wise_cities_methodology,"Only 28.15% of generated waste actually collected off-island"
+collection_primary,tons_per_day,daily,2022,na,combined,22.5,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,field_measurement,"Primary collection at transfer station"
+collection_secondary,tons_per_day,daily,2022,na,combined,9.8,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,field_measurement,"Secondary collection - transported to mainland"
+disposal_to_mainland,tons_per_day,daily,2022,na,combined,9.6,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,field_measurement,"Waste sent to Kantunilkin landfill"
+residential_generation,tons_per_day,daily,2022,na,combined,1.98,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,demographic_analysis,"Residential generation only"
+commercial_generation,tons_per_day,daily,2022,na,combined,32.8,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,establishment_survey,"Non-residential sources (hotels, restaurants, commerce)"
+per_capita_generation,kg_per_person_day,daily,2022,na,combined,0.74,direct,census_own_study,Holbox.WP2E.DocumentoMaestro.pdf,high,population_based_calculation,"1.98 tons/day ÷ 2673 inhabitants"
+population_permanent,inhabitants,annual,2020,na,combined,2673,official,inegi,censo_poblacion_vivienda_2020,high,national_census,"Official permanent population count"
+accommodation_capacity,rooms,annual,2022,na,combined,4524,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,medium,establishment_census_projection,"Total accommodation capacity including private rentals"
+organic_waste_fraction,percentage,annual,2022,na,combined,55.65,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,medium,composition_analysis,"Organic fraction of total waste stream"
+plastic_generation_annual,tons_per_year,annual,2022,na,combined,734,direct,own_study,Holbox.WP2E.DocumentoMaestro.pdf,medium,wfd_methodology,"Annual plastic waste generation from WFD analysis"
+# Template para datos historicos de Holbox - THESIS-003 Model Validation
+# 
+# INSTRUCCIONES DE USO:
+# 1. Reemplazar 'pending' con valores numericos obtenidos de fuentes
+# 2. Actualizar source_document con nombre real del documento
+# 3. Ajustar confidence_level basado en calidad de fuente
+# 4. Agregar filas adicionales segun datos disponibles
+#
+# CONFIDENCE LEVELS:
+# - high: Datos oficiales gubernamentales, series temporales >2 años
+# - medium: Estudios academicos, reportes tecnicos con metodologia
+# - low: Estimaciones, noticias, datos sin metodologia clara
+#
+# SOURCE TYPES:
+# - official: Gobierno federal, estatal, municipal
+# - secondary: Academia, consultores, organizaciones tecnicas  
+# - tertiary: ONG, medios, estimaciones de expertos
+#
+# PRIORITY KPIs para validacion (obtener al menos 2):
+# 1. total_waste_generation - KPI fundamental del modelo
+# 2. collection_costs - Validacion economica del sistema
+# 3. transport_to_mainland - Flujo critico verificable
+#
+# FRAMEWORK DE VALIDACION:
+# Los datos seran procesados automaticamente por src/utils/realDataComparison.js
+# Metricas calculadas: % Error, MAPE, RMSE, correlacion R²
+# Thresholds de error aceptable: <20% generacion, <30% costos, <25% flujos fisicos

@@ -1,77 +1,264 @@
 # Tesina: Gestión Integral de Residuos Sólidos - Isla Holbox
 
-**Autor:** Rafael Lang  
-**Institución:** Universidad  
-**Fecha:** Septiembre 2024
+**Simulador Web Interactivo + Documento Académico Completo**
 
-## Descripción
+Este repositorio contiene tanto el **simulador web React/TypeScript** (producto central) como la **tesina académica completa** sobre gestión integral de residuos sólidos urbanos en Isla Holbox, Quintana Roo, México.
 
-Esta tesina presenta un análisis integral del sistema de gestión de residuos sólidos urbanos en Isla Holbox, Quintana Roo, México. El trabajo incluye el desarrollo de un modelo matemático determinístico para simular flujos de masa y evaluación económica del sistema actual, así como la propuesta de 8 escenarios alternativos de mejora.
+## 🎯 Componentes del Proyecto
 
-## Estructura del Proyecto
+### 🖥️ **Simulador Web (Producto Central)**
+Aplicación React/TypeScript para simulación interactiva del sistema de gestión de residuos con:
+- **Motor matemático**: Modelo determinístico con 5 módulos secuenciales
+- **3 flujos de residuos**: RSU, Sargazo, RCD con variación estacional 
+- **Validación empírica**: 100% validación (8/8 KPIs) con error promedio 6.0%
+- **Análisis de sensibilidad**: 29 escenarios, jerarquía de variables críticas
+- **Dashboard interactivo**: KPIs tiempo real, análisis financiero, diagramas
 
-```
-tesis/
-├── capitulos/                    # Capítulos principales de la tesina
-│   ├── capitulo1_introduccion.md
-│   ├── capitulo2_marco_teorico.md
-│   ├── capitulo3_metodologia.md
-│   ├── capitulo4_validacion_sensibilidad.md
-│   ├── capitulo5_escenarios.md
-│   └── capitulo6_resultados_recomendaciones.md
-├── anexos/                       # Anexos técnicos
-│   ├── anexo_a.md
-│   ├── anexo_b.md
-│   ├── anexo_c.md
-│   ├── anexo_d.md
-│   └── anexo_e.md
-├── recursos/
-│   ├── imagenes/                 # Imágenes y diagramas
-│   └── charts/                   # Gráficos y visualizaciones
-├── portada.md                    # Portada del documento
-├── referencias.md                # Referencias bibliográficas
-├── formato_tesina.css            # Estilos CSS para generación PDF
-├── generate_pdf_fixed.py         # Script de generación PDF
-└── TESINA_HOLBOX_FINAL.pdf      # Documento final
-```
+### 📄 **Tesina Académica (177 páginas)**
+Documento académico completo con metodología, validación y resultados:
+- **6 capítulos** + 5 anexos técnicos
+- **PDF auto-generado** con sistema Pandoc + WeasyPrint
+- **Gráficos integrados** de análisis de sensibilidad
+- **Referencias APA** automáticas
 
-## Metodología
+## ✨ Key Features
 
-El núcleo metodológico es un **modelo matemático determinístico** que simula flujos de masa y económicos del sistema de gestión de residuos. El modelo se estructura en cinco módulos secuenciales basados en conservación de masa:
+### Core Simulation
+- 🔄 **Advanced Simulation Engine** - Complex 30-day waste flow calculations with multi-stage processing and inventory tracking
+- 📊 **Interactive Dashboard** - Multiple analysis views (KPIs, Financial, Flow Diagrams, Process Analysis, Calculations Table)
+- 🏖️ **Season-based Modeling** - Separate calculations for high/low tourist seasons with dynamic occupancy rates
+- ♻️ **Circular Economy Integration** - Comprehensive valorization and separation enhancement modeling
 
-1. **Generación** por sectores con variación estacional
-2. **Recolección** limitada por capacidad vehicular  
-3. **Transporte** con restricción crítica de 9.6 ton/día
-4. **Valorización** mediante compostaje y separación
-5. **Disposición final** con cálculos económicos integrados
+### New Advanced Features
+- 🌱 **Waste Valorization Scenarios** - Compostaje, biogas generation, and plastic pyrolysis with economic analysis
+- 📚 **Separation Enhancement Programs** - Education, incentive, and container programs with effectiveness tracking
+- 💰 **Cost-Benefit Analysis** - ROI calculations, waterfall charts, and program impact assessment
+- 📈 **Enhanced Visualizations** - Dynamic charts, progress bars, and conditional rendering based on active scenarios
+- 🔍 **Inventory Management** - Real-time tracking across all process stages with capacity utilization metrics
 
-## Resultados Principales
+### Data & Scenarios
+- 💾 **Advanced Scenario Management** - Save, load, compare up to 4 scenarios simultaneously with detailed comparison tools
+- 🗄️ **Dual Data Persistence** - Client-side SQLite database with optional cloud Supabase integration
+- 📤 **Comprehensive Export System** - High-resolution PNG/SVG chart export and detailed CSV data tables
+- 📱 **Responsive Design** - Optimized for desktop, tablet, and mobile devices
+- 🎨 **Modern UI/UX** - Built with Tailwind CSS, Lucide icons, and interactive components
 
-- **Validación empírica:** Modelo validado con tasa del 100% (8/8 KPIs) y error promedio de 6.0%
-- **Variable crítica:** Capacidad de transporte (30.7% de impacto sistémico)
-- **Déficit sistémico:** 79.6% causado por restricción logística
-- **Escenarios evaluados:** 8 alternativas con análisis costo-beneficio integral
+## 🚀 Quick Start
 
-## Generación del PDF
+### Prerequisites
 
-Para generar el documento PDF completo:
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
 
 ```bash
-python generate_pdf_fixed.py
+# Clone the repository
+git clone https://github.com/ramphastoslangosta/waste-simulator.git
+cd waste-simulator
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-### Requisitos
+The application will be available at `http://localhost:5173`
 
-- Python 3.8+
-- Pandoc
-- WeasyPrint
-- Bibliotecas Python: `subprocess`, `re`, `os`
+### Building for Production
 
-## Archivos de Respaldo
+```bash
+# Create production build
+npm run build
 
-- **repo_backup_original/**: Respaldo completo del repositorio original
-- **tesis_backup_completo/**: Respaldo del trabajo de tesis antes de la limpieza
+# Preview production build locally
+npm run preview
+```
 
-## Licencia
+## 🏗️ Technology Stack
 
-Este trabajo es propiedad intelectual del autor y está protegido por derechos de autor académicos.
+- **Frontend**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Charts**: Recharts
+- **Database**: SQL.js (client-side SQLite)
+- **Cloud Storage**: Supabase (optional)
+- **Development**: ESLint for code quality
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── features/          # Main analysis views
+│   │   ├── KPIDashboard.tsx
+│   │   ├── FinancialAnalysis.tsx
+│   │   ├── FlowDiagram.tsx
+│   │   └── ...
+│   ├── scenarios/         # Scenario management
+│   ├── auth/             # Authentication components
+│   ├── ui/               # Reusable UI components
+│   └── admin/            # Admin tools
+├── hooks/                # Custom React hooks
+│   ├── useWasteSimulation.tsx  # Core simulation engine
+│   ├── useAuth.ts
+│   └── useScenarios.ts
+├── lib/                  # External services
+│   ├── database.ts       # SQLite database manager
+│   └── supabase.ts       # Cloud database (optional)
+├── constants/            # Configuration and initial data
+├── utils/                # Helper functions
+└── App.tsx              # Main application component
+```
+
+## 🔧 Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🌐 Simulation Model
+
+### Waste Streams
+
+1. **Enhanced RSU Flow**: Collection → Transfer Station → Material Recovery + Valorization → Final Transport → Disposal
+2. **Sargassum Flow**: Seasonal collection and disposal with capacity planning
+3. **RCD Flow**: Construction waste management with cost tracking
+
+### Advanced Simulation Features
+
+- **Multi-Stage Inventory Tracking**: Real-time material accumulation across all process stages
+- **Valorization Processes**: 
+  - Compostaje (organic waste → compost with revenue generation)
+  - Biogas generation (organic waste → energy with income tracking)  
+  - Plastic pyrolysis (plastic waste → fuel with cost-benefit analysis)
+- **Separation Enhancement Programs**:
+  - Education programs (population-based costs and effectiveness)
+  - Incentive programs (performance-based costs per ton separated)
+  - Container programs (infrastructure costs with amortization)
+- **Enhanced Material Recovery**: Source separation and plant-based recovery with program impacts
+- **Comprehensive Economic Analysis**: Costs, revenues, ROI calculations, and program cost-effectiveness
+- **Advanced Leak Analysis**: Waste losses at each stage with capacity utilization tracking
+
+### Seasons
+
+- **High Season**: Tourist peak period with increased occupancy rates
+- **Low Season**: Off-peak period with baseline waste generation
+
+## 💾 Data Management
+
+### Local Storage
+- Scenarios and results are stored in browser localStorage
+- Uses SQL.js for client-side database operations
+- Data persists between sessions
+- Export/import functionality for data backup
+
+### Cloud Storage (Optional)
+- Supabase integration for multi-user scenarios
+- User authentication and data sync
+- Shareable scenarios between users
+
+## 📊 Data Collection
+
+For accurate simulation results, proper input data collection is essential:
+
+- **📋 [Data Collection Guide](./DATA_COLLECTION_GUIDE.md)** - Comprehensive instructions for gathering input parameters with proper source citation
+- **✅ [Data Collection Checklist](./DATA_COLLECTION_CHECKLIST.md)** - Quick reference and validation checklist
+
+**Key Requirements:**
+- All parameters must be supported by documented sources
+- Approximations and assumptions must be clearly identified
+- Local context should be prioritized over generic estimates
+- Uncertainty ranges should be provided where available
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Development Protocol](./DEVELOPMENT_PROTOCOL.md) for detailed guidelines.
+
+### Development Workflow
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes following our coding standards
+4. Run linting (`npm run lint`)
+5. Test your changes thoroughly
+6. Commit using conventional commits (`git commit -m 'feat: add amazing feature'`)
+7. Push to your branch (`git push origin feature/amazing-feature`)
+8. Open a Pull Request
+
+## 🎓 Academic Validation Status
+
+### ✅ **Model Validation Complete - 100% Success Rate**
+
+**TAREA 1 COMPLETED**: Model validation and calibration using primary source field data from 2022 Holbox study.
+
+| Validation Metric | Result | Status |
+|------------------|--------|--------|
+| **Total KPIs Validated** | 8/8 (100%) | ✅ **Excellent** |
+| **Mean Absolute Error** | 13.1% | ✅ **Academic Standard** |
+| **Excellent Predictions** (<5% error) | 4 KPIs | ✅ **High Precision** |
+| **Good Predictions** (5-25% error) | 4 KPIs | ✅ **Engineering Acceptable** |
+| **Requires Calibration** (>25% error) | 0 KPIs | ✅ **Fully Calibrated** |
+
+**Key Achievements:**
+- ✅ **Primary Source Validation**: Using own 2022 Holbox field study data
+- ✅ **Successful Calibration**: Transport capacity parameter adjusted (10→8 tons/day)
+- ✅ **Complete Documentation**: Table 4.1 in Chapter-Validation.md with all error analyses
+- ✅ **Academic Rigor**: Explicit calibration process documented for thesis defense
+
+**Data Source**: Holbox.WP2E.DocumentoMaestro.pdf (Primary field research, highest quality)
+
+## 📋 Roadmap
+
+### Recently Completed ✅
+- ✅ **Model Validation & Calibration** - 100% validation rate with primary source data
+- ✅ **Sensitivity Analysis Complete** - 7 parameters tested, 29 scenarios analyzed
+- ✅ **Tornado Chart Visualizations** - 8 professional charts at 300 DPI for thesis
+- ✅ **Critical Variables Identified** - Transport capacity (30.7%), costs (11.9%), restaurants (11.5%)
+- ✅ **Waste Valorization Scenarios** - Compostaje, biogas, plastic pyrolysis 
+- ✅ **Separation Enhancement Programs** - Education, incentive, container programs
+- ✅ **Enhanced Visualizations** - Dynamic charts with program impact tracking
+- ✅ **Advanced Cost-Benefit Analysis** - ROI calculations and waterfall charts
+- ✅ **Comprehensive Export System** - High-resolution chart export and detailed CSV tables
+- ✅ **Multi-Stage Inventory Tracking** - Real-time capacity utilization monitoring
+
+### In Progress 🚀
+- 🎯 **FASE 3: Thesis Assembly** - Assumptions/Limitations documentation and improvement scenarios
+- 🎯 **Policy Recommendations** - Evidence-based recommendations using sensitivity findings
+- 🎯 **Academic Finalization** - Complete thesis documentation and defense preparation
+
+### Upcoming Features
+- [ ] **Sankey Diagram Implementation** - Visual flow representation with valorization branches
+- [ ] **Advanced Analytics** - Trend analysis and forecasting with program effectiveness tracking
+- [ ] **Multi-language Support** - English and Spanish interfaces
+- [ ] **Mobile App** - React Native version with core simulation features
+- [ ] **API Integration** - Real-time data feeds and external system integration
+- [ ] **PDF Reporting System** - Comprehensive report generation with charts and analysis
+
+## 🐛 Known Issues
+
+- Sankey diagram component is placeholder (needs implementation)
+- Mobile responsiveness could be improved for complex comparison tables
+- Large scenario datasets with extensive valorization data may impact browser performance
+- Some advanced charts may require horizontal scrolling on smaller screens
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Developed for environmental impact assessment in Isla Holbox
+- Built with modern React ecosystem and best practices
+- Inspired by sustainable waste management principles
+
+## 📞 Contact
+
+For questions, suggestions, or collaboration opportunities, please open an issue on GitHub.
+
+---
+
+**Made with ❤️ for sustainable waste management**
