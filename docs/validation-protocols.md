@@ -3,7 +3,7 @@
 
 **Referencia:** Anexo D Digital de la Tesina "Gestión Integral de Residuos Sólidos - Isla Holbox"  
 **Implementación:** Marco de validación automatizada en `/src/test/validation/`  
-**Datos empíricos:** `data/holbox-historical-data.csv` (Estudio SUMA 2022)  
+**Datos empíricos:** `data/holbox-historical-data.csv` (Estudio SUEMA 2022)  
 **Fecha:** Septiembre 2024
 
 ---
@@ -36,7 +36,7 @@
 ### 1.2 Tres Pilares de Validación
 
 **Pilar 1: Validación Empírica**
-- Comparación directa contra datos reales del Estudio SUMA 2022
+- Comparación directa contra datos reales del Estudio SUEMA 2022
 - Error relativo por KPI con criterio de aceptación <25%
 - Tasa de validación exitosa ≥75% (6 de 8 KPIs)
 
@@ -64,9 +64,9 @@
 
 ### 2.1 Metodología de Validación Empírica
 
-#### Protocolo SUMA-2022 (Datos Primarios)
+#### Protocolo SUEMA-2022 (Datos Primarios)
 
-**Fuente de Datos:** Estudio de caracterización SUMA 2022 - Isla Holbox  
+**Fuente de Datos:** Estudio de caracterización SUEMA 2022 - Isla Holbox  
 **Período:** Temporada alta turística  
 **Tipo:** Datos primarios de campo (4 semanas de medición)  
 **Confiabilidad:** Alta - Mediciones directas en terreno  
@@ -77,7 +77,7 @@
 
 ```
 Para cada KPI crítico:
-1. Extraer valor empírico del estudio SUMA 2022
+1. Extraer valor empírico del estudio SUEMA 2022
 2. Ejecutar simulación con parámetros calibrados
 3. Calcular error relativo = |Modelo - Empírico| / Empírico × 100
 4. Clasificar resultado según criterios de precisión
@@ -88,7 +88,7 @@ Para cada KPI crítico:
 
 **Tabla 2.1: Protocolo de Validación por KPI**
 
-| **KPI** | **Unidad** | **Valor Empírico SUMA** | **Criterio Error** | **Status Objetivo** |
+| **KPI** | **Unidad** | **Valor Empírico SUEMA** | **Criterio Error** | **Status Objetivo** |
 |---------|------------|-------------------------|-------------------|---------------------|
 | **Generación Total RSU** | ton/día | 28.5 ± 2.1 | <25% | Crítico |
 | **Material Recolectado** | ton/día | 26.8 ± 1.8 | <25% | Crítico |
@@ -218,14 +218,14 @@ function validateMassConservation(simulationResults, scenario, season) {
 
 **Protocolo:** Cuando existe conflicto entre estimación inicial y dato empírico, se prioriza sistemáticamente el dato empírico medido en campo.
 
-**Justificación:** Los datos del Estudio SUMA 2022 representan mediciones directas en condiciones reales, superando en confiabilidad a estimaciones teóricas o extrapolaciones.
+**Justificación:** Los datos del Estudio SUEMA 2022 representan mediciones directas en condiciones reales, superando en confiabilidad a estimaciones teóricas o extrapolaciones.
 
 ### 4.2 Caso Crítico: Calibración de Capacidad de Transporte
 
 #### Discrepancia Detectada
 
 **Estimación Inicial:** Capacidad de transporte = 10.0 ton/día  
-**Medición SUMA 2022:** Capacidad de transporte = 9.6 ton/día  
+**Medición SUEMA 2022:** Capacidad de transporte = 9.6 ton/día  
 **Diferencia:** -0.4 ton/día (-4.0% de ajuste)  
 
 #### Protocolo de Calibración Aplicado
@@ -434,11 +434,11 @@ function compareWithRealData(simulationResults, historicalData) {
 
 | **Rank** | **Variable Crítica** | **Impacto Promedio** | **Validación Específica** |
 |----------|----------------------|---------------------|--------------------------|
-| **1** | Capacidad Transporte Final | **30.7%** | Calibrada con dato SUMA (9.6 ton/día) ✅ |
+| **1** | Capacidad Transporte Final | **30.7%** | Calibrada con dato SUEMA (9.6 ton/día) ✅ |
 | **2** | Costo de Recolección | **11.9%** | Estimación conservadora validada ✅ |
-| **3** | Tasa Generación Restaurantes | **11.5%** | Dato SUMA directo (46.7 kg/unidad/día) ✅ |
+| **3** | Tasa Generación Restaurantes | **11.5%** | Dato SUEMA directo (46.7 kg/unidad/día) ✅ |
 | **4** | Ocupación Temporada Alta | **5.2%** | Estimación turística validada ✅ |
-| **5** | Tasa Generación Hoteles | **5.2%** | Dato SUMA directo (2.1 kg/unidad/día) ✅ |
+| **5** | Tasa Generación Hoteles | **5.2%** | Dato SUEMA directo (2.1 kg/unidad/día) ✅ |
 | **6** | Tasa de Fuga Recolección | **3.0%** | Estimación ingenieril conservadora ✅ |
 | **7** | Población Fija | **1.9%** | Dato INEGI oficial (2,673 habitantes) ✅ |
 
@@ -627,7 +627,7 @@ const ValidationExecutor = {
 - **Restricciones físicas:** `src/test/validation/physicalConstraints.test.js`
 
 ### Datos de Validación:
-- **Datos empíricos:** `data/holbox-historical-data.csv` (Estudio SUMA 2022)
+- **Datos empíricos:** `data/holbox-historical-data.csv` (Estudio SUEMA 2022)
 - **Datos comparativos:** `data/holbox-comparison.csv`
 - **Resultados sensibilidad:** `data/sensitivity-summary-results.csv`
 
