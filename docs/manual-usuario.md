@@ -431,7 +431,7 @@ El sistema impone restricciones realistas:
 ## **10. Soporte Técnico**
 
 Para soporte técnico adicional o reporte de problemas:
-- **Repositorio**: https://github.com/rafaellang/waste-simulator
+- **Repositorio**: https://github.com/ramphastoslangosta/waste-simulator.git
 - **Documentación Técnica**: Consulte los archivos de documentación en el repositorio
 - **Issues**: Reporte problemas técnicos a través del sistema de issues de GitHub
 
