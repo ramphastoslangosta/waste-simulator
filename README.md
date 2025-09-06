@@ -2,17 +2,24 @@
 
 **Simulador Web Interactivo + Documento Académico Completo**
 
+🌐 **Aplicación en Vivo**: [https://waste-simulator.vercel.app/](https://waste-simulator.vercel.app/)
+
+📖 **Manual de Usuario Completo**: [docs/manual-usuario.md](./docs/manual-usuario.md)
+
 Este repositorio contiene tanto el **simulador web React/TypeScript** (producto central) como la **tesina académica completa** sobre gestión integral de residuos sólidos urbanos en Isla Holbox, Quintana Roo, México.
 
 ## 🎯 Componentes del Proyecto
 
 ### 🖥️ **Simulador Web (Producto Central)**
+🚀 **[Acceder a la Aplicación](https://waste-simulator.vercel.app/)** | 📖 **[Manual de Usuario](./docs/manual-usuario.md)**
+
 Aplicación React/TypeScript para simulación interactiva del sistema de gestión de residuos con:
 - **Motor matemático**: Modelo determinístico con 5 módulos secuenciales
 - **3 flujos de residuos**: RSU, Sargazo, RCD con variación estacional 
 - **Validación empírica**: 100% validación (8/8 KPIs) con error promedio 6.0%
 - **Análisis de sensibilidad**: 29 escenarios, jerarquía de variables críticas
 - **Dashboard interactivo**: KPIs tiempo real, análisis financiero, diagramas
+- **Manual de usuario**: Documentación completa con capturas de pantalla para replicabilidad
 
 ### 📄 **Tesina Académica (177 páginas)**
 Documento académico completo con metodología, validación y resultados:
@@ -20,6 +27,7 @@ Documento académico completo con metodología, validación y resultados:
 - **PDF auto-generado** con sistema Pandoc + WeasyPrint
 - **Gráficos integrados** de análisis de sensibilidad
 - **Referencias APA** automáticas
+- **Anexos digitales**: 4 documentos técnicos especializados ([docs/](./docs/))
 
 ## ✨ Key Features
 
@@ -44,6 +52,15 @@ Documento académico completo con metodología, validación y resultados:
 - 🎨 **Modern UI/UX** - Built with Tailwind CSS, Lucide icons, and interactive components
 
 ## 🚀 Quick Start
+
+### 🌐 Usar la Aplicación Web
+
+**Forma más rápida**: Accede directamente a la aplicación en vivo:
+👉 **[https://waste-simulator.vercel.app/](https://waste-simulator.vercel.app/)**
+
+📖 **Para aprender a usar el simulador**, consulta el **[Manual de Usuario](./docs/manual-usuario.md)** con guías paso a paso y capturas de pantalla.
+
+### 💻 Desarrollo Local
 
 ### Prerequisites
 
@@ -161,9 +178,17 @@ src/
 - User authentication and data sync
 - Shareable scenarios between users
 
-## 📊 Data Collection
+## 📊 Documentación y Guías
 
-For accurate simulation results, proper input data collection is essential:
+### 📖 Manual de Usuario
+- **📘 [Manual de Usuario Completo](./docs/manual-usuario.md)** - Guía exhaustiva con 10 secciones principales
+- **🖼️ Capturas de Pantalla** - 20 imágenes explicativas de cada funcionalidad
+- **📋 Instrucciones Paso a Paso** - Desde configuración hasta análisis comparativo
+- **🔧 Resolución de Problemas** - Soluciones a problemas comunes
+- **✅ Mejores Prácticas** - Recomendaciones para análisis efectivos
+
+### 📋 Recolección de Datos
+Para resultados precisos, es esencial una recolección adecuada de datos:
 
 - **📋 [Data Collection Guide](./DATA_COLLECTION_GUIDE.md)** - Comprehensive instructions for gathering input parameters with proper source citation
 - **✅ [Data Collection Checklist](./DATA_COLLECTION_CHECKLIST.md)** - Quick reference and validation checklist
@@ -173,6 +198,12 @@ For accurate simulation results, proper input data collection is essential:
 - Approximations and assumptions must be clearly identified
 - Local context should be prioritized over generic estimates
 - Uncertainty ranges should be provided where available
+
+### 📚 Anexos Digitales
+- **📊 [Formulación Matemática](./docs/mathematical-formulation.md)** - 47+ ecuaciones con implementación
+- **✅ [Protocolos de Validación](./docs/validation-protocols.md)** - 3 pilares de validación técnica
+- **📋 [Plan de Implementación](./docs/implementation-plan.md)** - Guía ejecutiva para Escenario 8
+- **📝 [Glosario Técnico](./docs/glossary.md)** - 100+ términos especializados
 
 ## 🤝 Contributing
 
@@ -224,11 +255,16 @@ We welcome contributions! Please see our [Development Protocol](./DEVELOPMENT_PR
 - ✅ **Advanced Cost-Benefit Analysis** - ROI calculations and waterfall charts
 - ✅ **Comprehensive Export System** - High-resolution chart export and detailed CSV tables
 - ✅ **Multi-Stage Inventory Tracking** - Real-time capacity utilization monitoring
+- ✅ **Production Deployment** - Aplicación desplegada en Vercel con dominio público
+- ✅ **User Manual Complete** - Manual exhaustivo con 20 capturas de pantalla
+- ✅ **Digital Annexes** - 4 documentos técnicos especializados para la tesina
+- ✅ **Repository Organization** - Estructura final para entrega académica
 
 ### In Progress 🚀
 - 🎯 **FASE 3: Thesis Assembly** - Assumptions/Limitations documentation and improvement scenarios
 - 🎯 **Policy Recommendations** - Evidence-based recommendations using sensitivity findings
 - 🎯 **Academic Finalization** - Complete thesis documentation and defense preparation
+- 🎯 **Repository Final Review** - Limpieza final y verificación para entrega académica
 
 ### Upcoming Features
 - [ ] **Sankey Diagram Implementation** - Visual flow representation with valorization branches
@@ -257,7 +293,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-For questions, suggestions, or collaboration opportunities, please open an issue on GitHub.
+For questions, suggestions, or collaboration opportunities:
+- **GitHub Issues**: Para problemas técnicos del simulador
+- **Academic Inquiries**: Para consultas sobre la metodología o resultados
+- **User Support**: Consulta el [Manual de Usuario](./docs/manual-usuario.md) para dudas de uso
 
 ---
 
