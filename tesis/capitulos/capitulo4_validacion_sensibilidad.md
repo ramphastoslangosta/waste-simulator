@@ -68,7 +68,7 @@ Conforme a la metodología de validación establecida en el capítulo anterior, 
 Esta variable domina absolutamente el comportamiento del sistema. Su impacto en la **Utilización de Capacidad de Procesamiento** alcanza 80.97% de sensibilidad, lo que significa que pequeños incrementos en la capacidad de transporte generan reducciones dramáticas en la utilización sistémica, aliviando la presión sobre todo el sistema. La **FIGURA 4.1** ilustra esta dominancia:
 
 **FIGURA 4.1: Gráfico de Tornado de Sensibilidad General del Sistema**
-![Gráfico de Tornado de Sensibilidad General del Sistema](recursos/charts/tornado_chart_overall_sensitivity.png)
+![Gráfico de Tornado de Sensibilidad General del Sistema](../recursos/charts/tornado_chart_overall_sensitivity.png)
 *Fuente: Elaboración propia. Gráfico generado con el script create_sensitivity_charts.py a partir de los resultados del análisis de sensibilidad, disponibles en data/sensitivity-summary-results.csv*
 **Costo de Recolección (11.9% impacto):** 
 

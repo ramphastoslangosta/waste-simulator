@@ -619,6 +619,8 @@ def markdown_to_html_with_formulas(markdown_files, cover_content, output_html_pa
         return False
 
     print("\n🔄 Procesando Markdown con fórmulas LaTeX y paginación inteligente...")
+    
+    import re  # Mover import al inicio de la función
 
     # Empezar con el contenido de la portada si existe
     combined_content = ""
@@ -631,11 +633,14 @@ def markdown_to_html_with_formulas(markdown_files, cover_content, output_html_pa
         with open(markdown_file, 'r', encoding='utf-8') as f:
             content = f.read()
         
+        # PASO 0: Convertir rutas de imagen de GitHub a rutas para WeasyPrint
+        # GitHub usa ../recursos/ pero WeasyPrint necesita recursos/ desde el directorio tesis/
+        content = re.sub(r'\.\./recursos/', 'recursos/', content)
+        
         # PASO 1: Agrupar tablas y figuras para evitar saltos de página
         content = wrap_tables_and_figures(content)
         
         # PASO 2: Procesar fórmulas LaTeX - primero display, luego inline
-        import re
         
         # Procesar fórmulas de display $$...$$ (centradas)
         def process_display_formula(match):
@@ -692,8 +697,10 @@ def markdown_to_html_with_formulas(markdown_files, cover_content, output_html_pa
     for markdown_file in markdown_files:
         with open(markdown_file, 'r', encoding='utf-8') as f:
             content = f.read()
+        
+        # Convertir rutas de imagen de GitHub a rutas para WeasyPrint
+        content = re.sub(r'\.\./recursos/', 'recursos/', content)
         content = wrap_tables_and_figures(content)
-        import re
         
         # Procesar fórmulas de display $$...$$ (centradas)
         def process_display_formula(match):

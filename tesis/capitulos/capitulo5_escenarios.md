@@ -13,7 +13,7 @@ La matriz comparativa completa de los 8 escenarios se presenta en el **Anexo C.1
 El Escenario 1 representa la línea base validada que confirma una falla sistémica crítica. Como se ilustra en la Figura 5.1, la generación total de 27.7 ton/día y las pérdidas en recolección resultan en una llegada de 23.5 ton/día a la estación de transferencia. Sin embargo, la capacidad de transporte continental está restringida a solo 9.6 ton/día, lo que provoca una acumulación forzada diaria de 12.7 toneladas, resultando en acumulación de **inventario insostenible**.
 
 **Figura 5.1: Diagrama de Flujo Cuantificado del Sistema de Gestión de Residuos**
-![Diagrama de Flujo Cuantificado del SGR](recursos/imagenes/FIGURA_5.1_Diagrama_Flujo_Cuantificado.png)
+![Diagrama de Flujo Cuantificado del SGR](../recursos/imagenes/FIGURA_5.1_Diagrama_Flujo_Cuantificado.png)
 *Fuente: Elaboración propia. Gráfico generado a partir de la comparación de escenarios (data/holbox-comparison.csv) ejecutada por el motor de simulación (src/simulation/simulationEngine.ts).*
 
 Este colapso operacional genera **déficit económico neto de 23,255 MXN/día**, estableciendo el problema central: un sistema económicamente insostenible y operacionalmente fallido que requiere transformación sistémica.
