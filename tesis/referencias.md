@@ -21,7 +21,7 @@ Secretaría de Medio Ambiente y Recursos Naturales (SEMARNAT). (2020). <em>Diagn
 </div>
 
 <div class="single-reference">
-Servicio de Limpia Urbana Municipal de Lázaro Cárdenas (SUMA). (2022). <em>Estudio de caracterización de residuos sólidos urbanos - Isla Holbox</em>. Lázaro Cárdenas, Quintana Roo: Ayuntamiento de Lázaro Cárdenas. [Documento interno de trabajo]
+SUEMA. 2022. Diagnóstico inicial del sistema de manejo de residuos del Municipio de Lázaro Cárdenas con enfoque en la Isla de Holbox. Ciudad de México, México.
 </div>
 
 <div class="single-reference">
