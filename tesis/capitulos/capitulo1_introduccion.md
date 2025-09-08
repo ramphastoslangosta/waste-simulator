@@ -7,7 +7,7 @@ Los Pequeños Estados Insulares en Desarrollo (SIDS, por sus siglas en inglés) 
 Isla Holbox, ubicada en el extremo norte de la península de Yucatán, ejemplifica perfectamente estos desafíos. Con una superficie de 56 km² y una población que fluctúa entre 1,500 habitantes en temporada baja y 8,000 durante los picos turísticos, la isla, un área natural protegida situada entre la laguna Yalahau y la segunda barrera de arrecifes más grande del mundo (ver **FIGURA 1.1**), enfrenta una presión extrema sobre sus sistemas de infraestructura.
 
 **FIGURA 1.1: Ubicación Geográfica de Isla Holbox**
-![Mapa Satelital de Isla Holbox](recursos/imagenes/FIGURA_1.1_Holbox_Satelital.png)
+![Mapa Satelital de Isla Holbox](.../recursos/imagenes/FIGURA_1.1_Holbox_Satelital.png)
 *Fuente: Imagen satelital de Copernicus/Sentinel-2, procesada con Google Earth Engine.*
 
 Las restricciones logísticas insulares agravan significativamente la problemática. La ausencia de conexión terrestre continental obliga a que todo el transporte de residuos se realice por vía marítima, incrementando los costos operacionales entre 200% y 300% respecto a sistemas continentales equivalentes. Esta limitación, combinada con la infraestructura portuaria limitada y las restricciones climáticas estacionales, crea cuellos de botella críticos que comprometen la viabilidad operacional del sistema de gestión.
