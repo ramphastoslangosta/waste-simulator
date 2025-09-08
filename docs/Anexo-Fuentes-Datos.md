@@ -1,4 +1,4 @@
-# ANEXO A: TRAZABILIDAD DE DATOS DEL ESCENARIO BASE
+# TRAZABILIDAD DE DATOS DEL ESCENARIO BASE
 
 ## Resumen Ejecutivo
 
@@ -271,39 +271,3 @@ Cada parámetro incluye:
 | Parámetros Económicos | 20 | 22.5% | Media |
 | Escenarios de Separación | 18 | 11.2% | Baja |
 | Otros | 3 | 3.4% | Baja |
-
----
-
-## 4. PRÓXIMOS PASOS
-
-### 4.1 Cronograma de Documentación (Días 2-4)
-
-**Día 2 (Martes 27 Agosto):**
-- Documentar parámetros de logística y capacidades (Secciones 2.5-2.6)
-- Investigar fuentes: reportes municipales, estudios SEMARNAT
-- Documentar parámetros económicos (Secciones 2.9-2.13)
-
-**Día 3 (Miércoles 28 Agosto):**
-- Finalizar parámetros de valorización y separación (Secciones 2.7-2.8)
-- Completar documentación de tasas de fuga y separación
-- Review completo: **0 parámetros sin justificación**
-
-**Día 4 (Jueves 29 Agosto):**
-- Crear summary table con estadísticas finales
-- Identificar parámetros con mayor incertidumbre
-- Formato final del anexo para inclusión en tesis
-
-### 4.2 Fuentes Identificadas para Investigación
-
-1. **SEMARNAT Quintana Roo** - Diagnósticos estatales de residuos sólidos
-2. **Municipio de Lázaro Cárdenas** - Reportes oficiales de limpia pública
-3. **INEGI** - Censos y estadísticas socioeconómicas
-4. **Estudios académicos** - Papers sobre gestión de residuos en zonas costeras
-5. **Operadores locales** - Datos técnicos del sistema actual
-
----
-
-**Documento creado**: 20 Agosto 2025  
-**Estado**: Día 1 de 4 - Estructura base completada  
-**Próxima actualización**: 21 Agosto 2025  
-**Responsable**: Equipo de Desarrollo de Tesis
