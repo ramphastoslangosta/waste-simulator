@@ -48,11 +48,21 @@ def get_markdown_files(base_path):
     portada_path = base_path / "portada.md"
     cover_content = ""
     if portada_path.exists():
-        print(f"  [✓] portada.md (será incluida como primera página)")
+        print(f"  [✓] portada.md (será incluida como portada)")
         with open(portada_path, 'r', encoding='utf-8') as f:
             cover_content = f.read()
     else:
         print(f"  [✗] portada.md (No encontrada)")
+    
+    # Verificar si existe la primera página
+    primera_pagina_path = base_path / "primer_pagina.md"
+    first_page_content = ""
+    if primera_pagina_path.exists():
+        print(f"  [✓] primer_pagina.md (será incluida como primera página después de portada)")
+        with open(primera_pagina_path, 'r', encoding='utf-8') as f:
+            first_page_content = f.read()
+    else:
+        print(f"  [✗] primer_pagina.md (No encontrada)")
     
     for file_name in markdown_files_order:
         file_path = base_path / file_name
@@ -64,7 +74,7 @@ def get_markdown_files(base_path):
         else:
             print(f"  [✗] {file_name} (No encontrado, se omitirá)")
 
-    return existing_files, cover_content
+    return existing_files, cover_content, first_page_content
 
 def clean_content(file_path):
     """
@@ -610,7 +620,7 @@ def combine_cover_and_main(cover_html_path, main_html_path, output_html_path):
     except Exception as e:
         print(f"⚠️ Advertencia: No se pudo combinar la portada: {e}")
 
-def markdown_to_html_with_formulas(markdown_files, cover_content, output_html_path, css_path):
+def markdown_to_html_with_formulas(markdown_files, cover_content, first_page_content, output_html_path, css_path):
     """
     Convierte Markdown a HTML procesando fórmulas LaTeX para WeasyPrint
     """
@@ -627,6 +637,8 @@ def markdown_to_html_with_formulas(markdown_files, cover_content, output_html_pa
     if cover_content:
         # Procesar la portada para separar del contenido principal
         combined_content = cover_content + "\n\n<div class='page-break'></div>\n\n"
+    
+    # NOTA: La primera página ahora se procesa con el contenido principal, no aquí
     
     # Leer y procesar todos los archivos Markdown
     for markdown_file in markdown_files:
@@ -668,7 +680,7 @@ def markdown_to_html_with_formulas(markdown_files, cover_content, output_html_pa
     
     # Crear HTML de portada por separado para evitar numeración en TOC
     if cover_content:
-        # Convertir solo la portada a HTML sin numeración ni TOC
+        # Convertir SOLO la portada a HTML sin numeración ni TOC
         temp_cover_file = output_html_path.parent / "temp_cover.md"
         with open(temp_cover_file, 'w', encoding='utf-8') as f:
             f.write(cover_content)
@@ -692,8 +704,14 @@ def markdown_to_html_with_formulas(markdown_files, cover_content, output_html_pa
             if temp_cover_file.exists():
                 temp_cover_file.unlink()
     
-    # Crear contenido principal con numeración y TOC (excluyendo portada)
+    # Crear contenido principal con numeración y TOC (incluyendo primera página pero excluyendo portada)
     main_content = ""
+    
+    # Agregar primera página al contenido principal (antes que los capítulos)
+    if first_page_content:
+        processed_first_page = re.sub(r'\.\./recursos/', 'recursos/', first_page_content)
+        main_content += processed_first_page + "\n\n<div class='page-break'></div>\n\n"
+    
     for markdown_file in markdown_files:
         with open(markdown_file, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -819,7 +837,7 @@ def main():
         print(f"❌ ERROR: No se encuentra el archivo de estilos '{css_path.name}'.")
         return
 
-    markdown_files, cover_content = get_markdown_files(base_path)
+    markdown_files, cover_content, first_page_content = get_markdown_files(base_path)
     if not markdown_files and not cover_content:
         return
 
@@ -827,7 +845,7 @@ def main():
     success = False
     try:
         # Paso 1: Markdown → HTML con fórmulas LaTeX convertidas
-        if markdown_to_html_with_formulas(markdown_files, cover_content, html_temp_path, css_path):
+        if markdown_to_html_with_formulas(markdown_files, cover_content, first_page_content, html_temp_path, css_path):
             # Paso 2: HTML → PDF con WeasyPrint
             if html_to_pdf_with_weasyprint(html_temp_path, pdf_output_path):
                 success = True

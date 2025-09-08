@@ -15,8 +15,8 @@
         content: none; /* Sin encabezado */
     }
     
-    @bottom-center {
-        content: counter(page); /* Número de página en el pie */
+    @bottom-right {
+        content: counter(page); /* Número de página en la esquina inferior derecha */
         font-family: "Times New Roman", serif;
         font-size: 12pt;
     }
@@ -45,6 +45,10 @@
     
     @bottom-center {
         content: none; /* Sin número de página en portada */
+    }
+    
+    @bottom-right {
+        content: none; /* Sin número de página en esquina derecha de portada */
     }
 }
 
@@ -863,4 +867,82 @@ section[id*="referencias"] p {
     font-family: "Times New Roman", serif;
     font-size: 12pt;
     text-align: justify;
+}
+
+/* ==========================================================================
+   ESTILOS PARA PRIMERA PÁGINA ACADÉMICA
+   ========================================================================== */
+
+/* Contenedor principal de primera página - asegurar salto de página */
+.first-page {
+    page-break-before: always !important;
+    page-break-after: always !important;
+    min-height: 90vh;
+    font-family: "Times New Roman", serif;
+}
+
+/* Título de la primera página - 14pt, bold */
+.first-page-title {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 1.5cm 0 1cm 0;  /* Reducir margen superior para evitar división de página */
+    text-align: center;
+    line-height: 1.3;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Autor de la primera página - 14pt, bold */
+.first-page-author {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 1cm 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Título de sección (Resumen) - 14pt, bold */
+.first-page-section-title {
+    font-family: "Times New Roman", serif;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 0.8cm 0 0.6cm 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Texto del resumen - 12pt, justificado */
+.first-page-text {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    font-weight: normal;
+    margin: 0.5cm 0;
+    text-align: justify;
+    line-height: 1.5;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Enlaces - 12pt */
+.first-page-links {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    font-weight: normal;
+    margin: 0.3cm 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Palabras clave - 12pt, bold label */
+.first-page-keywords {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 0.8cm 0;
+    text-align: center;
+    line-height: 1.2;
 }

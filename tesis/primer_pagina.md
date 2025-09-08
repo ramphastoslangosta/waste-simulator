@@ -1,27 +1,17 @@
-# Resumen Ejecutivo
+<div align="center" class="first-page">
 
-## Gestión Integral de Residuos Sólidos - Isla Holbox: Simulador Web Interactivo para Optimización de Sistemas Insulares
+<div class="first-page-title">GESTIÓN INTEGRAL DE RESIDUOS SÓLIDOS - ISLA HOLBOX: SIMULADOR WEB INTERACTIVO PARA OPTIMIZACIÓN DE SISTEMAS INSULARES</div>
 
-**Problemática:** Los Pequeños Estados Insulares en Desarrollo enfrentan desafíos críticos en la gestión de residuos sólidos urbanos debido a limitaciones logísticas y geográficas. Isla Holbox presenta un déficit sistémico del 65% en capacidad de transporte continental (demanda: 27.7 ton/día vs. capacidad: 9.6 ton/día), generando acumulación descontrolada y costos operacionales insostenibles de 8.5-10.3 millones MXN anuales.
+<div class="first-page-author">Rafael Lang Millet</div>
 
-**Objetivo:** Desarrollar un simulador web interactivo basado en modelado matemático determinístico para analizar, optimizar y evaluar escenarios de mejora del sistema de gestión de residuos sólidos en territorios insulares, facilitando la toma de decisiones estratégicas mediante herramientas de análisis cuantitativo.
+<div class="first-page-section-title">Resumen</div>
 
-**Método:** Investigación aplicada con desarrollo de motor de simulación de 6 módulos secuenciales (generación, recolección, separación, valorización, inventarios, economía) implementado en React/TypeScript. Validación empírica con datos primarios de campo (2022) alcanzando 100% de validación (8/8 KPIs) con error promedio del 6.0%. Análisis de sensibilidad de 7 parámetros críticos en 29 escenarios operacionales.
+<div class="first-page-text">Los Pequeños Estados Insulares en Desarrollo enfrentan desafíos críticos en la gestión de residuos sólidos urbanos debido a limitaciones logísticas y geográficas. Isla Holbox presenta un déficit sistémico del 65% en capacidad de transporte continental (demanda: 27.7 ton/día vs. capacidad: 9.6 ton/día), generando acumulación descontrolada y costos operacionales insostenibles. El objetivo fue desarrollar un simulador web interactivo basado en modelado matemático determinístico para analizar, optimizar y evaluar escenarios de mejora del sistema de gestión de residuos sólidos en territorios insulares. La metodología incluyó investigación aplicada con desarrollo de motor de simulación de 6 módulos secuenciales (generación, recolección, separación, valorización, inventarios, economía) implementado en React/TypeScript, con validación empírica de 8/8 KPIs con error promedio del 6.0% y análisis de sensibilidad de 7 parámetros críticos en 29 escenarios operacionales. El análisis identificó que incrementar la capacidad de transporte continental representa la variable de mayor impacto sistémico (30.7% sensibilidad), mientras que programas de valorización y separación en origen ofrecen alternativas económicamente viables, transformando el déficit operacional en un sistema económicamente sustentable.</div>
 
-**Conclusión Principal:** El análisis identificó que incrementar la capacidad de transporte continental representa la variable de mayor impacto sistémico (30.7% sensibilidad), mientras que programas de valorización y separación en origen ofrecen alternativas económicamente viables para reducir la presión sobre el transporte y generar ingresos adicionales, transformando el déficit operacional en un sistema económicamente sustentable.
+<div class="first-page-links">**Aplicación en Vivo**: https://waste-simulator.vercel.app/</div>
 
----
+<div class="first-page-links">**Repositorio GitHub**: https://github.com/ramphastoslangosta/waste-simulator.git</div>
 
-**🌐 Aplicación en Vivo:** https://waste-simulator.vercel.app/
+<div class="first-page-keywords">Palabras clave: Operaciones, Gestión de Residuos, Análisis de Sistemas, Simulación, Optimización Insular</div>
 
-**📂 Repositorio GitHub:** https://github.com/ramphastoslangosta/waste-simulator.git
-
----
-
-## Palabras Clave
-
-1. **Operaciones** (Área de Administración)
-2. **Gestión de Residuos** (Tema de investigación)
-3. **Análisis de Sistemas** (Aspecto básico)
-4. **Simulación** (Palabra importante del título)
-5. **Optimización Insular** (Palabras importantes del título)
+</div>
