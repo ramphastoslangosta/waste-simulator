@@ -25,11 +25,11 @@ Esta limitación genera el déficit sistémico del 79.6% identificado como causa
 
 ## Fuentes de Datos y Calibración Empírica
 
-**Datos Primarios:** La base empírica proviene del **Estudio SUMA (2022)** que proporcionó **47 variables operacionales** medidas durante 4 semanas en temporada alta, incluyendo tasas de generación por sector (2.1 kg/unidad/día hoteles), composición por fuente (52% orgánicos en restaurantes), y capacidades operacionales actuales. Los **112 parámetros operacionales utilizados se detallan en el Anexo C**, proporcionando la base completa de configuración del modelo.
+**Datos Primarios:** La base empírica proviene del **Estudio SUEMA (2022)** que proporcionó **47 variables operacionales** medidas durante 4 semanas en temporada alta, incluyendo tasas de generación por sector (2.1 kg/unidad/día hoteles), composición por fuente (52% orgánicos en restaurantes), y capacidades operacionales actuales. Los **112 parámetros operacionales utilizados se detallan en el Anexo C**, proporcionando la base completa de configuración del modelo.
 
 **Protocolo de Calibración de Tres Etapas:**
 
-**Etapa 1 - Calibración Paramétrica:** Ajuste crítico de capacidad de transporte de estimación inicial (10.0 ton/día) al valor empírico SUMA (9.6 ton/día). Esta corrección de -0.4 ton/día incrementó la predicción de inventario acumulado en 13 toneladas, demostrando la sensibilidad sistémica al cuello de botella de transporte.
+**Etapa 1 - Calibración Paramétrica:** Ajuste crítico de capacidad de transporte de estimación inicial (10.0 ton/día) al valor empírico de SUEMA (9.6 ton/día). Esta corrección de -0.4 ton/día incrementó la predicción de inventario acumulado en 13 toneladas, demostrando la sensibilidad sistémica al cuello de botella de transporte.
 
 **Etapa 2 - Integridad Física:** Implementación de validador automático para conservación de masa en cada simulación de 30 días, garantizando error numérico <0.01% y cumplimiento de restricciones físicas (flujos no negativos, capacidades respetadas).
 

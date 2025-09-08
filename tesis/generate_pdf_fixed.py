@@ -26,17 +26,17 @@ def get_markdown_files(base_path):
     """Obtiene la lista ordenada de archivos Markdown para la tesina."""
     # Edita esta lista para que coincida con el orden y nombre de tus capítulos
     markdown_files_order = [
-        "capitulo1_introduccion.md",
-        "capitulo2_marco_teorico.md",
-        "capitulo3_metodologia.md",
-        "capitulo4_validacion_sensibilidad.md",
-        "capitulo5_escenarios.md",
-        "capitulo6_resultados_recomendaciones.md",
-        "anexo_a.md",
-        "anexo_b.md",
-        "anexo_c.md",
-        "anexo_d.md",
-        "anexo_e.md",
+        "capitulos/capitulo1_introduccion.md",
+        "capitulos/capitulo2_marco_teorico.md",
+        "capitulos/capitulo3_metodologia.md",
+        "capitulos/capitulo4_validacion_sensibilidad.md",
+        "capitulos/capitulo5_escenarios.md",
+        "capitulos/capitulo6_resultados_recomendaciones.md",
+        "anexos/anexo_a.md",
+        "anexos/anexo_b.md",
+        "anexos/anexo_c.md",
+        "anexos/anexo_d.md",
+        "anexos/anexo_e.md",
         "referencias.md"
         # "anexo_x_....md", # Agrega tus anexos adicionales aquí
     ]

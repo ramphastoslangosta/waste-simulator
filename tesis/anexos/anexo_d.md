@@ -6,7 +6,7 @@
 
 **Tabla D.1: Validación Modelo vs. Datos Reales SUEMA 2022**
 
-| **KPI** | **Predicción Modelo** | **Dato Empírico SUMA** | **Error Relativo** | **Estado** |
+| **KPI** | **Predicción Modelo** | **Dato Empírico SUEMA** | **Error Relativo** | **Estado** |
 |---------|----------------------|------------------------|-------------------|------------|
 | **Generación Total RSU** | 27.70 ton/día | 28.5 ± 2.1 ton/día | **2.8%** | Excelente |
 | **Material Recolectado** | 27.70 ton/día | 26.8 ± 1.8 ton/día | **3.4%** | Excelente |

@@ -57,7 +57,7 @@
 - **ROI:** Return on Investment (Retorno sobre Inversión)  
 - **RSU:** Residuos Sólidos Urbanos  
 - **SIDS:** Small Island Developing States  
-- **SUMA:** Consultora ambiental que proporcionó datos empíricos (2022)  
+- **SUEMA:** Consultora ambiental que proporcionó datos empíricos (2022)  
 - **ton/día:** Toneladas por día (unidad de flujo másico)  
 
 ## A.4 Terminología Especifica del Simulador

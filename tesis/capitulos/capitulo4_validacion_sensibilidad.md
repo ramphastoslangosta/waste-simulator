@@ -19,7 +19,7 @@ Los resultados de verificación confirman **robustez física absoluta**: error p
 
 ## Validación Empírica Integral
 
-Conforme a la metodología de validación establecida en el capítulo anterior, se ejecutó la comparación sistemática entre las predicciones del modelo calibrado y los datos operacionales reales proporcionados por el estudio SUMA 2022, correspondientes al período de temporada alta turística.
+Conforme a la metodología de validación establecida en el capítulo anterior, se ejecutó la comparación sistemática entre las predicciones del modelo calibrado y los datos operacionales reales proporcionados por el estudio de SUEMA 2022, correspondientes al período de temporada alta turística.
 
 **TABLA 4.2: Validación del Modelo Contra Datos Empíricos**
 
@@ -39,7 +39,7 @@ Conforme a la metodología de validación establecida en el capítulo anterior, 
 
 **Resultados de Validación:** El modelo alcanzó **tasa de validación del 100%** con 7 de 8 indicadores mostrando precisión "excelente" (error <10%) y **error promedio ponderado de 6.0%**. La desviación del 20% en "Recuperación Total" se considera aceptable debido a la alta variabilidad inherente de la recuperación informal, característica típica de sistemas de gestión en transición.
 
-**Calibración Paramétrica Crítica:** Durante la validación se detectó una discrepancia entre la estimación inicial de capacidad de transporte (10.0 ton/día) y la medición empírica SUMA (9.6 ton/día). La corrección de -0.4 ton/día incrementó la predicción de inventario acumulado en 13 toneladas, demostrando la **sensibilidad extrema del sistema al cuello de botella de transporte** y validando la decisión metodológica de priorizar sistemáticamente datos empíricos sobre estimaciones teóricas.
+**Calibración Paramétrica Crítica:** Durante la validación se detectó una discrepancia entre la estimación inicial de capacidad de transporte (10.0 ton/día) y la medición empírica de SUEMA (9.6 ton/día). La corrección de -0.4 ton/día incrementó la predicción de inventario acumulado en 13 toneladas, demostrando la **sensibilidad extrema del sistema al cuello de botella de transporte** y validando la decisión metodológica de priorizar sistemáticamente datos empíricos sobre estimaciones teóricas.
 
 ## Análisis de Sensibilidad Sistemático
 
@@ -68,7 +68,7 @@ Conforme a la metodología de validación establecida en el capítulo anterior, 
 Esta variable domina absolutamente el comportamiento del sistema. Su impacto en la **Utilización de Capacidad de Procesamiento** alcanza 80.97% de sensibilidad, lo que significa que pequeños incrementos en la capacidad de transporte generan reducciones dramáticas en la utilización sistémica, aliviando la presión sobre todo el sistema. La **FIGURA 4.1** ilustra esta dominancia:
 
 **FIGURA 4.1: Gráfico de Tornado de Sensibilidad General del Sistema**
-![Gráfico de Tornado de Sensibilidad General del Sistema](../V3/charts/tornado_chart_overall_sensitivity.png)
+![Gráfico de Tornado de Sensibilidad General del Sistema](recursos/charts/tornado_chart_overall_sensitivity.png)
 *Fuente: Elaboración propia. Gráfico generado con el script create_sensitivity_charts.py a partir de los resultados del análisis de sensibilidad, disponibles en data/sensitivity-summary-results.csv*
 **Costo de Recolección (11.9% impacto):** 
 

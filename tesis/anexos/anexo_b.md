@@ -69,7 +69,7 @@ $$G_{total} = Material_{dispuesto} + Material_{recuperado} + Material_{valorizad
 
 **Tabla B.2: Tasas de Generación Validadas por Sector**
 
-| Símbolo | Descripción | Valor SUMA 2022 |
+| Símbolo | Descripción | Valor SUEMA 2022 |
 |---------|-------------|-----------------|
 | $R_{hoteles}$ | Tasa hotelera | **2.1 kg/unidad/día** |
 | $R_{restaurantes}$ | Tasa gastronómica | **46.7 kg/unidad/día** |
