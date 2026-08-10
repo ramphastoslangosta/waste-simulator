@@ -3,6 +3,7 @@
 // ========================================================================
 export const TABS = [
     { id: 'kpis', label: 'Dashboard de KPIs' },
+    { id: 'map', label: 'Mapa' },
     { id: 'financials', label: 'Análisis Financiero' },
     { id: 'flow', label: 'Diagrama de Flujo RSU' },
     { id: 'process', label: 'Análisis de Procesos RSU' },

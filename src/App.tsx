@@ -5,9 +5,10 @@ import { Sun, Moon, User, LogOut } from 'lucide-react';
 import { useWasteSimulation } from './hooks/useWasteSimulation';
 import { useAuth } from './hooks/useAuth';
 import { TABS } from './constants/layoutConstants';
-import { INITIAL_INPUTS } from './constants/initialState';
+import { STUDY_CASES, DEFAULT_CASE, getStudyCase, getInitialInputs } from './studyCases';
 import InputPanel from './components/features/InputPanel.tsx';
 import KPIDashboard from './components/features/KPIDashboard.tsx';
+import MapView from './components/features/MapView.tsx';
 import FinancialAnalysis from './components/features/FinancialAnalysis.tsx';
 import FlowDiagram from './components/features/FlowDiagram.tsx';
 import ProcessAnalysis from './components/features/ProcessAnalysis.tsx';
@@ -29,7 +30,14 @@ const SankeyDiagram = () => (
 export default function App() {
     const [activeTab, setActiveTab] = useState('kpis');
     const [season, setSeason] = useState('high'); // 'high' or 'low'
-    const [inputs, setInputs] = useState(INITIAL_INPUTS);
+    const [studyCaseId, setStudyCaseId] = useState(DEFAULT_CASE);
+    const [inputs, setInputs] = useState(() => getInitialInputs(DEFAULT_CASE));
+
+    // Cambiar de caso de estudio recarga los parámetros iniciales de ese caso.
+    const handleStudyCaseChange = (id: string) => {
+        setStudyCaseId(id);
+        setInputs(getInitialInputs(id));
+    };
     const [showAuthModal, setShowAuthModal] = useState(false);
     const [comparisonScenarios, setComparisonScenarios] = useState<any[]>([]);
     const [isComparisonMode, setIsComparisonMode] = useState(false);
@@ -75,6 +83,8 @@ export default function App() {
         switch (activeTab) {
             case 'kpis':
                 return <KPIDashboard kpis={activeKpis} season={activeSeasonLabel} />;
+            case 'map':
+                return <MapView geo={getStudyCase(studyCaseId).geo} />;
             case 'financials':
                 return <FinancialAnalysis kpis={activeKpis} season={activeSeasonLabel} />;
             case 'flow':
@@ -158,9 +168,26 @@ export default function App() {
                 <div className="bg-slate-100 rounded-2xl shadow-lg overflow-hidden">
                     <header className="bg-gradient-to-br from-blue-900 to-blue-700 text-white p-6 text-center">
                         <div className="flex justify-between items-center">
-                            <div className="flex-1">
-                                <h1 className="text-2xl sm:text-4xl font-bold">Modelo de Simulación de Residuos</h1>
-                                <p className="mt-2 text-md sm:text-lg opacity-90">Isla Holbox (Modelo v4 - Flujos Separados) - Live Version</p>
+                            <div className="flex-1 text-left">
+                                <h1 className="text-2xl sm:text-4xl font-bold">Simulador de Residuos</h1>
+                                <div className="mt-2 flex items-center gap-3 flex-wrap">
+                                    <label className="text-sm opacity-90">Caso de estudio:</label>
+                                    <select
+                                        value={studyCaseId}
+                                        onChange={(e) => handleStudyCaseChange(e.target.value)}
+                                        className="bg-blue-800 text-white text-sm rounded-md px-3 py-1 border border-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                    >
+                                        {STUDY_CASES.map((c) => (
+                                            <option key={c.id} value={c.id}>{c.name}</option>
+                                        ))}
+                                    </select>
+                                    {getStudyCase(studyCaseId).validated && (
+                                        <span className="text-xs bg-green-600 rounded-full px-2 py-0.5">validado</span>
+                                    )}
+                                </div>
+                                <p className="mt-1 text-xs sm:text-sm opacity-80">
+                                    {getStudyCase(studyCaseId).location} — {getStudyCase(studyCaseId).description}
+                                </p>
                             </div>
                             <div className="flex items-center space-x-4">
                                 {authLoading ? (

@@ -1,0 +1,14 @@
+{
+  "hoteles": 170,
+  "cuartos": 2341,
+  "ocupacion_mensual": {
+    "enero": 73.1,
+    "febrero": 69.7,
+    "marzo": 78.2,
+    "abril": 71.8
+  },
+  "ocupacion_prom": 73.2,
+  "source": "Secretaría de Turismo del Estado de Quintana Roo — '¿Cómo vamos en turismo?' reporte 202604",
+  "source_url": "https://sedeturqroo.gob.mx/ARCHIVOS/comovamos/como_vamos_202604.pdf",
+  "report_ym": "202604"
+}

@@ -1,0 +1,7169 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3936,
+          21.509316
+        ]
+      },
+      "properties": {
+        "id": "overture/0",
+        "name": "Holbox Mágico",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.81
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.394678,
+          21.510068
+        ]
+      },
+      "properties": {
+        "id": "overture/1",
+        "name": "La puerta azul beach club",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38337,
+          21.521545
+        ]
+      },
+      "properties": {
+        "id": "overture/2",
+        "name": "Club de Playa El Velero",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.384481,
+          21.520969
+        ]
+      },
+      "properties": {
+        "id": "overture/3",
+        "name": "Fresco Bar and Grill",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.383713,
+          21.520767
+        ]
+      },
+      "properties": {
+        "id": "overture/4",
+        "name": "Mystique Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 1.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38605,
+          21.519867
+        ]
+      },
+      "properties": {
+        "id": "overture/5",
+        "name": "Rhincodon Typus",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.86
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.385466,
+          21.520349
+        ]
+      },
+      "properties": {
+        "id": "overture/6",
+        "name": "Casa Takywara",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.384064,
+          21.52001
+        ]
+      },
+      "properties": {
+        "id": "overture/7",
+        "name": "Santos Fuegos Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381154,
+          21.52095
+        ]
+      },
+      "properties": {
+        "id": "overture/8",
+        "name": "Experimental Juice Bar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.51
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37892,
+          21.520979
+        ]
+      },
+      "properties": {
+        "id": "overture/9",
+        "name": "Casa Las Palmas",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.44
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37821,
+          21.52056
+        ]
+      },
+      "properties": {
+        "id": "overture/10",
+        "name": "Mayari Hotel Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37827,
+          21.520381
+        ]
+      },
+      "properties": {
+        "id": "overture/11",
+        "name": "Golden Paradise Hostel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38042,
+          21.520357
+        ]
+      },
+      "properties": {
+        "id": "overture/12",
+        "name": "El Crustáceo Kascarudo",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37982,
+          21.519995
+        ]
+      },
+      "properties": {
+        "id": "overture/13",
+        "name": "Alcobas del Mar",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375031,
+          21.52022
+        ]
+      },
+      "properties": {
+        "id": "overture/14",
+        "name": "Maya Hotel Residence",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.87
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375031,
+          21.520299
+        ]
+      },
+      "properties": {
+        "id": "overture/15",
+        "name": "Mayan Mittoz",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376054,
+          21.520973
+        ]
+      },
+      "properties": {
+        "id": "overture/16",
+        "name": "Utopia Hostel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3767,
+          21.520834
+        ]
+      },
+      "properties": {
+        "id": "overture/17",
+        "name": "Holbox Mi Habitat",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376584,
+          21.520982
+        ]
+      },
+      "properties": {
+        "id": "overture/18",
+        "name": "Bambú Café Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376669,
+          21.521113
+        ]
+      },
+      "properties": {
+        "id": "overture/19",
+        "name": "Cocina económica EL PASO",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.44
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376961,
+          21.521121
+        ]
+      },
+      "properties": {
+        "id": "overture/20",
+        "name": "Casa Corona Holbox México",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377566,
+          21.521496
+        ]
+      },
+      "properties": {
+        "id": "overture/21",
+        "name": "Camping Coconut",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.73
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377435,
+          21.521478
+        ]
+      },
+      "properties": {
+        "id": "overture/22",
+        "name": "Coconut by ÓOL Hotels",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376461,
+          21.521125
+        ]
+      },
+      "properties": {
+        "id": "overture/23",
+        "name": "Casa Frida Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374036,
+          21.521572
+        ]
+      },
+      "properties": {
+        "id": "overture/24",
+        "name": "Hotel Corazón Mexicano",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37417,
+          21.521569
+        ]
+      },
+      "properties": {
+        "id": "overture/25",
+        "name": "El Corazón Mexicano Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.41
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374919,
+          21.521509
+        ]
+      },
+      "properties": {
+        "id": "overture/26",
+        "name": "Che Holbox Hostel & Bar",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37754,
+          21.52183
+        ]
+      },
+      "properties": {
+        "id": "overture/27",
+        "name": "Pampa Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376847,
+          21.521948
+        ]
+      },
+      "properties": {
+        "id": "overture/28",
+        "name": "Marvin Suites",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37717,
+          21.522047
+        ]
+      },
+      "properties": {
+        "id": "overture/29",
+        "name": "Hotel Casa Bárbara Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 1.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377854,
+          21.522122
+        ]
+      },
+      "properties": {
+        "id": "overture/30",
+        "name": "Subway",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377646,
+          21.522168
+        ]
+      },
+      "properties": {
+        "id": "overture/31",
+        "name": "VIP Barber Studio",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377899,
+          21.522154
+        ]
+      },
+      "properties": {
+        "id": "overture/32",
+        "name": "Beach Club Escape Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.71
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377915,
+          21.522146
+        ]
+      },
+      "properties": {
+        "id": "overture/33",
+        "name": "K'U' Holbox Restaurante",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377915,
+          21.522146
+        ]
+      },
+      "properties": {
+        "id": "overture/34",
+        "name": "Bocamar Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37814,
+          21.522076
+        ]
+      },
+      "properties": {
+        "id": "overture/35",
+        "name": "Gelato Guru - Holbox ",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377975,
+          21.522105
+        ]
+      },
+      "properties": {
+        "id": "overture/36",
+        "name": "MAYAB Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378732,
+          21.522183
+        ]
+      },
+      "properties": {
+        "id": "overture/37",
+        "name": "Hotel La Casa del Capi",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379008,
+          21.522206
+        ]
+      },
+      "properties": {
+        "id": "overture/38",
+        "name": "Antojitos La Sirenita",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378454,
+          21.521808
+        ]
+      },
+      "properties": {
+        "id": "overture/39",
+        "name": "Veintidos",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378412,
+          21.521574
+        ]
+      },
+      "properties": {
+        "id": "overture/40",
+        "name": "Kai Hotel Boutique",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37819,
+          21.521341
+        ]
+      },
+      "properties": {
+        "id": "overture/41",
+        "name": "Casa Ohana",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379645,
+          21.521176
+        ]
+      },
+      "properties": {
+        "id": "overture/42",
+        "name": "Golden Paradise Town",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379348,
+          21.521402
+        ]
+      },
+      "properties": {
+        "id": "overture/43",
+        "name": "Moon Dreams Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380643,
+          21.521411
+        ]
+      },
+      "properties": {
+        "id": "overture/44",
+        "name": "Hotel Villas Marilú",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.93
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38161,
+          21.521217
+        ]
+      },
+      "properties": {
+        "id": "overture/45",
+        "name": "Jugueria los 2 Hermanos",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.383188,
+          21.52146
+        ]
+      },
+      "properties": {
+        "id": "overture/46",
+        "name": "Hotel Puerto Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 1.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380703,
+          21.521705
+        ]
+      },
+      "properties": {
+        "id": "overture/47",
+        "name": "Hotel Para Ti",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.93
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381097,
+          21.521842
+        ]
+      },
+      "properties": {
+        "id": "overture/48",
+        "name": "Nereida Cantina de Mar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.382252,
+          21.522165
+        ]
+      },
+      "properties": {
+        "id": "overture/49",
+        "name": "Hotel Zomay Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.382373,
+          21.522059
+        ]
+      },
+      "properties": {
+        "id": "overture/50",
+        "name": "Copal Café Zomay Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381271,
+          21.522315
+        ]
+      },
+      "properties": {
+        "id": "overture/51",
+        "name": "Le Jardin",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380801,
+          21.522218
+        ]
+      },
+      "properties": {
+        "id": "overture/52",
+        "name": "La Bionda cancun",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.72
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380814,
+          21.522326
+        ]
+      },
+      "properties": {
+        "id": "overture/53",
+        "name": "Restaurante Coralitos",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.74
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381687,
+          21.522606
+        ]
+      },
+      "properties": {
+        "id": "overture/54",
+        "name": "Casa del Viento by ÓOL Hotels",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.382379,
+          21.523071
+        ]
+      },
+      "properties": {
+        "id": "overture/55",
+        "name": "Holbox Dream Beach Front Hotel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.383115,
+          21.52297
+        ]
+      },
+      "properties": {
+        "id": "overture/56",
+        "name": "El Chiringuito",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.382314,
+          21.52328
+        ]
+      },
+      "properties": {
+        "id": "overture/57",
+        "name": "Casa TomTom Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.382436,
+          21.523375
+        ]
+      },
+      "properties": {
+        "id": "overture/58",
+        "name": "Serenity Beach Club",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38232,
+          21.523199
+        ]
+      },
+      "properties": {
+        "id": "overture/59",
+        "name": "Coquito's Beach Club",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.55
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381459,
+          21.523111
+        ]
+      },
+      "properties": {
+        "id": "overture/60",
+        "name": "Moon Dreams Yum Balam",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381299,
+          21.523132
+        ]
+      },
+      "properties": {
+        "id": "overture/61",
+        "name": "Casa Nostra Roof Restaurant",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381362,
+          21.523196
+        ]
+      },
+      "properties": {
+        "id": "overture/62",
+        "name": "Macondo Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381329,
+          21.523343
+        ]
+      },
+      "properties": {
+        "id": "overture/63",
+        "name": "Stay at Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38089,
+          21.523373
+        ]
+      },
+      "properties": {
+        "id": "overture/64",
+        "name": "Tierra del Mar Hotel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380972,
+          21.523054
+        ]
+      },
+      "properties": {
+        "id": "overture/65",
+        "name": "“Pinches Mexicanos” Mezcalería - Taquearía",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.56
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381668,
+          21.522933
+        ]
+      },
+      "properties": {
+        "id": "overture/66",
+        "name": "Tribu Hostel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381689,
+          21.522803
+        ]
+      },
+      "properties": {
+        "id": "overture/67",
+        "name": "Hostel Tribu",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38158,
+          21.522842
+        ]
+      },
+      "properties": {
+        "id": "overture/68",
+        "name": "Mulberry Project",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38026,
+          21.522941
+        ]
+      },
+      "properties": {
+        "id": "overture/69",
+        "name": "Bendito Burrito",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380342,
+          21.5229
+        ]
+      },
+      "properties": {
+        "id": "overture/70",
+        "name": "Esta al carbón",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.86
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380179,
+          21.522923
+        ]
+      },
+      "properties": {
+        "id": "overture/71",
+        "name": "Hotel Siesa Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.83
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379752,
+          21.522834
+        ]
+      },
+      "properties": {
+        "id": "overture/72",
+        "name": "Big Fish",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.88
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379747,
+          21.522832
+        ]
+      },
+      "properties": {
+        "id": "overture/73",
+        "name": "Tostaderia Seafood Bigfish",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37975,
+          21.522911
+        ]
+      },
+      "properties": {
+        "id": "overture/74",
+        "name": "Innovateh Celulares y Accesorios",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380095,
+          21.523078
+        ]
+      },
+      "properties": {
+        "id": "overture/75",
+        "name": "Papeleria El Estudiante",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.87
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380177,
+          21.523009
+        ]
+      },
+      "properties": {
+        "id": "overture/76",
+        "name": "Maiztro",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380301,
+          21.523338
+        ]
+      },
+      "properties": {
+        "id": "overture/77",
+        "name": "La Barracuda",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380233,
+          21.523253
+        ]
+      },
+      "properties": {
+        "id": "overture/78",
+        "name": "Restaurante la Barracuda isla holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379858,
+          21.523373
+        ]
+      },
+      "properties": {
+        "id": "overture/79",
+        "name": "Naranjas Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.74
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379235,
+          21.523305
+        ]
+      },
+      "properties": {
+        "id": "overture/80",
+        "name": "Hotel Arena",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378977,
+          21.523156
+        ]
+      },
+      "properties": {
+        "id": "overture/81",
+        "name": "El Cocal de Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379196,
+          21.523321
+        ]
+      },
+      "properties": {
+        "id": "overture/82",
+        "name": "Hotel los Arcos Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379107,
+          21.523388
+        ]
+      },
+      "properties": {
+        "id": "overture/83",
+        "name": "Marquesitas Cetina",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.51
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378383,
+          21.523261
+        ]
+      },
+      "properties": {
+        "id": "overture/84",
+        "name": "Restaurante la Guaya",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378401,
+          21.523142
+        ]
+      },
+      "properties": {
+        "id": "overture/85",
+        "name": "Parador 33",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377961,
+          21.523104
+        ]
+      },
+      "properties": {
+        "id": "overture/86",
+        "name": "Florería",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377925,
+          21.52307
+        ]
+      },
+      "properties": {
+        "id": "overture/87",
+        "name": "Maresa",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378,
+          21.52307
+        ]
+      },
+      "properties": {
+        "id": "overture/88",
+        "name": "Tacomoquieras",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378653,
+          21.523048
+        ]
+      },
+      "properties": {
+        "id": "overture/89",
+        "name": "Hotel El Pueblito",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378882,
+          21.523038
+        ]
+      },
+      "properties": {
+        "id": "overture/90",
+        "name": "Restaurante El Colibrí",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378866,
+          21.523088
+        ]
+      },
+      "properties": {
+        "id": "overture/91",
+        "name": "Casa Alebrije",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.74
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378927,
+          21.523077
+        ]
+      },
+      "properties": {
+        "id": "overture/92",
+        "name": "La Isla del Colibri",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.44
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379011,
+          21.522979
+        ]
+      },
+      "properties": {
+        "id": "overture/93",
+        "name": "Pizzería Colibrí",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378778,
+          21.523023
+        ]
+      },
+      "properties": {
+        "id": "overture/94",
+        "name": "El Sushi Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.93
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378786,
+          21.523001
+        ]
+      },
+      "properties": {
+        "id": "overture/95",
+        "name": "La Bamba Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378578,
+          21.522907
+        ]
+      },
+      "properties": {
+        "id": "overture/96",
+        "name": "Capriccio Café",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37865,
+          21.52288
+        ]
+      },
+      "properties": {
+        "id": "overture/97",
+        "name": "Las Galinas",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378426,
+          21.5229
+        ]
+      },
+      "properties": {
+        "id": "overture/98",
+        "name": "Las Gallinas Mexican Home Cuisine & Gourmet Tacos",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.36
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37811,
+          21.52283
+        ]
+      },
+      "properties": {
+        "id": "overture/99",
+        "name": "Arte Sano",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378469,
+          21.5227
+        ]
+      },
+      "properties": {
+        "id": "overture/100",
+        "name": "Super Monkeys",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378248,
+          21.522583
+        ]
+      },
+      "properties": {
+        "id": "overture/101",
+        "name": "Los Pinshis tacos Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378306,
+          21.522569
+        ]
+      },
+      "properties": {
+        "id": "overture/102",
+        "name": "Farmacias de la Riviera",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.39
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37839,
+          21.522608
+        ]
+      },
+      "properties": {
+        "id": "overture/103",
+        "name": "Móvil Shop",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3784,
+          21.522626
+        ]
+      },
+      "properties": {
+        "id": "overture/104",
+        "name": "Bigbeef holbox",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.43
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379378,
+          21.52269
+        ]
+      },
+      "properties": {
+        "id": "overture/105",
+        "name": "El Sazon de Tony",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379428,
+          21.522661
+        ]
+      },
+      "properties": {
+        "id": "overture/106",
+        "name": "Barber Shop Aries",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379738,
+          21.522797
+        ]
+      },
+      "properties": {
+        "id": "overture/107",
+        "name": "BIG FISH Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379541,
+          21.522571
+        ]
+      },
+      "properties": {
+        "id": "overture/108",
+        "name": "Isla Holbox Mi viejo chit",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.42
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379416,
+          21.522519
+        ]
+      },
+      "properties": {
+        "id": "overture/109",
+        "name": "Aurora Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380524,
+          21.522427
+        ]
+      },
+      "properties": {
+        "id": "overture/110",
+        "name": "Quartieri Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.68
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378688,
+          21.522358
+        ]
+      },
+      "properties": {
+        "id": "overture/111",
+        "name": "Baguettes D'Mary",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378677,
+          21.522379
+        ]
+      },
+      "properties": {
+        "id": "overture/112",
+        "name": "Villas El Jardin",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377977,
+          21.522487
+        ]
+      },
+      "properties": {
+        "id": "overture/113",
+        "name": "El Mercadito Isla Holbox ",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.71
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378195,
+          21.52243
+        ]
+      },
+      "properties": {
+        "id": "overture/114",
+        "name": "Casa Violeta Holbox Restaurante",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37813,
+          21.522364
+        ]
+      },
+      "properties": {
+        "id": "overture/115",
+        "name": "Madre Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378007,
+          21.522367
+        ]
+      },
+      "properties": {
+        "id": "overture/116",
+        "name": "Mexiterraneo",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377806,
+          21.522218
+        ]
+      },
+      "properties": {
+        "id": "overture/117",
+        "name": "Hotel Pelecanus Suites",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.73
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376767,
+          21.522274
+        ]
+      },
+      "properties": {
+        "id": "overture/118",
+        "name": "Panadería La Conchita",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377515,
+          21.52237
+        ]
+      },
+      "properties": {
+        "id": "overture/119",
+        "name": "Hotel Elements Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.36
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377655,
+          21.522635
+        ]
+      },
+      "properties": {
+        "id": "overture/120",
+        "name": "Bohonito Hotel Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377275,
+          21.522656
+        ]
+      },
+      "properties": {
+        "id": "overture/121",
+        "name": "Posada Don Panchon y Maruxa",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37717,
+          21.52273
+        ]
+      },
+      "properties": {
+        "id": "overture/122",
+        "name": "Tatuadores Mexicanos",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376188,
+          21.522585
+        ]
+      },
+      "properties": {
+        "id": "overture/123",
+        "name": "Casa Emma",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376392,
+          21.522391
+        ]
+      },
+      "properties": {
+        "id": "overture/124",
+        "name": "Wíinik Room",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37711,
+          21.522805
+        ]
+      },
+      "properties": {
+        "id": "overture/125",
+        "name": "Antojitos Kanasin",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37757,
+          21.523092
+        ]
+      },
+      "properties": {
+        "id": "overture/126",
+        "name": "Aura Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.88
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377568,
+          21.523051
+        ]
+      },
+      "properties": {
+        "id": "overture/127",
+        "name": "Davos' Barber shop",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.61
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377611,
+          21.523172
+        ]
+      },
+      "properties": {
+        "id": "overture/128",
+        "name": "La Mexiquense Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376535,
+          21.523125
+        ]
+      },
+      "properties": {
+        "id": "overture/129",
+        "name": "Casa Mech",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.55
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376783,
+          21.523159
+        ]
+      },
+      "properties": {
+        "id": "overture/130",
+        "name": "La Cubana.",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376712,
+          21.523233
+        ]
+      },
+      "properties": {
+        "id": "overture/131",
+        "name": "Restaurante Milpa Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376624,
+          21.523255
+        ]
+      },
+      "properties": {
+        "id": "overture/132",
+        "name": "Taquería El Poblano Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377132,
+          21.52339
+        ]
+      },
+      "properties": {
+        "id": "overture/133",
+        "name": "Taqueria Mérida",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377852,
+          21.523358
+        ]
+      },
+      "properties": {
+        "id": "overture/134",
+        "name": "Restaurante Zarabanda",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.72
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377012,
+          21.523505
+        ]
+      },
+      "properties": {
+        "id": "overture/135",
+        "name": "Luces de Tul Apparel",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.6
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376598,
+          21.523612
+        ]
+      },
+      "properties": {
+        "id": "overture/136",
+        "name": "Café León, Isla Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.56
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377495,
+          21.523911
+        ]
+      },
+      "properties": {
+        "id": "overture/137",
+        "name": "Ceviches La Chingada",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377101,
+          21.52396
+        ]
+      },
+      "properties": {
+        "id": "overture/138",
+        "name": "Hotel Shankara Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377156,
+          21.523801
+        ]
+      },
+      "properties": {
+        "id": "overture/139",
+        "name": "Shankara Suites & Apartments",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376757,
+          21.523749
+        ]
+      },
+      "properties": {
+        "id": "overture/140",
+        "name": "Hotel & Residence gruppo Ambremasc",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.69
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375196,
+          21.523407
+        ]
+      },
+      "properties": {
+        "id": "overture/141",
+        "name": "La Casa de Mia Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.93
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377022,
+          21.524221
+        ]
+      },
+      "properties": {
+        "id": "overture/142",
+        "name": "Pachamama Holbox - Hostel & Private Apartments",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376976,
+          21.52421
+        ]
+      },
+      "properties": {
+        "id": "overture/143",
+        "name": "Casa Sunshine Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37783,
+          21.524141
+        ]
+      },
+      "properties": {
+        "id": "overture/144",
+        "name": "Farmacias Similares",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377841,
+          21.524171
+        ]
+      },
+      "properties": {
+        "id": "overture/145",
+        "name": "Alta Gula",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377816,
+          21.524329
+        ]
+      },
+      "properties": {
+        "id": "overture/146",
+        "name": "Antojitos Abuelo Tom",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376957,
+          21.524351
+        ]
+      },
+      "properties": {
+        "id": "overture/147",
+        "name": "Wayak rooms",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.27
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376905,
+          21.524567
+        ]
+      },
+      "properties": {
+        "id": "overture/148",
+        "name": "Hostel Mapache",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378183,
+          21.52453
+        ]
+      },
+      "properties": {
+        "id": "overture/149",
+        "name": "Cortes Barber Studio",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378502,
+          21.524577
+        ]
+      },
+      "properties": {
+        "id": "overture/150",
+        "name": "Asadero Mr. Parrilla",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37805,
+          21.524386
+        ]
+      },
+      "properties": {
+        "id": "overture/151",
+        "name": "Azulito Holbox restaurante y bar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378115,
+          21.524393
+        ]
+      },
+      "properties": {
+        "id": "overture/152",
+        "name": "Xolo tacos",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.79
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378813,
+          21.52432
+        ]
+      },
+      "properties": {
+        "id": "overture/153",
+        "name": "Temoc Tacos & Mezcal",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.43
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378965,
+          21.524331
+        ]
+      },
+      "properties": {
+        "id": "overture/154",
+        "name": "Porque No- Holbox Helado Artesanal",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379037,
+          21.52429
+        ]
+      },
+      "properties": {
+        "id": "overture/155",
+        "name": "La Miranda de Rulo",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.21
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379117,
+          21.524362
+        ]
+      },
+      "properties": {
+        "id": "overture/156",
+        "name": "DIOSA MAYA",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.42
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378677,
+          21.524505
+        ]
+      },
+      "properties": {
+        "id": "overture/157",
+        "name": "AKBAL Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378642,
+          21.524566
+        ]
+      },
+      "properties": {
+        "id": "overture/158",
+        "name": "Las Cazuelitas (tacos de guisado)",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379393,
+          21.524519
+        ]
+      },
+      "properties": {
+        "id": "overture/159",
+        "name": "La Constanza De Rulo",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379295,
+          21.524505
+        ]
+      },
+      "properties": {
+        "id": "overture/160",
+        "name": "Clandestino",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380032,
+          21.524517
+        ]
+      },
+      "properties": {
+        "id": "overture/161",
+        "name": "Holbox Té",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.71
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380505,
+          21.524515
+        ]
+      },
+      "properties": {
+        "id": "overture/162",
+        "name": "Amaité Hotel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380345,
+          21.524507
+        ]
+      },
+      "properties": {
+        "id": "overture/163",
+        "name": "Villa Mar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380225,
+          21.524472
+        ]
+      },
+      "properties": {
+        "id": "overture/164",
+        "name": "La Tostadería",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.93
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380154,
+          21.524381
+        ]
+      },
+      "properties": {
+        "id": "overture/165",
+        "name": "Soulbox Rooftop | Sunset Bar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380281,
+          21.524412
+        ]
+      },
+      "properties": {
+        "id": "overture/166",
+        "name": "Restaurante Bar Villa Mar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38036,
+          21.524419
+        ]
+      },
+      "properties": {
+        "id": "overture/167",
+        "name": "Olita de mar Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380264,
+          21.52436
+        ]
+      },
+      "properties": {
+        "id": "overture/168",
+        "name": "Buenavista Grill",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380161,
+          21.524354
+        ]
+      },
+      "properties": {
+        "id": "overture/169",
+        "name": "Hotel Mittoz Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379979,
+          21.52433
+        ]
+      },
+      "properties": {
+        "id": "overture/170",
+        "name": "Chakte Supermarket",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380252,
+          21.524213
+        ]
+      },
+      "properties": {
+        "id": "overture/171",
+        "name": "The Hot Corner",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379993,
+          21.524187
+        ]
+      },
+      "properties": {
+        "id": "overture/172",
+        "name": "Basico Cocina de Playa",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379918,
+          21.52416
+        ]
+      },
+      "properties": {
+        "id": "overture/173",
+        "name": "Basico Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37996,
+          21.524172
+        ]
+      },
+      "properties": {
+        "id": "overture/174",
+        "name": "Básico",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380035,
+          21.524151
+        ]
+      },
+      "properties": {
+        "id": "overture/175",
+        "name": "La Anémona",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380083,
+          21.524135
+        ]
+      },
+      "properties": {
+        "id": "overture/176",
+        "name": "La conquista empanadas",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.47
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380092,
+          21.524133
+        ]
+      },
+      "properties": {
+        "id": "overture/177",
+        "name": "Hotel los Arcos Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380376,
+          21.524123
+        ]
+      },
+      "properties": {
+        "id": "overture/178",
+        "name": "La Pinsa Tío Pupo",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.83
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380529,
+          21.524049
+        ]
+      },
+      "properties": {
+        "id": "overture/179",
+        "name": "El Cafecito",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379755,
+          21.524005
+        ]
+      },
+      "properties": {
+        "id": "overture/180",
+        "name": "Tequila O'Clock",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379589,
+          21.524008
+        ]
+      },
+      "properties": {
+        "id": "overture/181",
+        "name": "El Encuentro",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.47
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379859,
+          21.524089
+        ]
+      },
+      "properties": {
+        "id": "overture/182",
+        "name": "Painapol",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 1.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379173,
+          21.524022
+        ]
+      },
+      "properties": {
+        "id": "overture/183",
+        "name": "Subway",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.32
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379159,
+          21.524034
+        ]
+      },
+      "properties": {
+        "id": "overture/184",
+        "name": "Restaurante de Pimienta",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.39
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3792,
+          21.524053
+        ]
+      },
+      "properties": {
+        "id": "overture/185",
+        "name": "Papa Rana Isla Holbox Logo Shop",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378885,
+          21.524001
+        ]
+      },
+      "properties": {
+        "id": "overture/186",
+        "name": "Posada Amapola",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378587,
+          21.52399
+        ]
+      },
+      "properties": {
+        "id": "overture/187",
+        "name": "Los Tacos De Barbacoa",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.38
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37865,
+          21.524073
+        ]
+      },
+      "properties": {
+        "id": "overture/188",
+        "name": "Casa Lupita Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378808,
+          21.524125
+        ]
+      },
+      "properties": {
+        "id": "overture/189",
+        "name": "Hotel Casa Lupita",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379082,
+          21.524125
+        ]
+      },
+      "properties": {
+        "id": "overture/190",
+        "name": "Crónicas Taproom",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379147,
+          21.524127
+        ]
+      },
+      "properties": {
+        "id": "overture/191",
+        "name": "El Limoncito",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.73
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379026,
+          21.524237
+        ]
+      },
+      "properties": {
+        "id": "overture/192",
+        "name": "Keelotes D' Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.31
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378816,
+          21.524217
+        ]
+      },
+      "properties": {
+        "id": "overture/193",
+        "name": "Apollo_holbox",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.55
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378828,
+          21.524172
+        ]
+      },
+      "properties": {
+        "id": "overture/194",
+        "name": "Restaurante Olivers",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.49
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377998,
+          21.524207
+        ]
+      },
+      "properties": {
+        "id": "overture/195",
+        "name": "Casa Maya de Jose Lima",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.39
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377968,
+          21.524087
+        ]
+      },
+      "properties": {
+        "id": "overture/196",
+        "name": "Roots Pizzas a la Leña",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378039,
+          21.524081
+        ]
+      },
+      "properties": {
+        "id": "overture/197",
+        "name": "Pizzería Roots",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.49
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378173,
+          21.523968
+        ]
+      },
+      "properties": {
+        "id": "overture/198",
+        "name": "NÁAY",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378628,
+          21.523877
+        ]
+      },
+      "properties": {
+        "id": "overture/199",
+        "name": "Tacos Árabes",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.39
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378584,
+          21.523864
+        ]
+      },
+      "properties": {
+        "id": "overture/200",
+        "name": "Casa Roma",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378852,
+          21.523836
+        ]
+      },
+      "properties": {
+        "id": "overture/201",
+        "name": "Los Pelicanos",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.27
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378623,
+          21.523726
+        ]
+      },
+      "properties": {
+        "id": "overture/202",
+        "name": "Zócalo",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3784,
+          21.523827
+        ]
+      },
+      "properties": {
+        "id": "overture/203",
+        "name": "Edelyn",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.52
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378387,
+          21.523806
+        ]
+      },
+      "properties": {
+        "id": "overture/204",
+        "name": "Restaurante Edelyn",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378369,
+          21.52368
+        ]
+      },
+      "properties": {
+        "id": "overture/205",
+        "name": "Chol Cheese Pizzas Holbox pizza langosta",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.87
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378087,
+          21.523432
+        ]
+      },
+      "properties": {
+        "id": "overture/206",
+        "name": "La Changa",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.36
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379584,
+          21.52363
+        ]
+      },
+      "properties": {
+        "id": "overture/207",
+        "name": "El Ma. Carmita",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379651,
+          21.523588
+        ]
+      },
+      "properties": {
+        "id": "overture/208",
+        "name": "Tachali Holbox Café",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.73
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37974,
+          21.523603
+        ]
+      },
+      "properties": {
+        "id": "overture/209",
+        "name": "Restaurante Viva Zapata",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379736,
+          21.523592
+        ]
+      },
+      "properties": {
+        "id": "overture/210",
+        "name": "Villas El Encanto",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379559,
+          21.523555
+        ]
+      },
+      "properties": {
+        "id": "overture/211",
+        "name": "Monono Omakase Bar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.32
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379456,
+          21.523599
+        ]
+      },
+      "properties": {
+        "id": "overture/212",
+        "name": "Lazaro Holbox Wine Club Modern Eatery",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379378,
+          21.523551
+        ]
+      },
+      "properties": {
+        "id": "overture/213",
+        "name": "Hotel Posada La Raza",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379456,
+          21.523542
+        ]
+      },
+      "properties": {
+        "id": "overture/214",
+        "name": "Restaurante Pura Vida",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.46
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37932,
+          21.523468
+        ]
+      },
+      "properties": {
+        "id": "overture/215",
+        "name": "MÍTICA",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.69
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379757,
+          21.523449
+        ]
+      },
+      "properties": {
+        "id": "overture/216",
+        "name": "Restaurante Naranjas",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37977,
+          21.523448
+        ]
+      },
+      "properties": {
+        "id": "overture/217",
+        "name": "Gisellas Hotelito Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379767,
+          21.523465
+        ]
+      },
+      "properties": {
+        "id": "overture/218",
+        "name": "Viva Zapata",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380413,
+          21.523561
+        ]
+      },
+      "properties": {
+        "id": "overture/219",
+        "name": "churrasqueriavacuno",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.59
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379408,
+          21.523837
+        ]
+      },
+      "properties": {
+        "id": "overture/220",
+        "name": "Terraza La Combi Et Voilà",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379655,
+          21.523892
+        ]
+      },
+      "properties": {
+        "id": "overture/221",
+        "name": "La Combi Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379311,
+          21.523897
+        ]
+      },
+      "properties": {
+        "id": "overture/222",
+        "name": "Lolita Holbox Boutique",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.66
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379275,
+          21.523961
+        ]
+      },
+      "properties": {
+        "id": "overture/223",
+        "name": "Limoncito Breakfast",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.68
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380256,
+          21.523908
+        ]
+      },
+      "properties": {
+        "id": "overture/224",
+        "name": "El Mirador Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.55
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380387,
+          21.523856
+        ]
+      },
+      "properties": {
+        "id": "overture/225",
+        "name": "Restaurante La Conquista",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.61
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380921,
+          21.52392
+        ]
+      },
+      "properties": {
+        "id": "overture/226",
+        "name": "Las Panchas",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380601,
+          21.523829
+        ]
+      },
+      "properties": {
+        "id": "overture/227",
+        "name": "Las Empa Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.73
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380592,
+          21.523621
+        ]
+      },
+      "properties": {
+        "id": "overture/228",
+        "name": "Steakhouse VAC uno",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.83
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381899,
+          21.523657
+        ]
+      },
+      "properties": {
+        "id": "overture/229",
+        "name": "Casa Cat Ba",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 1.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.382124,
+          21.52355
+        ]
+      },
+      "properties": {
+        "id": "overture/230",
+        "name": "La Palapa de Victor",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.382763,
+          21.523409
+        ]
+      },
+      "properties": {
+        "id": "overture/231",
+        "name": "Casa Mariposa",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.86
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381081,
+          21.524044
+        ]
+      },
+      "properties": {
+        "id": "overture/232",
+        "name": "Beachfront Hotel La Palapa",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381246,
+          21.52409
+        ]
+      },
+      "properties": {
+        "id": "overture/233",
+        "name": "Casa Nostra Terraza",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.67
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381185,
+          21.524112
+        ]
+      },
+      "properties": {
+        "id": "overture/234",
+        "name": "Hotel La Palapa",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381222,
+          21.524117
+        ]
+      },
+      "properties": {
+        "id": "overture/235",
+        "name": "Punta Baja",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380954,
+          21.52435
+        ]
+      },
+      "properties": {
+        "id": "overture/236",
+        "name": "Hotel Amairé",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.57
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37274,
+          21.528414
+        ]
+      },
+      "properties": {
+        "id": "overture/237",
+        "name": "Villas HM Paraíso del Mar",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.372497,
+          21.527682
+        ]
+      },
+      "properties": {
+        "id": "overture/238",
+        "name": "Paraiso del Mar",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373577,
+          21.527601
+        ]
+      },
+      "properties": {
+        "id": "overture/239",
+        "name": "Tamashi Sky Bar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.74
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373643,
+          21.527724
+        ]
+      },
+      "properties": {
+        "id": "overture/240",
+        "name": "Villa HM Palapas Del Mar",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374542,
+          21.527858
+        ]
+      },
+      "properties": {
+        "id": "overture/241",
+        "name": "La Smasheria Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.3
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375374,
+          21.527709
+        ]
+      },
+      "properties": {
+        "id": "overture/242",
+        "name": "Raices Beach Club",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.73
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375342,
+          21.527412
+        ]
+      },
+      "properties": {
+        "id": "overture/243",
+        "name": "Iguanas RestoBar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375164,
+          21.52726
+        ]
+      },
+      "properties": {
+        "id": "overture/244",
+        "name": "Casa Iguana Hotel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376414,
+          21.527059
+        ]
+      },
+      "properties": {
+        "id": "overture/245",
+        "name": "Slow Food Restaurant",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376244,
+          21.527129
+        ]
+      },
+      "properties": {
+        "id": "overture/246",
+        "name": "Restaurant Raices, Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375608,
+          21.5271
+        ]
+      },
+      "properties": {
+        "id": "overture/247",
+        "name": "Ser Casasandra Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375669,
+          21.526957
+        ]
+      },
+      "properties": {
+        "id": "overture/248",
+        "name": "Casa Sandra",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37495,
+          21.52712
+        ]
+      },
+      "properties": {
+        "id": "overture/249",
+        "name": "Ana y Jose Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373433,
+          21.527444
+        ]
+      },
+      "properties": {
+        "id": "overture/250",
+        "name": "Villas HM Palapas del Mar",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37271,
+          21.52744
+        ]
+      },
+      "properties": {
+        "id": "overture/251",
+        "name": "Camping Tachali Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.372589,
+          21.527074
+        ]
+      },
+      "properties": {
+        "id": "overture/252",
+        "name": "Villa los Mangles Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373229,
+          21.526789
+        ]
+      },
+      "properties": {
+        "id": "overture/253",
+        "name": "Aroma Bar & Restaurante by Cielito Lindo",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.71
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373786,
+          21.52673
+        ]
+      },
+      "properties": {
+        "id": "overture/254",
+        "name": "Hotel Punta Caliza",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373352,
+          21.526826
+        ]
+      },
+      "properties": {
+        "id": "overture/255",
+        "name": "Cielito Lindo Hotel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.84
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374624,
+          21.526897
+        ]
+      },
+      "properties": {
+        "id": "overture/256",
+        "name": "Xaloc Resort",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3747,
+          21.52691
+        ]
+      },
+      "properties": {
+        "id": "overture/257",
+        "name": "Aloha Hotel Boutique",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3747,
+          21.52691
+        ]
+      },
+      "properties": {
+        "id": "overture/258",
+        "name": "Farmacias Céntrica",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3747,
+          21.52691
+        ]
+      },
+      "properties": {
+        "id": "overture/259",
+        "name": "Área de Protección de Flora y Fauna Yum Balam",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3747,
+          21.52691
+        ]
+      },
+      "properties": {
+        "id": "overture/260",
+        "name": "África Restaurante Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.46
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3747,
+          21.52691
+        ]
+      },
+      "properties": {
+        "id": "overture/261",
+        "name": "Amorcito Corazón Restaurante - Cantina",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.61
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373681,
+          21.526629
+        ]
+      },
+      "properties": {
+        "id": "overture/262",
+        "name": "Punta Caliza",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37368,
+          21.526246
+        ]
+      },
+      "properties": {
+        "id": "overture/263",
+        "name": "Residencial Privado Ida y Vuelta",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373718,
+          21.526128
+        ]
+      },
+      "properties": {
+        "id": "overture/264",
+        "name": "Cabañas Ida y Vuelta",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.8
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373721,
+          21.526116
+        ]
+      },
+      "properties": {
+        "id": "overture/265",
+        "name": "HOSTEL & CABANAS IDA Y VUELTA CAMPING",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374036,
+          21.526006
+        ]
+      },
+      "properties": {
+        "id": "overture/266",
+        "name": "El Corazón boutique hotel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373823,
+          21.525839
+        ]
+      },
+      "properties": {
+        "id": "overture/267",
+        "name": "Chac Chi Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374803,
+          21.526004
+        ]
+      },
+      "properties": {
+        "id": "overture/268",
+        "name": "Casa Aloha",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374996,
+          21.526188
+        ]
+      },
+      "properties": {
+        "id": "overture/269",
+        "name": "Tierra Mia Hotel Boutique",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374118,
+          21.526255
+        ]
+      },
+      "properties": {
+        "id": "overture/270",
+        "name": "Hotel Boutique Casa Baleine",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37511,
+          21.526224
+        ]
+      },
+      "properties": {
+        "id": "overture/271",
+        "name": "Hotel Villa Margaritas",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37767,
+          21.525908
+        ]
+      },
+      "properties": {
+        "id": "overture/272",
+        "name": "Posada Mawimbi",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377842,
+          21.525975
+        ]
+      },
+      "properties": {
+        "id": "overture/273",
+        "name": "Barquito",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37779,
+          21.526084
+        ]
+      },
+      "properties": {
+        "id": "overture/274",
+        "name": "Hotel Mawimbi",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376168,
+          21.526723
+        ]
+      },
+      "properties": {
+        "id": "overture/275",
+        "name": "Gluglü",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.33
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375955,
+          21.52686
+        ]
+      },
+      "properties": {
+        "id": "overture/276",
+        "name": "Nacheria Dafi Johns",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.4
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376952,
+          21.526816
+        ]
+      },
+      "properties": {
+        "id": "overture/277",
+        "name": "El Ñañas",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.79
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377056,
+          21.526788
+        ]
+      },
+      "properties": {
+        "id": "overture/278",
+        "name": "Las Empanadas",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.35
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37861,
+          21.52591
+        ]
+      },
+      "properties": {
+        "id": "overture/279",
+        "name": "Hotel Casa Maya",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378267,
+          21.525855
+        ]
+      },
+      "properties": {
+        "id": "overture/280",
+        "name": "AMA Japanese Restaurant",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378099,
+          21.525884
+        ]
+      },
+      "properties": {
+        "id": "overture/281",
+        "name": "Mandarina",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3779,
+          21.525759
+        ]
+      },
+      "properties": {
+        "id": "overture/282",
+        "name": "Casa Las Tortugas",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 1.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378782,
+          21.52574
+        ]
+      },
+      "properties": {
+        "id": "overture/283",
+        "name": "Carioca's Restaurant and Beach Club",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378995,
+          21.525678
+        ]
+      },
+      "properties": {
+        "id": "overture/284",
+        "name": "Capitán Capitán Beach Club",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378663,
+          21.525684
+        ]
+      },
+      "properties": {
+        "id": "overture/285",
+        "name": "Carioca's Beach Bar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.46
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377956,
+          21.525489
+        ]
+      },
+      "properties": {
+        "id": "overture/286",
+        "name": "Le Bazaar Boutique",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377897,
+          21.525472
+        ]
+      },
+      "properties": {
+        "id": "overture/287",
+        "name": "Casa las Tortugas Petit Beach Hotel and Spa",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.61
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377986,
+          21.525392
+        ]
+      },
+      "properties": {
+        "id": "overture/288",
+        "name": "LUUMA Gathering Bar Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 1.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379272,
+          21.525185
+        ]
+      },
+      "properties": {
+        "id": "overture/289",
+        "name": "La Diosa Kali",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379541,
+          21.525174
+        ]
+      },
+      "properties": {
+        "id": "overture/290",
+        "name": "Salma",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379444,
+          21.52522
+        ]
+      },
+      "properties": {
+        "id": "overture/291",
+        "name": "Limulus",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380382,
+          21.524593
+        ]
+      },
+      "properties": {
+        "id": "overture/292",
+        "name": "Ku",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380337,
+          21.524585
+        ]
+      },
+      "properties": {
+        "id": "overture/293",
+        "name": "Restaurante La Playa de Nana",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.44
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380472,
+          21.524636
+        ]
+      },
+      "properties": {
+        "id": "overture/294",
+        "name": "A by Amaite",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380485,
+          21.52466
+        ]
+      },
+      "properties": {
+        "id": "overture/295",
+        "name": "Amaité Beach Hotel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380406,
+          21.524725
+        ]
+      },
+      "properties": {
+        "id": "overture/296",
+        "name": "Restaurant Villa Mar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37938,
+          21.524596
+        ]
+      },
+      "properties": {
+        "id": "overture/297",
+        "name": "Casa Peregrino Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379269,
+          21.524584
+        ]
+      },
+      "properties": {
+        "id": "overture/298",
+        "name": "Boutique Tramas Holbox",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379343,
+          21.524619
+        ]
+      },
+      "properties": {
+        "id": "overture/299",
+        "name": "The Notorius Cocteleria",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.24
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379417,
+          21.524622
+        ]
+      },
+      "properties": {
+        "id": "overture/300",
+        "name": "Babalu Yei Yei Pizza Pasta",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.53
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379459,
+          21.524653
+        ]
+      },
+      "properties": {
+        "id": "overture/301",
+        "name": "La Constanza de Rulo",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379577,
+          21.524653
+        ]
+      },
+      "properties": {
+        "id": "overture/302",
+        "name": "La Chaya",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3794,
+          21.524838
+        ]
+      },
+      "properties": {
+        "id": "overture/303",
+        "name": "Los Calientes",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.21
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379882,
+          21.52513
+        ]
+      },
+      "properties": {
+        "id": "overture/304",
+        "name": "Raíces Slow Food",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.89
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378745,
+          21.525154
+        ]
+      },
+      "properties": {
+        "id": "overture/305",
+        "name": "La Chingad@ ceviche",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378745,
+          21.525154
+        ]
+      },
+      "properties": {
+        "id": "overture/306",
+        "name": "BE HOLBOX HOSTEL",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378514,
+          21.525067
+        ]
+      },
+      "properties": {
+        "id": "overture/307",
+        "name": "Casa Playa Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378103,
+          21.525106
+        ]
+      },
+      "properties": {
+        "id": "overture/308",
+        "name": "Barba Negra",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378172,
+          21.524956
+        ]
+      },
+      "properties": {
+        "id": "overture/309",
+        "name": "Eco Hostel Casa del Agua",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.58
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378224,
+          21.524968
+        ]
+      },
+      "properties": {
+        "id": "overture/310",
+        "name": "Holbox Foodie Market",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.78
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37838,
+          21.524878
+        ]
+      },
+      "properties": {
+        "id": "overture/311",
+        "name": "El café de Olivia",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378462,
+          21.5248
+        ]
+      },
+      "properties": {
+        "id": "overture/312",
+        "name": "El Trikini",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.46
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378633,
+          21.524629
+        ]
+      },
+      "properties": {
+        "id": "overture/313",
+        "name": "Hotelito Villas Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37867,
+          21.52458
+        ]
+      },
+      "properties": {
+        "id": "overture/314",
+        "name": "Tierra Mia Juice and Coffee",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.61
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378477,
+          21.524645
+        ]
+      },
+      "properties": {
+        "id": "overture/315",
+        "name": "Panadería Mexicana Rosaura",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378477,
+          21.524719
+        ]
+      },
+      "properties": {
+        "id": "overture/316",
+        "name": "Azotea Catorce",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375469,
+          21.524833
+        ]
+      },
+      "properties": {
+        "id": "overture/317",
+        "name": "Bilú",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3752,
+          21.52483
+        ]
+      },
+      "properties": {
+        "id": "overture/318",
+        "name": "Rh Hotel Aldea Kuka ",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.33
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374997,
+          21.525256
+        ]
+      },
+      "properties": {
+        "id": "overture/319",
+        "name": "Ardentía Apartments",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.55
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374499,
+          21.525317
+        ]
+      },
+      "properties": {
+        "id": "overture/320",
+        "name": "Frequency",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374207,
+          21.525324
+        ]
+      },
+      "properties": {
+        "id": "overture/321",
+        "name": "Villas Palmar",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374806,
+          21.525584
+        ]
+      },
+      "properties": {
+        "id": "overture/322",
+        "name": "Piedrasanta Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.371722,
+          21.528722
+        ]
+      },
+      "properties": {
+        "id": "overture/323",
+        "name": "Villa Moopich",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.87
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.371567,
+          21.528828
+        ]
+      },
+      "properties": {
+        "id": "overture/324",
+        "name": "Ventana al Paraiso",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.36
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.371268,
+          21.529035
+        ]
+      },
+      "properties": {
+        "id": "overture/325",
+        "name": "Blue Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.86
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375424,
+          21.519435
+        ]
+      },
+      "properties": {
+        "id": "overture/326",
+        "name": "Minisuper El Cachorro Holbox",
+        "type": "comercio",
+        "generation": 95,
+        "source": "overture",
+        "confidence": 0.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375534,
+          21.519357
+        ]
+      },
+      "properties": {
+        "id": "overture/327",
+        "name": "Glamping Holbox Sunset",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.72
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37656,
+          21.519063
+        ]
+      },
+      "properties": {
+        "id": "overture/328",
+        "name": "Villas Mora",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.54
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37917,
+          21.518491
+        ]
+      },
+      "properties": {
+        "id": "overture/329",
+        "name": "Mis Sueños Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3787,
+          21.5182
+        ]
+      },
+      "properties": {
+        "id": "overture/330",
+        "name": "Delek Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379172,
+          21.517952
+        ]
+      },
+      "properties": {
+        "id": "overture/331",
+        "name": "Ecoco Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.383267,
+          21.518152
+        ]
+      },
+      "properties": {
+        "id": "overture/332",
+        "name": "Cabañas el Manatí",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.81
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379609,
+          21.518764
+        ]
+      },
+      "properties": {
+        "id": "overture/333",
+        "name": "Sanyama Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380561,
+          21.51923
+        ]
+      },
+      "properties": {
+        "id": "overture/334",
+        "name": "Casa Sofia Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381874,
+          21.519657
+        ]
+      },
+      "properties": {
+        "id": "overture/335",
+        "name": "Kin camping",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381995,
+          21.519492
+        ]
+      },
+      "properties": {
+        "id": "overture/336",
+        "name": "Isla Bonita",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.383573,
+          21.51974
+        ]
+      },
+      "properties": {
+        "id": "overture/337",
+        "name": "La Aldea Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.384243,
+          21.519627
+        ]
+      },
+      "properties": {
+        "id": "overture/338",
+        "name": "Coccoloba Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.385176,
+          21.519303
+        ]
+      },
+      "properties": {
+        "id": "overture/339",
+        "name": "Rooftop HX",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.385176,
+          21.519303
+        ]
+      },
+      "properties": {
+        "id": "overture/340",
+        "name": "Hotel Casa Margot",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.385328,
+          21.519337
+        ]
+      },
+      "properties": {
+        "id": "overture/341",
+        "name": "Casa Vainilla",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.384218,
+          21.518965
+        ]
+      },
+      "properties": {
+        "id": "overture/342",
+        "name": "Coco Lou",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.29
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.386302,
+          21.519228
+        ]
+      },
+      "properties": {
+        "id": "overture/343",
+        "name": "Café del Mar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.387304,
+          21.5192
+        ]
+      },
+      "properties": {
+        "id": "overture/344",
+        "name": "Casa Libelula",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.386311,
+          21.518714
+        ]
+      },
+      "properties": {
+        "id": "overture/345",
+        "name": "Casa de tus Sueños Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.26
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.386914,
+          21.518854
+        ]
+      },
+      "properties": {
+        "id": "overture/346",
+        "name": "Casa Astral Luxury Hotel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.86
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.386625,
+          21.519526
+        ]
+      },
+      "properties": {
+        "id": "overture/347",
+        "name": "Casa Luz",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.9
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.386697,
+          21.519684
+        ]
+      },
+      "properties": {
+        "id": "overture/348",
+        "name": "Café del mar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.61
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.386296,
+          21.519753
+        ]
+      },
+      "properties": {
+        "id": "overture/349",
+        "name": "Hotel Casa Takywara",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.76
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38881,
+          21.518058
+        ]
+      },
+      "properties": {
+        "id": "overture/350",
+        "name": "Carolinda Beach Club",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.41
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.386071,
+          21.517844
+        ]
+      },
+      "properties": {
+        "id": "overture/351",
+        "name": "Why Knot",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.55
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.388052,
+          21.518447
+        ]
+      },
+      "properties": {
+        "id": "overture/352",
+        "name": "Choby's House Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.385908,
+          21.51813
+        ]
+      },
+      "properties": {
+        "id": "overture/353",
+        "name": "Casa Paz",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.63
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.387964,
+          21.517047
+        ]
+      },
+      "properties": {
+        "id": "overture/354",
+        "name": "Hotel Ensueño",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.64
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.388034,
+          21.517045
+        ]
+      },
+      "properties": {
+        "id": "overture/355",
+        "name": "Ensueño Holbox & Beach Club",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38689,
+          21.517215
+        ]
+      },
+      "properties": {
+        "id": "overture/356",
+        "name": "Hotel Casa Lumini Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.388531,
+          21.517375
+        ]
+      },
+      "properties": {
+        "id": "overture/357",
+        "name": "Casa Blat Ha Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.389903,
+          21.517441
+        ]
+      },
+      "properties": {
+        "id": "overture/358",
+        "name": "Golden Paradise Beach Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.389738,
+          21.517342
+        ]
+      },
+      "properties": {
+        "id": "overture/359",
+        "name": "Spirit Holbox Hotel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.388859,
+          21.517177
+        ]
+      },
+      "properties": {
+        "id": "overture/360",
+        "name": "Hotel S",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.14
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.389344,
+          21.517089
+        ]
+      },
+      "properties": {
+        "id": "overture/361",
+        "name": "Soho Boutique Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.389677,
+          21.516951
+        ]
+      },
+      "properties": {
+        "id": "overture/362",
+        "name": "Casa HX",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.390257,
+          21.516742
+        ]
+      },
+      "properties": {
+        "id": "overture/363",
+        "name": "La Puerta Azul Beachfront",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.389765,
+          21.516674
+        ]
+      },
+      "properties": {
+        "id": "overture/364",
+        "name": "Nomade Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.392914,
+          21.515331
+        ]
+      },
+      "properties": {
+        "id": "overture/365",
+        "name": "Casa Punta Coco",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.91
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.389428,
+          21.515403
+        ]
+      },
+      "properties": {
+        "id": "overture/366",
+        "name": "Bhoga Boutique Hotel",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.393614,
+          21.515041
+        ]
+      },
+      "properties": {
+        "id": "overture/367",
+        "name": "Casa Toto",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.41
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.390324,
+          21.514029
+        ]
+      },
+      "properties": {
+        "id": "overture/368",
+        "name": "Anicca Aldea",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.39353,
+          21.512939
+        ]
+      },
+      "properties": {
+        "id": "overture/369",
+        "name": "Boutique Hotel El Nido Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.387261,
+          21.513898
+        ]
+      },
+      "properties": {
+        "id": "overture/370",
+        "name": "Hotel Villas del Carmen",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.39136,
+          21.512629
+        ]
+      },
+      "properties": {
+        "id": "overture/371",
+        "name": "Pantera HX",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.391427,
+          21.512649
+        ]
+      },
+      "properties": {
+        "id": "overture/372",
+        "name": "Café Calamar HX",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.85
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.391486,
+          21.512654
+        ]
+      },
+      "properties": {
+        "id": "overture/373",
+        "name": "Casa HX",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.393719,
+          21.511703
+        ]
+      },
+      "properties": {
+        "id": "overture/374",
+        "name": "Casa de los Santos",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.393572,
+          21.511503
+        ]
+      },
+      "properties": {
+        "id": "overture/375",
+        "name": "El Holboxeno",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.34
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.305775,
+          21.545226
+        ]
+      },
+      "properties": {
+        "id": "overture/376",
+        "name": "AWA Hotel Boutique Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.73
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.364228,
+          21.534351
+        ]
+      },
+      "properties": {
+        "id": "overture/377",
+        "name": "Restaurante Larena",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.52
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.363753,
+          21.534288
+        ]
+      },
+      "properties": {
+        "id": "overture/378",
+        "name": "ALMA Bar Holbox",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.363845,
+          21.534166
+        ]
+      },
+      "properties": {
+        "id": "overture/379",
+        "name": "El Sabor de las Nubes",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.42
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.364005,
+          21.534138
+        ]
+      },
+      "properties": {
+        "id": "overture/380",
+        "name": "Las Nubes de Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 1.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.369476,
+          21.530446
+        ]
+      },
+      "properties": {
+        "id": "overture/381",
+        "name": "Hotelito Crismi",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.94
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37089,
+          21.529551
+        ]
+      },
+      "properties": {
+        "id": "overture/382",
+        "name": "Hotel Holmar",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.87
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.370249,
+          21.530044
+        ]
+      },
+      "properties": {
+        "id": "overture/383",
+        "name": "My Blue Hotel Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.36963,
+          21.53051
+        ]
+      },
+      "properties": {
+        "id": "overture/384",
+        "name": "Cafeteria Tierra Mia",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.55
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.368815,
+          21.530573
+        ]
+      },
+      "properties": {
+        "id": "overture/385",
+        "name": "Aldea Kuka",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.367689,
+          21.531028
+        ]
+      },
+      "properties": {
+        "id": "overture/386",
+        "name": "Holbox Suites On The Beach",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.92
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.368811,
+          21.530987
+        ]
+      },
+      "properties": {
+        "id": "overture/387",
+        "name": "Palapas del Sol",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.99
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.368728,
+          21.531102
+        ]
+      },
+      "properties": {
+        "id": "overture/388",
+        "name": "Palapas del Sol",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.77
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.368249,
+          21.531115
+        ]
+      },
+      "properties": {
+        "id": "overture/389",
+        "name": "Hotel Villas Caracol Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.367999,
+          21.531278
+        ]
+      },
+      "properties": {
+        "id": "overture/390",
+        "name": "Villas Tiburon",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.97
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.367587,
+          21.531385
+        ]
+      },
+      "properties": {
+        "id": "overture/391",
+        "name": "Hotel Villas Tiburon",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.367195,
+          21.531535
+        ]
+      },
+      "properties": {
+        "id": "overture/392",
+        "name": "Casa Hridaya Hotel Boutique",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.98
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.368006,
+          21.531682
+        ]
+      },
+      "properties": {
+        "id": "overture/393",
+        "name": "Mosquito Bar",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.7
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.366405,
+          21.532406
+        ]
+      },
+      "properties": {
+        "id": "overture/394",
+        "name": "Hotel Villas Flamingos",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 1.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.338098,
+          21.551804
+        ]
+      },
+      "properties": {
+        "id": "overture/395",
+        "name": "La Cabane ",
+        "type": "restaurante",
+        "generation": 160,
+        "source": "overture",
+        "confidence": 0.88
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.329755,
+          21.553147
+        ]
+      },
+      "properties": {
+        "id": "overture/396",
+        "name": "Casa del Viento",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.82
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.333565,
+          21.563041
+        ]
+      },
+      "properties": {
+        "id": "overture/397",
+        "name": "El Mirador de Holbox",
+        "type": "hotel",
+        "generation": 380,
+        "source": "overture",
+        "confidence": 0.26
+      }
+    }
+  ]
+}

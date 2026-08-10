@@ -1,0 +1,60 @@
+{
+  "thresholdM": 60.0,
+  "byType": [
+    {
+      "type": "hotel",
+      "denue": 139,
+      "osm": 82,
+      "overture": 186,
+      "byOsm": 62,
+      "byOverture": 108,
+      "byBoth": 56,
+      "byAny": 114,
+      "byNone": 25,
+      "osmOnly": 20,
+      "overtureOnly": 78,
+      "coverage": 82.0
+    },
+    {
+      "type": "restaurante",
+      "denue": 149,
+      "osm": 134,
+      "overture": 191,
+      "byOsm": 94,
+      "byOverture": 110,
+      "byBoth": 89,
+      "byAny": 115,
+      "byNone": 34,
+      "osmOnly": 40,
+      "overtureOnly": 81,
+      "coverage": 77.2
+    },
+    {
+      "type": "comercio",
+      "denue": 187,
+      "osm": 48,
+      "overture": 21,
+      "byOsm": 41,
+      "byOverture": 19,
+      "byBoth": 9,
+      "byAny": 51,
+      "byNone": 136,
+      "osmOnly": 7,
+      "overtureOnly": 2,
+      "coverage": 27.3
+    }
+  ],
+  "totals": {
+    "denue": 475,
+    "osm": 264,
+    "overture": 398,
+    "byOsm": 197,
+    "byOverture": 237,
+    "byBoth": 154,
+    "byAny": 280,
+    "byNone": 195,
+    "osmOnly": 67,
+    "overtureOnly": 161,
+    "coverage": 58.9
+  }
+}

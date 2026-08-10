@@ -4,6 +4,9 @@
 *.temp
 tesina_completa.html
 
+# Excepcion: index.html es el entry point de Vite (la regla *.html se lo tragaba)
+!index.html
+
 # Archivos del sistema
 .DS_Store
 Thumbs.db
@@ -29,3 +32,11 @@ venv/
 
 # Archivos de log
 *.log
+
+# INEGI API token (local, no versionar)
+scripts/geo/data/.inegi_token
+
+# Dependencias y artefactos de build
+node_modules/
+dist/
+.venv-geo/

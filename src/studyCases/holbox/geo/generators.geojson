@@ -1,0 +1,4229 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377658,
+          21.525899
+        ]
+      },
+      "properties": {
+        "id": "node/662487373",
+        "name": "Posada Mawimbi",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.367399,
+          21.531366
+        ]
+      },
+      "properties": {
+        "id": "node/1873830725",
+        "name": "(hotel sin nombre)",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379665,
+          21.523615
+        ]
+      },
+      "properties": {
+        "id": "node/2127063220",
+        "name": "Viva Zapata",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378987,
+          21.522235
+        ]
+      },
+      "properties": {
+        "id": "node/2127063264",
+        "name": "La Sirenita",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37837,
+          21.523857
+        ]
+      },
+      "properties": {
+        "id": "node/2127063293",
+        "name": "Pizzeria Edeleyn",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378489,
+          21.522687
+        ]
+      },
+      "properties": {
+        "id": "node/2127081644",
+        "name": "Super Monkeys",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379664,
+          21.523974
+        ]
+      },
+      "properties": {
+        "id": "node/2127081650",
+        "name": "Bar Hezcalito",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379578,
+          21.525012
+        ]
+      },
+      "properties": {
+        "id": "node/2127084025",
+        "name": "La Diosa Kali",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379175,
+          21.523373
+        ]
+      },
+      "properties": {
+        "id": "node/2127112987",
+        "name": "Hotel Las Arena",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378081,
+          21.523618
+        ]
+      },
+      "properties": {
+        "id": "node/2127113791",
+        "name": "Lavamatica (Laundromat)",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37814,
+          21.523533
+        ]
+      },
+      "properties": {
+        "id": "node/2127118530",
+        "name": "Los Pelicanos",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375861,
+          21.527585
+        ]
+      },
+      "properties": {
+        "id": "node/2127118532",
+        "name": "Las Raices",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377813,
+          21.523403
+        ]
+      },
+      "properties": {
+        "id": "node/2127118533",
+        "name": "Zarabanda",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.382294,
+          21.523011
+        ]
+      },
+      "properties": {
+        "id": "node/2127121619",
+        "name": "Holbox Dream",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378116,
+          21.521439
+        ]
+      },
+      "properties": {
+        "id": "node/2127127473",
+        "name": "Centro Ferretera",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381033,
+          21.523946
+        ]
+      },
+      "properties": {
+        "id": "node/2129523441",
+        "name": "Faro Viejo",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373758,
+          21.526289
+        ]
+      },
+      "properties": {
+        "id": "node/2384492623",
+        "name": "Ida y Vuelta",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3764,
+          21.523876
+        ]
+      },
+      "properties": {
+        "id": "node/2565323761",
+        "name": "Hacienda la Catrina",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378286,
+          21.522638
+        ]
+      },
+      "properties": {
+        "id": "node/3282897726",
+        "name": "(comercio sin nombre)",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379353,
+          21.523484
+        ]
+      },
+      "properties": {
+        "id": "node/3284477371",
+        "name": "Posada La Raza",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379289,
+          21.523214
+        ]
+      },
+      "properties": {
+        "id": "node/4079936007",
+        "name": "Los Arcos",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.369593,
+          21.530079
+        ]
+      },
+      "properties": {
+        "id": "node/4213761044",
+        "name": "Casa Caracola",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.368295,
+          21.531061
+        ]
+      },
+      "properties": {
+        "id": "node/4213761045",
+        "name": "Club Las Hamacas",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.364291,
+          21.534047
+        ]
+      },
+      "properties": {
+        "id": "node/4213761046",
+        "name": "El Sabor de Las Nubes",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.364023,
+          21.53429
+        ]
+      },
+      "properties": {
+        "id": "node/4213761047",
+        "name": "Las Nubes",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.367893,
+          21.531628
+        ]
+      },
+      "properties": {
+        "id": "node/4213761048",
+        "name": "Mosquito",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.368699,
+          21.530781
+        ]
+      },
+      "properties": {
+        "id": "node/4213761049",
+        "name": "Palapas del Sol",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.367994,
+          21.531227
+        ]
+      },
+      "properties": {
+        "id": "node/4213761051",
+        "name": "Villas Caracol",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.366407,
+          21.532476
+        ]
+      },
+      "properties": {
+        "id": "node/4213761052",
+        "name": "Villas Flamingos",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.372881,
+          21.528187
+        ]
+      },
+      "properties": {
+        "id": "node/4213797475",
+        "name": "HM Villas Paraiso del Mar",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.371729,
+          21.528626
+        ]
+      },
+      "properties": {
+        "id": "node/4213797476",
+        "name": "Villa Moopich",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.370948,
+          21.529173
+        ]
+      },
+      "properties": {
+        "id": "node/4213797477",
+        "name": "Villas Delphines",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375762,
+          21.519835
+        ]
+      },
+      "properties": {
+        "id": "node/4225177389",
+        "name": "Casa Lupita",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378888,
+          21.523137
+        ]
+      },
+      "properties": {
+        "id": "node/4699740489",
+        "name": "Casa Alebrije",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381667,
+          21.522807
+        ]
+      },
+      "properties": {
+        "id": "node/4701840296",
+        "name": "Tribu",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379807,
+          21.524457
+        ]
+      },
+      "properties": {
+        "id": "node/4702785490",
+        "name": "El tacoquetome",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381062,
+          21.523212
+        ]
+      },
+      "properties": {
+        "id": "node/4765648825",
+        "name": "Bucaneros Hostel",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381407,
+          21.522873
+        ]
+      },
+      "properties": {
+        "id": "node/4776795330",
+        "name": "Bucaneros",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381288,
+          21.522295
+        ]
+      },
+      "properties": {
+        "id": "node/4783317121",
+        "name": "Le Jardin",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.383161,
+          21.522803
+        ]
+      },
+      "properties": {
+        "id": "node/4880939523",
+        "name": "Cócteles Hotel Zomay",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378609,
+          21.52458
+        ]
+      },
+      "properties": {
+        "id": "node/4935683321",
+        "name": "Ukulele Hamburgers",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379115,
+          21.522307
+        ]
+      },
+      "properties": {
+        "id": "node/5007711322",
+        "name": "Villas El Jardin",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378686,
+          21.524091
+        ]
+      },
+      "properties": {
+        "id": "node/5024710626",
+        "name": "Casa Lupita",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37991,
+          21.524164
+        ]
+      },
+      "properties": {
+        "id": "node/5216252102",
+        "name": "Básico",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380607,
+          21.523526
+        ]
+      },
+      "properties": {
+        "id": "node/5220241921",
+        "name": "Posada Ingrid",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3797,
+          21.523973
+        ]
+      },
+      "properties": {
+        "id": "node/5222038142",
+        "name": "El Chapulim",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380765,
+          21.524092
+        ]
+      },
+      "properties": {
+        "id": "node/5317462274",
+        "name": "Amaité",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.386827,
+          21.51969
+        ]
+      },
+      "properties": {
+        "id": "node/5317485034",
+        "name": "Café del Mar",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.384215,
+          21.5198
+        ]
+      },
+      "properties": {
+        "id": "node/5317485900",
+        "name": "Casa de los Ángeles",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38346,
+          21.521803
+        ]
+      },
+      "properties": {
+        "id": "node/5317485904",
+        "name": "El Velero",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.393464,
+          21.511528
+        ]
+      },
+      "properties": {
+        "id": "node/5317487008",
+        "name": "Punta Coco",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.383587,
+          21.520431
+        ]
+      },
+      "properties": {
+        "id": "node/5317487102",
+        "name": "Casa de las Sirenas",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.388293,
+          21.517306
+        ]
+      },
+      "properties": {
+        "id": "node/5317492575",
+        "name": "Casa Blatha",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381429,
+          21.521442
+        ]
+      },
+      "properties": {
+        "id": "node/5317492943",
+        "name": "Casa Azúl",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.388548,
+          21.517912
+        ]
+      },
+      "properties": {
+        "id": "node/5317493130",
+        "name": "Carolinda",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.389748,
+          21.517258
+        ]
+      },
+      "properties": {
+        "id": "node/5317493131",
+        "name": "Spirit Holbox",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380469,
+          21.524033
+        ]
+      },
+      "properties": {
+        "id": "node/5317493187",
+        "name": "El Cafecito",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378365,
+          21.525687
+        ]
+      },
+      "properties": {
+        "id": "node/5317493261",
+        "name": "Casa Maya",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.389556,
+          21.517179
+        ]
+      },
+      "properties": {
+        "id": "node/5317493362",
+        "name": "Spirit Holbox",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.383226,
+          21.518211
+        ]
+      },
+      "properties": {
+        "id": "node/5317493363",
+        "name": "Cabañas Manatí",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378718,
+          21.524133
+        ]
+      },
+      "properties": {
+        "id": "node/5317493516",
+        "name": "Oliver's Diner",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380473,
+          21.522684
+        ]
+      },
+      "properties": {
+        "id": "node/5317493520",
+        "name": "Ama's Bike Rental",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37943,
+          21.52464
+        ]
+      },
+      "properties": {
+        "id": "node/5317494026",
+        "name": "La Miranda de Rulo",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379175,
+          21.524398
+        ]
+      },
+      "properties": {
+        "id": "node/5317494211",
+        "name": "Maroc Coffee & Bakery",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379116,
+          21.522895
+        ]
+      },
+      "properties": {
+        "id": "node/5317494212",
+        "name": "Lavamar",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380414,
+          21.522549
+        ]
+      },
+      "properties": {
+        "id": "node/5317494213",
+        "name": "Los Tigritos",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379492,
+          21.523627
+        ]
+      },
+      "properties": {
+        "id": "node/5317494249",
+        "name": "Panadería Amaranto",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377847,
+          21.521951
+        ]
+      },
+      "properties": {
+        "id": "node/5317494305",
+        "name": "Abarrotes Dunosusa",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379709,
+          21.523978
+        ]
+      },
+      "properties": {
+        "id": "node/5317494417",
+        "name": "El Encuentro",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379373,
+          21.523882
+        ]
+      },
+      "properties": {
+        "id": "node/5317494915",
+        "name": "Pichrizos",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379503,
+          21.523619
+        ]
+      },
+      "properties": {
+        "id": "node/5317495143",
+        "name": "Cafeteria Amaranto",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378943,
+          21.523195
+        ]
+      },
+      "properties": {
+        "id": "node/5317495382",
+        "name": "Angeles y Diablitos",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378485,
+          21.523026
+        ]
+      },
+      "properties": {
+        "id": "node/5317495383",
+        "name": "Plaza El Pueblito",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379153,
+          21.523387
+        ]
+      },
+      "properties": {
+        "id": "node/5328275221",
+        "name": "Bar arena",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378713,
+          21.52309
+        ]
+      },
+      "properties": {
+        "id": "node/5460009422",
+        "name": "Rosa Mexicano",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378335,
+          21.523687
+        ]
+      },
+      "properties": {
+        "id": "node/5460010421",
+        "name": "Milpa",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378346,
+          21.525948
+        ]
+      },
+      "properties": {
+        "id": "node/5460054221",
+        "name": "Mandarina",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380353,
+          21.52048
+        ]
+      },
+      "properties": {
+        "id": "node/5460133021",
+        "name": "El Crustaceo Kascarudo",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380451,
+          21.524019
+        ]
+      },
+      "properties": {
+        "id": "node/5648284923",
+        "name": "El Cafecito",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376982,
+          21.524229
+        ]
+      },
+      "properties": {
+        "id": "node/5670956941",
+        "name": "Pachamama",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378811,
+          21.52321
+        ]
+      },
+      "properties": {
+        "id": "node/5693834221",
+        "name": "(comercio sin nombre)",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377944,
+          21.524127
+        ]
+      },
+      "properties": {
+        "id": "node/5694853722",
+        "name": "Roots",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37792,
+          21.525487
+        ]
+      },
+      "properties": {
+        "id": "node/5741175921",
+        "name": "Casa Las Tortugas",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.391289,
+          21.515356
+        ]
+      },
+      "properties": {
+        "id": "node/5859731785",
+        "name": "Casa Frances",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377752,
+          21.524024
+        ]
+      },
+      "properties": {
+        "id": "node/5872347585",
+        "name": "Casa Holbox",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380266,
+          21.524311
+        ]
+      },
+      "properties": {
+        "id": "node/5930621285",
+        "name": "Hot Corner",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374934,
+          21.525864
+        ]
+      },
+      "properties": {
+        "id": "node/5930621485",
+        "name": "Aloha",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378591,
+          21.524587
+        ]
+      },
+      "properties": {
+        "id": "node/5937542685",
+        "name": "La Botana",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37943,
+          21.525181
+        ]
+      },
+      "properties": {
+        "id": "node/5949513586",
+        "name": "Salma Bar",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373922,
+          21.526963
+        ]
+      },
+      "properties": {
+        "id": "node/6063591753",
+        "name": "Palapas del Mar",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373393,
+          21.526856
+        ]
+      },
+      "properties": {
+        "id": "node/6063591872",
+        "name": "Cielito Lindo",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373483,
+          21.526938
+        ]
+      },
+      "properties": {
+        "id": "node/6063592038",
+        "name": "Aroma",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381559,
+          21.522522
+        ]
+      },
+      "properties": {
+        "id": "node/6063592546",
+        "name": "Casa del Viento",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377959,
+          21.525359
+        ]
+      },
+      "properties": {
+        "id": "node/6063593061",
+        "name": "Luuma",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.368032,
+          21.531378
+        ]
+      },
+      "properties": {
+        "id": "node/6063593062",
+        "name": "Alma Bar",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375082,
+          21.520196
+        ]
+      },
+      "properties": {
+        "id": "node/6063593141",
+        "name": "Maya",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.368246,
+          21.531549
+        ]
+      },
+      "properties": {
+        "id": "node/6063593156",
+        "name": "Villas Tiburon",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380363,
+          21.524401
+        ]
+      },
+      "properties": {
+        "id": "node/6064251810",
+        "name": "Buena Vista",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377956,
+          21.525379
+        ]
+      },
+      "properties": {
+        "id": "node/6064256660",
+        "name": "Luuma",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381538,
+          21.522667
+        ]
+      },
+      "properties": {
+        "id": "node/6071059473",
+        "name": "Kukulkite Kitesurfing Center",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378051,
+          21.524054
+        ]
+      },
+      "properties": {
+        "id": "node/6156584786",
+        "name": "naay salad bar",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377994,
+          21.525179
+        ]
+      },
+      "properties": {
+        "id": "node/6156792785",
+        "name": "Barba Negra",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379296,
+          21.523939
+        ]
+      },
+      "properties": {
+        "id": "node/6159067585",
+        "name": "Limoncito",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.382475,
+          21.523226
+        ]
+      },
+      "properties": {
+        "id": "node/6206713685",
+        "name": "Casa Tom Tom",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377541,
+          21.523124
+        ]
+      },
+      "properties": {
+        "id": "node/6211881185",
+        "name": "La Mexiquense",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378256,
+          21.524539
+        ]
+      },
+      "properties": {
+        "id": "node/6213996585",
+        "name": "Los Pescaditos",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379659,
+          21.524937
+        ]
+      },
+      "properties": {
+        "id": "node/6213996586",
+        "name": "The Notorious Cocktail",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378917,
+          21.525164
+        ]
+      },
+      "properties": {
+        "id": "node/6214014085",
+        "name": "La Tapatía",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376738,
+          21.524568
+        ]
+      },
+      "properties": {
+        "id": "node/6225439185",
+        "name": "Mapache",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379863,
+          21.524111
+        ]
+      },
+      "properties": {
+        "id": "node/6258918285",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377577,
+          21.523017
+        ]
+      },
+      "properties": {
+        "id": "node/6262715885",
+        "name": "la chilanguita",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378531,
+          21.522767
+        ]
+      },
+      "properties": {
+        "id": "node/6262715886",
+        "name": "Willy’s tour",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379584,
+          21.524739
+        ]
+      },
+      "properties": {
+        "id": "node/6262715887",
+        "name": "La Chaya",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378382,
+          21.524705
+        ]
+      },
+      "properties": {
+        "id": "node/6262715985",
+        "name": "VIP holbox experience",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381372,
+          21.523085
+        ]
+      },
+      "properties": {
+        "id": "node/6275105685",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379538,
+          21.522586
+        ]
+      },
+      "properties": {
+        "id": "node/6424394270",
+        "name": "Mi viejo Chit",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376318,
+          21.524017
+        ]
+      },
+      "properties": {
+        "id": "node/6456944586",
+        "name": "Casa Jicaco",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378618,
+          21.523567
+        ]
+      },
+      "properties": {
+        "id": "node/6472620785",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379784,
+          21.52234
+        ]
+      },
+      "properties": {
+        "id": "node/6581626288",
+        "name": "Lavanderia",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377602,
+          21.523951
+        ]
+      },
+      "properties": {
+        "id": "node/6641977285",
+        "name": "(hotel sin nombre)",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378242,
+          21.522422
+        ]
+      },
+      "properties": {
+        "id": "node/6652278587",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380394,
+          21.524022
+        ]
+      },
+      "properties": {
+        "id": "node/6665027389",
+        "name": "La Pinsa",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378564,
+          21.524541
+        ]
+      },
+      "properties": {
+        "id": "node/6679466285",
+        "name": "Fragatta",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377945,
+          21.524403
+        ]
+      },
+      "properties": {
+        "id": "node/6690012285",
+        "name": "Antolltos e Abuelo Tom",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378395,
+          21.523244
+        ]
+      },
+      "properties": {
+        "id": "node/6700464485",
+        "name": "Parador 33",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377001,
+          21.523009
+        ]
+      },
+      "properties": {
+        "id": "node/6780769585",
+        "name": "Floreria El Lirio",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377049,
+          21.522994
+        ]
+      },
+      "properties": {
+        "id": "node/6780769586",
+        "name": "Florería El Lirio",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377033,
+          21.523014
+        ]
+      },
+      "properties": {
+        "id": "node/6780769685",
+        "name": "Florería El Lirio",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377019,
+          21.523
+        ]
+      },
+      "properties": {
+        "id": "node/6780769785",
+        "name": "Floreria El Lirio",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379177,
+          21.522941
+        ]
+      },
+      "properties": {
+        "id": "node/6784066585",
+        "name": "Pescadería",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380344,
+          21.52411
+        ]
+      },
+      "properties": {
+        "id": "node/6822748785",
+        "name": "La Pinsa tio pupo",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377895,
+          21.524325
+        ]
+      },
+      "properties": {
+        "id": "node/6824291385",
+        "name": "Restaurant",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379724,
+          21.52276
+        ]
+      },
+      "properties": {
+        "id": "node/6981990685",
+        "name": "Big Fish",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.367238,
+          21.532186
+        ]
+      },
+      "properties": {
+        "id": "node/6988657385",
+        "name": "ALMA Beach club",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379096,
+          21.522394
+        ]
+      },
+      "properties": {
+        "id": "node/7002486485",
+        "name": "Angeles Y Diablitos",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381402,
+          21.52172
+        ]
+      },
+      "properties": {
+        "id": "node/7107342385",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378098,
+          21.523992
+        ]
+      },
+      "properties": {
+        "id": "node/7155274185",
+        "name": "La chingada - ceviches",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379107,
+          21.518416
+        ]
+      },
+      "properties": {
+        "id": "node/7264621087",
+        "name": "Mis Sueños",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381112,
+          21.524012
+        ]
+      },
+      "properties": {
+        "id": "node/7270774985",
+        "name": "Las Panchas",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38136,
+          21.521724
+        ]
+      },
+      "properties": {
+        "id": "node/7644635985",
+        "name": "Waffle House Organic Kitchen",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379599,
+          21.523878
+        ]
+      },
+      "properties": {
+        "id": "node/8276742417",
+        "name": "La Combi",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378182,
+          21.522304
+        ]
+      },
+      "properties": {
+        "id": "node/8282411317",
+        "name": "Holbox Clothes Store",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379899,
+          21.524435
+        ]
+      },
+      "properties": {
+        "id": "node/8395183217",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378942,
+          21.523292
+        ]
+      },
+      "properties": {
+        "id": "node/8406730317",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379849,
+          21.522059
+        ]
+      },
+      "properties": {
+        "id": "node/8406751818",
+        "name": "Empanadas",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379753,
+          21.522234
+        ]
+      },
+      "properties": {
+        "id": "node/8416413517",
+        "name": "Tacos sopes",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379304,
+          21.525235
+        ]
+      },
+      "properties": {
+        "id": "node/8515168517",
+        "name": "(hotel sin nombre)",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374764,
+          21.521587
+        ]
+      },
+      "properties": {
+        "id": "node/8629812705",
+        "name": "Che Holbox",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378295,
+          21.520499
+        ]
+      },
+      "properties": {
+        "id": "node/8712841217",
+        "name": "Mayari",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377138,
+          21.522779
+        ]
+      },
+      "properties": {
+        "id": "node/8713472317",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377055,
+          21.522873
+        ]
+      },
+      "properties": {
+        "id": "node/8713472417",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379701,
+          21.523524
+        ]
+      },
+      "properties": {
+        "id": "node/8713475717",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379722,
+          21.523404
+        ]
+      },
+      "properties": {
+        "id": "node/8713652217",
+        "name": "La Jarochita",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377106,
+          21.522818
+        ]
+      },
+      "properties": {
+        "id": "node/8714961619",
+        "name": "Antojitos Kanasin",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379917,
+          21.524068
+        ]
+      },
+      "properties": {
+        "id": "node/8716803317",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.393478,
+          21.512876
+        ]
+      },
+      "properties": {
+        "id": "node/8819010817",
+        "name": "El Nido",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379491,
+          21.521607
+        ]
+      },
+      "properties": {
+        "id": "node/8830610422",
+        "name": "Tropical suites",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379085,
+          21.523328
+        ]
+      },
+      "properties": {
+        "id": "node/8927843018",
+        "name": "El Hornito Argentino",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378555,
+          21.522999
+        ]
+      },
+      "properties": {
+        "id": "node/8934300217",
+        "name": "Capriccio",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376917,
+          21.522404
+        ]
+      },
+      "properties": {
+        "id": "node/9092411218",
+        "name": "Casa Barbara",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377871,
+          21.523145
+        ]
+      },
+      "properties": {
+        "id": "node/9099412817",
+        "name": "(comercio sin nombre)",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377501,
+          21.523912
+        ]
+      },
+      "properties": {
+        "id": "node/9103057617",
+        "name": "La Chingada",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381126,
+          21.521835
+        ]
+      },
+      "properties": {
+        "id": "node/9401276317",
+        "name": "Nereida - Cantina de Mar",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38061,
+          21.523654
+        ]
+      },
+      "properties": {
+        "id": "node/9424330017",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376652,
+          21.527243
+        ]
+      },
+      "properties": {
+        "id": "node/9429513717",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377481,
+          21.522573
+        ]
+      },
+      "properties": {
+        "id": "node/9486949317",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377545,
+          21.52298
+        ]
+      },
+      "properties": {
+        "id": "node/9537414717",
+        "name": "Aura Holbox",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378713,
+          21.524574
+        ]
+      },
+      "properties": {
+        "id": "node/9579550104",
+        "name": "Hotelito Villas Holbox",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373639,
+          21.52221
+        ]
+      },
+      "properties": {
+        "id": "node/9641876917",
+        "name": "Luna Roja",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377627,
+          21.524084
+        ]
+      },
+      "properties": {
+        "id": "node/9641879917",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377196,
+          21.520157
+        ]
+      },
+      "properties": {
+        "id": "node/9675762117",
+        "name": "Casa Pajaritos",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381044,
+          21.522002
+        ]
+      },
+      "properties": {
+        "id": "node/9675762217",
+        "name": "Nereida",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379718,
+          21.523989
+        ]
+      },
+      "properties": {
+        "id": "node/9699486118",
+        "name": "Ardora",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378113,
+          21.522916
+        ]
+      },
+      "properties": {
+        "id": "node/9699493517",
+        "name": "Arte Sano",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.388928,
+          21.517882
+        ]
+      },
+      "properties": {
+        "id": "node/9718873317",
+        "name": "Casa Muuch",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.369632,
+          21.530674
+        ]
+      },
+      "properties": {
+        "id": "node/9719442717",
+        "name": "Carmen del Mar",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380212,
+          21.522194
+        ]
+      },
+      "properties": {
+        "id": "node/9740445917",
+        "name": "Frutería",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376894,
+          21.523026
+        ]
+      },
+      "properties": {
+        "id": "node/9741863618",
+        "name": "Frutería y",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376592,
+          21.522284
+        ]
+      },
+      "properties": {
+        "id": "node/9741863717",
+        "name": "Frutería",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379476,
+          21.525051
+        ]
+      },
+      "properties": {
+        "id": "node/9787123997",
+        "name": "Hinata",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378296,
+          21.522538
+        ]
+      },
+      "properties": {
+        "id": "node/9801804318",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376542,
+          21.523446
+        ]
+      },
+      "properties": {
+        "id": "node/9801804319",
+        "name": "Posada Los Abuelos",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379815,
+          21.522995
+        ]
+      },
+      "properties": {
+        "id": "node/9801804320",
+        "name": "(comercio sin nombre)",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.373061,
+          21.522175
+        ]
+      },
+      "properties": {
+        "id": "node/9939539823",
+        "name": "Casa Fuego",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378084,
+          21.522837
+        ]
+      },
+      "properties": {
+        "id": "node/9941489517",
+        "name": "Arte Sano",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381359,
+          21.52321
+        ]
+      },
+      "properties": {
+        "id": "node/9946051317",
+        "name": "Macondo Holbox",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381384,
+          21.521751
+        ]
+      },
+      "properties": {
+        "id": "node/9951248718",
+        "name": "Manglu",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378698,
+          21.525987
+        ]
+      },
+      "properties": {
+        "id": "node/9978509419",
+        "name": "The Barbarossa",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379619,
+          21.524889
+        ]
+      },
+      "properties": {
+        "id": "node/10054652218",
+        "name": "Punto San Telmo",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378854,
+          21.524545
+        ]
+      },
+      "properties": {
+        "id": "node/10086728408",
+        "name": "Hotelito Villas Holbox",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.382815,
+          21.519035
+        ]
+      },
+      "properties": {
+        "id": "node/10110247329",
+        "name": "Art Maya Rooms",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37828,
+          21.520352
+        ]
+      },
+      "properties": {
+        "id": "node/10262550407",
+        "name": "Golden Paradise",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377634,
+          21.520985
+        ]
+      },
+      "properties": {
+        "id": "node/10262567269",
+        "name": "M Store",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378733,
+          21.524371
+        ]
+      },
+      "properties": {
+        "id": "node/10309313141",
+        "name": "Temoc",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378972,
+          21.525642
+        ]
+      },
+      "properties": {
+        "id": "node/10309313142",
+        "name": "Capitan",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.393723,
+          21.509176
+        ]
+      },
+      "properties": {
+        "id": "node/10309323333",
+        "name": "Holbox Magico",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379244,
+          21.524549
+        ]
+      },
+      "properties": {
+        "id": "node/10309333874",
+        "name": "Minimarket",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378666,
+          21.524601
+        ]
+      },
+      "properties": {
+        "id": "node/10309338042",
+        "name": "(comercio sin nombre)",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.394786,
+          21.51015
+        ]
+      },
+      "properties": {
+        "id": "node/10309347465",
+        "name": "Punta Cocos",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38832,
+          21.517515
+        ]
+      },
+      "properties": {
+        "id": "node/10642013306",
+        "name": "La Cabane",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379779,
+          21.524525
+        ]
+      },
+      "properties": {
+        "id": "node/10642013307",
+        "name": "Kuxtal Market",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380077,
+          21.521984
+        ]
+      },
+      "properties": {
+        "id": "node/10671266605",
+        "name": "Antojitos Norma",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3814,
+          21.5232
+        ]
+      },
+      "properties": {
+        "id": "node/10722150506",
+        "name": "Hotel Macondo Holbox",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379233,
+          21.524402
+        ]
+      },
+      "properties": {
+        "id": "node/10723645505",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379765,
+          21.52403
+        ]
+      },
+      "properties": {
+        "id": "node/10727902605",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381056,
+          21.523126
+        ]
+      },
+      "properties": {
+        "id": "node/10916982705",
+        "name": "Hostel Barco Verde",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375911,
+          21.524111
+        ]
+      },
+      "properties": {
+        "id": "node/10916982706",
+        "name": "Panadería",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378242,
+          21.521328
+        ]
+      },
+      "properties": {
+        "id": "node/10995563373",
+        "name": "Casa Ohana",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.389485,
+          21.515248
+        ]
+      },
+      "properties": {
+        "id": "node/11061926705",
+        "name": "Kin Estudios",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38237,
+          21.522085
+        ]
+      },
+      "properties": {
+        "id": "node/11061926706",
+        "name": "Café Copal",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378421,
+          21.522652
+        ]
+      },
+      "properties": {
+        "id": "node/11196717632",
+        "name": "Waay",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379646,
+          21.52345
+        ]
+      },
+      "properties": {
+        "id": "node/11196765119",
+        "name": "XAMAN by WÁAY",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378174,
+          21.52242
+        ]
+      },
+      "properties": {
+        "id": "node/11200990555",
+        "name": "Holbox Guide Shop",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376771,
+          21.524418
+        ]
+      },
+      "properties": {
+        "id": "node/11305660970",
+        "name": "Coco Spa",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377562,
+          21.523507
+        ]
+      },
+      "properties": {
+        "id": "node/11305689269",
+        "name": "Masajes Holbox",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374555,
+          21.525803
+        ]
+      },
+      "properties": {
+        "id": "node/11334974469",
+        "name": "(comercio sin nombre)",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375268,
+          21.524852
+        ]
+      },
+      "properties": {
+        "id": "node/11334974569",
+        "name": "Super Mi",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377904,
+          21.524191
+        ]
+      },
+      "properties": {
+        "id": "node/11339451969",
+        "name": "Alta Gula",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379621,
+          21.521174
+        ]
+      },
+      "properties": {
+        "id": "node/12084148669",
+        "name": "Golden Paradise",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378947,
+          21.523212
+        ]
+      },
+      "properties": {
+        "id": "node/12437137402",
+        "name": "El Cocal de Holbox",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37916,
+          21.524067
+        ]
+      },
+      "properties": {
+        "id": "node/12494046276",
+        "name": "Subway",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.389167,
+          21.517045
+        ]
+      },
+      "properties": {
+        "id": "node/12494046301",
+        "name": "Valentina Holbox",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379231,
+          21.52398
+        ]
+      },
+      "properties": {
+        "id": "node/12494057708",
+        "name": "Pimienta",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379311,
+          21.521592
+        ]
+      },
+      "properties": {
+        "id": "node/12580517602",
+        "name": "(hotel sin nombre)",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381374,
+          21.521642
+        ]
+      },
+      "properties": {
+        "id": "node/12582429501",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380561,
+          21.522521
+        ]
+      },
+      "properties": {
+        "id": "node/12586513601",
+        "name": "(restaurante sin nombre)",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374546,
+          21.520559
+        ]
+      },
+      "properties": {
+        "id": "node/12666709801",
+        "name": "(comercio sin nombre)",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376476,
+          21.520888
+        ]
+      },
+      "properties": {
+        "id": "node/12741944657",
+        "name": "Casa Universo",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379882,
+          21.524503
+        ]
+      },
+      "properties": {
+        "id": "node/12790644801",
+        "name": "Holbox Market",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380542,
+          21.522499
+        ]
+      },
+      "properties": {
+        "id": "node/12805986901",
+        "name": "Quartieri",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377988,
+          21.522044
+        ]
+      },
+      "properties": {
+        "id": "node/12815613301",
+        "name": "Lavanderia",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381747,
+          21.52107
+        ]
+      },
+      "properties": {
+        "id": "node/12820797801",
+        "name": "La Sirenita del Mercado",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379781,
+          21.520034
+        ]
+      },
+      "properties": {
+        "id": "node/12820857501",
+        "name": "Alcobas del Mar",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37873,
+          21.520108
+        ]
+      },
+      "properties": {
+        "id": "node/12820903801",
+        "name": "Naj Casa Holbox",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379129,
+          21.5212
+        ]
+      },
+      "properties": {
+        "id": "node/12821393501",
+        "name": "Minisuper Jazmin",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.376896,
+          21.526621
+        ]
+      },
+      "properties": {
+        "id": "node/13070109801",
+        "name": "Ñaña",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379278,
+          21.524599
+        ]
+      },
+      "properties": {
+        "id": "node/13071039501",
+        "name": "Mar y Volcàn",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37918,
+          21.5245
+        ]
+      },
+      "properties": {
+        "id": "node/13071598301",
+        "name": "Taqueria Mateo",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.386852,
+          21.51887
+        ]
+      },
+      "properties": {
+        "id": "node/13310226973",
+        "name": "Casa Astral",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379276,
+          21.524453
+        ]
+      },
+      "properties": {
+        "id": "node/13310226974",
+        "name": "Noa",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379347,
+          21.524626
+        ]
+      },
+      "properties": {
+        "id": "node/13449218101",
+        "name": "Matambre fast grill",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380318,
+          21.524554
+        ]
+      },
+      "properties": {
+        "id": "node/13450307601",
+        "name": "Birria La Catrina",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379325,
+          21.52039
+        ]
+      },
+      "properties": {
+        "id": "node/13539161002",
+        "name": "Casa Sou",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379289,
+          21.523387
+        ]
+      },
+      "properties": {
+        "id": "node/13539161101",
+        "name": "Súper Chedraui",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379938,
+          21.524271
+        ]
+      },
+      "properties": {
+        "id": "node/13565837558",
+        "name": "Oxxo",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.384048,
+          21.519966
+        ]
+      },
+      "properties": {
+        "id": "node/13571430107",
+        "name": "Santos Fuegos",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.384128,
+          21.519863
+        ]
+      },
+      "properties": {
+        "id": "node/13571431002",
+        "name": "Casa Hood",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380905,
+          21.522993
+        ]
+      },
+      "properties": {
+        "id": "node/13578123456",
+        "name": "Bikes Holbox",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.381692,
+          21.522397
+        ]
+      },
+      "properties": {
+        "id": "node/13578133693",
+        "name": "La Bamba",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.380829,
+          21.522903
+        ]
+      },
+      "properties": {
+        "id": "node/13578136456",
+        "name": "Joanza",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.383759,
+          21.52066
+        ]
+      },
+      "properties": {
+        "id": "node/13578145131",
+        "name": "Mystique",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.377854,
+          21.5253
+        ]
+      },
+      "properties": {
+        "id": "node/13657184701",
+        "name": "Holbox Kiteboarding School",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374478,
+          21.527786
+        ]
+      },
+      "properties": {
+        "id": "node/13657245701",
+        "name": "La Smasheria",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379746,
+          21.52382
+        ]
+      },
+      "properties": {
+        "id": "node/13657302602",
+        "name": "Complemento",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.379013,
+          21.524183
+        ]
+      },
+      "properties": {
+        "id": "node/13657477501",
+        "name": "Crónicas Taproom",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374533,
+          21.527754
+        ]
+      },
+      "properties": {
+        "id": "node/13657477701",
+        "name": "(comercio sin nombre)",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378085,
+          21.52506
+        ]
+      },
+      "properties": {
+        "id": "node/13660106301",
+        "name": "Nutcafe",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.372664,
+          21.529111
+        ]
+      },
+      "properties": {
+        "id": "node/13662518701",
+        "name": "Punta Caliza",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.378372,
+          21.522738
+        ]
+      },
+      "properties": {
+        "id": "node/13663745701",
+        "name": "Tierrasal",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37814,
+          21.524962
+        ]
+      },
+      "properties": {
+        "id": "node/13665928501",
+        "name": "Barba Negra",
+        "gen_type": "restaurante",
+        "generation": 160
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375305,
+          21.51945
+        ]
+      },
+      "properties": {
+        "id": "node/13669612002",
+        "name": "9 Hermanos",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375225,
+          21.519486
+        ]
+      },
+      "properties": {
+        "id": "node/13669612003",
+        "name": "Holbox Express",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.375284,
+          21.519429
+        ]
+      },
+      "properties": {
+        "id": "node/13669633501",
+        "name": "(comercio sin nombre)",
+        "gen_type": "comercio",
+        "generation": 95
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.374715,
+          21.527119
+        ]
+      },
+      "properties": {
+        "id": "node/13894864773",
+        "name": "Xaloc Resort",
+        "gen_type": "hotel",
+        "generation": 380
+      }
+    }
+  ]
+}

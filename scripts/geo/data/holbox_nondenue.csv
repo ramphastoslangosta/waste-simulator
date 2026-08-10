@@ -1,0 +1,21 @@
+name,lat,lng,rooms,source,confidence,note,lodging_type
+Pachamama Holbox - Hostel & Private Apartments,21.52422,-87.37702,16,booking,medium,hostel+aparts 16 rooms,hostel
+Boutique Hotel El Nido Holbox,21.51294,-87.39353,20,booking,medium,adults-only 4star 20 rooms,hotel
+Casa Peregrino Holbox,21.5246,-87.37938,6,tripadvisor,medium,boutique 6 rooms,hotel
+Casa Hridaya Hotel Boutique,21.53154,-87.36719,8,booking,high,8 rooms adults-only 4star,hotel
+Utopia Hostel,21.52097,-87.37605,4,tripadvisor,low,dorm + few privates estimate,hostel
+Casa Sunshine Holbox,21.52421,-87.37698,8,official,high,oficial 8 rooms 21 guests,hotel
+Holbox Mi Habitat,21.52083,-87.3767,1,booking,high,single entire apartment,apartments
+Hotel Villas del Carmen,21.5139,-87.38726,13,booking,high,13 rooms pool restaurant,hotel
+Casa TomTom Holbox,21.52328,-87.38231,3,booking,medium,adults-only B&B 3 rooms,guesthouse
+Ana y Jose Holbox,21.52712,-87.37495,37,official,high,all-inclusive boutique 37 rooms,hotel
+Casa Sofia Holbox,21.51923,-87.38056,6,booking,high,aparthotel 6 rooms,apartments
+Villa Moopich,21.52872,-87.37172,6,tripadvisor,medium,whole-villa rental 6 br,apartments
+Rhincodon Typus,21.51987,-87.38605,6,estimate,low,eco palapa cabins estimate,glamping
+Ecoco Holbox,21.51795,-87.37917,6,booking,high,6 wood cabins adults-only,cabañas
+Casa Frida Holbox,21.52113,-87.37646,6,booking,high,6 apartment units,apartments
+Sanyama Holbox,21.51876,-87.37961,6,booking,high,aparthotel 6 rooms,apartments
+Coccoloba Holbox,21.51963,-87.38424,7,official,medium,oficial 7 apartments,apartments
+Glamping Holbox Sunset,21.51936,-87.37553,6,estimate,low,tented camp estimate,glamping
+Casa de los Santos,21.5117,-87.39372,6,booking,high,6 eco cabins,cabañas
+Casa Libelula,21.5192,-87.3873,3,booking,medium,whole-house rental 3 br,apartments

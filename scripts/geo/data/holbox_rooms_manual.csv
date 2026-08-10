@@ -1,0 +1,134 @@
+name,rooms,source,confidence,note
+HOTEL VILLAS FLAMINGOS,41,tripadvisor,medium,agregadores 40-41; listings viejos 14-15
+MYSTIQUE BLUE SUITES,38,official,high,Mystique Holbox by Royalton 38 suites
+VILAS HM PARAISO DELMAR,58,official,high,52 junior + 6 master suites
+VILLAS HM PALAPAS DEL MAR,52,official,high,sitio oficial 52 villas
+HOTEL NOMADE HOLBOX,30,official,high,30 suites incl 6 treehouses
+HOTEL ALDEA KUKA,44,booking,high,eco boutique 44 cuartos
+HOTEL CASA DE LAS TORTUGAS,30,official,medium,oficial 30; algunos 21-27
+HOTEL HOLBOX DREAM,47,tripadvisor,high,47 cuartos
+HOTEL NAI HOLBOX,20,estimate,low,boutique pequeno; conteo ambiguo
+CASA HX,14,booking,medium,adults-only; 14 (algunos 19)
+CASA IMOX,6,official,medium,villa-style 2 villas 2 apts 2 rooms
+CASA TAKYWARA,6,booking,medium,boutique villa ~6
+GOLDEN PARADISE TOWN,10,tripadvisor,medium,10 cuartos agregadores
+HOTEL BLUE HOLBOX,40,google,medium,4-star 40 (algunos 43)
+HOTEL CASA MARGOT,20,google,medium,3-star ~20
+HOTEL GOLDEN PARADISE BEACH,9,google,medium,beachfront 8-9
+HOTEL HAU BOUTIQUE,19,booking,medium,oceanfront boutique 19
+HOTEL HOLBOX BY XALOC,29,official,high,expandido a 29 cuartos/bungalows
+HOTEL HOLMAR,15,booking,high,15 cuartos confirmado
+HOTEL LAS NUBES DE HOLBOX,28,booking,high,28 cuartos
+HOTEL PALAPAS DEL SOL,30,official,medium,boutique 30 cuartos
+HOTEL PUNTA CALIZA,12,official,high,sitio oficial 12 cuartos
+HOTEL SER CASASANDRA,18,official,high,17 cuartos + 1 villa
+HOTEL SOHO BOUTIQUE,21,official,high,21 cuartos adults-only
+HOTEL CASA HX,19,official,high,oficial 19 rooms Punta Cocos adults only
+HOTEL SPIRIT,14,official,high,Spirit Holbox 14 rooms same property as SPIRIT HOLBOX
+HOTEL TIERRA MIA,15,official,high,oficial 15 rooms; aggregators varied 8-15
+HOTEL VILLAS CARACOL,16,official,high,oficial 16 suites family-run beachfront
+HOTELITO CRISMI,8,booking,high,Booking 8 air-conditioned rooms adults only
+MACONDO HOLBOX,22,booking,medium,aggregator 22 rooms; two Macondo listings exist
+RECIDENCIAL CIELITO HOMES,20,google,medium,mapea a Cielito Holbox 20 rooms 3 categorias
+SPIRIT HOLBOX,14,official,high,oficial solo 14 habitaciones y suites eco boutique
+SUITS VILLAS EL JARDIN,19,booking,medium,aggregator 19 rooms suites con kitchenette
+BEACH FRONT HOTEL LA PALAPA,25,official,high,oficial 25 rooms adults only beachfront
+CASA ASTRAL,20,expedia,low,conflicto 16 core vs 39 con apartments; boutique+aparts estimado 20
+HOTEL AMAITE,16,official,high,oficial 16 oceanfront rooms and suites
+HOTEL BOUTIQUE AWA,33,booking,high,Booking 33 guestrooms 5-star beachfront 3 restaurants
+HOTEL DIOSA KALI,17,official,high,oficial 17 rooms; prior 26 inflado
+HOTEL NAJ CASA HOLBOX,28,booking,high,Booking/oficial 28 rooms boutique
+HOTEL VILLAS TIBURON,25,booking,high,Booking/aggregator 25-room hotel adults only
+HOSTEL TRIBU,11,booking,medium,Booking 11 rooms dorms + privates
+HOTEL AK NA,10,official,high,oficial 10 rooms and suites
+HOTEL CABAÑAS IDA Y VUELTA,11,expedia,medium,Expedia 11 accommodations bungalows + tents
+HOTEL CASA CATBA,5,official,high,oficial 5 adult rooms whole-hotel 10 guests
+HOTEL LA PUERTA AZUL HOLBOX,14,official,high,oficial 14 rooms suites and villas
+HOTEL PARA TI,16,official,high,oficial 16 rooms adults only
+HOTEL PUERTO HOLBOX,14,booking,high,Booking only 14 rooms
+HOTEL VILLAS MARGARITAS,18,tripadvisor,medium,aggregator 18 rooms suites + apartments
+HOTEL ZOMAY,14,official,medium,oficial 14 rooms; aggregators 12-14
+ALCOBAS DEL MAR,12,booking,high,Booking 12 rooms
+APARTMENTS HOTEL ONDA MAYA,11,official,high,oficial 11 apartamentos adults-only
+CASA BARBARA,19,booking,medium,Booking 19 rooms; no oficiales 22-25
+HOTEL CASA IGUANA,10,booking,high,Booking 10 rooms
+HOTEL EL CORAZON BOUTIQUE,11,official,high,oficial 11 rooms adults-only
+HOTEL ENSUEÑO HOLBOX APARTMENTS,8,estimate,low,aparthotel pocas unidades estimado
+HOTEL LOS ARCOS,30,booking,high,Booking/Hotels.com 30 rooms
+HOTEL MAYARI,22,booking,medium,Booking 22 rooms rango 22-23
+HOTEL SIESTA HOLBOX,12,booking,high,Booking 12 rooms 6 king + 4 doble
+HOTEL TIERRA DEL MAR,6,booking,high,Booking/oficial 6 rooms adults-only
+HOTEL TROPICAL SUITES BY MIJ,16,expedia,medium,Expedia 16 accommodations posible sobreestimacion
+PARADISE PAMLS HOTEL,3,booking,medium,Booking 3 rooms propiedad pequena
+TARA TARA HOTEL,9,booking,high,Booking/Trip.com 9 rooms
+ALDEA CABAÑAS Y LAMPING,7,tripadvisor,high,La Aldea Holbox 7-room glamping+cabañas
+HOSTEL CHE,11,booking,high,Che Holbox Hostel 11 rooms
+HOTEL CABAÑAS COCONUT,30,tripadvisor,high,Coconut by OOL Hotels 30 rooms rebranded
+MAPACHE HOSTAL,10,official,medium,oficial 2 dorms + 8 glamping + 2 private ~10 room-equiv
+HOTEL CASA DEL VIENTO,15,booking,high,Booking 7 double 7 junior 1 master suite
+CASA LUZ,4,booking,high,villa 4 bedrooms shared common areas
+CASA MECH,6,estimate,low,small luxury adults-only count not published
+CASA OHANA,5,booking,low,apartment complex shared kitchen estimated
+CASA ÑAÑA,3,booking,high,Booking La Casa de Ñaña 3 rooms
+HOTEL AKVAL HOLBOX,13,booking,medium,AKBAL Holbox 13 rooms
+HOTEL ARTESANO,7,booking,high,Arte Sano adults-only 7 rooms
+HOTEL ARUMA HA,14,booking,medium,conflict 14 vs 20; 14 more consistent
+HOTEL AURORA HOLBOX,7,booking,high,Aurora 7 rooms
+HOTEL BHOGA,10,booking,high,Bhoga Boutique 10 rooms
+HOTEL BOHONITO,8,estimate,low,3-star guesthouse estimated by type
+HOTEL BOUTIQUE ALOHA,3,estimate,low,small boutique estimated
+HOTEL BRISA DEL MAR,8,expedia,high,8 rooms patio views
+HOTEL CASA CORONA HOLBOX,5,booking,high,Casa Corona 5 accommodations
+HOTEL CASA MAR,3,booking,medium,luxury villa 3 bedrooms
+HOTEL CASA MAYA,8,expedia,high,Casa Maya 8 guestrooms beachfront
+HOTEL CASA MUUCH,12,official,high,official 12 rooms adults-only
+HOTEL CHOBYS HOUSE,10,booking,medium,approx 10 rooms guesthouse
+HOTEL CORAZON MEXICANO HOLBOX,8,official,high,8 rooms aparthotel
+HOTEL EL JARDIN DE LOS ALUXES,5,booking,medium,Booking 5 guestrooms
+HOTEL EN LA PLAYA MAWIMBI,14,official,high,mawimbi.com 14 rooms boutique
+HOTEL ISLA BONITA,9,booking,high,9 rooms with mini-kitchen
+HOTEL KAI BOUTIQUE,13,tripadvisor,medium,approx 13 rooms adults-only 12-15
+HOTEL KIN STUDIOS HOLBOX,12,booking,medium,Casa Tekio by Kin Studios 12 rooms
+HOTEL KRAK INN,11,booking,high,11 rooms self check-in
+HOTEL LA CASA DE CAPI,10,booking,medium,10 accommodations
+HOTEL LA CASA DE MIA,6,booking,medium,6 rooms
+HOTEL LA CHAYA,8,booking,high,8 rooms sea views
+HOTEL LIFESTYLE KB,5,estimate,low,casa de huespedes estimated
+HOTEL MAYAN MITTOZ,12,booking,medium,approx 12 rooms 4-star
+HOTEL POSADA DAVID,4,estimate,low,estimado por tipo posada
+HOTEL VILLA LOS MANGLES HOLBOX,5,official,high,villalosmangles.com 5 units boutique
+HOTEL VILLA MARILU,12,tripadvisor,medium,Villas Marilu 12 rooms
+HOTEL VILLAS DEL PALMAR,20,tripadvisor,low,aggregator 20 rooms unverifiable may be smaller
+HOTELITO LA CONSTANZA DEL ROLO,9,expedia,medium,La Constanza de Rulo 9 accommodations
+HOTELITO VILLAS HOLBOX,10,booking,high,10 rooms
+MHTOZ HOTEL,13,official,high,Mittoz Holbox (Mhtoz typo) 13 rooms
+MITTOZ HOTEL,13,official,high,Mittoz Holbox 13 rooms
+SIRENAS CARIBEAN ROOM,10,official,medium,Sirenas Caribbean 10 rooms boutique
+CABAÑAS CHAC MOOL,8,tripadvisor,medium,Chac Mool Downtown 8-10 lower figure
+CABAÑAS SKYCAMP,8,booking,high,Skycamp 8 cabin/tent units
+ECO CABAÑAS LAAK,5,official,high,official 5 cabins private plunge pool
+HOLBOX DELUXE APARTMENTS,3,estimate,low,aparthotel small estimate by type
+HOSTAL HOLBOX,15,tripadvisor,low,capeado conservador (agregador citaba 48 dorm-beds; hostel no cuartos-hotel)
+HOSTAL MAYA AVENTURA,8,tripadvisor,medium,Aventura Maya 8 rooms
+HOSTAL WAKAC,5,estimate,low,estimado por tipo hostal
+HOSTEL BARCO VERDE,24,tripadvisor,medium,Barco Verde 24 rooms dorms+privates
+HOTEL VILLAS EL ENCANTO HOLBOX,9,tripadvisor,medium,El Encanto 5 cabins to 9 rooms
+POSADA HOWDUMAR,14,booking,high,Posada Hondumar 14 rooms
+CASA CHUJUK,10,tripadvisor,medium,Casa Chujuk by Spirit 10 rooms
+CASA DE HUESPEDES SQUALOS PLEACES,3,google,low,Squalo's place small apartment-style
+CASA KA ANCHE CAMPING,4,estimate,low,camping conservative small estimate
+HOTEL SHANKARA,7,official,high,official 6 suites + 2 apartments
+KIN CAMPING,4,estimate,low,tents-only campsite small estimate
+POSADA AMAPOLA,4,estimate,low,budget posada estimate by type
+POSADA ANHELING,3,estimate,low,estimado por tipo
+POSADA CLARITA,5,tripadvisor,low,small inn conservative estimate
+POSADA DON PANCHON Y MARUXA,5,booking,low,Booking room types small posada
+POSADA LA RAZA,3,estimate,low,estimado por tipo
+POSADA LAURY,4,estimate,low,small 3-star posada estimate
+POSADA LOS ABUELOS,6,tripadvisor,medium,conflict 6 vs 13 took lower
+POSADA LOS CORALES,4,google,low,small property near main square
+POSADA ROCIO,3,estimate,low,estimado por tipo
+POSADA YALEKIN,18,official,high,posadayalekin.com 18 rooms
+REHILETE POSADA,6,google,medium,Estudios Rehilete 6 rooms
+SUITE PELECANO,4,estimate,low,Pelecanus Suites small apart-hotel
+WHY KNOT,6,official,high,official 6 cabins beachfront B&B

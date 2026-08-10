@@ -1,0 +1,445 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37702,
+          21.52422
+        ]
+      },
+      "properties": {
+        "id": "nondenue/pachamama-holbox---hostel-&-private-apar",
+        "name": "Pachamama Holbox - Hostel & Private Apartments",
+        "type": "hotel",
+        "generation": 47,
+        "genLow": 40,
+        "genHigh": 54,
+        "rooms": 16,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.39353,
+          21.51294
+        ]
+      },
+      "properties": {
+        "id": "nondenue/boutique-hotel-el-nido-holbox",
+        "name": "Boutique Hotel El Nido Holbox",
+        "type": "hotel",
+        "generation": 59,
+        "genLow": 50,
+        "genHigh": 67,
+        "rooms": 20,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37938,
+          21.5246
+        ]
+      },
+      "properties": {
+        "id": "nondenue/casa-peregrino-holbox",
+        "name": "Casa Peregrino Holbox",
+        "type": "hotel",
+        "generation": 18,
+        "genLow": 15,
+        "genHigh": 20,
+        "rooms": 6,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.36719,
+          21.53154
+        ]
+      },
+      "properties": {
+        "id": "nondenue/casa-hridaya-hotel-boutique",
+        "name": "Casa Hridaya Hotel Boutique",
+        "type": "hotel",
+        "generation": 23,
+        "genLow": 20,
+        "genHigh": 27,
+        "rooms": 8,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37605,
+          21.52097
+        ]
+      },
+      "properties": {
+        "id": "nondenue/utopia-hostel",
+        "name": "Utopia Hostel",
+        "type": "hotel",
+        "generation": 12,
+        "genLow": 10,
+        "genHigh": 13,
+        "rooms": 4,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37698,
+          21.52421
+        ]
+      },
+      "properties": {
+        "id": "nondenue/casa-sunshine-holbox",
+        "name": "Casa Sunshine Holbox",
+        "type": "hotel",
+        "generation": 23,
+        "genLow": 20,
+        "genHigh": 27,
+        "rooms": 8,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3767,
+          21.52083
+        ]
+      },
+      "properties": {
+        "id": "nondenue/holbox-mi-habitat",
+        "name": "Holbox Mi Habitat",
+        "type": "hotel",
+        "generation": 3,
+        "genLow": 2,
+        "genHigh": 3,
+        "rooms": 1,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38726,
+          21.5139
+        ]
+      },
+      "properties": {
+        "id": "nondenue/hotel-villas-del-carmen",
+        "name": "Hotel Villas del Carmen",
+        "type": "hotel",
+        "generation": 38,
+        "genLow": 32,
+        "genHigh": 44,
+        "rooms": 13,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38231,
+          21.52328
+        ]
+      },
+      "properties": {
+        "id": "nondenue/casa-tomtom-holbox",
+        "name": "Casa TomTom Holbox",
+        "type": "hotel",
+        "generation": 9,
+        "genLow": 7,
+        "genHigh": 10,
+        "rooms": 3,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37495,
+          21.52712
+        ]
+      },
+      "properties": {
+        "id": "nondenue/ana-y-jose-holbox",
+        "name": "Ana y Jose Holbox",
+        "type": "hotel",
+        "generation": 108,
+        "genLow": 92,
+        "genHigh": 125,
+        "rooms": 37,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38056,
+          21.51923
+        ]
+      },
+      "properties": {
+        "id": "nondenue/casa-sofia-holbox",
+        "name": "Casa Sofia Holbox",
+        "type": "hotel",
+        "generation": 18,
+        "genLow": 15,
+        "genHigh": 20,
+        "rooms": 6,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37172,
+          21.52872
+        ]
+      },
+      "properties": {
+        "id": "nondenue/villa-moopich",
+        "name": "Villa Moopich",
+        "type": "hotel",
+        "generation": 18,
+        "genLow": 15,
+        "genHigh": 20,
+        "rooms": 6,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38605,
+          21.51987
+        ]
+      },
+      "properties": {
+        "id": "nondenue/rhincodon-typus",
+        "name": "Rhincodon Typus",
+        "type": "hotel",
+        "generation": 18,
+        "genLow": 15,
+        "genHigh": 20,
+        "rooms": 6,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37917,
+          21.51795
+        ]
+      },
+      "properties": {
+        "id": "nondenue/ecoco-holbox",
+        "name": "Ecoco Holbox",
+        "type": "hotel",
+        "generation": 18,
+        "genLow": 15,
+        "genHigh": 20,
+        "rooms": 6,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37646,
+          21.52113
+        ]
+      },
+      "properties": {
+        "id": "nondenue/casa-frida-holbox",
+        "name": "Casa Frida Holbox",
+        "type": "hotel",
+        "generation": 18,
+        "genLow": 15,
+        "genHigh": 20,
+        "rooms": 6,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37961,
+          21.51876
+        ]
+      },
+      "properties": {
+        "id": "nondenue/sanyama-holbox",
+        "name": "Sanyama Holbox",
+        "type": "hotel",
+        "generation": 18,
+        "genLow": 15,
+        "genHigh": 20,
+        "rooms": 6,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.38424,
+          21.51963
+        ]
+      },
+      "properties": {
+        "id": "nondenue/coccoloba-holbox",
+        "name": "Coccoloba Holbox",
+        "type": "hotel",
+        "generation": 20,
+        "genLow": 17,
+        "genHigh": 24,
+        "rooms": 7,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.37553,
+          21.51936
+        ]
+      },
+      "properties": {
+        "id": "nondenue/glamping-holbox-sunset",
+        "name": "Glamping Holbox Sunset",
+        "type": "hotel",
+        "generation": 18,
+        "genLow": 15,
+        "genHigh": 20,
+        "rooms": 6,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.39372,
+          21.5117
+        ]
+      },
+      "properties": {
+        "id": "nondenue/casa-de-los-santos",
+        "name": "Casa de los Santos",
+        "type": "hotel",
+        "generation": 18,
+        "genLow": 15,
+        "genHigh": 20,
+        "rooms": 6,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -87.3873,
+          21.5192
+        ]
+      },
+      "properties": {
+        "id": "nondenue/casa-libelula",
+        "name": "Casa Libelula",
+        "type": "hotel",
+        "generation": 9,
+        "genLow": 7,
+        "genHigh": 10,
+        "rooms": 3,
+        "gen_model": "v2_rooms",
+        "source": "overture",
+        "offRegistry": true
+      }
+    }
+  ]
+}

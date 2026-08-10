@@ -1,0 +1,17 @@
+{
+  "occupancy": {
+    "annual": 0.732,
+    "monthly": {
+      "enero": 0.731,
+      "febrero": 0.697,
+      "marzo": 0.782,
+      "abril": 0.718
+    }
+  },
+  "genBand": {
+    "lowFactor": 1.7,
+    "baseFactor": 2.0,
+    "highFactor": 2.3
+  },
+  "restaurantCoupling": 0.7
+}
