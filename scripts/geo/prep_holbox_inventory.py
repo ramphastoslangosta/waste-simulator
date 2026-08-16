@@ -41,6 +41,7 @@ GEO_DIR = ROOT / "src" / "studyCases" / "holbox" / "geo"
 RESIDENTS_JSON = DATA_DIR / "holbox_residents.json"
 SEDETUR_JSON = DATA_DIR / "sedetur_holbox.json"
 OUT = DATA_DIR / "holbox_inventory.json"
+TS_OUT = ROOT / "src" / "studyCases" / "holbox" / "inventory.ts"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Proyeccion 2022 → 2026
@@ -248,7 +249,7 @@ def build(year: int) -> dict:
     flotante = {k: max(0.0, empleos[k] - pob_censada[k] * tasa_ocup) for k in BANDS}
     pob_generadora = {k: pob_censada[k] + flotante[k] for k in BANDS}
     classes.append({
-        "id": "residencial", "task": "A0.1", "status": "corregido",
+        "id": "residencial", "bucket": "homes", "units_countable": True, "task": "A0.1", "status": "corregido",
         "label": "Poblacion residente (censada + flotante de trabajo)",
         "driver": "habitantes x kg/hab/dia",
         "counts": pob_generadora,
@@ -275,7 +276,7 @@ def build(year: int) -> dict:
     # ── 2. Hospedaje formal registrado ───────────────────────────────────────
     rooms_formal = band(sed_rooms, sed_rooms, sed_rooms)   # medido, no se proyecta
     classes.append({
-        "id": "hospedaje_formal", "task": "A2", "status": "modelado",
+        "id": "hospedaje_formal", "bucket": "hotels", "units_countable": True, "task": "A2", "status": "modelado",
         "label": f"Hospedaje formal registrado ({sed_hotels} hoteles)",
         "driver": "cuartos registrados x kg/cuarto/dia (ocupacion ya dentro del factor)",
         "counts": rooms_formal, "factors": F_ROOM_FORMAL,
@@ -297,7 +298,7 @@ def build(year: int) -> dict:
     rooms_muni = {k: CT_2022_ROOMS * proj[k] for k in BANDS}
     rooms_informal = {k: max(0.0, rooms_muni[k] - sed_rooms) for k in BANDS}
     classes.append({
-        "id": "hospedaje_informal", "task": "A0.3", "status": "nuevo_A0",
+        "id": "hospedaje_informal", "bucket": "hotels", "units_countable": True, "task": "A0.3", "status": "nuevo_A0",
         "label": "Hospedaje informal en establecimiento (posadas no registradas)",
         "driver": "cuartos del censo municipal menos los registrados en Sedetur",
         "counts": rooms_informal, "factors": F_ROOM_INFORMAL,
@@ -323,7 +324,7 @@ def build(year: int) -> dict:
         "high": CT_2019["viviendas_renta"] * 2.0 * proj19["high"],
     }
     classes.append({
-        "id": "renta_vacacional", "task": "A0.3", "status": "nuevo_A0",
+        "id": "renta_vacacional", "bucket": "hotels", "units_countable": True, "task": "A0.3", "status": "nuevo_A0",
         "label": "Renta vacacional en vivienda particular (Airbnb/VRBO)",
         "driver": "viviendas censadas x cuartos/vivienda x kg/cuarto/dia informal",
         "counts": rooms_vivienda, "factors": F_ROOM_INFORMAL,
@@ -350,7 +351,7 @@ def build(year: int) -> dict:
     n_rest = {k: CT_2022["restaurantes"] * proj[k] for k in BANDS}
     n_fondas = {k: CT_2022["fondas"] * proj[k] for k in BANDS}
     classes.append({
-        "id": "restaurantes", "task": "A0.2", "status": "modelado",
+        "id": "restaurantes", "bucket": "restaurants", "units_countable": True, "task": "A0.2", "status": "modelado",
         "label": "Restaurantes", "driver": "establecimientos x kg/establecimiento/dia",
         "counts": n_rest, "factors": F_RESTAURANT,
         "gen_kg": scale(n_rest, F_RESTAURANT),
@@ -370,7 +371,7 @@ def build(year: int) -> dict:
 
     # ── 6. Fondas (clase NUEVA — el modelo geo no la tenia) ──────────────────
     classes.append({
-        "id": "fondas", "task": "A0.2-h4", "status": "nuevo_A0",
+        "id": "fondas", "bucket": "restaurants", "units_countable": True, "task": "A0.2-h4", "status": "nuevo_A0",
         "label": "Fondas (cocina economica)",
         "driver": "establecimientos x kg/establecimiento/dia",
         "counts": n_fondas, "factors": F_FONDA,
@@ -389,7 +390,7 @@ def build(year: int) -> dict:
     # ── 7. Comercio establecido ──────────────────────────────────────────────
     n_com = {k: CT_2022["negocios_comerciales"] * proj[k] for k in BANDS}
     classes.append({
-        "id": "comercio", "task": "A0.2", "status": "modelado",
+        "id": "comercio", "bucket": "commerce", "units_countable": True, "task": "A0.2", "status": "modelado",
         "label": "Negocios comerciales establecidos",
         "driver": "establecimientos x kg/establecimiento/dia",
         "counts": n_com, "factors": F_COMERCIO,
@@ -407,7 +408,7 @@ def build(year: int) -> dict:
     # ── 8. Comercio ambulante (clase NUEVA) ──────────────────────────────────
     n_amb = {k: CT_2019["ambulantes"] * proj19[k] for k in BANDS}
     classes.append({
-        "id": "ambulantes", "task": "A0.2", "status": "nuevo_A0",
+        "id": "ambulantes", "bucket": "commerce", "units_countable": True, "task": "A0.2", "status": "nuevo_A0",
         "label": "Comercio ambulante",
         "driver": "puestos x kg/puesto/dia",
         "counts": n_amb, "factors": F_AMBULANTE,
@@ -428,7 +429,7 @@ def build(year: int) -> dict:
     playa = {k: BEACH_KM * BEACH_KG_PER_KM[k] for k in BANDS}
     servicio = {k: barrido[k] + playa[k] + PODA[k] for k in BANDS}
     classes.append({
-        "id": "servicio_limpia", "task": "A0.4", "status": "nuevo_A0",
+        "id": "servicio_limpia", "bucket": "commerce", "units_countable": False, "task": "A0.4", "status": "nuevo_A0",
         "label": "Barrido de calles, limpieza de playa y poda",
         "driver": "barrenderos x km/dia x kg/km  +  frente de playa  +  poda",
         "counts": band(SWEEPERS, SWEEPERS, SWEEPERS), "factors": None,
@@ -454,7 +455,7 @@ def build(year: int) -> dict:
     # ── 10. Day-trippers via ferry (A0.5, clase NUEVA) ───────────────────────
     daytrippers = {k: FERRY_ARRIVALS[k] * DAYTRIP_SHARE[k] for k in BANDS}
     classes.append({
-        "id": "day_trippers", "task": "A0.5", "status": "nuevo_A0",
+        "id": "day_trippers", "bucket": "commerce", "units_countable": False, "task": "A0.5", "status": "nuevo_A0",
         "label": "Excursionistas via ferry (residual, sin pernocta)",
         "driver": "llegadas de ferry x fraccion sin pernocta x kg residual/persona",
         "counts": daytrippers, "factors": KG_PER_DAYTRIPPER,
@@ -486,7 +487,7 @@ def build(year: int) -> dict:
     tours_season_kg = {k: pax_season[k] * KG_PER_TOUR_PAX[k] for k in BANDS}
     tours_annual_kg = {k: v * SEASON_DAYS / 365.0 for k, v in tours_season_kg.items()}
     classes.append({
-        "id": "tour_operadoras", "task": "A0.6", "status": "nuevo_A0",
+        "id": "tour_operadoras", "bucket": "commerce", "units_countable": False, "task": "A0.6", "status": "nuevo_A0",
         "label": "Tour operadoras y lanchas (tiburon ballena)",
         "driver": "lanchas en temporada x pax/tour x kg/pax, anualizado",
         "counts": pax_season, "factors": KG_PER_TOUR_PAX,
@@ -521,6 +522,7 @@ def build(year: int) -> dict:
     return {
         "case": "holbox",
         "target_year": year,
+        "occupancy_ref": round(sedetur.get("ocupacion_prom", 73.2) / 100.0, 4),
         "generated_by": "scripts/geo/prep_holbox_inventory.py (cierre Track A0)",
         "projection": {
             "months": PROJ_MONTHS if year == 2026 else 0,
@@ -605,6 +607,37 @@ def report(inv: dict) -> None:
     print()
 
 
+def emit_ts(inv: dict) -> None:
+    """Emite el inventario como CaseInventory tipado para que el motor lo consuma.
+    Mismo patron que prep_holbox_denue.py: el prep es la unica fuente de verdad y el
+    .ts es artefacto generado. Se recorta a lo que la proyeccion necesita — la prosa
+    (notas, caveats, fuentes) se queda en el JSON y no viaja al bundle."""
+    keep = ("id", "task", "status", "label", "driver", "bucket", "units_countable",
+            "counts", "gen_kg", "seasonality")
+    payload = {
+        "case": inv["case"],
+        "targetYear": inv["target_year"],
+        # Los factores kg/cuarto/dia traen la ocupacion DENTRO (se midieron sobre
+        # cuartos disponibles). El motor en cambio multiplica por ocupacion, asi que
+        # la proyeccion tiene que dividir por esta referencia para no contarla dos veces.
+        "occupancyRef": inv["occupancy_ref"],
+        "classes": [{k: c[k] for k in keep} for c in inv["classes"]],
+        "totals": inv["totals_t_dia"],
+        "witnesses": inv["witnesses"],
+    }
+    ts = (
+        "// AUTO-GENERADO por scripts/geo/prep_holbox_inventory.py — NO editar a mano.\n"
+        "// Inventario de generadores por CONTROL TOTAL (cierre del Track A0). Cada clase\n"
+        "// declara a que bucket del motor va y si su conteo es sumable como `units`.\n"
+        "import type { CaseInventory } from '../deriveInputs';\n\n"
+        "export const HOLBOX_INVENTORY: CaseInventory = "
+        + json.dumps(payload, ensure_ascii=False, indent=2)
+        + ";\n"
+    )
+    TS_OUT.parent.mkdir(parents=True, exist_ok=True)
+    TS_OUT.write_text(ts, encoding="utf-8")
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--year", type=int, default=2026, choices=(2022, 2026))
@@ -612,8 +645,10 @@ def main() -> int:
     inv = build(args.year)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(inv, indent=2, ensure_ascii=False), encoding="utf-8")
+    emit_ts(inv)
     report(inv)
-    print(f"-> {OUT.relative_to(ROOT)}\n")
+    print(f"-> {OUT.relative_to(ROOT)}")
+    print(f"-> {TS_OUT.relative_to(ROOT)}\n")
     return 0
 
 

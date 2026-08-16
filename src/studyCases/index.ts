@@ -4,6 +4,8 @@
 // entrada nueva aquí con su objeto `inputs` (mismo shape que INITIAL_INPUTS).
 import { INITIAL_INPUTS } from '../constants/initialState';
 import { HOLBOX_GEO_RECONCILED } from './holbox/geoReconciled';
+import { HOLBOX_INVENTORY } from './holbox/inventory';
+import type { CaseInventory } from './deriveInputs';
 
 // Geodata del caso — capa espacial cuantitativa (v1 sintética; luego GeoJSON reales
 // de OSM/Google/KMZ vía scripts/geo/prep_*.py). `generation` en kg/día por generador.
@@ -76,6 +78,11 @@ export interface StudyCase {
   validated: boolean;
   inputs: any;
   geo?: CaseGeo;
+  // Inventario de generadores por control total (Track A0). Es la fuente ALTERNA de
+  // los inputs de generación: `deriveInputsFromInventory` lo proyecta al motor. El
+  // caso sigue arrancando con `inputs` (agregado de campo) — el cambio de fuente es
+  // decisión de la UI (B2), no un default silencioso.
+  inventory?: CaseInventory;
 }
 
 export const STUDY_CASES: StudyCase[] = [
@@ -87,6 +94,7 @@ export const STUDY_CASES: StudyCase[] = [
     validated: true,
     inputs: INITIAL_INPUTS,
     geo: HOLBOX_GEO_RECONCILED,
+    inventory: HOLBOX_INVENTORY,
   },
   {
     id: 'plantilla',

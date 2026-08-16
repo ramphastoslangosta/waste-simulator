@@ -1,6 +1,7 @@
 {
   "case": "holbox",
   "target_year": 2026,
+  "occupancy_ref": 0.732,
   "generated_by": "scripts/geo/prep_holbox_inventory.py (cierre Track A0)",
   "projection": {
     "months": 48,
@@ -16,6 +17,8 @@
   "classes": [
     {
       "id": "residencial",
+      "bucket": "homes",
+      "units_countable": true,
       "task": "A0.1",
       "status": "corregido",
       "label": "Poblacion residente (censada + flotante de trabajo)",
@@ -63,6 +66,8 @@
     },
     {
       "id": "hospedaje_formal",
+      "bucket": "hotels",
+      "units_countable": true,
       "task": "A2",
       "status": "modelado",
       "label": "Hospedaje formal registrado (170 hoteles)",
@@ -100,6 +105,8 @@
     },
     {
       "id": "hospedaje_informal",
+      "bucket": "hotels",
+      "units_countable": true,
       "task": "A0.3",
       "status": "nuevo_A0",
       "label": "Hospedaje informal en establecimiento (posadas no registradas)",
@@ -133,6 +140,8 @@
     },
     {
       "id": "renta_vacacional",
+      "bucket": "hotels",
+      "units_countable": true,
       "task": "A0.3",
       "status": "nuevo_A0",
       "label": "Renta vacacional en vivienda particular (Airbnb/VRBO)",
@@ -171,6 +180,8 @@
     },
     {
       "id": "restaurantes",
+      "bucket": "restaurants",
+      "units_countable": true,
       "task": "A0.2",
       "status": "modelado",
       "label": "Restaurantes",
@@ -207,6 +218,8 @@
     },
     {
       "id": "fondas",
+      "bucket": "restaurants",
+      "units_countable": true,
       "task": "A0.2-h4",
       "status": "nuevo_A0",
       "label": "Fondas (cocina economica)",
@@ -239,6 +252,8 @@
     },
     {
       "id": "comercio",
+      "bucket": "commerce",
+      "units_countable": true,
       "task": "A0.2",
       "status": "modelado",
       "label": "Negocios comerciales establecidos",
@@ -270,6 +285,8 @@
     },
     {
       "id": "ambulantes",
+      "bucket": "commerce",
+      "units_countable": true,
       "task": "A0.2",
       "status": "nuevo_A0",
       "label": "Comercio ambulante",
@@ -301,6 +318,8 @@
     },
     {
       "id": "servicio_limpia",
+      "bucket": "commerce",
+      "units_countable": false,
       "task": "A0.4",
       "status": "nuevo_A0",
       "label": "Barrido de calles, limpieza de playa y poda",
@@ -348,6 +367,8 @@
     },
     {
       "id": "day_trippers",
+      "bucket": "commerce",
+      "units_countable": false,
       "task": "A0.5",
       "status": "nuevo_A0",
       "label": "Excursionistas via ferry (residual, sin pernocta)",
@@ -389,6 +410,8 @@
     },
     {
       "id": "tour_operadoras",
+      "bucket": "commerce",
+      "units_countable": false,
       "task": "A0.6",
       "status": "nuevo_A0",
       "label": "Tour operadoras y lanchas (tiburon ballena)",
