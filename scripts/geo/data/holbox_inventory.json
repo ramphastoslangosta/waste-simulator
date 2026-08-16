@@ -1,0 +1,485 @@
+{
+  "case": "holbox",
+  "target_year": 2026,
+  "generated_by": "scripts/geo/prep_holbox_inventory.py (cierre Track A0)",
+  "projection": {
+    "months": 48,
+    "factors": {
+      "low": 1.2826821060323403,
+      "base": 1.38995054859149,
+      "high": 1.4972189911506397
+    },
+    "method_low": "tasa de nacimiento de negocios INEGI (0.52%/mes servicios), el metodo del propio WP2E",
+    "method_base": "CAGR observado de Sedetur 8.58%/ano (1551 cuartos 2021 -> 2341 en abr-2026), crecimiento NETO medido y local",
+    "note": "Los dos metodos se corroboran: x1.28 vs x1.39 a 4 anos. Una tasa de nacimiento no resta cierres, asi que el CAGR medido gobierna la base y la natalidad queda como cota conservadora."
+  },
+  "classes": [
+    {
+      "id": "residencial",
+      "task": "A0.1",
+      "status": "corregido",
+      "label": "Poblacion residente (censada + flotante de trabajo)",
+      "driver": "habitantes x kg/hab/dia",
+      "counts": {
+        "low": 2735.0,
+        "base": 4732.224334600761,
+        "high": 6869.0280989562725
+      },
+      "factors": {
+        "low": 0.743,
+        "base": 0.85,
+        "high": 1.0
+      },
+      "gen_kg": {
+        "low": 2032.105,
+        "base": 4022.3906844106464,
+        "high": 6869.0280989562725
+      },
+      "geo_located_units": null,
+      "seasonality": "flat",
+      "sources": [
+        "CEN (ITER 2020, loc. 23-007-0012)",
+        "DEN (empleo por estrato)",
+        "WP2E (2,673 hab 2022 via padron electoral + matricula)",
+        "SEMARNAT Diagnostico Basico 2020, region Sureste (0.743 kg/hab/dia)"
+      ],
+      "detail": {
+        "pob_censada": {
+          "low": 1841,
+          "base": 2673.0,
+          "high": 3715.337816385053
+        },
+        "trabajadores_no_censados": {
+          "low": 894.0,
+          "base": 2059.224334600761,
+          "high": 3153.6902825712195
+        },
+        "tasa_ocupacion_censo": 0.6692
+      },
+      "notes": [
+        "El heredado 'fixedPopulation: 2673' esta atribuido al Censo 2020 en holbox-historical-data.csv, pero el censo da 1,841. El 2,673 SI existe: es la estimacion 2022 del WP2E por padron electoral + matricula. La atribucion del CSV es lo que esta mal, no el numero.",
+        "El per-capita baja de 0.90/1.00/1.10 a 0.743/0.85/1.00: el ancla correcta es SEMARNAT region Sureste (0.743), no el promedio nacional. Correccion a la BAJA de ~15% en la base."
+      ]
+    },
+    {
+      "id": "hospedaje_formal",
+      "task": "A2",
+      "status": "modelado",
+      "label": "Hospedaje formal registrado (170 hoteles)",
+      "driver": "cuartos registrados x kg/cuarto/dia (ocupacion ya dentro del factor)",
+      "counts": {
+        "low": 2341,
+        "base": 2341,
+        "high": 2341
+      },
+      "factors": {
+        "low": 1.38,
+        "base": 1.62,
+        "high": 1.86
+      },
+      "gen_kg": {
+        "low": 3230.58,
+        "base": 3792.42,
+        "high": 4354.26
+      },
+      "geo_located_units": 2012,
+      "coverage": {
+        "label": "Hospedaje formal (cuartos ubicados)",
+        "universe": 2341,
+        "unit": "cuartos"
+      },
+      "seasonality": "sedetur",
+      "sources": [
+        "SED (abr-2026)",
+        "AM20 (1.62 kg/cuarto/dia formal)"
+      ],
+      "notes": [
+        "Sedetur abr-2026 es conteo oficial vigente: no se proyecta.",
+        "CONFLICTO DE FACTOR: el modelo v2 del geo asume 2.0 kg/huesped-noche x 2 huesp/cuarto x 73.2% ocupacion = 2.93 kg/cuarto/dia, 1.8x la unica medicion local disponible (AM20, 1.62). Decidir en A1 cual gobierna."
+      ]
+    },
+    {
+      "id": "hospedaje_informal",
+      "task": "A0.3",
+      "status": "nuevo_A0",
+      "label": "Hospedaje informal en establecimiento (posadas no registradas)",
+      "driver": "cuartos del censo municipal menos los registrados en Sedetur",
+      "counts": {
+        "low": 2415.1852491679183,
+        "base": 2812.9366341772447,
+        "high": 3210.688019186572
+      },
+      "factors": {
+        "low": 0.66,
+        "base": 0.78,
+        "high": 0.9
+      },
+      "gen_kg": {
+        "low": 1594.0222644508262,
+        "base": 2194.090574658251,
+        "high": 2889.619217267915
+      },
+      "geo_located_units": null,
+      "seasonality": "sedetur",
+      "sources": [
+        "WP2E tabla 4 (535 posadas + 83 hoteles = 3708 cuartos 2022)",
+        "SED",
+        "AM20 (0.78 informal)"
+      ],
+      "notes": [
+        "El censo municipal cuenta el universo (formal + informal); Sedetur solo el registrado. El residual es el informal — resta, no suma nueva.",
+        "AM20 estimo ~1,000 cuartos informales publicados en sitios web en 2019: corrobora el orden de magnitud por una via independiente."
+      ]
+    },
+    {
+      "id": "renta_vacacional",
+      "task": "A0.3",
+      "status": "nuevo_A0",
+      "label": "Renta vacacional en vivienda particular (Airbnb/VRBO)",
+      "driver": "viviendas censadas x cuartos/vivienda x kg/cuarto/dia informal",
+      "counts": {
+        "low": 544.0,
+        "base": 1451.9077385009246,
+        "high": 2085.276910688188
+      },
+      "factors": {
+        "low": 0.66,
+        "base": 0.78,
+        "high": 0.9
+      },
+      "gen_kg": {
+        "low": 359.04,
+        "base": 1132.488036030721,
+        "high": 1876.7492196193691
+      },
+      "geo_located_units": 2,
+      "coverage": {
+        "label": "Renta vacacional (viviendas)",
+        "universe": 967.9384923339496,
+        "unit": "viviendas"
+      },
+      "seasonality": "sedetur",
+      "sources": [
+        "WP2E (544 viviendas censadas 2019, 1-2 cuartos c/u)",
+        "AM20 (0.78 kg/cuarto/dia informal)"
+      ],
+      "notes": [
+        "El DENUE registra 2 unidades bajo 721312. El censo municipal encontro 544 viviendas. Subregistro de tres ordenes de magnitud.",
+        "No hay doble conteo con las 17 unidades 7213* del DENUE: esas son pensiones/casas de huespedes (establecimiento), no vivienda particular, y entran en el conteo municipal de posadas.",
+        "Cota baja deliberadamente plana (1 cuarto, sin proyectar): es el piso duro del censo 2019."
+      ]
+    },
+    {
+      "id": "restaurantes",
+      "task": "A0.2",
+      "status": "modelado",
+      "label": "Restaurantes",
+      "driver": "establecimientos x kg/establecimiento/dia",
+      "counts": {
+        "low": 126.9855284972017,
+        "base": 137.60510431055752,
+        "high": 148.22468012391334
+      },
+      "factors": {
+        "low": 97.1,
+        "base": 114.2,
+        "high": 131.3
+      },
+      "gen_kg": {
+        "low": 12330.294817078284,
+        "base": 15714.502912265669,
+        "high": 19461.900500269825
+      },
+      "geo_located_units": 149,
+      "coverage": {
+        "label": "Alimentos (restaurantes + fondas, bucket 722* del geo)",
+        "universe": 373.89669757111085,
+        "unit": "u"
+      },
+      "seasonality": "restaurant_coupling",
+      "sources": [
+        "WP2E tabla 4 (99 u 2022)",
+        "AM20 (114.2 kg/est/dia)"
+      ],
+      "notes": [
+        "El bottom-up geo mete restaurantes Y fondas en un solo bucket de 149 unidades 722*. El control total los separa: son dos clases con factores que difieren 3x."
+      ]
+    },
+    {
+      "id": "fondas",
+      "task": "A0.2-h4",
+      "status": "nuevo_A0",
+      "label": "Fondas (cocina economica)",
+      "driver": "establecimientos x kg/establecimiento/dia",
+      "counts": {
+        "low": 218.05595802549786,
+        "base": 236.2915932605533,
+        "high": 254.52722849560874
+      },
+      "factors": {
+        "low": 32.7,
+        "base": 38.5,
+        "high": 44.3
+      },
+      "gen_kg": {
+        "low": 7130.429827433781,
+        "base": 9097.226340531302,
+        "high": 11275.556222355466
+      },
+      "geo_located_units": null,
+      "seasonality": "restaurant_coupling",
+      "sources": [
+        "WP2E tabla 4 (170 u 2022)",
+        "AM20 (38.5 kg/est/dia)"
+      ],
+      "notes": [
+        "Clase que el modelo geo nunca tuvo. El campo la separa de restaurante porque el factor es 3x menor (38.5 vs 114.2).",
+        "Es el tipo de establecimiento que un registro administrativo ve peor: informal, familiar, sin razon social."
+      ]
+    },
+    {
+      "id": "comercio",
+      "task": "A0.2",
+      "status": "modelado",
+      "label": "Negocios comerciales establecidos",
+      "driver": "establecimientos x kg/establecimiento/dia",
+      "counts": {
+        "low": 618.252775107588,
+        "base": 669.9561644210982,
+        "high": 721.6595537346084
+      },
+      "factors": {
+        "low": 16.8,
+        "base": 19.77,
+        "high": 22.7
+      },
+      "gen_kg": {
+        "low": 10386.64662180748,
+        "base": 13245.03337060511,
+        "high": 16381.67186977561
+      },
+      "geo_located_units": 187,
+      "seasonality": "flat",
+      "sources": [
+        "WP2E tabla 4 (482 u 2022)",
+        "AM20 (19.77 kg/est/dia)"
+      ],
+      "notes": [
+        "El factor del geo por categoria sub-SCIAN (19.30 kg/u/dia promedio) coincide con el del campo (19.77) al 2.4%, construidos de forma independiente. El factor esta validado; el gap era 100% conteo."
+      ]
+    },
+    {
+      "id": "ambulantes",
+      "task": "A0.2",
+      "status": "nuevo_A0",
+      "label": "Comercio ambulante",
+      "driver": "puestos x kg/puesto/dia",
+      "counts": {
+        "low": 114.93878134681317,
+        "base": 124.55090894003028,
+        "high": 134.16303653324738
+      },
+      "factors": {
+        "low": 5.0,
+        "base": 8.0,
+        "high": 12.0
+      },
+      "gen_kg": {
+        "low": 574.6939067340659,
+        "base": 996.4072715202423,
+        "high": 1609.9564383989687
+      },
+      "geo_located_units": 0,
+      "seasonality": "sedetur",
+      "sources": [
+        "WP2E (~70 negocios ambulantes 2019, FUERA de los 1,197)"
+      ],
+      "notes": [
+        "El WP2E los excluye explicitamente del 1,197 y nunca los suma al total. Es masa que ni el campo ni el geo estaban contando.",
+        "Sin medicion local del factor: se ancla como fraccion de un local establecido (sin refrigeracion ni almacen). Banda ancha declarada."
+      ]
+    },
+    {
+      "id": "servicio_limpia",
+      "task": "A0.4",
+      "status": "nuevo_A0",
+      "label": "Barrido de calles, limpieza de playa y poda",
+      "driver": "barrenderos x km/dia x kg/km  +  frente de playa  +  poda",
+      "counts": {
+        "low": 4,
+        "base": 4,
+        "high": 4
+      },
+      "factors": null,
+      "gen_kg": {
+        "low": 180.0,
+        "base": 459.0,
+        "high": 898.0
+      },
+      "geo_located_units": null,
+      "seasonality": "flat",
+      "sources": [
+        "WP2E (barrido manual, 4 personas, 2 por lado de la isla)",
+        "Reglamento de Limpia municipal, art. 92 fr. I y art. 40 fr. I (alcance: calles, avenidas, jardines, parques, playas, humedales)",
+        "Reglamento art. 82 (obligacion de separar organico de podas)"
+      ],
+      "detail": {
+        "barrido_kg": {
+          "low": 100.0,
+          "base": 234.0,
+          "high": 448.0
+        },
+        "playa_kg": {
+          "low": 30.0,
+          "base": 75.0,
+          "high": 150.0
+        },
+        "poda_kg": {
+          "low": 50.0,
+          "base": 150.0,
+          "high": 300.0
+        }
+      },
+      "notes": [
+        "REVISION A LA BAJA: el a-priori del plan era 1.0-2.5 t/d. Con el driver real (4 barrenderos manuales) la clase pesa ~0.5 t/d. El a-priori venia de un porcentaje tipico del total, no de la operacion observada.",
+        "El WP2E declara: 'Se desconoce la cantidad de residuos recolectados a traves del barrido manual'. Esta clase es estimacion por driver, no medicion — la mas debil del inventario.",
+        "SARGAZO EXCLUIDO: corriente aparte, ver exclusiones."
+      ]
+    },
+    {
+      "id": "day_trippers",
+      "task": "A0.5",
+      "status": "nuevo_A0",
+      "label": "Excursionistas via ferry (residual, sin pernocta)",
+      "driver": "llegadas de ferry x fraccion sin pernocta x kg residual/persona",
+      "counts": {
+        "low": 168.60000000000002,
+        "base": 449.9846410133379,
+        "high": 1199.9590427022347
+      },
+      "factors": {
+        "low": 0.15,
+        "base": 0.25,
+        "high": 0.4
+      },
+      "gen_kg": {
+        "low": 25.290000000000003,
+        "base": 112.49616025333448,
+        "high": 479.9836170808939
+      },
+      "geo_located_units": null,
+      "seasonality": "sedetur",
+      "sources": [
+        "WP2E/AM20 (308,000 visitantes 2019 segun navieras = 843/dia, picos >5,000/dia)"
+      ],
+      "detail": {
+        "llegadas_ferry_dia": {
+          "low": 843.0,
+          "base": 1499.9488033777932,
+          "high": 2999.8976067555864
+        },
+        "pico_historico_dia": 5000.0
+      },
+      "notes": [
+        "FRONTERA DECLARADA: la comida del excursionista ya esta contada en restaurantes y fondas. Solo se le atribuye el residual de consumo fuera del establecimiento (botella, empaque, residuo de playa).",
+        "INCONSISTENCIA DETECTADA: 843 llegadas/dia no cuadra con el stock de cuartos (2,341 Sedetur x 73.2% x 2 huesp = 3,427 huespedes/noche, que a 3 noches de estancia exige ~417,000 llegadas/ano de pernocta sola, mas que el total reportado). Holbox opera dos lineas de ferry; lo mas probable es que el 308,000 sea de una sola. La cota alta duplica.",
+        "REVISION A LA BAJA: a-priori 0.5-1.5 t/d; con el residual declarado la clase pesa ~0.1 t/d en la base.",
+        "SOLAPE con tour operadoras: buena parte del excursionista viene al tour de tiburon ballena. No sumar ambos sin descontar."
+      ]
+    },
+    {
+      "id": "tour_operadoras",
+      "task": "A0.6",
+      "status": "nuevo_A0",
+      "label": "Tour operadoras y lanchas (tiburon ballena)",
+      "driver": "lanchas en temporada x pax/tour x kg/pax, anualizado",
+      "counts": {
+        "low": 240,
+        "base": 540,
+        "high": 1000
+      },
+      "factors": {
+        "low": 0.3,
+        "base": 0.45,
+        "high": 0.6
+      },
+      "gen_kg": {
+        "low": 30.18082191780822,
+        "base": 101.86027397260274,
+        "high": 251.5068493150685
+      },
+      "geo_located_units": 6,
+      "coverage": {
+        "label": "Tour operadoras (embarcaciones en temporada)",
+        "universe": 60,
+        "unit": "lanchas"
+      },
+      "seasonality": "whale_shark",
+      "sources": [
+        "DEN 5615* (6 unidades: 5 organizacion de excursiones + 1 agencia)",
+        "CONANP APFF Yum Balam / Reserva Tiburon Ballena (DOF 2009) — padron de permisionarios, pendiente por solicitud documental"
+      ],
+      "detail": {
+        "gen_en_temporada_kg": {
+          "low": 72.0,
+          "base": 243.0,
+          "high": 600.0
+        },
+        "dias_temporada": 153,
+        "meses_temporada": "mayo-septiembre"
+      },
+      "notes": [
+        "Revierte una exclusion mal hecha: se habian tierizado como 'peso ~cero'. Un tour mueve box lunch, botellas y equipo para ~10 pax y el residuo regresa a la isla.",
+        "DENUE registra 6 unidades y 0 bajo 4871*/4883*: las cooperativas de lancheros no estan en el registro. CONANP es el unico conteo duro y no expone API — solicitud documental, no bloqueo.",
+        "Fuertemente estacional: en temporada pesa ~2.4x el promedio anual."
+      ]
+    }
+  ],
+  "totals_t_dia": {
+    "low": 37.873283259422244,
+    "base": 50.86791562424788,
+    "high": 66.34823203303938
+  },
+  "nuevas_clases_A0_t_dia": {
+    "low": 9.893656820536481,
+    "base": 14.093568656966454,
+    "high": 19.28137156403768
+  },
+  "geo_bottom_up_actual_t_dia": 18.46,
+  "witnesses": {
+    "campo_wp2e_2022_t_dia": 34.8,
+    "estacion_transferencia_t_dia": [
+      20,
+      25
+    ],
+    "estacion_transferencia_fuente": "Nomadas (2022) via WP2E: 'Entre 20 y 25 toneladas diarias se reportan llegan a la ET'",
+    "cobertura_hogares": 0.8,
+    "cobertura_fuente": "AM20 via WP2E: ~80% de los hogares recibian el servicio"
+  },
+  "exclusions": [
+    {
+      "id": "sargazo",
+      "reason": "Corriente distinta, estacional y masiva. Compite por la misma capacidad de recoleccion y disposicion pero no es RSU. Merece renglon propio en el diagnostico, no entrar al total."
+    },
+    {
+      "id": "rcd_construccion",
+      "reason": "Residuo de construccion y demolicion. Holbox esta en boom constructivo; el Reglamento de Limpia (art. 74) prohibe mezclarlo con RSU. Flujo real, corriente distinta."
+    },
+    {
+      "id": "rpbi",
+      "reason": "Residuo peligroso biologico-infeccioso de las 6 clinicas del DENUE. Marco normativo aparte (NOM-087)."
+    },
+    {
+      "id": "terminal_chiquila",
+      "reason": "Fuera de la frontera del sistema. La terminal de ferry en tierra firme genera, pero no es de la isla."
+    },
+    {
+      "id": "talleres",
+      "reason": "7 talleres del DENUE: generan residuo de manejo especial (aceite, filtros, llantas), no RSU municipal."
+    },
+    {
+      "id": "servicios_peso_cero",
+      "reason": "Inmobiliarias, banca, religiosas, alquiler de bicis y carritos (17 u). Empaque marginal."
+    }
+  ]
+}
