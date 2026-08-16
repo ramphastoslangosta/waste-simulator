@@ -219,7 +219,6 @@ def build(year: int) -> dict:
 
     proj = PROJ if year == 2026 else {k: 1.0 for k in BANDS}
     proj19 = PROJ_2019 if year == 2026 else {k: (1 + SEDETUR_CAGR) ** 3 for k in BANDS}
-    sed_hotels = sedetur.get("cuartos") and sedetur.get("hoteles", 170)
     # Sedetur (abr-2026) y el DENUE (snapshot 2025) son entradas NATIVAS de 2026. La
     # corrida de 2022 existe para validar el marco contra el estudio de campo, asi que
     # ambas se retro-proyectan con el mismo CAGR observado; de lo contrario se compara
